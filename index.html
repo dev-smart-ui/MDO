@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./src/css/style.css">
+
+</head>
+<body class="bg-white font-primary font-normal">
+<header class="fixed top-0 left-0 w-full z-10 bg-[#0c0c11] h-[56px]"></header>
+<div class="swiper swiper-h h-screen" id="page-slider">
+    <div class="swiper-wrapper">
+        <!--hero-->
+        <div class="swiper-slide hero-section bg-dark-blue pt-[10vh] pb-[6vh] lg:pt-[14vh] lg:pb-[9vh] 3xl:pt-[15vh] 3xl:pb-[9.5vh]">
+            <div class="container h-full flex flex-col justify-between">
+                <div class="absolute top-[56px] left-0 lg:left-auto lg:top-[112px] lg:right-[-30px] 3xl:top-[26px] w-[118vw] h-[52vh] lg:w-[57.2vw] lg:h-[53.8vw] 3xl:w-[52.2vw] 3xl:h-[42.8vw]">
+                    <span class="block absolute top-0 right-0 w-[69vw] h-[69vw] lg:w-[593px] lg:h-[593px] rounded-full bg-[#2B84D84A] blur-[200px]"></span>
+                    <span class="hidden lg:block absolute top-[80px] right-[214px] lg:w-[593px] lg:h-[593px] rounded-full bg-[#2B84D84A] blur-[200px]"></span>
+                    <span class="block absolute bottom-0 left-0 w-[69vw] h-[69vw] lg:w-[593px] lg:h-[593px] rounded-full bg-[#5AD18252] blur-[200px]"></span>
+                </div>
+                <div class="mb-[1.2vh] lg:mb-0 relative lg:absolute lg:top-[11vh] lg:right-[-2.5vw] 3xl:top-[12.4vh] 3xl:right-0">
+                    <img src="./src/images/globe.png" alt="globe" loading="lazy"
+                         class="hidden lg:block w-[53.5vw] 3xl:w-[48.5vw] max-w-[970px]"/>
+                    <img src="./src/images/globe-mobile.png" alt="globe" loading="lazy"
+                         class="lg:hidden w-full min-w-[calc(100%_+_48px)] ml-[-24px] max-h-[50vh] object-contain"/>
+                </div>
+
+                <div class="flex flex-col justify-between lg:h-full w-full text-white relative z-[1]">
+                    <div class="flex flex-col gap-[1.6vh] lg:gap-[3.3vh] 3xl:gap-[3.7vh] lg:mb-[4vh]">
+                        <h1 class="text-[8.4vw] lg:text-[8.4vw] 3xl:text-[7.3vw] leading-[1.04] lg:leading-[0.92] 3xl:leading-[0.95] font-secondary lg:max-w-[50vw] 3xl:max-w-[42vw] w-full">
+                            <span class="text-[#3F97EB]">Discover</span>
+                            <span class="text-[#93C246]">Analyze</span>
+                            <span>Maximize Your Profit</span>
+                        </h1>
+                        <h2 class="opacity-65 text-[16px] lg:text-[1.25vw] 3xl:text-[1.3vw] leading-[1.66] lg:leading-[2.1] 3xl:leading-[1.69] lg:max-w-[41vw] w-full pr-[2vw] lg:pr-0">
+                            MDO Database provides world coverage for the intelligence you need to identify and seize
+                            opportunities in mining.
+                        </h2>
+                    </div>
+                    <div class="hidden lg:block counter-block counter-block-desktop">
+                        <p class="lg:text-[2.5vw] 3xl:text-[2.76vw] leading-[1.5] lg:mb-[2.3vw] 3xl:mb-[2.1vw] counter-title">
+                            Mining Database in numbers</p>
+                        <div class="counter-grid grid grid-cols-[repeat(6,148px)] lg:gap-[20px] 3xl:gap-[29px]">
+                            <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
+                                <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
+                                     data-count="99"></div>
+                                <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Countries</span>
+                            </div>
+                            <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
+                                <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
+                                     data-count="120"></div>
+                                <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Processing Technologies</span>
+                            </div>
+                            <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
+                                <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
+                                     data-count="140"></div>
+                                <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Commodities</span>
+                            </div>
+                            <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
+                                <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
+                                     data-count="2400"></div>
+                                <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Heavy Mobile Equipment Models</span>
+                            </div>
+                            <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
+                                <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
+                                     data-count="2400"></div>
+                                <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Mines and Advanced Mining Projects</span>
+                            </div>
+                            <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
+                                <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
+                                     data-count="7000+"></div>
+                                <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Key Contacts<br> on Mine Sites</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- counter-->
+        <div class="swiper-slide bg-[#12131C] lg:hidden text-white pt-[9.5vh] pb-[10vh] counter-block counter-block-mobile">
+            <div class="container">
+                <p class="text-[9vw] leading-[1.45] counter-title max-w-[70%] mb-[7.6vh]">Mining Database in numbers</p>
+                <div class="counter-grid grid grid-cols-[repeat(2,calc(50%_-_10px))] gap-x-[14px] gap-y-[8.7vh]">
+                    <div class="counter-item flex flex-col gap-[10px]">
+                        <span class="number leading-[0.86] text-blue text-[10vw] font-medium overflow-hidden"
+                              data-count="99"></span>
+                        <span class="text opacity-70 text-[14px] leading-[1.5]">Countries</span>
+                    </div>
+                    <div class="counter-item flex flex-col gap-[10px]">
+                        <span class="number leading-[0.86] text-blue text-[10vw] font-medium overflow-hidden"
+                              data-count="120"></span>
+                        <span class="text opacity-70 text-[14px] leading-[1.5]">Processing Technologies</span>
+                    </div>
+                    <div class="counter-item flex flex-col gap-[10px]">
+                        <span class="number leading-[0.86] text-blue text-[10vw] font-medium overflow-hidden"
+                              data-count="140"></span>
+                        <span class="text opacity-70 text-[14px] leading-[1.5]">Commodities</span>
+                    </div>
+                    <div class="counter-item flex flex-col gap-[10px]">
+                        <span class="number leading-[0.86] text-blue text-[10vw] font-medium overflow-hidden"
+                              data-count="2400"></span>
+                        <span class="text opacity-70 text-[14px] leading-[1.5]">Heavy Mobile Equipment Models</span>
+                    </div>
+                    <div class="counter-item flex flex-col gap-[10px]">
+                        <span class="number leading-[0.86] text-blue text-[10vw] font-medium overflow-hidden"
+                              data-count="2400"></span>
+                        <span class="text opacity-70 text-[14px] leading-[1.5]">Mines and Advanced Mining Projects</span>
+                    </div>
+                    <div class="counter-item flex flex-col gap-[10px]">
+                        <span class="number leading-[0.86] text-blue text-[10vw] font-medium overflow-hidden"
+                              data-count="7000+"></span>
+                        <span class="text opacity-70 text-[14px] leading-[1.5]">Key Contacts<br> on Mine Sites</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./src/js/script.js" defer></script>
+</body>
+</html>
