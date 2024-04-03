@@ -1,11 +1,19 @@
 "use strict"
+function isTouchEnabled() {
+    return ( 'ontouchstart' in window ) ||
+        ( navigator.maxTouchPoints > 0 ) ||
+        ( navigator.msMaxTouchPoints > 0 );
+}
 
 document.addEventListener("DOMContentLoaded", function () {
+
     // sliders
     let s1 = document.querySelector('#page-slider');
     let s2 = document.querySelector('#up-to-date');
     let pageSlider = new Swiper("#page-slider", {
         direction: "vertical",
+        allowTouchMove: isTouchEnabled(),
+        simulateTouch: true,
         slidesPerView: 1,
         mousewheel: {
             forceToAxis: true,
@@ -14,55 +22,64 @@ document.addEventListener("DOMContentLoaded", function () {
             noMousewheelClass: 'swiper-no-swiping',
             releaseOnEdges: true
         },
-        allowTouchMove: false,
+        on: {
+            init: function (){
+                const counter = this.slides[this.activeIndex].querySelector('.counter-grid');
+                if(counter){
+                    findNumbers(counter);
+                }
+            }
+        }
     });
-    let swiper2 = new Swiper("#up-to-date", {
-        direction: 'vertical',
-        slidesPerView: 'auto',
-        freeMode: true,
-        freeModeSticky: true,
-        watchSlidesProgress: true,
-        watchSlidesVisibility: true,
-        scrollbar: {
-            el: ".swiper-scrollbar-custom",
-            hide: false,
-        },
-        parallax: true,
-        mousewheel: {
-            forceToAxis: true,
-            enabled: true
-        },
-    });
+    // let swiper2 = new Swiper("#up-to-date", {
+    //     direction: 'vertical',
+    //     slidesPerView: 'auto',
+    //     freeMode: true,
+    //     freeModeSticky: true,
+    //     watchSlidesProgress: true,
+    //     watchSlidesVisibility: true,
+    //     scrollbar: {
+    //         el: ".swiper-scrollbar-custom",
+    //         hide: false,
+    //     },
+    //     parallax: true,
+    //     mousewheel: {
+    //         forceToAxis: true,
+    //         enabled: true
+    //     },
+    // });
 
     pageSlider.on('slideChange', function () {
+        const counter = this.slides[this.activeIndex].querySelector('.counter-grid');
+        if(counter){
+            findNumbers(counter);
+        }
+
         if (this.slides[this.activeIndex].classList.contains('nested')) {
             this.slides[this.activeIndex].classList.add('swiper-no-swiping');
         }
     })
 
-    swiper2.on('progress', function () {
-        if (this.isEnd || this.isBeginning) {
-            s1.querySelectorAll('.nested').forEach(i => {
-                i.classList.remove('swiper-no-swiping')
-            })
-        }
-    })
+    // swiper2.on('progress', function () {
+    //     if (this.isEnd || this.isBeginning) {
+    //         s1.querySelectorAll('.nested').forEach(i => {
+    //             i.classList.remove('swiper-no-swiping')
+    //         })
+    //     }
+    // })
 
     // counter
-    const gridsNumber = document.querySelectorAll('.counter-block .counter-grid');
 
-    if (gridsNumber.length > 0) {
-        gridsNumber.forEach((element) => {
-            const numbers = element.querySelectorAll('.counter-item .number');
+    function findNumbers(element){
+        const numbers = element.querySelectorAll('.counter-item .number');
 
-            if (numbers.length > 0) {
-                numbers.forEach((element, index) => {
-                    const countTo = parseInt(element.dataset.count.replace(/[^\d]/g, ''), 10),
-                        textInCount = element.dataset.count.replace(/[^a-zа-яё+]+/ig, '')
-                    generateNumbers(countTo, textInCount, element, (index * 100))
-                })
-            }
-        })
+        if (numbers.length > 0) {
+            numbers.forEach((element, index) => {
+                const countTo = parseInt(element.dataset.count.replace(/[^\d]/g, ''), 10),
+                    textInCount = element.dataset.count.replace(/[^a-zа-яё+]+/ig, '')
+                generateNumbers(countTo, textInCount, element, (index * 100))
+            })
+        }
     }
 
     function generateNumbers(n, text, element, delay) {
@@ -100,18 +117,23 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         element.append(wrapper)
 
+        numbersTransform(numbersHeight(element), element, wrapper);
         animationNumbers(element, delay)
     }
 
-    function animationNumbers(element, delay) {
-        let n = element.querySelectorAll('span'),
-            wrapper = element.querySelector('.number-wrapper'),
-            numberHeight = n[0].offsetHeight
+    function numbersHeight(element){
+        let n = element.querySelectorAll('span')
+        return n[0].offsetHeight
+    }
 
+    function numbersTransform(numberHeight, element, wrapper){
         element.style.height = numberHeight + 'px'
-
         wrapper.style.transform = `translateY(calc(-100% + ${numberHeight}px))`
         wrapper.classList.remove('opacity-0')
+    }
+
+    function animationNumbers(element, delay) {
+        let wrapper = element.querySelector('.number-wrapper')
 
         setTimeout(() => {
             wrapper.classList.add('transition-transform', 'duration-[1000ms]')
@@ -119,4 +141,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }, delay)
     }
 
+    window.addEventListener('resize', function (){
+        let numbers = document.querySelectorAll('.counter-block .number');
+        numbers.forEach(element => {
+            if(element.querySelectorAll('span').length > 0){
+                let height = numbersHeight(element);
+                element.style.height = height + 'px'
+            }
+        })
+    })
 });
