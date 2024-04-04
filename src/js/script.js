@@ -6,16 +6,18 @@ function isTouchEnabled() {
         (navigator.msMaxTouchPoints > 0);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
 
     // sliders
-    let s1 = document.querySelector('#page-slider');
-    let s2 = document.querySelector('#up-to-date');
+    const s1 = document.querySelector('#page-slider');
+    const s2 = document.querySelector('#up-to-date');
+    const s3 = document.querySelector('#comprehensive-slider');
     let pageSlider = new Swiper("#page-slider", {
         direction: "vertical",
         allowTouchMove: isTouchEnabled(),
         simulateTouch: !isTouchEnabled(),
         slidesPerView: 1,
+        longSwipesRatio: 0.3,
         mousewheel: {
             forceToAxis: true,
             enabled: true,
@@ -29,18 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (counter) {
                     findNumbers(counter);
                 }
-            }
+            },
         }
     });
 
     let comprehensiveSlider = new Swiper("#comprehensive-slider", {
-        // slidesPerView: 'auto',
         slidesPerView: 1.2,
         loop: true,
         centeredSlides: true,
         roundLengths: true,
         autoplay: true,
-        speed: 500,
+        speed: 700,
         pagination: {
             el: ".comprehensive-coverage-pagination",
             clickable: true,
@@ -55,40 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
             1440: {
                 slidesPerView: 3.8,
             },
-            1642:{
-                slidesPerView: 5.4,
+            1642: {
+                slidesPerView: 4.8,
             }
         }
     });
-
-    function changeSlide() {
-        if (comprehensiveSlider && comprehensiveSlider.activeIndex < comprehensiveSlider.slides.length - 1) {
-            comprehensiveSlider.slideNext();
-        } else {
-            comprehensiveSlider.slideTo(0);
-        }
-    }
-
-    // setInterval(changeSlide, 3000);
-
-    // let swiper2 = new Swiper("#up-to-date", {
-    //     direction: 'vertical',
-    //     slidesPerView: 'auto',
-    //     freeMode: true,
-    //     freeModeSticky: true,
-    //     watchSlidesProgress: true,
-    //     watchSlidesVisibility: true,
-    //     scrollbar: {
-    //         el: ".swiper-scrollbar-custom",
-    //         hide: false,
-    //     },
-    //     parallax: true,
-    //     nested: true,
-    //     mousewheel: {
-    //         forceToAxis: true,
-    //         enabled: true
-    //     },
-    // });
 
     pageSlider.on('slideChange', function () {
         const counter = this.slides[this.activeIndex].querySelector('.counter-grid');
@@ -101,16 +73,44 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 
-    // swiper2.on('progress', function () {
-    //     if (this.isEnd || this.isBeginning) {
-    //         s1.querySelectorAll('.nested').forEach(i => {
-    //             i.classList.remove('swiper-no-swiping')
-    //         })
-    //     }
-    // })
+    comprehensiveSlider.on('transitionStart', function () {
+        sliderTextToggle();
+    })
+
+
+    if (document.fonts) {
+        document.fonts.onloadingdone = () => {
+            sliderTextToggle();
+        };
+    }
+
+    function sliderTextToggle() {
+        const sliderContent = s3.querySelectorAll('.content');
+        sliderContent.forEach(i => {
+            if (i.querySelector('ul').offsetHeight > 0) {
+                if (i.closest('.swiper-slide').classList.contains('swiper-slide-active')) {
+                    i.style.transform = `translateY(0)`;
+                } else {
+                    i.style.transform = `translateY(${(i.querySelector('ul').offsetHeight) + 3}px)`;
+                }
+            }
+        })
+    }
+
+    function sliderTextHide() {
+        const sliderContent = s3.querySelectorAll('.content ul');
+        sliderContent.forEach(element => {
+            if (element.offsetHeight > 0) {
+                element.closest('.content').style.transform = `translateY(${element.offsetHeight}px)`;
+            }
+        })
+    }
+
+    function sliderTextShow(element) {
+        element.style.transform = `translateY(0)`;
+    }
 
     // counter
-
     function findNumbers(element) {
         const numbers = element.querySelectorAll('.counter-item .number');
 
