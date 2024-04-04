@@ -1,8 +1,9 @@
 "use strict"
+
 function isTouchEnabled() {
-    return ( 'ontouchstart' in window ) ||
-        ( navigator.maxTouchPoints > 0 ) ||
-        ( navigator.msMaxTouchPoints > 0 );
+    return ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let pageSlider = new Swiper("#page-slider", {
         direction: "vertical",
         allowTouchMove: isTouchEnabled(),
-        simulateTouch: true,
+        simulateTouch: !isTouchEnabled(),
         slidesPerView: 1,
         mousewheel: {
             forceToAxis: true,
@@ -23,14 +24,53 @@ document.addEventListener("DOMContentLoaded", function () {
             releaseOnEdges: true
         },
         on: {
-            init: function (){
+            init: function () {
                 const counter = this.slides[this.activeIndex].querySelector('.counter-grid');
-                if(counter){
+                if (counter) {
                     findNumbers(counter);
                 }
             }
         }
     });
+
+    let comprehensiveSlider = new Swiper("#comprehensive-slider", {
+        // slidesPerView: 'auto',
+        slidesPerView: 1.2,
+        loop: true,
+        centeredSlides: true,
+        roundLengths: true,
+        autoplay: true,
+        speed: 500,
+        pagination: {
+            el: ".comprehensive-coverage-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2.3,
+            },
+            1200: {
+                slidesPerView: 2.9,
+            },
+            1440: {
+                slidesPerView: 3.8,
+            },
+            1642:{
+                slidesPerView: 5.4,
+            }
+        }
+    });
+
+    function changeSlide() {
+        if (comprehensiveSlider && comprehensiveSlider.activeIndex < comprehensiveSlider.slides.length - 1) {
+            comprehensiveSlider.slideNext();
+        } else {
+            comprehensiveSlider.slideTo(0);
+        }
+    }
+
+    // setInterval(changeSlide, 3000);
+
     // let swiper2 = new Swiper("#up-to-date", {
     //     direction: 'vertical',
     //     slidesPerView: 'auto',
@@ -43,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //         hide: false,
     //     },
     //     parallax: true,
+    //     nested: true,
     //     mousewheel: {
     //         forceToAxis: true,
     //         enabled: true
@@ -51,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     pageSlider.on('slideChange', function () {
         const counter = this.slides[this.activeIndex].querySelector('.counter-grid');
-        if(counter){
+        if (counter) {
             findNumbers(counter);
         }
 
@@ -70,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // counter
 
-    function findNumbers(element){
+    function findNumbers(element) {
         const numbers = element.querySelectorAll('.counter-item .number');
 
         if (numbers.length > 0) {
@@ -121,12 +162,12 @@ document.addEventListener("DOMContentLoaded", function () {
         animationNumbers(element, delay)
     }
 
-    function numbersHeight(element){
+    function numbersHeight(element) {
         let n = element.querySelectorAll('span')
         return n[0].offsetHeight
     }
 
-    function numbersTransform(numberHeight, element, wrapper){
+    function numbersTransform(numberHeight, element, wrapper) {
         element.style.height = numberHeight + 'px'
         wrapper.style.transform = `translateY(calc(-100% + ${numberHeight}px))`
         wrapper.classList.remove('opacity-0')
@@ -141,10 +182,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }, delay)
     }
 
-    window.addEventListener('resize', function (){
+    window.addEventListener('resize', function () {
         let numbers = document.querySelectorAll('.counter-block .number');
         numbers.forEach(element => {
-            if(element.querySelectorAll('span').length > 0){
+            if (element.querySelectorAll('span').length > 0) {
                 let height = numbersHeight(element);
                 element.style.height = height + 'px'
             }

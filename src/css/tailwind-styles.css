@@ -2,58 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-.swiper-scrollbar-custom {
-  width: 10px;
-  height: 216px;
-  border-radius: 30px;
-  background: #D9D9D9;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 2%;
+:root {
+  --swiper-pagination-bullet-inactive-color: #34384E1A;
+  --swiper-pagination-color: #02C2FF;
+  --swiper-pagination-bullet-inactive-opacity: 1;
 }
 
-.swiper-scrollbar-drag {
-  background: #02C2FF;
-  width: 10px;
-  border-radius: 30px;
-}
+/*.swiper-scrollbar-custom {*/
+/*  width: 10px;*/
+/*  height: 216px;*/
+/*  border-radius: 30px;*/
+/*  background: #D9D9D9;*/
+/*  position: absolute;*/
+/*  top: 50%;*/
+/*  transform: translateY(-50%);*/
+/*  right: 2%;*/
+/*}*/
 
-.parallax-bg {
-  font-size: 1000px;
-  color: #fff;
-  opacity: .1;
-  position: absolute;
-  inset: 0;
-}
+/*.swiper-scrollbar-drag {*/
+/*  background: #02C2FF;*/
+/*  width: 10px;*/
+/*  border-radius: 30px;*/
+/*}*/
+
+/*.parallax-bg {*/
+/*  font-size: 1000px;*/
+/*  color: #fff;*/
+/*  opacity: .1;*/
+/*  position: absolute;*/
+/*  inset: 0;*/
+/*}*/
 
 .swiper-slide {
   overflow: hidden;
 }
 
+/*hero section*/
 .hero-section h1 {
-  font-size: clamp(6.3vw, 14.3vw, 7vh);
+  font-size: clamp(6.3dvw, 14.3dvw, 7dvh);
 }
 
 .hero-section h2 {
-  font-size: clamp(2vw, 4.1vw, 2vh);
+  font-size: clamp(2dvw, 4.1dvw, 2dvh);
 }
 
 .counter-block .counter-title {
-  font-size: clamp(3.76vw, 9vw, 5vh);
-  margin-bottom: clamp(3vh, 7.6vh, 17vw);
+  font-size: clamp(3.76dvw, 9dvw, 5dvh);
+  margin-bottom: clamp(3dvh, 7.6dvh, 17dvw);
 }
 
 .counter-block .counter-item .number {
-  font-size: clamp(5vw, 10vw, 5vh)
+  font-size: clamp(5dvw, 10dvw, 5dvh)
 }
 
 .counter-block .counter-item .text {
-  font-size: clamp(1.5vw, 3.6vw, 2vh);
+  font-size: clamp(1.5dvw, 3.6dvw, 2dvh);
 }
 
 .counter-block .counter-grid {
-  row-gap: clamp(3vh, 8.7vh, 19vw);
+  row-gap: clamp(3dvh, 8.7dvh, 19dvw);
 }
 
 @media screen and (max-height: 600px) {
@@ -64,53 +71,115 @@
 
 @media screen and (min-width: 1024px) {
   .hero-section h1 {
-    font-size: clamp(4.3vw, 8.4vw, 14vh);
+    font-size: clamp(4.3dvw, 8.4dvw, 14dvh);
   }
 
   .hero-section h2 {
-    font-size: clamp(.9vw, 1.25vw, 2vh);
+    font-size: clamp(.9dvw, 1.25dvw, 2dvh);
   }
 
   .counter-block .counter-title {
-    font-size: clamp(1.76vw, 2.5vw, 5vh);
-    margin-bottom: clamp(3vh, 3.6vh, 11vw);
+    font-size: clamp(1.76dvw, 2.5dvw, 5dvh);
+    margin-bottom: clamp(3dvh, 3.6dvh, 11dvw);
   }
 
   .counter-block .counter-item .number {
-    font-size: clamp(1vw, 3.1vw, 5vh);
+    font-size: clamp(1dvw, 3.1dvw, 5dvh);
   }
 
   .counter-block .counter-item .text {
-    font-size: clamp(.5vw, 0.97vw, 2vh);
+    font-size: clamp(.5dvw, 0.97dvw, 2dvh);
   }
 
   .counter-block .counter-grid {
-    grid-template-columns: repeat(6, clamp(5vw, 10.3vw, 17vh));
+    grid-template-columns: repeat(6, clamp(5dvw, 10.3dvw, 17dvh));
   }
 }
 
 @media screen and (min-width: 1642px) {
   .hero-section h1 {
-    font-size: clamp(4.3vw, 7.3vw, 13vh);
+    font-size: clamp(4.3dvw, 7.3dvw, 13dvh);
   }
 
   .hero-section h2 {
-    font-size: clamp(0.9vw, 1.3vw, 3vh);
+    font-size: clamp(0.9dvw, 1.3dvw, 3dvh);
   }
 
   .counter-block .counter-title {
-    font-size: clamp(1.76vw, 2.76vw, 5vh);
+    font-size: clamp(1.76dvw, 2.76dvw, 5dvh);
   }
 
   .counter-block .counter-item .number {
-    font-size: clamp(1vw, 2.5vw, 5vh);
+    font-size: clamp(1dvw, 2.5dvw, 5dvh);
   }
 
   .counter-block .counter-item .text {
-    font-size: clamp(.3vw, .7vw, 2vh);
+    font-size: clamp(.3dvw, .7dvw, 2dvh);
   }
 
   .counter-block .counter-grid {
-    grid-template-columns: repeat(6, clamp(5vw, 7.4vw, 14vh));
+    grid-template-columns: repeat(6, clamp(5dvw, 7.4dvw, 14dvh));
+  }
+}
+
+/*comprehensive coverage*/
+.comprehensive-coverage h2 {
+  font-size: clamp(5.3dvw, 9.2dvw, 4dvh);
+}
+
+.comprehensive-coverage .subtitle {
+  font-size: clamp(2dvw, 4.04dvw, 3dvh);
+}
+
+.comprehensive-coverage .content p {
+  font-size: clamp(3dvw, 6.6dvw, 3dvh);
+}
+
+.comprehensive-coverage-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+}
+.comprehensive-coverage .swiper-wrapper{
+  align-items: center;
+}
+
+.comprehensive-coverage .swiper-slide{
+  transition: width 0.5s, height 0.5s;
+  padding: 0 10px;
+}
+.comprehensive-coverage .swiper-slide{
+  width: 84.8%;
+  height: 100%;
+  padding: 0 10px;
+  transition: width 0.5s, height 0.5s;
+}
+
+@media screen and (min-width: 768px){
+  .comprehensive-coverage .swiper-slide{
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comprehensive-coverage h2 {
+    font-size: clamp(3.3dvw, 4.46dvw, 7.2dvh);
+  }
+
+  .comprehensive-coverage .subtitle {
+    font-size: clamp(1dvw, 1.25dvw, 3dvh);
+  }
+
+  .comprehensive-coverage .content p {
+    font-size: clamp(3dvw, 6.6dvw, 3dvh);
+  }
+
+  .comprehensive-coverage .swiper-slide{
+    width: 22%;
+    height: 82%;
+  }
+
+  .comprehensive-coverage .swiper-slide.swiper-slide-active{
+    width: 26.5%;
+    height: 100%;
   }
 }
