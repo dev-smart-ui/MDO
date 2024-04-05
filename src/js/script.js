@@ -43,7 +43,8 @@ window.addEventListener("load", function () {
         roundLengths: true,
         loopAdditionalSlides: 2,
         autoplay: {
-            delay: 5000
+            delay: 5000,
+            waitForTransition: true,
         },
         speed: 700,
         watchSlidesProgress: true,
@@ -74,6 +75,10 @@ window.addEventListener("load", function () {
             },
             slideChange: function () {
                 updateSlideClasses.call(this);
+            },
+            click: function () {
+                let index = this.clickedSlide.getAttribute('data-swiper-slide-index');
+                this.slideToLoop(index);
             }
         }
     });
@@ -227,8 +232,11 @@ window.addEventListener("load", function () {
         }, delay)
     }
 
-    window.addEventListener('resize', function () {
+    function checkDeviceWidth(){
+        return window.innerWidth
+    }
 
+    window.addEventListener('resize', function () {
         sliderTextToggle();
 
         let numbers = document.querySelectorAll('.counter-block .number');
