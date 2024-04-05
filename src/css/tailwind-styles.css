@@ -136,7 +136,7 @@
   font-size: clamp(2dvw, 4.04dvw, 3dvh);
 }
 
-.comprehensive-coverage .subtitle br{
+.comprehensive-coverage .subtitle br {
   display: none;
 }
 
@@ -157,7 +157,7 @@
 .comprehensive-coverage .swiper-slide {
   height: 100%;
   padding: 0 10px;
-  transition: transform 0.7s;
+  transition: transform 0.7s, right 0.7s;
 }
 
 #comprehensive-slider {
@@ -174,7 +174,7 @@
     font-size: clamp(1dvw, 1.25dvw, 3dvh);
   }
 
-  .comprehensive-coverage .subtitle br{
+  .comprehensive-coverage .subtitle br {
     display: block;
   }
 
@@ -184,10 +184,17 @@
 
   .comprehensive-coverage .swiper-slide {
     transform: scale(0.82);
+    transform-origin: right center;
+    min-height: 408px;
   }
 
   .comprehensive-coverage .swiper-slide.swiper-slide-active {
     transform: scale(1);
+    transform-origin: center center;
+  }
+
+  .comprehensive-coverage .afterActive {
+    transform-origin: left center;
   }
 
   .swiper-slide.comprehensive-coverage {
@@ -198,6 +205,7 @@
   #comprehensive-slider {
     padding-top: clamp(15px, 8.7dvh, 9dvw);
     padding-bottom: clamp(15px, 7dvh, 4dvw);
+    max-height: calc(408px + clamp(15px, 8.7dvh, 9dvw) + clamp(15px, 7dvh, 4dvw));
   }
 
   .comprehensive-coverage-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
@@ -227,6 +235,62 @@
   }
 
   .comprehensive-coverage .content p {
-    font-size: clamp(0.4dvw, 1.6dvw, 3dvh);
+    font-size: clamp(16px, 32px, 3dvh);
+  }
+
+  .comprehensive-coverage .swiper-slide {
+    min-height: 450px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 800px) {
+  .comprehensive-coverage h2 {
+    font-size: clamp(1.3dvw, 2.46dvw, 4.2dvh);
+  }
+
+  .comprehensive-coverage .subtitle {
+    font-size: clamp(1dvw, 1.25dvw, 1dvh);
+  }
+
+  .comprehensive-coverage .swiper-slide {
+    min-height: 335px;
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-height: 800px) {
+  .comprehensive-coverage .content {
+    padding-left: 20px;
+    padding-bottom: 15px;
+  }
+
+  .comprehensive-coverage .content p {
+    font-size: clamp(1dvw, 2dvw, 2.5dvh);
+  }
+
+  .comprehensive-coverage .content ul {
+    font-size: 0.8dvw;
+  }
+}
+
+@media screen and (min-width: 1642px) and (max-height: 1060px) {
+  .hero-section .image-block img {
+    max-width: 39dvw
+  }
+}
+
+@media screen and (min-width: 1440px) and (max-height: 800px) {
+  .hero-section .image-block img {
+    max-width: 80dvh
+  }
+}
+
+@media screen and (min-width: 2300px) and (min-height: 1000px) {
+  .comprehensive-coverage .swiper-slide {
+    min-height: 550px;
+  }
+}
+@media screen and (min-width: 2300px) and (max-height: 999px) {
+  .comprehensive-coverage .content p {
+    font-size: clamp(16px, 25px, 3dvh);
   }
 }
