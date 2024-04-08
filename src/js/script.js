@@ -7,11 +7,9 @@ function isTouchEnabled() {
 }
 
 window.addEventListener("load", function () {
-
     // sliders
     const s1 = document.querySelector('#page-slider');
-    const s2 = document.querySelector('#up-to-date');
-    const s3 = document.querySelector('#comprehensive-slider');
+    const s2 = document.querySelector('#comprehensive-slider');
     let pageSlider = new Swiper("#page-slider", {
         direction: "vertical",
         allowTouchMove: isTouchEnabled(),
@@ -19,61 +17,52 @@ window.addEventListener("load", function () {
         slidesPerView: 1,
         speed: 800,
         longSwipesRatio: 0.3,
+        freeMode: {
+            enabled: true,
+            sticky: true,
+        },
         mousewheel: {
             forceToAxis: true,
-            enabled: true,
-            noSwiping: false,
+            enabled: !isTouchEnabled(),
             noMousewheelClass: 'swiper-no-swiping',
-            releaseOnEdges: true
+            releaseOnEdges: true,
+            sensitivity: 3,
         },
         on: {
             init: function () {
-                const counter = this.slides[this.activeIndex].querySelector('.counter-grid');
-                if (counter) {
-                    findNumbers(counter);
-                }
+                initCounters(this.slides[this.activeIndex])
             },
         }
     });
 
+
     let comprehensiveSlider = new Swiper("#comprehensive-slider", {
-        slidesPerView: 1.2,
+        slidesPerView: "auto",
+        spaceBetween: 20,
         loop: true,
         centeredSlides: true,
-        roundLengths: true,
         loopAdditionalSlides: 2,
+        updateOnWindowResize: true,
         autoplay: {
             delay: 5000,
             waitForTransition: true,
         },
         speed: 700,
-        watchSlidesProgress: true,
         pagination: {
             el: ".comprehensive-coverage-pagination",
             clickable: true,
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2.3,
-            },
-            1024: {
-                slidesPerView: 2.9,
-            },
-            1440: {
-                slidesPerView: 3.75,
-            },
-            1642: {
-                slidesPerView: 4.75,
-            },
-            2300: {
-                slidesPerView: 5.75,
-            }
         },
         on: {
             init: function () {
                 updateSlideClasses.call(this);
             },
-            slideChange: function () {
+            slideChangeTransitionStart: function () {
+                updateSlideClasses.call(this);
+            },
+            resize: function () {
+                updateSlideClasses.call(this);
+            },
+            slideChangeTransitionEnd: function () {
                 updateSlideClasses.call(this);
             },
             click: function () {
@@ -82,6 +71,24 @@ window.addEventListener("load", function () {
             }
         }
     });
+
+    pageSlider.on('slideChange', function () {
+        initCounters(this.slides[this.activeIndex])
+
+        if (this.slides[this.activeIndex].classList.contains('nested')) {
+            this.slides[this.activeIndex].classList.add('swiper-no-swiping');
+        }
+    })
+
+    comprehensiveSlider.on('transitionStart', function () {
+        sliderTextToggle();
+    })
+
+    if (document.fonts) {
+        document.fonts.onloadingdone = () => {
+            sliderTextToggle()
+        };
+    }
 
     function nextAll(elem) {
         let matched = [];
@@ -108,143 +115,175 @@ window.addEventListener("load", function () {
 
         active.classList.remove('afterActive');
         active.style.right = '0'
-        this.slides.forEach(i => {
-            i.classList.remove('afterActive')
-        })
-        allPrev.forEach((elem, index) => {
-            elem.style.right = `${elem.offsetWidth * (-right * index)}px`
-        })
-        allNext.forEach((elem, index) => {
-            elem.classList.add('afterActive')
-            elem.style.right = `${elem.offsetWidth * (right * index)}px`
-        })
+        if (checkDeviceWidth() >= 1024) {
+            this.slides.forEach(i => {
+                i.classList.remove('afterActive')
+            })
+            allPrev.forEach((elem, index) => {
+                elem.style.right = `${elem.offsetWidth * (-right * index)}px`
+            })
+            allNext.forEach((elem, index) => {
+                elem.classList.add('afterActive')
+                elem.style.right = `${elem.offsetWidth * (right * index)}px`
+            })
+        } else {
+            this.slides.forEach(i => {
+                i.style.right = '0'
+            })
+        }
+
     }
-
-    pageSlider.on('slideChange', function () {
-        const counter = this.slides[this.activeIndex].querySelector('.counter-grid');
-        if (counter) {
-            findNumbers(counter);
-        }
-
-        if (this.slides[this.activeIndex].classList.contains('nested')) {
-            this.slides[this.activeIndex].classList.add('swiper-no-swiping');
-        }
-    })
-
-    comprehensiveSlider.on('transitionStart', function () {
-        sliderTextToggle();
-    })
 
     //text on slider cards
-    if (document.fonts) {
-        document.fonts.onloadingdone = () => {
-            sliderTextToggle();
-        };
-    }
 
     function sliderTextToggle() {
-        const sliderContent = s3.querySelectorAll('.content');
-        if(sliderContent.length > 0){
+        const sliderContent = s2.querySelectorAll('.content');
+        if (sliderContent.length > 0) {
             sliderContent.forEach(i => {
-                if (i.querySelector('ul').offsetHeight > 0) {
+                if (i.querySelector('.list') && i.querySelector('.list').offsetHeight > 0) {
                     if (i.closest('.swiper-slide').classList.contains('swiper-slide-active')) {
                         i.style.transform = `translateY(0)`;
                     } else {
-                        i.style.transform = `translateY(${(i.querySelector('ul').offsetHeight) + 5}px)`;
+                        i.style.transform = `translateY(${(i.querySelector('.list').offsetHeight)}px)`;
                     }
                 } else {
                     i.style.transform = `translateY(0)`;
                 }
             })
         }
-
-    }
-
-    // counter
-    function findNumbers(element) {
-        const numbers = element.querySelectorAll('.counter-item .number');
-
-        if (numbers.length > 0) {
-            numbers.forEach((element, index) => {
-                const countTo = parseInt(element.dataset.count.replace(/[^\d]/g, ''), 10),
-                    textInCount = element.dataset.count.replace(/[^a-zа-яё+]+/ig, '')
-                generateNumbers(countTo, textInCount, element, (index * 100))
-            })
-        }
-    }
-
-    function generateNumbers(n, text, element, delay) {
-        n = +n;
-        let step = 5;
-        if (n > 2000 && n < 5000) {
-            step = 100;
-        } else if (n > 5000) {
-            step = 500;
-        }
-        const numbers = [];
-
-        for (let i = 0; i <= n;) {
-            numbers.push(i + text);
-            if (i >= 1000 && n > 2000 && n < 5000) {
-                i += 500;
-            } else {
-                i += step;
-            }
-        }
-        if (!numbers.includes(n)) {
-            numbers.push(n + text);
-        }
-
-        renderNumbers(numbers, element, delay)
-    }
-
-    function renderNumbers(num, element, delay) {
-        let wrapper = document.createElement('div');
-        wrapper.classList.add('flex', 'flex-col-reverse', 'number-wrapper', 'opacity-0')
-        num.forEach(n => {
-            let numberElem = document.createElement('span');
-            numberElem.innerText = n
-            wrapper.append(numberElem)
-        })
-        element.append(wrapper)
-
-        numbersTransform(numbersHeight(element), element, wrapper);
-        animationNumbers(element, delay)
-    }
-
-    function numbersHeight(element) {
-        let n = element.querySelectorAll('span')
-        return n[0].offsetHeight
-    }
-
-    function numbersTransform(numberHeight, element, wrapper) {
-        element.style.height = numberHeight + 'px'
-        wrapper.style.transform = `translateY(calc(-100% + ${numberHeight}px))`
-        wrapper.classList.remove('opacity-0')
-    }
-
-    function animationNumbers(element, delay) {
-        let wrapper = element.querySelector('.number-wrapper')
-
-        setTimeout(() => {
-            wrapper.classList.add('transition-transform', 'duration-[1000ms]')
-            wrapper.style.transform = `translateY(0)`;
-        }, delay)
-    }
-
-    function checkDeviceWidth(){
-        return window.innerWidth
     }
 
     window.addEventListener('resize', function () {
         sliderTextToggle();
 
-        let numbers = document.querySelectorAll('.counter-block .number');
-        numbers.forEach(element => {
-            if (element.querySelectorAll('span').length > 0) {
-                let height = numbersHeight(element);
-                element.style.height = height + 'px'
-            }
-        })
+        // let numbers = document.querySelectorAll('.counter-block .number');
+        // numbers.forEach(element => {
+        //     if (element.querySelectorAll('span').length > 0) {
+        //         let height = numbersHeight(element);
+        //         element.style.height = height + 'px'
+        //     }
+        // })
     })
+
+    // counter
+    function countUp(elements, duration) {
+        const animationDuration = duration || 4000,
+            frameDuration = 1000 / 60,
+            totalFrames = Math.round(animationDuration / frameDuration),
+            easeOutQuad = (t) => t * (2 - t),
+            easeInOutSine = (x) => -(Math.cos(Math.PI * x) - 1) / 2,
+            animateCountUp = (el) => {
+                let frame = 0
+                const countTo = parseInt(el.dataset.count.replace(/[^\d]/g, ''), 10),
+                    textInCount = el.dataset.count.replace(/[^a-zа-яё+]+/ig, '')
+
+                const counter = setInterval(() => {
+                    frame++
+
+                    const progress = easeInOutSine(frame / totalFrames),
+                        currentCount = Math.round(countTo * progress)
+
+                    if (parseInt(el.textContent.replace(/[^\d]/g, ''), 10) !== currentCount) {
+                        el.textContent = currentCount + textInCount
+                    }
+
+                    if (frame === totalFrames) {
+                        clearInterval(counter)
+                    }
+                }, frameDuration)
+            }
+
+        elements.forEach((element, index) => {
+            setTimeout(() => animateCountUp(element), index * 380)
+        })
+    }
+
+    function initCounters(element) {
+        const counter = element.querySelector('.counter-grid');
+        if (counter) {
+            const numbers = counter.querySelectorAll('.counter-item .number');
+
+            if (numbers.length > 0) {
+                numbers.forEach((number) => {
+                    number.textContent = '0'
+                })
+                countUp(numbers, 2000)
+            }
+        }
+    }
+
+    // function findNumbers(element) {
+    //     const numbers = element.querySelectorAll('.counter-item .number');
+    //
+    //     if (numbers.length > 0) {
+    //         numbers.forEach((element, index) => {
+    //             const countTo = parseInt(element.dataset.count.replace(/[^\d]/g, ''), 10),
+    //                 textInCount = element.dataset.count.replace(/[^a-zа-яё+]+/ig, '')
+    //             generateNumbers(countTo, textInCount, element, (index * 100))
+    //         })
+    //     }
+    // }
+
+    // function generateNumbers(n, text, element, delay) {
+    //     n = +n;
+    //     let step = 5;
+    //     if (n > 2000 && n < 5000) {
+    //         step = 100;
+    //     } else if (n > 5000) {
+    //         step = 500;
+    //     }
+    //     const numbers = [];
+    //
+    //     for (let i = 0; i <= n;) {
+    //         numbers.push(i + text);
+    //         if (i >= 1000 && n > 2000 && n < 5000) {
+    //             i += 500;
+    //         } else {
+    //             i += step;
+    //         }
+    //     }
+    //     if (!numbers.includes(n)) {
+    //         numbers.push(n + text);
+    //     }
+    //
+    //     renderNumbers(numbers, element, delay)
+    // }
+    //
+    // function renderNumbers(num, element, delay) {
+    //     let wrapper = document.createElement('div');
+    //     wrapper.classList.add('flex', 'flex-col-reverse', 'number-wrapper', 'opacity-0')
+    //     num.forEach(n => {
+    //         let numberElem = document.createElement('span');
+    //         numberElem.innerText = n
+    //         wrapper.append(numberElem)
+    //     })
+    //     element.append(wrapper)
+    //
+    //     numbersTransform(numbersHeight(element), element, wrapper);
+    //     animationNumbers(element, delay)
+    // }
+    //
+    // function numbersHeight(element) {
+    //     let n = element.querySelectorAll('span')
+    //     return n[0].offsetHeight
+    // }
+    //
+    // function numbersTransform(numberHeight, element, wrapper) {
+    //     element.style.height = numberHeight + 'px'
+    //     wrapper.style.transform = `translateY(calc(-100% + ${numberHeight}px))`
+    //     wrapper.classList.remove('opacity-0')
+    // }
+    //
+    // function animationNumbers(element, delay) {
+    //     let wrapper = element.querySelector('.number-wrapper')
+    //
+    //     setTimeout(() => {
+    //         wrapper.classList.add('transition-transform', 'duration-[1000ms]')
+    //         wrapper.style.transform = `translateY(0)`;
+    //     }, delay)
+    // }
+
+    function checkDeviceWidth() {
+        return window.innerWidth
+    }
 });

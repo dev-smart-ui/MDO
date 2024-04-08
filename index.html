@@ -17,7 +17,11 @@
 
 </head>
 <body class="bg-white font-primary font-normal">
-<header class="fixed top-0 left-0 w-full z-10 bg-[#0c0c11] h-[56px]"></header>
+<header class="fixed top-0 left-0 w-full z-10 bg-[#0c0c11] h-[56px]">
+    <img src="./src/images/Menu-mobile.png" alt="" class="w-full h-full lg:hidden mx-auto max-w-[393px]">
+    <img src="./src/images/Menu-1440.png" alt="" class="w-full h-full hidden lg:block 3xl:hidden">
+    <img src="./src/images/Menu-desktop.png" alt="" class="w-full h-full hidden 3xl:block mx-auto max-w-[1995px]">
+</header>
 <div class="swiper swiper-h h-dvh" id="page-slider">
     <div class="swiper-wrapper">
         <!--hero-->
@@ -53,32 +57,32 @@
                         <div class="counter-grid grid grid-cols-[repeat(6,148px)] lg:gap-[20px] 3xl:gap-[29px]">
                             <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
                                 <div class="number leading-[1] text-blue lg:text-[3.1dvw] 3xl:text-[2.5vw] font-medium overflow-hidden"
-                                     data-count="99"></div>
+                                     data-count="99">0</div>
                                 <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Countries</span>
                             </div>
                             <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
                                 <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
-                                     data-count="120"></div>
+                                     data-count="120">0</div>
                                 <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Processing Technologies</span>
                             </div>
                             <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
                                 <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
-                                     data-count="140"></div>
+                                     data-count="140">0</div>
                                 <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Commodities</span>
                             </div>
                             <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
                                 <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
-                                     data-count="2400"></div>
+                                     data-count="2400">0</div>
                                 <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Heavy Mobile Equipment Models</span>
                             </div>
                             <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
                                 <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
-                                     data-count="2400"></div>
+                                     data-count="2400">0</div>
                                 <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Mines and Advanced Mining Projects</span>
                             </div>
                             <div class="counter-item flex flex-col lg:gap-[13px] 3xl:gap-[7px]">
                                 <div class="number leading-[1] text-blue lg:text-[3.1vw] 3xl:text-[2.5vw] font-medium overflow-hidden"
-                                     data-count="7000+"></div>
+                                     data-count="7000+">0</div>
                                 <span class="text opacity-70 text-[14px] leading-[1.5] 3xl:leading-[1.7]">Key Contacts<br> on Mine Sites</span>
                             </div>
                         </div>
@@ -138,173 +142,195 @@
             <div class="swiper grow w-full pt-[6.8dvh] pb-[10.6dvh] lg:pt-[8.7dvh] lg:pb-[7dvh]" id="comprehensive-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner"> <!-- w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]-->
                             <img src="./src/images/comprehensive-slides/Commodity-Production.jpeg" loading="lazy"
                                  alt="Commodity-Production" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Commodity Production, Costs and Financials</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Forecast Production</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Current Production</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Historic Production</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Cash Costs</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>All-in Sustained Costs (AISC)</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>All-in Costs</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mine Financials: Revenue, Income, EBITDA</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Commodity Production, Costs and Financials</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Forecast Production</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Current Production</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Historic Production</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Cash Costs</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>All-in Sustained Costs (AISC)</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>All-in Costs</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mine Financials: Revenue, Income, EBITDA</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Key-Mine-Personnel-and-Workforce.jpeg"
                                  loading="lazy" alt="Key Mine Personnel and Workforce" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Key Mine Personnel and Workforce</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>More than 7,000 key decision makers at mine sites and consultants:</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>General and Engineering Managers</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mine and Operation Managers</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mine and Plant Maintenance Managers</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Processing Managers</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Procurement Staff and more…</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[26px] pb-[2.5dvh] 3xl:pb-[2dvh]">Key Mine Personnel and Workforce</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>More than 7,000 key decision makers at mine sites and consultants:</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>General and Engineering Managers</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mine and Operation Managers</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mine and Plant Maintenance Managers</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Processing Managers</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Procurement Staff and more…</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Reserves-and-Resources.jpeg"
                                  loading="lazy" alt="Geology, Mineral Reserves and Resources" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Geology, Mineral Reserves and Resources</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Deposit Type</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mineralogy and Deposit Dimentions</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Proven and Probable Reserves</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Measured and Indicated Resources</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Geology, Mineral Reserves and Resources</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Deposit Type</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mineralogy and Deposit Dimentions</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Proven and Probable Reserves</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Measured and Indicated Resources</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Mining-Operations.jpeg"
                                  loading="lazy" alt="Mining Operations" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Mining Operations</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Methods and Technologies</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Scale, tpd</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Tonnes mined and processed</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Pit design details</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Hoist Shaft depth</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Mining Operations</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Methods and Technologies</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Scale, tpd</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Tonnes mined and processed</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Pit design details</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Hoist Shaft depth</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Heavy-Mobile-Equipment.jpeg"
                                  loading="lazy" alt="Heavy Mobile Equipment" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Heavy Mobile Equipment</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Methods and Technologies</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Scale, tpd</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Tonnes mined and processed</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Pit design details</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Hoist Shaft depth</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Heavy Mobile Equipment</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Methods and Technologies</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Scale, tpd</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Tonnes mined and processed</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Pit design details</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Hoist Shaft depth</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Comminution-Crushers-and-Mills.jpeg"
                                  loading="lazy" alt="Comminution, Crushers and Mills" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Comminution, Crushers and Mills</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>1,200 mines and projects with crushers/mills data</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>250 models</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>1,900 units</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Comminution, Crushers and Mills</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>1,200 mines and projects with crushers/mills data</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>250 models</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>1,900 units</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Mineral-Processing.jpeg"
                                  loading="lazy" alt="Mineral Processing" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Mineral Processing</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Processing Technologies</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Reagents</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Recovery Technologies</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Recovery Rates</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Flowsheet Diagrams</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Mineral Processing</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Processing Technologies</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Reagents</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Recovery Technologies</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Recovery Rates</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Flowsheet Diagrams</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Project-Costs-and-Returns.jpeg"
                                  loading="lazy" alt="Project Costs and Returns" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Project Costs and Returns</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>CapEx</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>OpEx</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Revenue</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Cash Flow</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Net Present Value (NPV)</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Interntal Rate of Return (IRR)</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Project Costs and Returns</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>CapEx</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>OpEx</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Revenue</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Cash Flow</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Net Present Value (NPV)</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Interntal Rate of Return (IRR)</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Project-Development-Timeline.jpeg"
                                  loading="lazy" alt="Project Development Timeline" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Project Development Timeline</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Permitting Timeline</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Construction Timeline</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Production Start Date</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Project Development Timeline</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Mining Permitting Timeline</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Construction Timeline</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Production Start Date</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Water-Supply-and-Consumption.jpeg"
                                  loading="lazy" alt="Water Supply and Consumption" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Water Supply and Consumption</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Water Supply Volumes and Rates</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Water Pumps and Pipelines</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Slurry Pipelines</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Water Supply and Consumption</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Water Supply Volumes and Rates</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Water Pumps and Pipelines</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Slurry Pipelines</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide group">
-                        <div class="w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]">
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Conveyors-and-Pipelines.jpeg"
                                  loading="lazy" alt="Conveyors and Pipelines" class="w-full object-cover h-full"/>
-                            <div class="content absolute bottom-0 left-0 w-full p-[26px] z-[1] lg:pt-[16px] lg:pb-[28px] lg:pl-[29px] 3xl:pb-[33px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw]">Conveyors and Pipelines</p>
-                                <ul class="hidden lg:block pt-[2.5dvh] opacity-70 text-white text-[1dvw] leading-[2.03] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:pt-[2dvh] 3xl:leading-[2]">
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>440 mines and projects with coveyor data</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Conveyor Type and Length</li>
-                                    <li class='before:content-["•"] flex items-start gap-[8px]'>Belt width and Motor power</li>
-                                </ul>
+                            <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Conveyors and Pipelines</p>
+                                <div class="list">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>440 mines and projects with coveyor data</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Conveyor Type and Length</li>
+                                        <li class='before:content-["•"] flex items-start gap-[8px]'>Belt width and Motor power</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
