@@ -203,7 +203,7 @@ window.addEventListener("load", function () {
         elements.forEach((element, index) => {
             setTimeout(() => {
                 animateCountUp(element)
-            }, index * 380)
+            }, index * 200)
         })
     }
 
@@ -216,7 +216,7 @@ window.addEventListener("load", function () {
                 numbers.forEach((number) => {
                     number.textContent = '0'
                 })
-                countUp(numbers, 2000)
+                countUp(numbers, 1200)
             }
         }
     }
