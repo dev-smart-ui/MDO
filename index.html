@@ -6,7 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MDO - Mining Intelligence and News</title>
-    <link rel="icon" type="image/png" href="./src/images/favicon.png" />
+
+    <link rel="apple-touch-icon" href="./src/images/favicon-io/apple-touch-icon.png">
+    <link type="image/png" sizes="16x16" rel="icon" href="./src/images/favicon-io/favicon-16x16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href="./src/images/favicon-io/favicon-32x32.png">
+    <link type="image/png" sizes="192x192" rel="icon" href="./src/images/favicon-io/android-chrome-192x192.png">
+    <link type="image/png" sizes="512x512" rel="icon" href="./src/images/favicon-io/android-chrome-512x512.png">
+    <link rel="manifest" href="./src/images/favicon-io/site.webmanifest" crossorigin="use-credentials">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -27,10 +35,10 @@
         <!--hero-->
         <div class="swiper-slide hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh]">
             <div class="container h-full flex flex-col justify-between">
-                <div class="absolute top-[56px] left-0 lg:left-auto lg:top-[112px] lg:right-[-30px] 3xl:top-[26px] w-[118dvw] h-[52dvh] lg:w-[57.2dvw] lg:h-[53.8dvw] 3xl:w-[52.2dvw] 3xl:h-[42.8dvw]">
-                    <span class="block absolute top-0 right-0 w-[69dvw] h-[69dvw] lg:w-[593px] lg:h-[593px] rounded-full bg-[#2B84D84A] blur-[200px]"></span>
-                    <span class="hidden lg:block absolute top-[80px] right-[214px] lg:w-[593px] lg:h-[593px] rounded-full bg-[#2B84D84A] blur-[200px]"></span>
-                    <span class="block absolute bottom-0 left-0 w-[69vw] h-[69vw] lg:w-[593px] lg:h-[593px] rounded-full bg-[#5AD18252] blur-[200px]"></span>
+                <div class="absolute top-[56px] left-[-15%] lg:left-auto lg:right-[-10%] 3xl:top-[26px] w-[135%] h-[65%] lg:w-[70%] lg:h-[90%]">
+                    <img src="./src/images/light-mobile.png" alt="" class="w-full h-full lg:hidden">
+                    <img src="./src/images/light-1440.png" alt="" class="w-full h-full hidden lg:block 3xl:hidden">
+                    <img src="./src/images/light-desktop.png" alt="" class="w-full h-full hidden 3xl:block">
                 </div>
                 <div class="image-block mb-[1.2dvh] lg:mb-0 relative lg:absolute lg:top-[11dvh] lg:right-[-2.5dvw] 3xl:top-[12.4dvh] 3xl:right-0">
                     <img src="./src/images/globe.png" alt="globe" loading="lazy"
@@ -51,6 +59,8 @@
                             opportunities in mining.
                         </h2>
                     </div>
+
+                    <!-- counter desktop-->
                     <div class="hidden lg:block counter-block">
                         <p class="lg:text-[2.5dvw] 3xl:text-[2.76dvw] leading-[1.5] lg:mb-[2.3dvw] 3xl:mb-[2.1dvw] counter-title">
                             Mining Database in numbers</p>
@@ -92,7 +102,7 @@
             </div>
         </div>
 
-        <!-- counter-->
+        <!-- counter mobile-->
         <div class="swiper-slide bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
             <div class="container">
                 <p class="text-[9vw] leading-[1.45] counter-title max-w-[70%] mb-[7.6dvh]">Mining Database in numbers</p>
@@ -142,7 +152,7 @@
             <div class="swiper grow w-full pt-[6.8dvh] pb-[10.6dvh] lg:pt-[8.7dvh] lg:pb-[7dvh]" id="comprehensive-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide group">
-                        <div class="swiper-slide-inner"> <!-- w-full h-full relative overflow-hidden rounded-[16px] after:absolute after:block after:inset-0 after:bg-[linear-gradient(180deg,rgba(28,28,28,0)_71.07%,#212121_100%)] after:transition-all lg:after:group-[.swiper-slide-active]:bg-[linear-gradient(180deg,rgba(33,33,33,0.45)_-32.37%,#212121_100%)]-->
+                        <div class="swiper-slide-inner">
                             <img src="./src/images/comprehensive-slides/Commodity-Production.jpeg" loading="lazy"
                                  alt="Commodity-Production" class="w-full object-cover h-full"/>
                             <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
@@ -166,9 +176,9 @@
                             <img src="./src/images/comprehensive-slides/Key-Mine-Personnel-and-Workforce.jpeg"
                                  loading="lazy" alt="Key Mine Personnel and Workforce" class="w-full object-cover h-full"/>
                             <div class="content absolute bottom-0 left-0 w-full p-[26px] pb-0 z-[1] lg:pt-[16px] lg:pl-[29px] duration-700 transition-transform">
-                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[26px] pb-[2.5dvh] 3xl:pb-[2dvh]">Key Mine Personnel and Workforce</p>
+                                <p class="text-white text-[6.6vw] lg:text-[2dvw] leading-[1.2] 3xl:text-[1.6dvw] pb-[2.5dvh] 3xl:pb-[2dvh]">Key Mine Personnel and Workforce</p>
                                 <div class="list">
-                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
+                                    <ul class="block opacity-70 text-white text-[3dvw] lg:text-[1dvw] leading-[2.03] pb-[26px] lg:pb-[28px] 3xl:pb-[33px] font-light ml-[10px] 3xl:text-[0.8dvw] 3xl:leading-[2]">
                                         <li class='before:content-["•"] flex items-start gap-[8px]'>More than 7,000 key decision makers at mine sites and consultants:</li>
                                         <li class='before:content-["•"] flex items-start gap-[8px]'>General and Engineering Managers</li>
                                         <li class='before:content-["•"] flex items-start gap-[8px]'>Mine and Operation Managers</li>

@@ -180,7 +180,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  transition: .3s;
+  transition: opacity .7s;
 }
 
 #comprehensive-slider .swiper-slide .swiper-slide-inner:after {
@@ -270,7 +270,6 @@
 @media screen and (min-width: 1440px) and (max-height: 800px) {
   .comprehensive-coverage .content {
     padding-left: 20px;
-    padding-bottom: 15px;
   }
 
   .hero-section .image-block img {

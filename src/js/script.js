@@ -1,5 +1,6 @@
 "use strict"
 
+//touch screen check
 function isTouchEnabled() {
     return ('ontouchstart' in window) ||
         (navigator.maxTouchPoints > 0) ||
@@ -18,7 +19,7 @@ window.addEventListener("load", function () {
         speed: 800,
         longSwipesRatio: 0.3,
         freeMode: {
-            enabled: true,
+            enabled: !isTouchEnabled(),
             sticky: true,
         },
         mousewheel: {
@@ -34,7 +35,6 @@ window.addEventListener("load", function () {
             },
         }
     });
-
 
     let comprehensiveSlider = new Swiper("#comprehensive-slider", {
         slidesPerView: "auto",
@@ -72,6 +72,7 @@ window.addEventListener("load", function () {
         }
     });
 
+    //sliders events
     pageSlider.on('slideChange', function () {
         initCounters(this.slides[this.activeIndex])
 
@@ -84,22 +85,25 @@ window.addEventListener("load", function () {
         sliderTextToggle();
     })
 
+    //functions initialization after loading fonts
     if (document.fonts) {
         document.fonts.onloadingdone = () => {
             sliderTextToggle()
         };
     }
 
-    function nextAll(elem) {
+    // find all next elements after "element"
+    function nextAll(element) {
         let matched = [];
-        while (elem = elem.nextSibling) {
-            if (elem.nodeType === 1) {
-                matched.push(elem);
+        while (element = element.nextSibling) {
+            if (element.nodeType === 1) {
+                matched.push(element);
             }
         }
         return matched;
     }
 
+    // find all prev elements before "element"
     function prevAll(element) {
         let matched = [];
         while (element = element.previousElementSibling)
@@ -107,6 +111,7 @@ window.addEventListener("load", function () {
         return matched;
     }
 
+    //add class and styles for comprehensiveSlider
     function updateSlideClasses() {
         let active = this.slides[this.activeIndex],
             right = 0.18,
@@ -134,8 +139,7 @@ window.addEventListener("load", function () {
 
     }
 
-    //text on slider cards
-
+    //toggle text on comprehensiveSlider cards
     function sliderTextToggle() {
         const sliderContent = s2.querySelectorAll('.content');
         if (sliderContent.length > 0) {
@@ -155,6 +159,8 @@ window.addEventListener("load", function () {
 
     window.addEventListener('resize', function () {
         sliderTextToggle();
+
+        //update numbers height (old counter animation)
 
         // let numbers = document.querySelectorAll('.counter-block .number');
         // numbers.forEach(element => {
@@ -180,7 +186,7 @@ window.addEventListener("load", function () {
                 const counter = setInterval(() => {
                     frame++
 
-                    const progress = easeInOutSine(frame / totalFrames),
+                    const progress = easeOutQuad(frame / totalFrames),
                         currentCount = Math.round(countTo * progress)
 
                     if (parseInt(el.textContent.replace(/[^\d]/g, ''), 10) !== currentCount) {
@@ -194,7 +200,10 @@ window.addEventListener("load", function () {
             }
 
         elements.forEach((element, index) => {
-            setTimeout(() => animateCountUp(element), index * 380)
+            setTimeout(() => {
+                console.log(element, index * 380)
+                animateCountUp(element)
+            }, index * 380)
         })
     }
 
@@ -212,6 +221,7 @@ window.addEventListener("load", function () {
         }
     }
 
+    //old counter animation
     // function findNumbers(element) {
     //     const numbers = element.querySelectorAll('.counter-item .number');
     //
