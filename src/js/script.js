@@ -201,7 +201,6 @@ window.addEventListener("load", function () {
 
         elements.forEach((element, index) => {
             setTimeout(() => {
-                console.log(element, index * 380)
                 animateCountUp(element)
             }, index * 380)
         })
