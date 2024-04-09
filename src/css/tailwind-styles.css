@@ -327,13 +327,49 @@
   font-size: 14px
 }
 
+@media screen and (max-width: 1440px) {
+  .comprehensive-coverage .content ul {
+    font-size: 15px
+  }
+}
+
 @media screen and (max-width: 1440px) and (max-height: 740px) {
   .comprehensive-coverage .content ul {
-    font-size: 12px
+    font-size: 14px
   }
 
   .comprehensive-coverage .content p {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1440px) and (max-height: 1025px){
+  .comprehensive-coverage .content ul {
+    font-size: 14px
+  }
+}
+
+@media screen and (max-width: 1440px) and (max-height: 770px){
+  .comprehensive-coverage .content ul {
+    font-size: 13px
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-height: 1025px){
+  .comprehensive-coverage .content ul {
+    font-size: 14px
+  }
+}
+
+@media screen and (max-width: 1025px) and (max-height: 769px) {
+  .comprehensive-coverage .content ul {
+    font-size: 14px
+  }
+}
+
+@media screen and (max-width: 768px) and (max-height: 740px) {
+  .comprehensive-coverage .content ul {
+    font-size: 12px
   }
 }
 

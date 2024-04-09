@@ -47,6 +47,7 @@ window.addEventListener("load", function () {
             delay: 5000,
             waitForTransition: true,
         },
+        grabCursor: true,
         speed: 700,
         pagination: {
             el: ".comprehensive-coverage-pagination",
