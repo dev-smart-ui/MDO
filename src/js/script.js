@@ -36,13 +36,52 @@ window.addEventListener("load", function () {
         }
     });
 
+    // let comprehensiveSlider = new Swiper("#comprehensive-slider", {
+    //     slidesPerView: "auto",
+    //     spaceBetween: 20,
+    //     loop: true,
+    //     centeredSlides: true,
+    //     loopAdditionalSlides: 2,
+    //     updateOnWindowResize: true,
+    //     // autoplay: {
+    //     //     delay: 5000,
+    //     //     waitForTransition: true,
+    //     // },
+    //     grabCursor: true,
+    //     speed: 700,
+    //     pagination: {
+    //         el: ".comprehensive-coverage-pagination",
+    //         clickable: true,
+    //     },
+    //     on: {
+    //         init: function () {
+    //             updateSlideClasses.call(this);
+    //         },
+    //         slideChangeTransitionStart: function () {
+    //             updateSlideClasses.call(this);
+    //         },
+    //         resize: function () {
+    //             updateSlideClasses.call(this);
+    //         },
+    //         slideChangeTransitionEnd: function () {
+    //             updateSlideClasses.call(this);
+    //         },
+    //         click: function (event) {
+    //             let index = this.clickedSlide.getAttribute('data-swiper-slide-index');
+    //             this.slideToLoop(index);
+    //         },
+    //     }
+    // });
+
     let comprehensiveSlider = new Swiper("#comprehensive-slider", {
-        slidesPerView: "auto",
+        slidesPerView: 1.25,
         spaceBetween: 20,
         loop: true,
         centeredSlides: true,
-        loopAdditionalSlides: 2,
         updateOnWindowResize: true,
+        loopAdditionalSlides: 4,
+        slideToClickedSlide: true,
+        observer: true,
         autoplay: {
             delay: 5000,
             waitForTransition: true,
@@ -53,23 +92,35 @@ window.addEventListener("load", function () {
             el: ".comprehensive-coverage-pagination",
             clickable: true,
         },
+        breakpoints:{
+            768: {
+                slidesPerView: 2,
+            },
+            1024:{
+                slidesPerView: 3.2,
+            },
+            1440:{
+                slidesPerView: 3.8,
+            },
+            1642:{
+                slidesPerView: 4.8,
+            }
+        },
         on: {
             init: function () {
                 updateSlideClasses.call(this);
             },
             slideChangeTransitionStart: function () {
                 updateSlideClasses.call(this);
+                this.updateSlides()
             },
             resize: function () {
                 updateSlideClasses.call(this);
             },
             slideChangeTransitionEnd: function () {
                 updateSlideClasses.call(this);
+                this.updateSlides()
             },
-            click: function () {
-                let index = this.clickedSlide.getAttribute('data-swiper-slide-index');
-                this.slideToLoop(index);
-            }
         }
     });
 
