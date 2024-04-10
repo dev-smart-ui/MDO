@@ -160,16 +160,6 @@ window.addEventListener("load", function () {
 
     window.addEventListener('resize', function () {
         sliderTextToggle();
-
-        //update numbers height (old counter animation)
-
-        // let numbers = document.querySelectorAll('.counter-block .number');
-        // numbers.forEach(element => {
-        //     if (element.querySelectorAll('span').length > 0) {
-        //         let height = numbersHeight(element);
-        //         element.style.height = height + 'px'
-        //     }
-        // })
     })
 
     // counter
@@ -203,7 +193,7 @@ window.addEventListener("load", function () {
         elements.forEach((element, index) => {
             setTimeout(() => {
                 animateCountUp(element)
-            }, index * 200)
+            }, index * 100)
         })
     }
 
@@ -216,82 +206,10 @@ window.addEventListener("load", function () {
                 numbers.forEach((number) => {
                     number.textContent = '0'
                 })
-                countUp(numbers, 1200)
+                countUp(numbers, 600)
             }
         }
     }
-
-    //old counter animation
-    // function findNumbers(element) {
-    //     const numbers = element.querySelectorAll('.counter-item .number');
-    //
-    //     if (numbers.length > 0) {
-    //         numbers.forEach((element, index) => {
-    //             const countTo = parseInt(element.dataset.count.replace(/[^\d]/g, ''), 10),
-    //                 textInCount = element.dataset.count.replace(/[^a-zа-яё+]+/ig, '')
-    //             generateNumbers(countTo, textInCount, element, (index * 100))
-    //         })
-    //     }
-    // }
-
-    // function generateNumbers(n, text, element, delay) {
-    //     n = +n;
-    //     let step = 5;
-    //     if (n > 2000 && n < 5000) {
-    //         step = 100;
-    //     } else if (n > 5000) {
-    //         step = 500;
-    //     }
-    //     const numbers = [];
-    //
-    //     for (let i = 0; i <= n;) {
-    //         numbers.push(i + text);
-    //         if (i >= 1000 && n > 2000 && n < 5000) {
-    //             i += 500;
-    //         } else {
-    //             i += step;
-    //         }
-    //     }
-    //     if (!numbers.includes(n)) {
-    //         numbers.push(n + text);
-    //     }
-    //
-    //     renderNumbers(numbers, element, delay)
-    // }
-    //
-    // function renderNumbers(num, element, delay) {
-    //     let wrapper = document.createElement('div');
-    //     wrapper.classList.add('flex', 'flex-col-reverse', 'number-wrapper', 'opacity-0')
-    //     num.forEach(n => {
-    //         let numberElem = document.createElement('span');
-    //         numberElem.innerText = n
-    //         wrapper.append(numberElem)
-    //     })
-    //     element.append(wrapper)
-    //
-    //     numbersTransform(numbersHeight(element), element, wrapper);
-    //     animationNumbers(element, delay)
-    // }
-    //
-    // function numbersHeight(element) {
-    //     let n = element.querySelectorAll('span')
-    //     return n[0].offsetHeight
-    // }
-    //
-    // function numbersTransform(numberHeight, element, wrapper) {
-    //     element.style.height = numberHeight + 'px'
-    //     wrapper.style.transform = `translateY(calc(-100% + ${numberHeight}px))`
-    //     wrapper.classList.remove('opacity-0')
-    // }
-    //
-    // function animationNumbers(element, delay) {
-    //     let wrapper = element.querySelector('.number-wrapper')
-    //
-    //     setTimeout(() => {
-    //         wrapper.classList.add('transition-transform', 'duration-[1000ms]')
-    //         wrapper.style.transform = `translateY(0)`;
-    //     }, delay)
-    // }
 
     function checkDeviceWidth() {
         return window.innerWidth
