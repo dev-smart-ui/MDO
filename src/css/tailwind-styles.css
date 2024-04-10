@@ -197,12 +197,15 @@
   font-size: clamp(2.25rem, 1.882rem + 1.498vw, 3.75rem);
 }
 
+.step-form-box {
+  padding: clamp(32px, 2.16vw, 43px) clamp(24px, 1.75vw, 35px) clamp(16px, 2.41vw, 48px) clamp(24px, 4.01vw, 80px);
+}
+
 .modal {
   background-color: lightgray;
   padding: 20px;
   text-align: center;
 }
-
 
 @media screen and (min-width: 1024px) {
   .comprehensive-coverage h2 {
