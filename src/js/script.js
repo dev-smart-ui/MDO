@@ -8,6 +8,7 @@ function isTouchEnabled() {
 }
 
 window.addEventListener("load", function () {
+
     // sliders
     const s1 = document.querySelector('#page-slider');
     const s2 = document.querySelector('#comprehensive-slider');
