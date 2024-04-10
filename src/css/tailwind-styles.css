@@ -207,6 +207,22 @@
   opacity: 1;
 }
 
+.step-form-wrap{
+  padding-bottom: clamp(32px, 5.56vw, 111px);
+  padding-top: clamp(32px, 5.56vw, 111px);
+}
+
+.step-form-wrap h2 {
+  font-size: clamp(2.25rem, 1.882rem + 1.498vw, 3.75rem);
+}
+
+.modal {
+  background-color: lightgray;
+  padding: 20px;
+  text-align: center;
+}
+
+
 @media screen and (min-width: 1024px) {
   .comprehensive-coverage h2 {
     font-size: clamp(3.3dvw, 4.46dvw, 7.2dvh);

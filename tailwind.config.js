@@ -22,7 +22,8 @@ module.exports = {
             colors: {
                 'dark-blue': '#151721',
                 'blue': '#02A1D3',
-                'text-black': '#151515'
+                'text-black': '#151515',
+                'gray':'#F8F8F8',
             },
         },
     },

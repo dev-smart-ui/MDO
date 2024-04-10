@@ -353,10 +353,66 @@
     </div>
 </div>
 
+<section class="step-form-wrap bg-gray">
+    <div class="container h-full">
+
+        <div class="bg-white rounded-[20px] pt-[45px] pl-[80px] p3-[35px]" id="stepForm">
+
+            <div id="step1" class="step">
+                <div class="left-side">
+                    <h2 class="font-bold ">Packages and Modules</h2>
+                    <select id="regionSelect">
+                        <option value="">Выберите регион</option>
+                        <!-- Добавьте опции регионов здесь -->
+                    </select>
+                    <input type="checkbox" id="checkBox"> <label for="checkBox">Я согласен</label>
+                    <select id="optionsSelect">
+                        <option value="">Выберите опцию</option>
+                        <option value="basic">Basic</option>
+                        <option value="customResearch">Custom Research</option>
+                        <option value="ultimate">Ultimate</option>
+                    </select>
+                </div>
+                <div class="right-side" id="optionsList">
+                    <!-- Список опций будет отображаться здесь -->
+                </div>
+                <button id="toStep2">Далее</button>
+            </div>
+
+            <!-- Шаг 2 -->
+            <div id="step2" class="step" style="display:none;">
+                <div class="left-side">
+                    <!-- Форма с инпутами и радиобаттонами -->
+                    <input type="text" id="nameInput" placeholder="Ваше имя">
+                    <input type="radio" id="payment1" name="payment" value="card"> <label for="payment1">Карта</label>
+                    <input type="radio" id="payment2" name="payment" value="paypal"> <label
+                        for="payment2">PayPal</label>
+                    <!-- Другие поля формы -->
+                </div>
+                <div class="right-side" id="selectedList">
+                    <!-- Выбранный список с первого шага -->
+                </div>
+                <button id="toStep3">Далее</button>
+            </div>
+
+            <!-- Шаг 3 -->
+            <div id="step3" class="step" style="display:none;">
+                <div class="modal">
+                    Subscription Successful!
+                </div>
+                <button id="finish">Завершить</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!--<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
 <!--<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
 <!--<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
 <script defer src="./src/js/script.js"></script>
+<script defer src="./src/js/step-form.js"></script>
 </body>
 </html>
