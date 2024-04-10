@@ -36,43 +36,6 @@ window.addEventListener("load", function () {
         }
     });
 
-    // let comprehensiveSlider = new Swiper("#comprehensive-slider", {
-    //     slidesPerView: "auto",
-    //     spaceBetween: 20,
-    //     loop: true,
-    //     centeredSlides: true,
-    //     loopAdditionalSlides: 2,
-    //     updateOnWindowResize: true,
-    //     // autoplay: {
-    //     //     delay: 5000,
-    //     //     waitForTransition: true,
-    //     // },
-    //     grabCursor: true,
-    //     speed: 700,
-    //     pagination: {
-    //         el: ".comprehensive-coverage-pagination",
-    //         clickable: true,
-    //     },
-    //     on: {
-    //         init: function () {
-    //             updateSlideClasses.call(this);
-    //         },
-    //         slideChangeTransitionStart: function () {
-    //             updateSlideClasses.call(this);
-    //         },
-    //         resize: function () {
-    //             updateSlideClasses.call(this);
-    //         },
-    //         slideChangeTransitionEnd: function () {
-    //             updateSlideClasses.call(this);
-    //         },
-    //         click: function (event) {
-    //             let index = this.clickedSlide.getAttribute('data-swiper-slide-index');
-    //             this.slideToLoop(index);
-    //         },
-    //     }
-    // });
-
     let comprehensiveSlider = new Swiper("#comprehensive-slider", {
         slidesPerView: 1.25,
         spaceBetween: 20,
