@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const optionsDetails = document.getElementById('optionsDetails');
     const selectedOptions = document.getElementById('selectedOptions');
     const globalCheckbox = document.querySelector('input[value="global"]');
-    const checkboxes = document.querySelectorAll('#regionsSelect .items input[type="checkbox"]');
-    const regionSelectedItems = document.getElementById('selected-items');
+    const checkboxes = document.querySelectorAll('#regionsSelect .regions-item-box input[type="checkbox"]');
+    const regionSelectedItems = document.getElementById('selectedItems');
+    const regionsItemBox = document.getElementById('regionsItemBox');
     let formData = {};
     const mainRegionSelectValue = "Global";
     const regionsIng = [];
@@ -21,14 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             regionSelectedItems.textContent = selectedCheckboxes.map(c => {
                 regionsIng.push(c.value);
-                return c.value;
+                return c.value.charAt(0).toUpperCase() + c.value.slice(1);
             }).join(", ") + ` (${selectedCheckboxes.length})`;
 
         }
     }
 
     regionSelectedItems.addEventListener('click', ()=>{
-
+        regionsItemBox.classList.toggle("open")
     })
 
     function handleCheckboxChange() {
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (c !== globalCheckbox) {
                     c.checked = false;
                     c.disabled = true;
+                    c.parentNode.classList.add('disabled')
                 }
             });
         } else {
@@ -48,8 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             } else {
-                checkboxes.forEach(c => c.disabled = false);
+                checkboxes.forEach(c =>{
+                    c.disabled = false
+                    c.parentNode.classList.remove('disabled')
+                });
                 globalCheckbox.disabled = false;
+
             }
         }
         updateItemsDisplay();
