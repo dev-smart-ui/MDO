@@ -363,14 +363,14 @@
     <div class="container h-full">
         <div class="bg-white rounded-[20px] step-form-box" id="stepForm">
             <!-- step1-->
-            <div class="step active" id="step1">
+            <div class="step hidden active" id="step1">
                 <div class="left w-2/4">
-                    <h2 class="font-bold">Packages and Modules</h2>
+                    <h2 class="step-title font-bold">Packages and Modules</h2>
 
                     <div class="select-box regions-select-box">
-                        <div class="select-title-box flex items-center">
-                            <img src="./src/images/step-form/step1.png" loading="lazy" alt="Select your region"/>
-                            <span class="font-semibold">Select your region(s):</span>
+                        <div class="select-title-box flex items-end">
+                            <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy" alt="Select your region"/>
+                            <span class="font-semibold text-[22px]">1. Select your region(s):</span>
                         </div>
 
                         <div id="regionsSelect" class="regions-select-wrap">
@@ -445,7 +445,7 @@
             </div>
 
             <!-- Шаг 2 -->
-            <div class="step" id="step2">
+            <div class="step hidden" id="step2">
                 <div class="left">
                     <input type="text" placeholder="Name" id="name">
                     <input type="text" placeholder="Email" id="email">
@@ -462,7 +462,7 @@
             </div>
 
             <!-- Шаг 3 -->
-            <div class="step" id="step3">
+            <div class="step hidden" id="step3">
                 <p>Subscription Successful!</p>
                 <button class="nextBtn">Finish</button>
             </div>
