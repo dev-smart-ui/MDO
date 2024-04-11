@@ -2,7 +2,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         let currentStep = 0;
         const steps = document.querySelectorAll('.step');
-        const nextButtons = document.querySelectorAll('.nextBtn');
+        const nextButtons = document.querySelectorAll('[data-next-btn]');
         const optionsDetails = document.getElementById('optionsDetails');
         const selectedOptions = document.getElementById('selectedOptions');
         const globalCheckbox = document.querySelector('input[value="global"]');
@@ -12,13 +12,14 @@
         const regionsItemBox = document.getElementById('regionsItemBox');
         let formData = {};
         const mainRegionSelectValue = "Global";
-        const regionsIng = [];
+        let regionsIng = [];
 
         //region select code start
 
         //toggle select regions click outside
         regionSelectedItems.addEventListener('click', (event) => {
             regionsItemBox.classList.toggle("open");
+            regionSelectedItems.classList.add("open");
             event.stopPropagation();
         });
 
@@ -26,6 +27,7 @@
         document.addEventListener('click', (event) => {
             if (!regionsSelect.contains(event.target)) {
                 regionsItemBox.classList.remove("open");
+                regionSelectedItems.classList.remove("open");
             }
         });
 
@@ -40,7 +42,7 @@
             } else {
                 regionSelectedItems.textContent = selectedCheckboxes.map(c => {
                     regionsIng.push(c.value);
-                    return c.value.charAt(0).toUpperCase() + c.value.slice(1);
+                    return c.value;
                 }).join(", ") + ` (${selectedCheckboxes.length})`;
 
             }
@@ -126,11 +128,11 @@
         optionsSelect.passedElement.element.addEventListener('change', (event) => {
             const value = event.detail.value;
             switch (value) {
-                case 'customPackage':
-                    optionsDetails.innerHTML = `<p>Details for customPackage</p>`;
-                    break;
                 case 'researchPackage':
                     optionsDetails.innerHTML = `<p>Details for researchPackageh</p>`;
+                    break;
+                case 'customPackage':
+                    optionsDetails.innerHTML = `<p>Details for customPackage</p>`;
                     break;
                 case 'ultimatePackage':
                     optionsDetails.innerHTML = `<p>Details for ultimatePackage</p>`;
@@ -169,6 +171,7 @@
                 } else {
                     // Reset form and formData for demonstration purposes
                     optionsSelect.setChoiceByValue('');
+                    regionsIng = []
                     document.getElementById('name').value = '';
                     document.getElementById('email').value = '';
                     document.querySelector('input[name="payment"]:checked').checked = false;

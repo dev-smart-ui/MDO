@@ -364,13 +364,13 @@
         <div class="bg-white rounded-[20px] step-form-box" id="stepForm">
             <!-- step1-->
             <div class="step hidden active" id="step1">
-                <div class="left w-2/4">
-                    <h2 class="step-title font-bold">Packages and Modules</h2>
+                <div class="left lg:w-2/4">
+                    <h2 class="step-title font-bold">Packages and<br> Modules</h2>
 
                     <div class="select-box regions-select-box">
-                        <div class="select-title-box flex items-end">
+                        <div class="select-title-box mb-3 flex items-end">
                             <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy" alt="Select your region"/>
-                            <span class="font-semibold text-[22px]">1. Select your region(s):</span>
+                            <span class="font-semibold text-[14px] lg:text-[22px]">1. Select your region(s):</span>
                         </div>
 
                         <div id="regionsSelect" class="regions-select-wrap">
@@ -382,32 +382,32 @@
                                     Global
                                 </label>
                                 <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="oceania">
+                                    <input type="checkbox" value="Oceania">
                                     <span class="checkmark"></span>
                                     Oceania
                                 </label>
                                 <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="usa">
+                                    <input type="checkbox" value="USA">
                                     <span class="checkmark"></span>
                                     USA
                                 </label>
                                 <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="canada">
+                                    <input type="checkbox" value="Canada">
                                     <span class="checkmark"></span>
                                     Canada
                                 </label>
                                 <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="latinAmerica">
+                                    <input type="checkbox" value="LatinAmerica">
                                     <span class="checkmark"></span>
                                     Latin America
                                 </label>
                                 <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="africa">
+                                    <input type="checkbox" value="Africa">
                                     <span class="checkmark"></span>
                                     Africa
                                 </label>
                                 <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="europeAsia">
+                                    <input type="checkbox" value="Europe+Asia">
                                     <span class="checkmark"></span>
                                     Europe + Asia
                                 </label>
@@ -416,19 +416,19 @@
                     </div>
 
                     <div class="select-box package-select-box">
-                        <div class="select-title-box flex items-center">
-                            <img src="./src/images/step-form/step2.png" loading="lazy" alt="Select you package"/>
-                            <span class="font-semibold">2. Select you package:</span>
+                        <div class="select-title-box mb-3 flex items-center">
+                            <img class="mr-2"  src="./src/images/step-form/step2.png" loading="lazy" alt="Select you package"/>
+                            <span class="font-semibold  text-[14px] lg:text-[22px]">2. Select you package:</span>
 
                         </div>
                         <!-- Кастомный селект для выбора опции -->
-                        <select id="optionsSelect" ></select>
+                        <select id="optionsSelect"></select>
                     </div>
 
-                    <div class="select-box">
-                        <div class="select-title-box flex items-center">
-                            <img src="./src/images/step-form/step3.png" loading="lazy" alt="Select you package"/>
-                            <span class="font-semibold">3. Select the number of licences:</span>
+                    <div class="select-box ">
+                        <div class="select-title-box mb-3 flex items-center">
+                            <img class="mr-2"  src="./src/images/step-form/step3.png" loading="lazy" alt="Select you package"/>
+                            <span class="font-semibold text-[14px] lg:text-[22px]">3. Select the number of licences:</span>
                         </div>
                         <!-- Кастомный селект для выбора опции -->
 
@@ -436,12 +436,9 @@
                     </div>
 
 
-
                 </div>
-                <div class="right w-2/4" id="optionsDetails">
-                    <!-- Сюда будут подгружаться детали в зависимости от выбранной опции -->
-                </div>
-                <button class="nextBtn">Next</button>
+                <div class="right lg:w-2/4" id="optionsDetails"></div>
+                <button data-next-btn class="nextBtn">Next</button>
             </div>
 
             <!-- Шаг 2 -->
@@ -457,14 +454,14 @@
                     </div>
                 </div>
                 <div class="right" id="selectedOptions"></div>
-                <button class="nextBtn">Next</button>
+                <button data-next-btn class="nextBtn">Next</button>
                 <div class="clearfix"></div>
             </div>
 
             <!-- Шаг 3 -->
             <div class="step hidden" id="step3">
                 <p>Subscription Successful!</p>
-                <button class="nextBtn">Finish</button>
+                <button data-next-btn class="nextBtn">Finish</button>
             </div>
         </div>
     </div>
