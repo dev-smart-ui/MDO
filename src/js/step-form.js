@@ -5,6 +5,7 @@
         const nextButtons = document.querySelectorAll('[data-next-btn]');
         const optionsDetails = document.getElementById('optionsDetails');
         const selectedOptions = document.getElementById('selectedOptions');
+        const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
         const globalCheckbox = document.querySelector('input[value="global"]');
         const checkboxes = document.querySelectorAll('#regionsSelect .regions-item-box input[type="checkbox"]');
         const regionSelectedItems = document.getElementById('selectedItems');
@@ -38,7 +39,7 @@
             if (selectedCheckboxes.length === 0 || globalCheckbox.checked) {
                 regionSelectedItems.textContent = mainRegionSelectValue;
                 regionsIng.push(mainRegionSelectValue);
-                return mainRegionSelectValue
+                return mainRegionSelectValue;
             } else {
                 regionSelectedItems.textContent = selectedCheckboxes.map(c => {
                     regionsIng.push(c.value);
@@ -91,9 +92,9 @@
                     });
                 } else {
                     const selectedNonGlobalCheckboxes = Array.from(checkboxes).filter(c => {
-                        if(c.checked && c.value !== mainRegionSelectValue.toLowerCase()){
+                        if (c.checked && c.value !== mainRegionSelectValue.toLowerCase()) {
                             c.parentNode.classList.add('choose');
-                            return c.checked && c.value !== mainRegionSelectValue.toLowerCase()
+                            return c.checked && c.value !== mainRegionSelectValue.toLowerCase();
                         }
                     }).length;
                     if (selectedNonGlobalCheckboxes >= 4) {
@@ -129,16 +130,20 @@
             const value = event.detail.value;
             switch (value) {
                 case 'researchPackage':
-                    optionsDetails.innerHTML = `<p>Details for researchPackageh</p>`;
+                    optionsDetails.innerHTML = optionalSelectContent.researchPackage.innerContent;
+                    additionalTextOptionsSelect.innerHTML = optionalSelectContent.researchPackage.additionalTextBottom;
                     break;
                 case 'customPackage':
-                    optionsDetails.innerHTML = `<p>Details for customPackage</p>`;
+                    optionsDetails.innerHTML = optionalSelectContent.customPackage.innerContent;
+                    additionalTextOptionsSelect.innerHTML = optionalSelectContent.customPackage.additionalTextBottom;
                     break;
                 case 'ultimatePackage':
-                    optionsDetails.innerHTML = `<p>Details for ultimatePackage</p>`;
+                    optionsDetails.innerHTML = optionalSelectContent.ultimatePackage.innerContent;
+                    additionalTextOptionsSelect.innerHTML = optionalSelectContent.ultimatePackage.additionalTextBottom;
                     break;
                 default:
                     optionsDetails.innerHTML = ``;
+                    additionalTextOptionsSelect.innerHTML = ``;
                     break;
             }
         });
@@ -171,7 +176,7 @@
                 } else {
                     // Reset form and formData for demonstration purposes
                     optionsSelect.setChoiceByValue('');
-                    regionsIng = []
+                    regionsIng = [];
                     document.getElementById('name').value = '';
                     document.getElementById('email').value = '';
                     document.querySelector('input[name="payment"]:checked').checked = false;
@@ -186,3 +191,18 @@
         });
     });
 })();
+
+ const optionalSelectContent = {
+    researchPackage: {
+        additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
+        innerContent: "<p>Details for researchPackage</p>"
+    },
+    customPackage: {
+        additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
+        innerContent: "<p>Details for customPackage</p>"
+    },
+    ultimatePackage: {
+        additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
+        innerContent: "<p>Details for ultimatePackage</p>"
+    },
+};

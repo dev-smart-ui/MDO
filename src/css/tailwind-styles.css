@@ -192,12 +192,26 @@
 /*common styles of step form  start*/
 
 .step.active{
-  display: block;
+  display: flex;
 }
 
 .step-form-wrap{
   padding-bottom: clamp(32px, 5.56vw, 111px);
   padding-top: clamp(32px, 5.56vw, 111px);
+}
+
+.step-form-wrap .continue-btn{
+  max-width: 270px;
+  width: 100%;
+  padding: 20px;
+  background: #02A1D3;
+  transition: .2s ease-in-out;
+
+}
+
+.step-form-wrap .continue-btn:hover{
+  font-size: 17px;
+  background: #02A1D3;
 }
 
 .step-form-wrap .step-title {
@@ -214,12 +228,11 @@
 }
 
 
-
-  /*common styles of step form  finish */
+/*common styles of step form  finish */
 
 /*regions select styles start*/
 
-.regions-select-wrap, .package-select-box {
+.regions-select-wrap, .package-select-wrap {
   position: relative;
   max-width: 408px;
   width: 100%;
@@ -398,7 +411,6 @@
   border: none;
   margin-top: 0;
 }
-
 
 .package-select-box .choices__list.choices__list--dropdown.is-active {
   visibility: visible !important;

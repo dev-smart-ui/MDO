@@ -359,6 +359,7 @@
     </div>
 </div>
 
+
 <section class="step-form-wrap bg-gray">
     <div class="container h-full">
         <div class="bg-white rounded-[20px] step-form-box" id="stepForm">
@@ -422,10 +423,16 @@
 
                         </div>
                         <!-- Кастомный селект для выбора опции -->
-                        <select id="optionsSelect"></select>
+                        <div  class="package-select-wrap">
+                            <select id="optionsSelect"></select>
+                        </div>
+
+                        <div class="text-[12px]" id="additionalTextOptionsSelect">
+
+                        </div>
                     </div>
 
-                    <div class="select-box ">
+                    <div class="select-box">
                         <div class="select-title-box mb-3 flex items-center">
                             <img class="mr-2"  src="./src/images/step-form/step3.png" loading="lazy" alt="Select you package"/>
                             <span class="font-semibold text-[14px] lg:text-[22px]">3. Select the number of licences:</span>
@@ -437,8 +444,11 @@
 
 
                 </div>
-                <div class="right lg:w-2/4" id="optionsDetails"></div>
-                <button data-next-btn class="nextBtn">Next</button>
+                <div class="right flex flex-col items-end lg:w-2/4" >
+                    <div class="optional-content" id="optionsDetails"></div>
+                    <button data-next-btn class="continue-btn rounded-[12px] font-medium text-[16px] text-white">Continue to billing ></button>
+                </div>
+
             </div>
 
             <!-- Шаг 2 -->
@@ -454,14 +464,14 @@
                     </div>
                 </div>
                 <div class="right" id="selectedOptions"></div>
-                <button data-next-btn class="nextBtn">Next</button>
+                <button data-next-btn class="continue-btn">Next</button>
                 <div class="clearfix"></div>
             </div>
 
             <!-- Шаг 3 -->
             <div class="step hidden" id="step3">
                 <p>Subscription Successful!</p>
-                <button data-next-btn class="nextBtn">Finish</button>
+                <button data-next-btn class="continue-btn">Finish</button>
             </div>
         </div>
     </div>
