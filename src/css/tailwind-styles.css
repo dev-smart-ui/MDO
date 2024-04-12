@@ -366,7 +366,13 @@
   color: #151515 !important;
   position: relative;
   background: transparent;
+  font-weight: 500;
 }
+
+.package-select-box .choices__list--dropdown .choices__item--disabled{
+  display: none;
+}
+
 
 .package-select-box .choices.is-open{
   border: 1px solid #02A1D3;
@@ -376,7 +382,7 @@
   border: none;
   background: transparent;
   font-size: 18px;
-  padding: 6px 16px 6px 16px;
+  padding: 6px;
 }
 
 .package-select-box .choices:after{

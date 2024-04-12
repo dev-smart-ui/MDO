@@ -15,6 +15,7 @@
         const mainRegionSelectValue = "Global";
         let regionsIng = [];
 
+
         //region select code start
 
         //toggle select regions click outside
@@ -111,13 +112,12 @@
 
         handleCheckboxChange();
 
-        //region select code finish
-
-        //
+        //option select code finish
 
         const optionsSelect = new Choices('#optionsSelect', {
             searchEnabled: false,
             itemSelectText: '',
+            shouldSort: false,
             choices: [
                 {value: 'researchPackage', label: 'Research Package'},
                 {value: 'customPackage', label: 'Custom Package'},
@@ -189,20 +189,75 @@
                 }
             });
         });
+
     });
 })();
 
- const optionalSelectContent = {
+// Объявляем optionalSelectContent в начале скрипта
+const optionalSelectContent = {
     researchPackage: {
         additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
-        innerContent: "<p>Details for researchPackage</p>"
+        innerContent: null,
     },
     customPackage: {
         additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
-        innerContent: "<p>Details for customPackage</p>"
+        innerContent: null,
     },
     ultimatePackage: {
         additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
-        innerContent: "<p>Details for ultimatePackage</p>"
+        innerContent: null,
     },
 };
+
+(() => {
+    document.addEventListener('DOMContentLoaded', () => {
+        const optionsDetails = document.getElementById('optionsDetails');
+
+        const dataDropdownsResearchPackage = [
+            { btnTitle: "Mine / Project Overview", imgLink:'src/images/step-form/listItem1.png', itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"] },
+            { btnTitle: "Ownership", imgLink:'src/images/step-form/listItem2.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
+            { btnTitle: "Deposit Type & Geology", imgLink:'src/images/step-form/listItem3.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
+            { btnTitle: "Reserves & Resources", imgLink:'src/images/step-form/listItem4.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
+            { btnTitle: "Commodity Production", imgLink:'src/images/step-form/listItem5.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
+            { btnTitle: "Workforce", imgLink:'src/images/step-form/listItem6.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
+            { btnTitle: "Mine Financials", imgLink:'src/images/step-form/listItem7.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
+        ];
+
+        function createDropdownsOfPackage(data) {
+            data.map((itemDropDown, index) => {
+                const dropdownBox = document.createElement("div");
+                dropdownBox.classList.add("dropdown-box");
+
+                const dropdownButton = document.createElement("button");
+                dropdownButton.classList.add("dropdown-toggle");
+                dropdownButton.setAttribute('data-dropdown-toggle', index);
+                dropdownButton.innerText = itemDropDown.btnTitle;
+
+                const imgItem = document.createElement("img");
+                imgItem.setAttribute('src', itemDropDown.imgLink);
+
+
+                dropdownButton.appendChild(imgItem);
+                dropdownBox.appendChild(dropdownButton);
+
+                const list = document.createElement("ul");
+                list.classList.add("dropdown-menu");
+                itemDropDown.itemsArr.map((dropDownItemInList) => {
+                    const listItem = document.createElement("li");
+                    listItem.classList.add("dropdown-item");
+                    listItem.innerText = `${dropDownItemInList}`;
+                    list.appendChild(listItem);
+                });
+
+                dropdownBox.appendChild(list);
+                optionsDetails.appendChild(dropdownBox);
+            });
+        }
+
+
+        optionalSelectContent.researchPackage.innerContent = () => createDropdownsOfPackage(dataDropdownsResearchPackage);
+        optionalSelectContent.researchPackage.innerContent();
+    });
+})();
+
+

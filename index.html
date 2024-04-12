@@ -422,9 +422,11 @@
                             <span class="font-semibold  text-[14px] lg:text-[22px]">2. Select you package:</span>
 
                         </div>
-                        <!-- Кастомный селект для выбора опции -->
+
                         <div  class="package-select-wrap">
-                            <select id="optionsSelect"></select>
+                            <select id="optionsSelect">
+                                <option value="" class="hidden" disabled selected>Choose package</option>
+                            </select>
                         </div>
 
                         <div class="text-[12px]" id="additionalTextOptionsSelect">
@@ -445,7 +447,7 @@
 
                 </div>
                 <div class="right flex flex-col items-end lg:w-2/4" >
-                    <div class="optional-content" id="optionsDetails"></div>
+                    <div class="optional-content w-full" id="optionsDetails"></div>
                     <button data-next-btn class="continue-btn rounded-[12px] font-medium text-[16px] text-white">Continue to billing ></button>
                 </div>
 
