@@ -364,8 +364,8 @@
     <div class="container h-full">
         <div class="bg-white rounded-[20px] step-form-box" id="stepForm">
             <!-- step1-->
-            <div class="step hidden active" id="step1">
-                <div class="left lg:w-2/4">
+            <div class="step-form-step hidden active" id="step1">
+                <div class="step-form-box-left lg:w-2/4">
                     <h2 class="step-title font-bold">Packages and<br> Modules</h2>
 
                     <div class="select-box regions-select-box">
@@ -429,7 +429,7 @@
                             </select>
                         </div>
 
-                        <div class="text-[12px]" id="additionalTextOptionsSelect">
+                        <div class="text-[12px] additional-text-options" id="additionalTextOptionsSelect">
 
                         </div>
                     </div>
@@ -439,23 +439,23 @@
                             <img class="mr-2"  src="./src/images/step-form/step3.png" loading="lazy" alt="Select you package"/>
                             <span class="font-semibold text-[14px] lg:text-[22px]">3. Select the number of licences:</span>
                         </div>
-                        <!-- Кастомный селект для выбора опции -->
 
-                        <select id="licencesSelect" ></select>
+                        <select id="licencesSelect"></select>
                     </div>
 
 
                 </div>
-                <div class="right flex flex-col items-end lg:w-2/4" >
+                <div class="step-form-box-right flex flex-col items-end lg:w-2/4" >
                     <div class="optional-content w-full" id="optionsDetails"></div>
+                    <div id="totalCounter" class="total-counter"></div>
                     <button data-next-btn class="continue-btn rounded-[12px] font-medium text-[16px] text-white">Continue to billing ></button>
                 </div>
 
             </div>
 
-            <!-- Шаг 2 -->
-            <div class="step hidden" id="step2">
-                <div class="left">
+            <!-- step2- -->
+            <div class="step-form-step hidden" id="step2">
+                <div class="step-form-box-left">
                     <input type="text" placeholder="Name" id="name">
                     <input type="text" placeholder="Email" id="email">
                     <div>
@@ -465,18 +465,19 @@
                         <input type="radio" name="payment" id="paypal" value="paypal"><label for="paypal">PayPal</label>
                     </div>
                 </div>
-                <div class="right  flex flex-col items-end lg:w-2/4">
-                <div class="right  flex flex-col items-end lg:w-2/4">
+
+                <div class="step-form-box-right  flex flex-col items-end lg:w-2/4">
 
                     <div class="optional-content w-full" id="selectedOptions"></div>
                     <button data-next-btn class="continue-btn rounded-[12px] font-medium text-[16px] text-white">Next</button>
 
                 </div>
-                <div class="clearfix"></div>
+
+
             </div>
 
-            <!-- Шаг 3 -->
-            <div class="step hidden" id="step3">
+            <!-- step3-->
+            <div class="step-form-step hidden" id="step3">
                 <p>Subscription Successful!</p>
                 <button data-next-btn class="continue-btn">Finish</button>
             </div>

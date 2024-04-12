@@ -126,6 +126,7 @@ const dataDropdownsUltimatePackage = [
         const regionSelectedItems = document.getElementById('selectedItems');
         const regionsSelect = document.getElementById('regionsSelect');
         const regionsItemBox = document.getElementById('regionsItemBox');
+        const totalCounter = document.getElementById('totalCounter');
         let formData = {};
         const mainRegionSelectValue = "Global";
         let regionsIng = [];
@@ -228,27 +229,47 @@ const dataDropdownsUltimatePackage = [
 
         //right side
 
+        //open dropdowns
+        optionsDetails.addEventListener('click', (event) => {
+            const dropDownButton = event.target.closest('.dropdown-toggle');
+            if (dropDownButton) {
+                const dropdownBox = dropDownButton.closest('.dropdown-box');
+                if (dropdownBox) {
+                    dropdownBox.classList.toggle('drop-down-item-open');
+                }
+            }
+        });
+
         function createDropdownsOfPackageAndUltimateResearch(data) {
             const optionsDetails = document.getElementById('optionsDetails');
             optionsDetails.innerHTML = '';
             data.map((itemDropDown, index) => {
                 const dropdownBox = document.createElement("div");
                 dropdownBox.classList.add("dropdown-box");
+                index === 0 && dropdownBox.classList.add("drop-down-item-open");
 
                 const dropdownButton = document.createElement("button");
-                dropdownButton.classList.add("dropdown-toggle");
-                dropdownButton.setAttribute('data-dropdown-toggle', index);
-                dropdownButton.innerText = itemDropDown.btnTitle;
+                dropdownButton.classList.add("dropdown-toggle", "flex", "items-center", "flex-row-reverse", "justify-end");
 
+                const titleArrowBox = document.createElement("div");
+                titleArrowBox.classList.add("title-arrow-box");
+                const titleBox = document.createElement("span");
+                titleBox.innerText = itemDropDown.btnTitle;
+
+
+                titleArrowBox.appendChild(titleBox);
+                const imgBox = document.createElement("div");
+                imgBox.classList.add("dropdown-toggle-img-box", "flex", "justify-center", "items-center",);
                 const imgItem = document.createElement("img");
                 imgItem.setAttribute('src', itemDropDown.imgLink);
+                imgBox.appendChild(imgItem);
 
-
-                dropdownButton.appendChild(imgItem);
+                dropdownButton.appendChild(titleArrowBox);
+                dropdownButton.appendChild(imgBox);
                 dropdownBox.appendChild(dropdownButton);
 
                 const list = document.createElement("ul");
-                list.classList.add("dropdown-menu");
+                list.classList.add("dropdown-menu", "list-disc");
                 itemDropDown.itemsArr.map((dropDownItemInList) => {
                     const listItem = document.createElement("li");
                     listItem.classList.add("dropdown-item");
@@ -259,6 +280,10 @@ const dataDropdownsUltimatePackage = [
                 dropdownBox.appendChild(list);
                 optionsDetails.appendChild(dropdownBox);
             });
+        }
+
+        function createDropdownsOfPackageCustom(data) {
+
         }
 
         function createDropdownsOfPackageCustom(data) {
@@ -281,7 +306,8 @@ const dataDropdownsUltimatePackage = [
             },
         };
 
-        // Инициализация выбора пакета
+
+        //create optional select
         const optionsSelect = new Choices('#optionsSelect', {
             searchEnabled: false,
             itemSelectText: '',
@@ -341,6 +367,8 @@ const dataDropdownsUltimatePackage = [
             });
         });
 
+        //load research package default at start
+        optionalSelectContent.researchPackage.innerContent(dataDropdownsResearchPackage);
     });
 })();
 
