@@ -465,8 +465,13 @@
                         <input type="radio" name="payment" id="paypal" value="paypal"><label for="paypal">PayPal</label>
                     </div>
                 </div>
-                <div class="right" id="selectedOptions"></div>
-                <button data-next-btn class="continue-btn">Next</button>
+                <div class="right  flex flex-col items-end lg:w-2/4">
+                <div class="right  flex flex-col items-end lg:w-2/4">
+
+                    <div class="optional-content w-full" id="selectedOptions"></div>
+                    <button data-next-btn class="continue-btn rounded-[12px] font-medium text-[16px] text-white">Next</button>
+
+                </div>
                 <div class="clearfix"></div>
             </div>
 
@@ -578,6 +583,6 @@
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script defer src="./src/js/script.js"></script>
-<script defer src="./src/js/step-form.js"></script>
+<script defer type="module" src="./src/js/step-form.js"></script>
 </body>
 </html>

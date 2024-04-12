@@ -1,11 +1,126 @@
+const dataDropdownsResearchPackage = [
+    {
+        btnTitle: "Mine / Project Overview",
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "Ownership",
+        imgLink: 'src/images/step-form/listItem2.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Deposit Type & Geology",
+        imgLink: 'src/images/step-form/listItem3.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Reserves & Resources",
+        imgLink: 'src/images/step-form/listItem4.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Commodity Production",
+        imgLink: 'src/images/step-form/listItem5.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Workforce",
+        imgLink: 'src/images/step-form/listItem6.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+];
+
+const dataDropdownsCustomPackage = [
+    {
+        btnTitle: "1Mine / Project Overview",
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "1Ownership",
+        imgLink: 'src/images/step-form/listItem2.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Deposit Type & Geology",
+        imgLink: 'src/images/step-form/listItem3.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Reserves & Resources",
+        imgLink: 'src/images/step-form/listItem4.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Commodity Production",
+        imgLink: 'src/images/step-form/listItem5.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Workforce",
+        imgLink: 'src/images/step-form/listItem6.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+];
+
+const dataDropdownsUltimatePackage = [
+    {
+        btnTitle: "1Mine / Project Overview",
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "1Ownership",
+        imgLink: 'src/images/step-form/listItem2.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Deposit Type & Geology",
+        imgLink: 'src/images/step-form/listItem3.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Reserves & Resources",
+        imgLink: 'src/images/step-form/listItem4.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Commodity Production",
+        imgLink: 'src/images/step-form/listItem5.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Workforce",
+        imgLink: 'src/images/step-form/listItem6.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+];
+
+
 (() => {
     document.addEventListener('DOMContentLoaded', () => {
         let currentStep = 0;
         const steps = document.querySelectorAll('.step');
         const nextButtons = document.querySelectorAll('[data-next-btn]');
         const optionsDetails = document.getElementById('optionsDetails');
-        const selectedOptions = document.getElementById('selectedOptions');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
+        const selectedOptions = document.getElementById('selectedOptions');
         const globalCheckbox = document.querySelector('input[value="global"]');
         const checkboxes = document.querySelectorAll('#regionsSelect .regions-item-box input[type="checkbox"]');
         const regionSelectedItems = document.getElementById('selectedItems');
@@ -109,121 +224,13 @@
             });
         });
 
-
         handleCheckboxChange();
 
-        //option select code finish
+        //right side
 
-        const optionsSelect = new Choices('#optionsSelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            choices: [
-                {value: 'researchPackage', label: 'Research Package'},
-                {value: 'customPackage', label: 'Custom Package'},
-                {value: 'ultimatePackage', label: 'Ultimate Package'}
-            ],
-        });
-
-        // Choices.js change event for optionsSelect to update optionsDetails
-        optionsSelect.passedElement.element.addEventListener('change', (event) => {
-            const value = event.detail.value;
-            switch (value) {
-                case 'researchPackage':
-                    optionsDetails.innerHTML = optionalSelectContent.researchPackage.innerContent;
-                    additionalTextOptionsSelect.innerHTML = optionalSelectContent.researchPackage.additionalTextBottom;
-                    break;
-                case 'customPackage':
-                    optionsDetails.innerHTML = optionalSelectContent.customPackage.innerContent;
-                    additionalTextOptionsSelect.innerHTML = optionalSelectContent.customPackage.additionalTextBottom;
-                    break;
-                case 'ultimatePackage':
-                    optionsDetails.innerHTML = optionalSelectContent.ultimatePackage.innerContent;
-                    additionalTextOptionsSelect.innerHTML = optionalSelectContent.ultimatePackage.additionalTextBottom;
-                    break;
-                default:
-                    optionsDetails.innerHTML = ``;
-                    additionalTextOptionsSelect.innerHTML = ``;
-                    break;
-            }
-        });
-
-
-        // Next button click event
-        nextButtons.forEach((btn, index) => {
-            btn.addEventListener('click', () => {
-                if (index < steps.length - 1) {
-                    steps[currentStep].classList.remove('active');
-                    currentStep++;
-                    steps[currentStep].classList.add('active');
-                    if (currentStep === 1) {
-                        // Update formData with choices from step 1
-                        formData = {
-                            regions: regionsIng,
-                            selectedOption: optionsSelect.getValue(true)[0],
-                            optionsDetails: optionsDetails.innerHTML,
-                        };
-                        selectedOptions.innerHTML = `Selected Regions: ${formData.regions.join(', ')}<br>Selected Option: ${formData.selectedOption}`;
-                    }
-                    if (currentStep === 2) {
-                        // Final step, gather all data
-                        const name = document.getElementById('name').value;
-                        const email = document.getElementById('email').value;
-                        const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
-                        Object.assign(formData, {name, email, paymentMethod});
-                        console.log(formData); // Here you can send formData to the server
-                    }
-                } else {
-                    // Reset form and formData for demonstration purposes
-                    optionsSelect.setChoiceByValue('');
-                    regionsIng = [];
-                    document.getElementById('name').value = '';
-                    document.getElementById('email').value = '';
-                    document.querySelector('input[name="payment"]:checked').checked = false;
-                    optionsDetails.innerHTML = '';
-                    selectedOptions.innerHTML = '';
-                    formData = {};
-                    steps[currentStep].classList.remove('active');
-                    currentStep = 0;
-                    steps[currentStep].classList.add('active');
-                }
-            });
-        });
-
-    });
-})();
-
-// Объявляем optionalSelectContent в начале скрипта
-const optionalSelectContent = {
-    researchPackage: {
-        additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
-        innerContent: null,
-    },
-    customPackage: {
-        additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
-        innerContent: null,
-    },
-    ultimatePackage: {
-        additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
-        innerContent: null,
-    },
-};
-
-(() => {
-    document.addEventListener('DOMContentLoaded', () => {
-        const optionsDetails = document.getElementById('optionsDetails');
-
-        const dataDropdownsResearchPackage = [
-            { btnTitle: "Mine / Project Overview", imgLink:'src/images/step-form/listItem1.png', itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"] },
-            { btnTitle: "Ownership", imgLink:'src/images/step-form/listItem2.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
-            { btnTitle: "Deposit Type & Geology", imgLink:'src/images/step-form/listItem3.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
-            { btnTitle: "Reserves & Resources", imgLink:'src/images/step-form/listItem4.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
-            { btnTitle: "Commodity Production", imgLink:'src/images/step-form/listItem5.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
-            { btnTitle: "Workforce", imgLink:'src/images/step-form/listItem6.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
-            { btnTitle: "Mine Financials", imgLink:'src/images/step-form/listItem7.png', itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"] },
-        ];
-
-        function createDropdownsOfPackage(data) {
+        function createDropdownsOfPackageAndUltimateResearch(data) {
+            const optionsDetails = document.getElementById('optionsDetails');
+            optionsDetails.innerHTML = '';
             data.map((itemDropDown, index) => {
                 const dropdownBox = document.createElement("div");
                 dropdownBox.classList.add("dropdown-box");
@@ -254,9 +261,86 @@ const optionalSelectContent = {
             });
         }
 
+        function createDropdownsOfPackageCustom(data) {
 
-        optionalSelectContent.researchPackage.innerContent = () => createDropdownsOfPackage(dataDropdownsResearchPackage);
-        optionalSelectContent.researchPackage.innerContent();
+        }
+
+
+        const optionalSelectContent = {
+            researchPackage: {
+                innerContent: () => createDropdownsOfPackageAndUltimateResearch(dataDropdownsResearchPackage),
+                additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
+            },
+            customPackage: {
+                innerContent: () => createDropdownsOfPackageCustom(dataDropdownsCustomPackage),
+                additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
+            },
+            ultimatePackage: {
+                innerContent: () => createDropdownsOfPackageAndUltimateResearch(dataDropdownsUltimatePackage),
+                additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
+            },
+        };
+
+        // Инициализация выбора пакета
+        const optionsSelect = new Choices('#optionsSelect', {
+            searchEnabled: false,
+            itemSelectText: '',
+            shouldSort: false,
+            choices: [
+                {value: 'researchPackage', label: 'Research Package'},
+                {value: 'customPackage', label: 'Custom Package'},
+                {value: 'ultimatePackage', label: 'Ultimate Package'}
+            ],
+        });
+
+        // Choices.js change event для optionsSelect
+        optionsSelect.passedElement.element.addEventListener('change', (event) => {
+            const value = event.detail.value;
+            optionalSelectContent[value].innerContent();
+            additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
+        });
+
+        // Next button click event
+        nextButtons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                if (index < steps.length - 1) {
+                    steps[currentStep].classList.remove('active');
+                    currentStep++;
+                    steps[currentStep].classList.add('active');
+                    if (currentStep === 1) {
+                        // Update formData with choices from step 1
+                        formData = {
+                            regions: regionsIng,
+                            selectedOption: optionsSelect.getValue(true),
+                            optionsDetails: optionsDetails.innerHTML,
+                        };
+                        selectedOptions.innerHTML = formData.optionsDetails;
+                    }
+                    if (currentStep === 2) {
+                        // Final step, gather all data
+                        const name = document.getElementById('name').value;
+                        const email = document.getElementById('email').value;
+                        const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+                        Object.assign(formData, {name, email, paymentMethod});
+                        console.log(formData); // Here you can send formData to the server
+                    }
+                } else {
+                    // Reset form and formData for demonstration purposes
+                    optionsSelect.setChoiceByValue('');
+                    regionsIng = [];
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.querySelector('input[name="payment"]:checked').checked = false;
+                    optionsDetails.innerHTML = '';
+                    selectedOptions.innerHTML = '';
+                    formData = {};
+                    steps[currentStep].classList.remove('active');
+                    currentStep = 0;
+                    steps[currentStep].classList.add('active');
+                }
+            });
+        });
+
     });
 })();
 
