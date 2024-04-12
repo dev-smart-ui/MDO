@@ -130,10 +130,10 @@ const dataDropdownsUltimatePackage = [
         let formData = {};
         const mainRegionSelectValue = "Global";
         let regionsIng = [];
+        let researchPackageTotal="5600"
 
 
-        //region select code start
-
+        //region custom select code start
         //toggle select regions click outside
         regionSelectedItems.addEventListener('click', (event) => {
             regionsItemBox.classList.toggle("open");
@@ -226,19 +226,9 @@ const dataDropdownsUltimatePackage = [
         });
 
         handleCheckboxChange();
+        //region custom select code finish
 
         //right side
-
-        //open dropdowns
-        optionsDetails.addEventListener('click', (event) => {
-            const dropDownButton = event.target.closest('.dropdown-toggle');
-            if (dropDownButton) {
-                const dropdownBox = dropDownButton.closest('.dropdown-box');
-                if (dropdownBox) {
-                    dropdownBox.classList.toggle('drop-down-item-open');
-                }
-            }
-        });
 
         function createDropdownsOfPackageAndUltimateResearch(data) {
             const optionsDetails = document.getElementById('optionsDetails');
@@ -279,6 +269,7 @@ const dataDropdownsUltimatePackage = [
 
                 dropdownBox.appendChild(list);
                 optionsDetails.appendChild(dropdownBox);
+                totalCounter.innerText=researchPackageTotal;
             });
         }
 
@@ -365,6 +356,18 @@ const dataDropdownsUltimatePackage = [
                     steps[currentStep].classList.add('active');
                 }
             });
+        });
+
+
+        //open dropdowns
+        optionsDetails.addEventListener('click', (event) => {
+            const dropDownButton = event.target.closest('.dropdown-toggle');
+            if (dropDownButton) {
+                const dropdownBox = dropDownButton.closest('.dropdown-box');
+                if (dropdownBox) {
+                    dropdownBox.classList.toggle('drop-down-item-open');
+                }
+            }
         });
 
         //load research package default at start
