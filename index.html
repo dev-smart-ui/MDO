@@ -24,17 +24,19 @@
     <link rel="stylesheet" href="./src/css/style.css">
 
 </head>
-<body class="bg-white font-primary font-normal">
-<header class="fixed top-0 left-0 w-full z-10 bg-[#0c0c11] h-[56px]">
-    <img src="./src/images/Menu-mobile.png" alt="" class="w-full h-full lg:hidden mx-auto max-w-[393px]">
-    <img src="./src/images/Menu-1440.png" alt="" class="w-full h-full hidden lg:block 3xl:hidden">
-    <img src="./src/images/Menu-desktop.png" alt="" class="w-full h-full hidden 3xl:block mx-auto max-w-[1995px]">
-</header>
-<div class="swiper swiper-h h-dvh" id="page-slider">
-    <div class="swiper-wrapper">
+<body class="bg-white font-primary font-normal overflow-hidden">
+
+<div class="h-dvh swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden" id="page-slider">
+    <div class="snap-y snap-mandatory overflow-x-hidden overflow-y-scroll h-full">
+        <header class="sticky top-0 w-full z-10 bg-[#0c0c11] h-[56px]">
+            <img src="./src/images/Menu-mobile.png" alt="" class="w-full h-full lg:hidden mx-auto max-w-[393px]">
+            <img src="./src/images/Menu-1440.png" alt="" class="w-full h-full hidden lg:block 3xl:hidden">
+            <img src="./src/images/Menu-desktop.png" alt="" class="w-full h-full hidden 3xl:block mx-auto max-w-[1995px]">
+        </header>
+
         <!--hero-->
-        <div class="swiper-slide hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh]">
-            <div class="container h-full flex flex-col justify-between">
+        <div class="swiper-slide snap-start hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh] relative">
+            <div class="container h-full flex flex-col justify-between ">
                 <div class="absolute top-[56px] left-[-15%] lg:left-auto lg:right-[-10%] 3xl:top-[26px] w-[135%] h-[65%] lg:w-[70%] lg:h-[90%]">
                     <img src="./src/images/light-mobile.png" alt="" class="w-full h-full lg:hidden">
                     <img src="./src/images/light-1440.png" alt="" class="w-full h-full hidden lg:block 3xl:hidden">
@@ -103,7 +105,7 @@
         </div>
 
         <!-- counter mobile-->
-        <div class="swiper-slide bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
+        <div class="swiper-slide snap-start bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
             <div class="container">
                 <p class="text-[9vw] leading-[1.45] counter-title max-w-[70%] mb-[7.6dvh]">Mining Database in numbers</p>
                 <div class="counter-grid grid grid-cols-[repeat(2,calc(50%_-_10px))] gap-x-[14px] gap-y-[8.7dvh]">
@@ -142,7 +144,7 @@
         </div>
 
         <!--comprehensive coverage-->
-        <div class="swiper-slide comprehensive-coverage pt-[15dvh] pb-[5.5dvh] lg:pt-[13dvh] lg:pb-[6dvh] text-text-black flex flex-col justify-between">
+        <div class="swiper-slide snap-start comprehensive-coverage pt-[15dvh] pb-[5.5dvh] lg:pt-[13dvh] lg:pb-[6dvh] text-text-black flex flex-col justify-between">
             <div class="container">
                 <h2 class="leading-[1.34] text-[9.2vw] lg:text-[4.46vw] font-bold mb-[2.7dvh] lg:mb-[2dvh] 3xl:text-[3.5dvw]">Comprehensive coverage</h2>
                 <p class="leading-[1.7] text-[4.04vw] lg:text-[1.25vw] lg:leading-[1.8] subtitle 3xl:text-[0.9dvw] 3xl:leading-[1.6]">MDO provides in-depth mining intelligence on operating
