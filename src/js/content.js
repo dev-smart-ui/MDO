@@ -44,6 +44,7 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
 }
 
 let selectedItems = {};
+
 function createDropdownsOfPackageCustom(data, packageTotal) {
     const optionsDetails = document.getElementById('optionsDetails');
     const totalCounter = document.getElementById('totalCounter');
@@ -54,14 +55,14 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
     data.map((itemDropDown, index) => {
         const dropdownBox = document.createElement("div");
 
-        if(index===0)   dropdownBox.classList.add("dropdown-box", "default-price");
+        if (index === 0) dropdownBox.classList.add("dropdown-box", "default-price");
         dropdownBox.classList.add("dropdown-box");
 
-        const toggleContainer= document.createElement("div");
+        const toggleContainer = document.createElement("div");
         toggleContainer.classList.add("toggle-container", "flex");
 
         const dropdownButton = document.createElement("button");
-        dropdownButton.classList.add("dropdown-toggle","dropdown-custom", "flex", "items-center", "flex-row-reverse", "justify-end");
+        dropdownButton.classList.add("dropdown-toggle", "dropdown-custom", "flex", "items-center", "flex-row-reverse", "justify-end");
 
         const titleArrowBox = document.createElement("div");
         titleArrowBox.classList.add("title-arrow-box");
@@ -76,10 +77,10 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
         imgItem.setAttribute('src', itemDropDown.imgLink);
         imgBox.appendChild(imgItem);
 
-        if(index>0){
+        if (index > 0) {
             const label = document.createElement("label");
             label.htmlFor = `checkbox-${index}`;
-            label.classList.add("check-box-label", "flex");
+            label.classList.add("check-box-label", "flex", "items-center");
 
             const checkBox = document.createElement("input");
             checkBox.type = "checkbox";
@@ -95,13 +96,15 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
             priceString.innerText = `$${itemDropDown.price}.00`;
 
 
-            checkBox.addEventListener('click', function() {
+            checkBox.addEventListener('click', function () {
                 if (this.checked) {
                     selectedItems[index] = {
-                        name:checkBox.getAttribute('data-name-checkbox'),
-                        price:itemDropDown.price};
+                        name: checkBox.getAttribute("data-name-checkbox"),
+                        price: itemDropDown.price
+                    };
 
                     total += itemDropDown.price;
+                    checkBox.classList.add("checked-custom-value");
                 } else {
                     total -= itemDropDown.price;
                 }
@@ -118,7 +121,7 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
         } else {
             const priceBox = document.createElement("span");
             priceBox.classList.add("default-price-string");
-            priceBox.innerText=`$${itemDropDown.price}`;
+            priceBox.innerText = `$${itemDropDown.price}`;
 
             dropdownButton.appendChild(priceBox);
             toggleContainer.appendChild(dropdownButton);
@@ -220,89 +223,119 @@ const dataDropdownsResearchPackage = [
         imgLink: 'src/images/step-form/listItem7.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "Mine Financials",
+        imgLink: 'src/images/step-form/listItem7.png',
+        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
 ];
 const dataDropdownsCustomPackage = [
     {
         btnTitle: "1Mine / Project Overview",
-        price:2000.00,
+        price: 2000.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "2Ownership",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem2.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
         btnTitle: "3Deposit Type & Geology",
-        price:20.00,
+        price: 20.00,
         imgLink: 'src/images/step-form/listItem3.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
         btnTitle: "4Reserves & Resources",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem4.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
         btnTitle: "5Commodity Production",
-        price:10.00,
+        price: 10.00,
         imgLink: 'src/images/step-form/listItem5.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
         btnTitle: "6Workforce",
-        price:10.00,
+        price: 10.00,
         imgLink: 'src/images/step-form/listItem6.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
         btnTitle: "7Mine Financials",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem7.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
         btnTitle: "1Mine / Project Overview",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "1Mine / Project Overview",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "1Mine / Project Overview",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "1Mine / Project Overview",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "1Mine / Project Overview",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "1Mine / Project Overview",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "1Mine / Project Overview",
-        price:12.00,
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },

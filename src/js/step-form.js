@@ -1,12 +1,12 @@
 import {
-    createDropdownsOfPackageResearch,
     createDropdownsOfPackageCustom,
+    createDropdownsOfPackageResearch,
     createDropdownsOfUltimateCustom,
-    dataDropdownsResearchPackage,
     dataDropdownsCustomPackage,
-    dataDropdownsUltimatePackage, selectedItems
+    dataDropdownsResearchPackage,
+    dataDropdownsUltimatePackage,
+    selectedItems
 } from "/src/js/content.js";
-
 
 
 (() => {
@@ -23,16 +23,20 @@ import {
         const regionsSelect = document.getElementById('regionsSelect');
         const regionsItemBox = document.getElementById('regionsItemBox');
         const totalCounter = document.getElementById('totalCounter');
+        const packageSelectInfo = document.getElementById('packageSelectInfo');
+        const packageSelectInfoText = document.getElementById('packageSelectInfoText');
+        const packageSelectInfoTextClose = document.getElementById('packageSelectInfoTextClose');
         let formData = {};
         const mainRegionSelectValue = "Global";
         let regionsIng = [];
-        let researchPackageTotal=5600;
-        let ultimatePackageTotal=5600;
-        let customPackageTotal=2000;
-        let currentPackageInnerHtmRight='';
+        let researchPackageTotal = 5600;
+        let ultimatePackageTotal = 5600;
+        let customPackageTotal = 2000;
+        let currentPackageInnerHtmRight = '';
 
 
         //region custom select code start
+
         //toggle select regions click outside
         regionSelectedItems.addEventListener('click', (event) => {
             regionsItemBox.classList.toggle("open");
@@ -127,8 +131,45 @@ import {
         handleCheckboxChange();
         //region custom select code finish
 
-        //right side
 
+        //create licenses select
+        const licencesSelect = new Choices('#licencesSelect', {
+            searchEnabled: false,
+            itemSelectText: '',
+            shouldSort: false,
+            position:'bottom',
+            choices: [
+                {value: '1', label: '1'},
+                {value: '2', label: '2'},
+                {value: '3', label: '3'}
+            ],
+        });
+
+        //create option select
+        const optionsPackageSelect = new Choices('#optionsSelect', {
+            searchEnabled: false,
+            itemSelectText: '',
+            shouldSort: false,
+            position:'bottom',
+            choices: [
+                {value: 'researchPackage', label: 'Research Package'},
+                {value: 'customPackage', label: 'Custom Package'},
+                {value: 'ultimatePackage', label: 'Ultimate Package'}
+            ],
+        });
+
+        // change event for option select
+        optionsPackageSelect.passedElement.element.addEventListener('change', (event) => {
+            const value = event.detail.value;
+            if (document.querySelector(".disabled-step-form-box-right")) {
+                document.querySelector(".disabled-step-form-box-right").classList.remove("disabled-step-form-box-right");
+            }
+
+
+            optionalSelectContent[value].innerContent();
+            additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
+            additionalTextOptionsSelect.style.paddingTop = '16px';
+        });
 
 
         const optionalSelectContent = {
@@ -147,38 +188,6 @@ import {
         };
 
 
-        //create licenses select
-        const licencesSelect = new Choices('#licencesSelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            choices: [
-                {value: '1', label: '1'},
-                {value: '2', label: '2'},
-                {value: '3', label: '3'}
-            ],
-        });
-
-        //create optional select
-        const optionsSelect = new Choices('#optionsSelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            choices: [
-                {value: 'researchPackage', label: 'Research Package'},
-                {value: 'customPackage', label: 'Custom Package'},
-                {value: 'ultimatePackage', label: 'Ultimate Package'}
-            ],
-        });
-
-        // Choices.js change event для optionsSelect
-        optionsSelect.passedElement.element.addEventListener('change', (event) => {
-            const value = event.detail.value;
-            optionalSelectContent[value].innerContent();
-            additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
-            additionalTextOptionsSelect.style.paddingTop = '16px';
-        });
-
         // Next button click event
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
@@ -191,15 +200,16 @@ import {
                         // Update formData with choices from step 1
                         formData = {
                             selectedRegions: regionsIng,
-                            selectedPackageOption: optionsSelect.getValue(true),
-                            totalPrice:document.getElementById("totalCounter").innerText
+                            selectedPackageOption: optionsPackageSelect.getValue(true),
+                            totalPrice: document.getElementById("totalCounter").innerText,
+                            numberLicense: licencesSelect.getValue(true),
                         };
 
-                        if (optionsSelect.getValue(true) === "customPackage") {
+                        if (optionsPackageSelect.getValue(true) === "customPackage") {
                             formData.selectedCustomPackageValues = selectedItems;
                         }
 
-                        currentPackageInnerHtmRight=optionsDetails.innerHTML;
+                        currentPackageInnerHtmRight = optionsDetails.innerHTML;
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
                     }
                     if (currentStep === 2) {
@@ -213,7 +223,7 @@ import {
                     }
                 } else {
                     // Reset form and formData for demonstration purposes
-                    optionsSelect.setChoiceByValue('');
+                    optionsPackageSelect.setChoiceByValue('');
                     regionsIng = [];
                     document.getElementById('name').value = '';
                     document.getElementById('email').value = '';
@@ -244,8 +254,29 @@ import {
         });
 
         //load research package default at start
-        optionalSelectContent.customPackage.innerContent(dataDropdownsCustomPackage);
+        createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
+
+
+        packageSelectInfo.addEventListener('click', ()=>{
+            packageSelectInfoText.classList.add("package-select-info-text-toggle")
+        })
+
+        packageSelectInfoTextClose.addEventListener('click', ()=>{
+            packageSelectInfoText.classList.remove("package-select-info-text-toggle")
+        })
+
+
+        document.addEventListener('click', (event) => {
+
+            if (!packageSelectInfo.contains(event.target)) {
+                packageSelectInfoText.classList.remove("package-select-info-text-toggle")
+            }
+        });
     });
+
+
 })();
+
+
 
 
