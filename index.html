@@ -364,7 +364,7 @@
     <div class="container h-full">
         <div class="bg-white rounded-[20px] step-form-box" id="stepForm">
             <!-- step1-->
-            <div class="step-form-step hidden active" id="step1">
+            <div data-step-form class="step-form-step hidden active" id="step1">
                 <div class="step-form-box-left lg:w-2/4">
                     <h2 class="step-title font-bold">Packages and<br> Modules</h2>
 
@@ -433,8 +433,6 @@
                         </div>
                     </div>
 
-
-
                     <div class="select-box licences-select-box">
                         <div class="select-title-box mb-3 flex items-center">
                             <img class="mr-2"  src="./src/images/step-form/step3.png" loading="lazy" alt="Select you package"/>
@@ -459,15 +457,15 @@
             </div>
 
             <!-- step2- -->
-            <div class="step-form-step hidden" id="step2">
+            <div data-step-form class="step-form-step hidden" id="step2">
                 <div class="step-form-box-left">
                     <input type="text" placeholder="Name" id="name">
                     <input type="text" placeholder="Email" id="email">
                     <div>
-                        <input type="radio" name="payment" id="card" value="card"><label for="card">Credit Card</label>
+                        <input type="radio" data-pay-method name="payment" id="card" value="card"><label for="card">Credit Card</label>
                     </div>
                     <div>
-                        <input type="radio" name="payment" id="paypal" value="paypal"><label for="paypal">PayPal</label>
+                        <input type="radio" data-pay-method  name="payment" id="paypal" value="paypal"><label for="paypal">PayPal</label>
                     </div>
                 </div>
 
@@ -482,7 +480,7 @@
             </div>
 
             <!-- step3-->
-            <div class="step-form-step hidden" id="step3">
+            <div data-step-form class="step-form-step hidden" id="step3">
                 <p>Subscription Successful!</p>
                 <button data-next-btn class="continue-btn">Finish</button>
             </div>
@@ -490,105 +488,13 @@
     </div>
 </section>
 
-<!-- <section class="step-form-wrap bg-gray">
-    <div class="container h-full">
-        <div class="bg-white rounded-[20px] step-form-box" id="stepForm">
-            &lt;!&ndash; step1&ndash;&gt;
-            <div class="step active" id="step1">
-                <div class="left w-2/4">
-                    <h2 class="font-bold">Packages and Modules</h2>
-                    &lt;!&ndash; Кастомный селект для выбора регионов с чекбоксами &ndash;&gt;
 
-                    <div class="select-box">
-                        <div class="select-title-box flex items-center">
-                            <img src="./src/images/step-form/step1.png" loading="lazy" alt="Select your region"/>
-                            <span class="font-semibold">Select your region(s):</span>
-                        </div>
-                        <div class="custom-select" id="regionSelect">
-                            <div class="select-header">Select your region(s):</div>
-                            <div class="select-options">
-                                <label><input type="checkbox" name="region" value="global">Global</label>
-                                <label><input type="checkbox" name="region" value="oceania">Oceania</label>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="select-box">
-                        <div class="select-title-box flex items-center">
-                            <img src="./src/images/step-form/step2.png" loading="lazy" alt="Select you package"/>
-                            <span class="font-semibold">2. Select you package:</span>
-
-                        </div>
-                        &lt;!&ndash; Кастомный селект для выбора опции &ndash;&gt;
-                        <div class="custom-select" id="optionsSelect">
-                            <div class="select-header">Choose package</div>
-                            <ul class="select-options">
-                                <li data-value="basic">Basic</li>
-                                <li data-value="customResearch">Custom Research</li>
-                                <li data-value="ultimate">Ultimate</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="select-box">
-                        <div class="select-title-box flex items-center">
-                            <img src="./src/images/step-form/step3.png" loading="lazy" alt="Select you package"/>
-                            <span class="font-semibold">3. Select the number of licences:</span>
-
-                        </div>
-                        &lt;!&ndash; Кастомный селект для выбора опции &ndash;&gt;
-                        <div class="custom-select" id="licencesSelect">
-                            <div class="select-header">Choose package</div>
-                            <ul class="select-options">
-                                <li data-value="basic">Basic</li>
-                                <li data-value="customResearch">Custom Research</li>
-                                <li data-value="ultimate">Ultimate</li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="right w-2/4" id="optionsDetails">
-                    &lt;!&ndash; Сюда будут подгружаться детали в зависимости от выбранной опции &ndash;&gt;
-                </div>
-                <button id="toStep2">Next</button>
-            </div>
-
-            &lt;!&ndash; Шаг 2 &ndash;&gt;
-            <div class="step" id="step2">
-                <div class="left">
-                    <input type="text" placeholder="Name" id="name">
-                    <input type="text" placeholder="Email" id="email">
-                    <div>
-                        <input type="radio" id="card" name="payment" value="card">
-                        <label for="card">Credit Card</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="paypal" name="payment" value="paypal">
-                        <label for="paypal">PayPal</label>
-                    </div>
-                </div>
-                <div class="right" id="selectedOptions">
-                    &lt;!&ndash; Выбранные опции с первого шага &ndash;&gt;
-                </div>
-                <button id="toStep3">Next</button>
-            </div>
-
-            &lt;!&ndash; Шаг 3 &ndash;&gt;
-            <div class="step" id="step3">
-                <p>Subscription Successful!</p>
-                <button id="finish">Finish</button>
-            </div>
-        </div>
-    </div>
-</section> -->
 
 <!-- Include Choices JavaScript (latest) -->
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script defer src="./src/js/script.js"></script>
+<script defer type="module" src="./src/js/content.js"></script>
 <script defer type="module" src="./src/js/step-form.js"></script>
 </body>
 </html>

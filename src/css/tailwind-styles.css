@@ -301,17 +301,31 @@
     margin-right: 16px;
 }
 
+.step-form-box-right .dropdown-toggle.dropdown-custom:after{
+    display: none;
+}
+
 .step-form-box-right .dropdown-toggle:after ,
-.step-form-box-right .menu-title:after {
+.step-form-box-right .menu-title:after,
+.step-form-box-right .default-price .dropdown-toggle:after {
     content: '';
     position: absolute;
     background: url("/src/images/step-form/check.png") no-repeat center center;
-    width: 16px;
-    height: 16px;
+    width: 13px;
+    height: 13px;
     right: 0;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
     background-size: contain;
+    display: block;
+}
+
+
+
+.step-form-box-right .dropdown-custom .default-price-string{
+    display: block;
+    margin-left: auto;
+    padding-right: 40px;
 }
 
 
@@ -338,7 +352,6 @@
     max-height: 0;
     overflow: hidden;
     transition:  max-height 0.4s ease-in-out, visibility 0.4s ease-in-out;
-    padding-top: 16px;
 }
 
 .step-form-box-right  .list-menu {
@@ -346,7 +359,6 @@
     font-size: 14px;
     line-height: 14px;
     opacity: 0.8;
-    padding-top: 16px;
 }
 
 
@@ -366,6 +378,33 @@
 .step-form-box-right .dropdown-item:not(:last-child) {
     margin-bottom: 12px;
 }
+
+.step-form-box-right .list-item:first-child ,
+.step-form-box-right .dropdown-item:first-child{
+   padding-top: 16px;
+}
+
+.step-form-box-right .check-box-label {
+    position: relative;
+}
+
+.step-form-box-right .price-string {
+    padding-right: 30px;
+    font-weight: 600!important;
+}
+
+
+.step-form-box-right .toggle-container span{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.step-form-box-right .default-price span{
+    font-weight: 600;
+    line-height: 16px;
+}
+
 
 .step-form-box-right .total-counter {
     font-size: 22px;
@@ -457,7 +496,8 @@
 }
 
 
-.regions-select-wrap .regions-item-label input {
+.regions-select-wrap .regions-item-label input,
+.step-form-box-right .toggle-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -465,40 +505,72 @@
     width: 0;
 }
 
-.regions-select-wrap .regions-item-label .checkmark {
+.regions-select-wrap .regions-item-label .checkmark,
+.step-form-box-right .toggle-container .checkmark {
     position: absolute;
     top: 50%;
-    left: 13px;
     transform: translate(-50%, -50%);
-    height: 16px;
-    width: 16px;
     border: 1px solid #c4bebe;
     border-radius: 3px;
 }
 
-.regions-select-wrap .regions-item-label input:checked ~ .checkmark {
-    border: 1px solid #03a752;
+
+.regions-select-wrap .regions-item-label .checkmark {
+    height: 16px;
+    width: 16px;
 }
 
-.regions-select-wrap .checkmark:after {
+
+.step-form-box-right .toggle-container .checkmark {
+    height: 14px;
+    width: 14px;
+}
+
+.regions-select-wrap .regions-item-label .checkmark {
+    left: 13px;
+}
+
+.step-form-box-right .toggle-container .checkmark {
+    right: 0;
+}
+
+.regions-select-wrap .regions-item-label input:checked ~ .checkmark,
+.step-form-box-right .toggle-container input:checked ~ .checkmark {
+    border: 1.5px solid #27AE60;
+}
+
+.regions-select-wrap .checkmark:after,
+.step-form-box-right .toggle-container .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 
-.regions-select-wrap .regions-item-label input:checked ~ .checkmark:after {
+.regions-select-wrap .regions-item-label input:checked ~ .checkmark:after,
+.step-form-box-right .toggle-container input:checked ~ .checkmark:after {
     display: block;
 }
 
-.regions-select-wrap .regions-item-label .checkmark:after {
+.regions-select-wrap .regions-item-label .checkmark:after,
+.step-form-box-right .toggle-container .checkmark:after {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    width: 4px;
+    transform: translate(-50%, -50%);
+    width: 9px;
     height: 7px;
-    border: solid #03a752;
-    border-width: 0 1.5px 1.5px 0;
+    background: url("/src/images/step-form/check-green.png") no-repeat center center;
+    background-size: contain;
+}
+
+.regions-select-wrap .regions-item-label .checkmark:after {
+    width: 9px;
+    height: 7px;
+}
+
+.step-form-box-right .toggle-container .checkmark:after {
+    width: 6px;
+    height: 6px;
 }
 
 /*regions select styles finish*/
