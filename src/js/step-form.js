@@ -130,7 +130,7 @@ const dataDropdownsUltimatePackage = [
         let formData = {};
         const mainRegionSelectValue = "Global";
         let regionsIng = [];
-        let researchPackageTotal="5600"
+        let researchPackageTotal="0"
 
 
         //region custom select code start
@@ -231,7 +231,6 @@ const dataDropdownsUltimatePackage = [
         //right side
 
         function createDropdownsOfPackageAndUltimateResearch(data) {
-            const optionsDetails = document.getElementById('optionsDetails');
             optionsDetails.innerHTML = '';
             data.map((itemDropDown, index) => {
                 const dropdownBox = document.createElement("div");
@@ -277,8 +276,39 @@ const dataDropdownsUltimatePackage = [
 
         }
 
-        function createDropdownsOfPackageCustom(data) {
+        function createDropdownsOfUltimateCustom(data) {
+            optionsDetails.innerHTML = '';
+            data.map((itemDropDown, index) => {
+                const menuBox = document.createElement("div");
+                menuBox.classList.add("menu-box");
 
+                const titleBox = document.createElement("div");
+                titleBox.classList.add("menu-title", "flex", "items-center", "flex-row-reverse", "justify-end");
+                titleBox.innerText = itemDropDown.btnTitle;
+
+                const imgBox = document.createElement("div");
+                imgBox.classList.add("menu-img-box", "flex", "justify-center", "items-center",);
+                const imgItem = document.createElement("img");
+                imgItem.setAttribute('src', itemDropDown.imgLink);
+                imgBox.appendChild(imgItem);
+
+
+                titleBox.appendChild(imgBox);
+                menuBox.appendChild(titleBox);
+
+                const list = document.createElement("ul");
+                list.classList.add("list-menu", "list-disc");
+                itemDropDown.itemsArr.map((dropDownItemInList) => {
+                    const listItem = document.createElement("li");
+                    listItem.classList.add("list-item");
+                    listItem.innerText = `${dropDownItemInList}`;
+                    list.appendChild(listItem);
+                });
+
+                menuBox.appendChild(list);
+                optionsDetails.appendChild(menuBox);
+                totalCounter.innerText=researchPackageTotal;
+            });
         }
 
 
@@ -292,11 +322,23 @@ const dataDropdownsUltimatePackage = [
                 additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
             },
             ultimatePackage: {
-                innerContent: () => createDropdownsOfPackageAndUltimateResearch(dataDropdownsUltimatePackage),
+                innerContent: () => createDropdownsOfUltimateCustom(dataDropdownsUltimatePackage),
                 additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
             },
         };
 
+
+        //create licenses select
+        const licencesSelect = new Choices('#licencesSelect', {
+            searchEnabled: false,
+            itemSelectText: '',
+            shouldSort: false,
+            choices: [
+                {value: '1', label: '1'},
+                {value: '2', label: '2'},
+                {value: '3', label: '3'}
+            ],
+        });
 
         //create optional select
         const optionsSelect = new Choices('#optionsSelect', {
@@ -315,6 +357,7 @@ const dataDropdownsUltimatePackage = [
             const value = event.detail.value;
             optionalSelectContent[value].innerContent();
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
+            additionalTextOptionsSelect.style.paddingTop = '16px';
         });
 
         // Next button click event
