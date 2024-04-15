@@ -364,13 +364,13 @@
     <div class="lg:container h-full">
         <div class="lg:bg-white rounded-[20px] step-form-box" id="stepForm">
             <!-- step1-->
-            <div data-step-form class="step-form-step flex flex-col  lg:flex-row hidden active" id="step1">
+            <div data-step-form class="step-form-step flex flex-col  lg:flex-row hidden " id="step1">
                 <div class="step-form-box-left lg:w-2/4">
                     <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold">Packages and<br> Modules</h2>
-
                     <div class="select-box regions-select-box">
                         <div class="select-title-box mb-3 flex items-center">
-                            <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy" alt="Select your region"/>
+                            <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy"
+                                 alt="Select your region"/>
                             <span class="font-semibold text-[14px] lg:text-[22px]">1. Select your region(s):</span>
                         </div>
 
@@ -419,18 +419,20 @@
                     <div class="select-box package-select-box">
                         <div class="select-title-box mb-3 flex items-center relative">
                             <div class="package-select-info-text" id="packageSelectInfoText">
-                                <img  class="absolute package-select-info-close" id="packageSelectInfoTextClose" src="./src/images/step-form/close.png" loading="lazy" alt="close"/>
+                                <img class="absolute package-select-info-close" id="packageSelectInfoTextClose"
+                                     src="./src/images/step-form/close.png" loading="lazy" alt="close"/>
                                 <h4>Select you package</h4>
                                 <span>Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!</span>
                             </div>
                             <button class="package-select-info-img absolute right-0 lg:hidden" id="packageSelectInfo">
-                                <img  src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
+                                <img src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
                             </button>
-                            <img class="mr-2"  src="./src/images/step-form/step2.png" loading="lazy" alt="Select you package"/>
+                            <img class="mr-2" src="./src/images/step-form/step2.png" loading="lazy"
+                                 alt="Select you package"/>
                             <span class="font-semibold  text-[14px] lg:text-[22px]">2. Select you package:</span>
                         </div>
 
-                        <div  class="package-select-wrap">
+                        <div class="package-select-wrap">
                             <select id="optionsSelect">
                                 <option value="" class="hidden" disabled selected>Choose package</option>
                             </select>
@@ -443,56 +445,110 @@
 
                     <div class="select-box licences-select-box">
                         <div class="select-title-box mb-3 flex items-center">
-                            <img class="mr-2"  src="./src/images/step-form/step3.png" loading="lazy" alt="Select you package"/>
+                            <img class="mr-2" src="./src/images/step-form/step3.png" loading="lazy"
+                                 alt="Select you package"/>
                             <span class="font-semibold  text-[14px] lg:text-[22px]">3. Select the number of licences:</span>
                         </div>
 
-                        <div  class="licences-select-wrap">
+                        <div class="licences-select-wrap">
                             <select id="licencesSelect">
                             </select>
                         </div>
                     </div>
-
                 </div>
-                <div class="step-form-box-right disabled-step-form-box-right flex flex-col items-end lg:w-2/4" >
-                    <div class="optional-content w-full" id="optionsDetails"></div>
+                <div class="step-form-box-right disabled-step-form-box-right flex flex-col items-end lg:w-2/4">
+                    <!-- <div class="optional-content w-full" id="optionsDetails"></div> -->
 
                     <div class="bottom-container">
                         <div class="total-counter">
                             Total: $<span id="totalCounter"></span>
                         </div>
-                        <button data-next-btn class="continue-btn flex items-center justify-center rounded-[12px] font-medium text-[16px] text-white">Continue to billing ></button>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- step2- -->
-            <div data-step-form class="step-form-step hidden" id="step2">
-                <div class="step-form-box-left">
-                    <input type="text" placeholder="Name" id="name">
-                    <input type="text" placeholder="Email" id="email">
-                    <div>
-                        <input type="radio" data-pay-method name="payment" id="card" value="card"><label for="card">Credit Card</label>
-                    </div>
-                    <div>
-                        <input type="radio" data-pay-method  name="payment" id="paypal" value="paypal"><label for="paypal">PayPal</label>
-                    </div>
-                </div>
-
-                <div class="step-form-box-right  flex flex-col items-end lg:w-2/4">
-
-                    <div class="optional-content w-full" id="selectedOptions"></div>
-                    <div class="bottom-container">
-                        <div class="total-counter">
-                            Total: $<span id="totalCounter1"></span>
-                        </div>
-                        <button data-next-btn class="flex items-center justify-center  continue-btn rounded-[12px] font-medium text-[16px] text-white">
+                        <button data-next-btn
+                                class="continue-btn flex items-center justify-center rounded-[12px] font-medium text-[16px] text-white">
                             Continue to billing >
                         </button>
                     </div>
+
                 </div>
+            </div>
+
+            <!-- step2- -->
+            <div data-step-form class="step-form-step step-form-step-two hidden active" id="step2">
+
+                    <div class="step-form-step-two-left-column">
+                        <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold ">Subscription</h2>
+                        <div class="step-form-step-two-details">
+                            <div class="step-form-box-left flex flex-col ">
+
+                                <div class="subscription-box-details flex flex-col ">
+                                    <h4>Your details</h4>
+                                    <label> <input type="text" placeholder="First name" id="firstName"></label>
+                                    <label> <input type="text" placeholder="Last Name" id="LastName"></label>
+                                    <label> <input type="text" placeholder="Phone" id="phone"></label>
+                                    <label> <input type="text" placeholder="Email" id="email"></label>
+                                </div>
+
+                                <div class="subscription-box-details flex flex-col ">
+                                    <h4>Company details</h4>
+                                    <label> <input type="text" placeholder="Company Name" id="companyName"></label>
+                                    <label> <input type="text" placeholder="Departament" id="Departament"></label>
+                                    <label> <input type="text" placeholder="Position" id="Position"></label>
+                                    <label> <input type="text" placeholder="Company Address 1" id="companyAddress1"></label>
+                                    <label> <input type="text" placeholder="Company Address 2" id="companyAddress2"></label>
+                                    <select id="countrySelect"></select>
+                                </div>
+
+                            </div>
+                            <div class="step-form-box-center flex flex-col ">
+
+                                <div class="subscription-box-details flex flex-col ">
+                                    <select id="citySelect"></select>
+                                    <select id="stateSelect"></select>
+                                    <label> <input type="text" placeholder="Zip/Postal Code" id="postalCode"></label>
+                                </div>
+
+                                <div class="subscription-box-details flex flex-col ">
+                                    <h4>Security</h4>
+                                    <label> <input type="text" placeholder="Password" id="password"></label>
+                                    <label> <input type="text" placeholder="Confirm Password" id="confirmPassword"></label>
+                                </div>
+
+                                <div class="subscription-payment-box-details">
+                                    <h4>Payment Method</h4>
+                                    <div>
+                                        <input type="radio" data-pay-method name="payment" id="visaMastercard" value="visaMastercard"><label for="visaMastercard">Visa/ Mastercard</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" data-pay-method name="payment" id="viseTransfer" value="viseTransfer"><label for="viseTransfer">Wise Transfer (EFT)</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" data-pay-method name="payment" id="check" value="check"><label for="check">Check</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" data-pay-method name="payment" id="payPal" value="payPal"><label for="paypal">PayPal</label>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="step-form-box-right flex flex-col items-end">
+                        <div class="optional-content w-full" id="optionsDetails"></div>
+                        <!--  <div class="optional-content w-full" id="selectedOptions"></div> -->
+                        <div class="bottom-container">
+                            <div class="total-counter">
+                                Total: $<span id="totalCounter1"></span>
+                            </div>
+                            <button data-next-btn
+                                    class="flex items-center justify-center  continue-btn rounded-[12px] font-medium text-[16px] text-white">
+                                Continue to billing >
+                            </button>
+                        </div>
+                    </div>
 
             </div>
 

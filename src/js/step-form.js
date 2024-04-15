@@ -10,6 +10,7 @@ import {
 
 
 (() => {
+    //step1
     document.addEventListener('DOMContentLoaded', () => {
         let currentStep = 0;
         const steps = document.querySelectorAll('[data-step-form]');
@@ -213,7 +214,6 @@ import {
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
                     }
                     if (currentStep === 2) {
-
                         // Final step, gather all data
                         const name = document.getElementById('name').value;
                         const email = document.getElementById('email').value;
@@ -277,6 +277,59 @@ import {
 
 })();
 
+
+(()=>{
+    //step2
+    document.addEventListener('DOMContentLoaded', () => {
+        //create country select
+        const countrySelect = new Choices('#countrySelect', {
+            searchEnabled: false,
+            itemSelectText: '',
+            shouldSort: false,
+            position:'bottom',
+            choices: [
+                {value: 'Afghanistan', label: 'Afghanistan'},
+                {value: 'Albania', label: 'Albania'},
+                {value: 'Algeria', label: 'Algeria'},
+                {value: 'American Samoa', label: 'American Samoa'},
+                {value: 'Andorra', label: 'Andorra'},
+                {value: 'Angola', label: 'Angola'},
+            ],
+        });
+
+        //create city select
+        const citySelect = new Choices('#citySelect', {
+            searchEnabled: false,
+            itemSelectText: '',
+            shouldSort: false,
+            position:'bottom',
+            choices: [
+                {value: 'Afghanistan', label: 'Afghanistan'},
+                {value: 'Albania', label: 'Albania'},
+                {value: 'Algeria', label: 'Algeria'},
+                {value: 'American Samoa', label: 'American Samoa'},
+                {value: 'Andorra', label: 'Andorra'},
+                {value: 'Angola', label: 'Angola'},
+            ],
+        });
+
+        //create state select
+        const stateSelect = new Choices('#stateSelect', {
+            searchEnabled: false,
+            itemSelectText: '',
+            shouldSort: false,
+            position:'bottom',
+            choices: [
+                {value: 'Afghanistan', label: 'Afghanistan'},
+                {value: 'Albania', label: 'Albania'},
+                {value: 'Algeria', label: 'Algeria'},
+                {value: 'American Samoa', label: 'American Samoa'},
+                {value: 'Andorra', label: 'Andorra'},
+                {value: 'Angola', label: 'Angola'},
+            ],
+        });
+    })
+})()
 
 
 

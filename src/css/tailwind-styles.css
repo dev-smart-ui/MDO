@@ -199,6 +199,9 @@
 .step-form-step.active {
     display: flex;
 }
+.step-form-step-two.active {
+    display: grid;
+}
 
 .step-form-box-right .optional-content {
     height: 590px;
@@ -287,7 +290,7 @@
 
 .step-form-box-left .package-select-info-text {
     position: absolute;
-    top: 0;
+    top: 100%;
     right: 0;
     box-shadow: 13px 11px 60px 0px #0000000D;
     border-radius: 20px;
@@ -462,6 +465,7 @@
     font-size: 22px;
     font-weight: 600;
     line-height: 33px;
+    margin-bottom: 10px;
 }
 
 .step-form-box-right .bottom-container{
@@ -718,6 +722,51 @@
 }
 
 /*option select styles finish*/
+.step-form-step-two{
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Первая колонка шире второй */
+    gap: 20px; /* Отступ между колонками */
+}
+
+.step-form-step-two .step-form-step-two-left-column{
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.step-form-step-two .step-form-step-two-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.step-form-step-two .subscription-box-details h4{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.step-form-step-two .subscription-box-details label:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.step-form-step-two .subscription-box-details input{
+    border: 1px solid #CFCFCF;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 6px 16px;
+    border-radius: 8px;
+}
+
+.step-form-step-two .step-title {
+   margin-bottom: 20px;
+}
+
+
+
 
 /*media steps form start*/
 
