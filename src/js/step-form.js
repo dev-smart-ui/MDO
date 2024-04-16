@@ -6,11 +6,11 @@ import {
     dataDropdownsResearchPackage,
     dataDropdownsUltimatePackage,
     selectedItems
-} from "/src/js/content.js";
+} from "./content.js";
 import {
     validateAccessCheckBox,
     validateForm
-} from "/src/js/validationForm.js";
+} from "./validationForm.js";
 
 
 (() => {
