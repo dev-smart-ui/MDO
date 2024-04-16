@@ -138,7 +138,7 @@ import {
             searchEnabled: false,
             itemSelectText: '',
             shouldSort: false,
-            position:'bottom',
+            position: 'bottom',
             choices: [
                 {value: '1', label: '1'},
                 {value: '2', label: '2'},
@@ -151,7 +151,7 @@ import {
             searchEnabled: false,
             itemSelectText: '',
             shouldSort: false,
-            position:'bottom',
+            position: 'bottom',
             choices: [
                 {value: 'researchPackage', label: 'Research Package'},
                 {value: 'customPackage', label: 'Custom Package'},
@@ -189,13 +189,152 @@ import {
         };
 
 
+        //step2
+
+            //create country select
+            const countrySelect = new Choices('#countrySelect', {
+                searchEnabled: false,
+                itemSelectText: '',
+                shouldSort: false,
+                position: 'bottom',
+                choices: [
+                    {value: 'Afghanistan', label: 'Afghanistan'},
+                    {value: 'Albania', label: 'Albania'},
+                    {value: 'Algeria', label: 'Algeria'},
+                    {value: 'American Samoa', label: 'American Samoa'},
+                    {value: 'Andorra', label: 'Andorra'},
+                    {value: 'Angola', label: 'Angola'},
+                ],
+            });
+
+            //create city select
+            const citySelect = new Choices('#citySelect', {
+                searchEnabled: false,
+                itemSelectText: '',
+                shouldSort: false,
+                position: 'bottom',
+                choices: [
+                    {value: 'Afghanistan', label: 'Afghanistan', selected: false,},
+                    {value: 'Albania', label: 'Albania', selected: false,},
+                    {value: 'Algeria', label: 'Algeria', selected: false,},
+                    {value: 'American Samoa', label: 'American Samoa', selected: false,},
+                    {value: 'Andorra', label: 'Andorra', selected: false,},
+                    {value: 'Angola', label: 'Angola', selected: false,},
+                ],
+            });
+
+            //create state select
+            const stateSelect = new Choices('#stateSelect', {
+                searchEnabled: false,
+                itemSelectText: '',
+                shouldSort: false,
+                position: 'bottom',
+                choices: [
+                    {value: 'Afghanistan', label: 'Afghanistan'},
+                    {value: 'Albania', label: 'Albania'},
+                    {value: 'Algeria', label: 'Algeria'},
+                    {value: 'American Samoa', label: 'American Samoa'},
+                    {value: 'Andorra', label: 'Andorra'},
+                    {value: 'Angola', label: 'Angola'},
+                ],
+            });
+
+        function showError(element, message) {
+            const errorDiv = document.getElementById('error-' + element.id);
+            if (errorDiv) {
+                errorDiv.textContent = message;
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        function clearError(element) {
+            const errorDiv = document.getElementById('error-' + element.id);
+            if (errorDiv) {
+                errorDiv.textContent = '';
+                errorDiv.style.display = 'none';
+            }
+        }
+
+        function validateChoicesSelect(choicesInstance, selectId) {
+            debugger
+            const selectedValue = choicesInstance.getValue(true);
+            if (!selectedValue) {
+                showError(document.getElementById(selectId), 'This select is required');
+                return false;
+            } else {
+                clearError(document.getElementById(selectId));
+                return true;
+            }
+        }
+
+        function validateField(field) {
+            if (!field.value.trim()) {
+                // Поле не заполнено, добавляем сообщение об ошибке
+                const errorDiv = document.getElementById('error-' + field.id);
+                if (errorDiv) {
+                    errorDiv.textContent = 'Please fill';
+                    errorDiv.style.display = 'block';
+                }
+                return false;
+            } else {
+                // Поле заполнено, убираем сообщение об ошибке
+                const errorDiv = document.getElementById('error-' + field.id);
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+                return true;
+            }
+        }
+
+
+        function validateForm() {
+            let isValid = true;
+
+            // Проверяем каждое обязательное поле
+            const requiredFields = document.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                isValid &= validateField(field); // Вызываем функцию валидации для каждого поля
+            });
+
+
+            // Проверяем чекбокс согласия с условиями использования
+            const termsCheckbox = document.getElementById('checkboxAccepted');
+            if (!termsCheckbox.checked) {
+                const errorDiv = document.getElementById('error-' + termsCheckbox.id);
+                if (errorDiv) {
+                    errorDiv.textContent = 'You must accept the terms of use';
+                    errorDiv.style.display = 'block';
+                }
+                isValid = false;
+            } else {
+                const errorDiv = document.getElementById('error-' + termsCheckbox.id);
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            }
+
+            return isValid;
+        }
+
+// Подключите функцию валидации ко всем полям с атрибутом required
+        document.querySelectorAll('[required]').forEach(field => {
+            field.addEventListener('input', () => {
+                validateField(field);
+            });
+        });
+
+
+
+
         // Next button click event
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
                 if (index < steps.length - 1) {
-                    steps[currentStep].classList.remove('active');
+                   /* steps[currentStep].classList.remove('active');*/
                     currentStep++;
-                    steps[currentStep].classList.add('active');
+                   /* steps[currentStep].classList.add('active');*/
                     if (currentStep === 1) {
 
                         // Update formData with choices from step 1
@@ -211,15 +350,24 @@ import {
                         }
 
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
-                        selectedOptions.innerHTML = currentPackageInnerHtmRight;
+                       /* selectedOptions.innerHTML = currentPackageInnerHtmRight;*/
                     }
                     if (currentStep === 2) {
-                        // Final step, gather all data
-                        const name = document.getElementById('name').value;
-                        const email = document.getElementById('email').value;
-                        const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
-                        Object.assign(formData, {name, email, paymentMethod});
-                        console.log(formData);
+                        const isCitySelectValid = validateChoicesSelect(citySelect, 'citySelect');
+                        const isCountrySelectValid = validateChoicesSelect(countrySelect, 'countrySelect');
+                        const isStateSelectValid = validateChoicesSelect(stateSelect, 'stateSelect');
+                        if (!validateForm() && !isCitySelectValid  && !isCountrySelectValid  && !isStateSelectValid) {
+
+
+                        } else {
+                            // Final step, gather all data
+                            const name = document.getElementById('name').value;
+                            const email = document.getElementById('email').value;
+                            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+                            Object.assign(formData, {name, email, paymentMethod});
+                            console.log(formData);
+                        }
+
                     }
                 } else {
                     // Reset form and formData for demonstration purposes
@@ -257,19 +405,19 @@ import {
         createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
 
 
-        packageSelectInfo.addEventListener('click', ()=>{
-            packageSelectInfoText.classList.add("package-select-info-text-toggle")
-        })
+        packageSelectInfo.addEventListener('click', () => {
+            packageSelectInfoText.classList.add("package-select-info-text-toggle");
+        });
 
-        packageSelectInfoTextClose.addEventListener('click', ()=>{
-            packageSelectInfoText.classList.remove("package-select-info-text-toggle")
-        })
+        packageSelectInfoTextClose.addEventListener('click', () => {
+            packageSelectInfoText.classList.remove("package-select-info-text-toggle");
+        });
 
 
         document.addEventListener('click', (event) => {
 
             if (!packageSelectInfo.contains(event.target)) {
-                packageSelectInfoText.classList.remove("package-select-info-text-toggle")
+                packageSelectInfoText.classList.remove("package-select-info-text-toggle");
             }
         });
     });
@@ -278,58 +426,9 @@ import {
 })();
 
 
-(()=>{
-    //step2
-    document.addEventListener('DOMContentLoaded', () => {
-        //create country select
-        const countrySelect = new Choices('#countrySelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            position:'bottom',
-            choices: [
-                {value: 'Afghanistan', label: 'Afghanistan'},
-                {value: 'Albania', label: 'Albania'},
-                {value: 'Algeria', label: 'Algeria'},
-                {value: 'American Samoa', label: 'American Samoa'},
-                {value: 'Andorra', label: 'Andorra'},
-                {value: 'Angola', label: 'Angola'},
-            ],
-        });
+(() => {
 
-        //create city select
-        const citySelect = new Choices('#citySelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            position:'bottom',
-            choices: [
-                {value: 'Afghanistan', label: 'Afghanistan'},
-                {value: 'Albania', label: 'Albania'},
-                {value: 'Algeria', label: 'Algeria'},
-                {value: 'American Samoa', label: 'American Samoa'},
-                {value: 'Andorra', label: 'Andorra'},
-                {value: 'Angola', label: 'Angola'},
-            ],
-        });
-
-        //create state select
-        const stateSelect = new Choices('#stateSelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            position:'bottom',
-            choices: [
-                {value: 'Afghanistan', label: 'Afghanistan'},
-                {value: 'Albania', label: 'Albania'},
-                {value: 'Algeria', label: 'Algeria'},
-                {value: 'American Samoa', label: 'American Samoa'},
-                {value: 'Andorra', label: 'Andorra'},
-                {value: 'Angola', label: 'Angola'},
-            ],
-        });
-    })
-})()
+})();
 
 
 
