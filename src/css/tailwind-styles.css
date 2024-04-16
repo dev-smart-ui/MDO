@@ -244,7 +244,7 @@
 .step-form-box-right  .title-arrow-box:after{
     content: '';
     position: absolute;
-    background: url("/src/images/step-form/arrow-dd.png") no-repeat center center;
+    background: url("../images/step-form/arrow-dd.png") no-repeat center center;
     width: 10px;
     height: 10px;
     right: -25px;
@@ -366,7 +366,7 @@
 .step-form-box-right .default-price .dropdown-toggle:after {
     content: '';
     position: absolute;
-    background: url("/src/images/step-form/check.png") no-repeat center center;
+    background: url("../images/step-form/check.png") no-repeat center center;
     width: 13px;
     height: 13px;
     right: 0;
@@ -637,7 +637,7 @@
     transform: translate(-50%, -50%);
     width: 9px;
     height: 7px;
-    background: url("/src/images/step-form/check-green.png") no-repeat center center;
+    background: url("../images/step-form/check-green.png") no-repeat center center;
     background-size: contain;
 }
 
