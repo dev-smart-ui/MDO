@@ -196,7 +196,8 @@
     padding: clamp(32px, 5.56vw, 111px) 10px clamp(32px, 5.56vw, 111px) 24px;
 }
 
-.step-form-step-one.active {
+.step-form-step-one.active,
+.step-form-step-three.active {
     display: flex;
 }
 .step-form-step-two.active {
@@ -441,6 +442,10 @@
 
 .step-form-box-right .check-box-label {
     position: relative;
+}
+
+.step-form-step-one .step-form-box-right .check-box-label{
+    cursor: pointer;
 }
 
 .step-form-box-right .price-string {

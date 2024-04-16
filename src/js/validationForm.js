@@ -13,9 +13,15 @@ function clearError(element) {
         errorDiv.style.display = 'none';
     }
 }
+function clearErrorForSelect(selectorId) {
+    const errorDiv = document.getElementById('error-' + selectorId);
+    if (errorDiv) {
+        errorDiv.textContent = '';
+        errorDiv.style.display = 'none';
+    }
+}
 
 function validateChoicesSelect(choicesInstance, selectId) {
-    debugger
     const selectedValue = choicesInstance.getValue(true);
     if (!selectedValue) {
         showError(document.getElementById(selectId), 'This select is required');
@@ -74,4 +80,21 @@ function validateForm() {
     return isValid;
 }
 
-export {showError,clearError, validateChoicesSelect, validateField, validateForm}
+
+document.getElementById('phone').addEventListener('input', function(e) {
+    // Разрешаем только номера, знаки плюса, тире и пробелы
+    const regex = /^[+0-9\s-]*$/;
+    if (!regex.test(this.value)) {
+        // Если введены недопустимые символы, очищаем поле
+        this.value = this.value.replace(/[^+0-9\s-]/g, '');
+    }
+});
+
+// Connect the validation function to all fields with the required attribute
+document.querySelectorAll('[required]').forEach(field => {
+    field.addEventListener('input', () => {
+        validateField(field);
+    });
+});
+
+export {showError,clearError, validateChoicesSelect, validateField, validateForm, clearErrorForSelect}

@@ -7,7 +7,13 @@ import {
     dataDropdownsUltimatePackage,
     selectedItems
 } from "/src/js/content.js";
-import {validateChoicesSelect, validateField, validateForm} from "/src/js/validationForm.js";
+import {
+    clearError,
+    clearErrorForSelect,
+    validateChoicesSelect,
+    validateField,
+    validateForm
+} from "/src/js/validationForm.js";
 
 
 (() => {
@@ -84,7 +90,7 @@ import {validateChoicesSelect, validateField, validateForm} from "/src/js/valida
                 });
             } else {
                 const selectedCount = Array.from(checkboxes).filter(c => c.checked && c.value !== mainRegionSelectValue.toLowerCase()).length;
-                if (selectedCount >= 4) {
+                if (selectedCount >= 5) {
                     checkboxes.forEach(c => {
                         if (!c.checked) {
                             c.disabled = true;
@@ -119,7 +125,7 @@ import {validateChoicesSelect, validateField, validateForm} from "/src/js/valida
                             return c.checked && c.value !== mainRegionSelectValue.toLowerCase();
                         }
                     }).length;
-                    if (selectedNonGlobalCheckboxes >= 4) {
+                    if (selectedNonGlobalCheckboxes >= 5) {
                         globalCheckbox.checked = true;
                         globalCheckbox.parentNode.classList.add('choose');
                         handleCheckboxChange();
@@ -172,10 +178,6 @@ import {validateChoicesSelect, validateField, validateForm} from "/src/js/valida
             additionalTextOptionsSelect.style.paddingTop = '16px';
         });
 
-        function checkSelectValidation(optionsPackageSelect){
-
-
-        }
 
 
         const optionalSelectContent = {
@@ -196,77 +198,11 @@ import {validateChoicesSelect, validateField, validateForm} from "/src/js/valida
 
         //step2
 
-            //create country select
-            const countrySelect = new Choices('#countrySelect', {
-                searchEnabled: false,
-                itemSelectText: '',
-                shouldSort: false,
-                position: 'bottom',
-                choices: [
-                    {value: 'Afghanistan', label: 'Afghanistan'},
-                    {value: 'Albania', label: 'Albania'},
-                    {value: 'Algeria', label: 'Algeria'},
-                    {value: 'American Samoa', label: 'American Samoa'},
-                    {value: 'Andorra', label: 'Andorra'},
-                    {value: 'Angola', label: 'Angola'},
-                ],
-            });
-
-            //create city select
-            const citySelect = new Choices('#citySelect', {
-                searchEnabled: false,
-                itemSelectText: '',
-                shouldSort: false,
-                position: 'bottom',
-                choices: [
-                    {value: 'Afghanistan', label: 'Afghanistan', selected: false,},
-                    {value: 'Albania', label: 'Albania', selected: false,},
-                    {value: 'Algeria', label: 'Algeria', selected: false,},
-                    {value: 'American Samoa', label: 'American Samoa', selected: false,},
-                    {value: 'Andorra', label: 'Andorra', selected: false,},
-                    {value: 'Angola', label: 'Angola', selected: false,},
-                ],
-            });
-
-            //create state select
-            const stateSelect = new Choices('#stateSelect', {
-                searchEnabled: false,
-                itemSelectText: '',
-                shouldSort: false,
-                position: 'bottom',
-                choices: [
-                    {value: 'Afghanistan', label: 'Afghanistan'},
-                    {value: 'Albania', label: 'Albania'},
-                    {value: 'Algeria', label: 'Algeria'},
-                    {value: 'American Samoa', label: 'American Samoa'},
-                    {value: 'Andorra', label: 'Andorra'},
-                    {value: 'Angola', label: 'Angola'},
-                ],
-            });
-
-
-
-
-        // Connect the validation function to all fields with the required attribute
-        document.querySelectorAll('[required]').forEach(field => {
-            field.addEventListener('input', () => {
-                validateField(field);
-            });
-        });
-
-
-
-
-        // Next button click event
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
                 if (index < steps.length - 1) {
-                   /* steps[currentStep].classList.remove('active');*/
-                    currentStep++;
-                   /* steps[currentStep].classList.add('active');*/
-                    if (currentStep === 1) {
+                    if (currentStep === 0) {
 
-                        // Update formData with choices from step 1
                         formData = {
                             selectedRegions: regionsIng,
                             selectedPackageOption: optionsPackageSelect.getValue(true),
@@ -279,25 +215,24 @@ import {validateChoicesSelect, validateField, validateForm} from "/src/js/valida
                         }
 
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
-                       /* selectedOptions.innerHTML = currentPackageInnerHtmRight;*/
+                        selectedOptions.innerHTML = currentPackageInnerHtmRight;
                     }
-                    if (currentStep === 2) {
-                        const isCitySelectValid = validateChoicesSelect(citySelect, 'citySelect');
-                        const isCountrySelectValid = validateChoicesSelect(countrySelect, 'countrySelect');
-                        const isStateSelectValid = validateChoicesSelect(stateSelect, 'stateSelect');
-                        if (!validateForm() && !isCitySelectValid  && !isCountrySelectValid  && !isStateSelectValid) {
 
 
+                    if (currentStep === 1) {
+                        if (!validateForm()) {
+                            console.log('Form on second step is not valid');
+                            return;
                         } else {
-                            // Final step, gather all data
-                            const name = document.getElementById('name').value;
-                            const email = document.getElementById('email').value;
-                            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
-                            Object.assign(formData, {name, email, paymentMethod});
-                            console.log(formData);
-                        }
+                            console.log('Form on second step is valid');
 
+                        }
                     }
+
+                    console.log(formData)
+                    steps[currentStep].classList.remove('active');
+                    currentStep++;
+                    steps[currentStep].classList.add('active');
                 } else {
                     // Reset form and formData for demonstration purposes
                     optionsPackageSelect.setChoiceByValue('');
@@ -317,6 +252,7 @@ import {validateChoicesSelect, validateField, validateForm} from "/src/js/valida
                 }
             });
         });
+
 
 
         //open dropdowns
