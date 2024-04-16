@@ -8,10 +8,7 @@ import {
     selectedItems
 } from "/src/js/content.js";
 import {
-    clearError,
-    clearErrorForSelect,
-    validateChoicesSelect,
-    validateField,
+    validateAccessCheckBox,
     validateForm
 } from "/src/js/validationForm.js";
 
@@ -34,6 +31,8 @@ import {
         const packageSelectInfo = document.getElementById('packageSelectInfo');
         const packageSelectInfoText = document.getElementById('packageSelectInfoText');
         const packageSelectInfoTextClose = document.getElementById('packageSelectInfoTextClose');
+        const checkboxAccepted = document.getElementById('checkboxAccepted');
+        const disabledContainer = document.getElementById('disabledContainer');
         let formData = {};
         const mainRegionSelectValue = "Global";
         let regionsIng = [];
@@ -60,6 +59,7 @@ import {
             }
         });
 
+        //update regions select when choose value
         function updateItemsDisplay() {
             regionsIng.length = 0;
             const selectedCheckboxes = Array.from(checkboxes).filter(c => c.checked && c.value !== mainRegionSelectValue.toLowerCase());
@@ -77,6 +77,8 @@ import {
             }
         }
 
+
+        //change state for regions select values
         function handleCheckboxChange() {
             if (globalCheckbox.checked) {
                 globalCheckbox.parentNode.classList.add('choose');
@@ -107,6 +109,7 @@ import {
             }
             updateItemsDisplay();
         }
+
 
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function () {
@@ -198,6 +201,7 @@ import {
 
         //step2
 
+
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
                 if (index < steps.length - 1) {
@@ -214,6 +218,7 @@ import {
                             formData.selectedCustomPackageValues = selectedItems;
                         }
 
+                        currentPackageInnerHtmRight = optionsDetails.innerHTML;
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
                     }
@@ -234,26 +239,29 @@ import {
                     currentStep++;
                     steps[currentStep].classList.add('active');
                 } else {
-                    // Reset form and formData for demonstration purposes
-                    optionsPackageSelect.setChoiceByValue('');
-                    regionsIng = [];
-                    document.getElementById('name').value = '';
-                    document.getElementById('email').value = '';
-                    document.querySelectorAll('input[name="payment"]:checked').checked = false;
-                    optionsDetails.innerHTML = '';
-                    selectedOptions.innerHTML = '';
-                    formData = {};
-                    steps[currentStep].classList.remove('active');
-                    currentStep = 0;
-                    steps[currentStep].classList.add('active');
-
-                    //load research package default at start
-                    optionalSelectContent.researchPackage.innerContent(dataDropdownsCustomPackage);
+                    resetForm()
                 }
             });
         });
 
+        function resetForm() {
+            // Reset form and formData for demonstration purposes
 
+            formData = {};
+            steps.forEach(step => step.classList.remove('active'));
+            steps[0].classList.add('active');
+            optionsPackageSelect.setChoiceByValue('');
+            regionsIng = [];
+            optionsDetails.innerHTML = '';
+            selectedOptions.innerHTML = '';
+            steps[currentStep].classList.remove('active');
+            currentStep = 0;
+            steps[currentStep].classList.add('active');
+
+            disabledContainer.classList.add("disabled-step-form-box-right")
+            //load research package default at start
+            optionalSelectContent.researchPackage.innerContent(dataDropdownsCustomPackage, 0);
+        }
 
         //open dropdowns
         optionsDetails.addEventListener('click', (event) => {
@@ -269,6 +277,7 @@ import {
         //load research package default at start
         createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
 
+        checkboxAccepted.addEventListener("click",validateAccessCheckBox )
 
         packageSelectInfo.addEventListener('click', () => {
             packageSelectInfoText.classList.add("package-select-info-text-toggle");
@@ -280,13 +289,11 @@ import {
 
 
         document.addEventListener('click', (event) => {
-
             if (!packageSelectInfo.contains(event.target)) {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
             }
         });
     });
-
 
 })();
 
