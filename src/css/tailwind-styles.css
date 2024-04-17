@@ -194,8 +194,9 @@
 
 .step-form-wrap {
     min-height: 1061px;
-    padding: clamp(32px, 5.56vw, 111px) 10px clamp(32px, 5.56vw, 111px) 24px;
+    padding: clamp(32px, 5.56vw, 111px) 24px clamp(32px, 5.56vw, 111px) 24px;
 }
+
 .step-form-wrap.step-form-wrap-open-package{
     padding: clamp(32px, 5.56vw, 111px) 0 clamp(32px, 5.56vw, 111px) 0
 }
@@ -295,9 +296,6 @@
 /*left side styles start*/
 
 
-.step-form-box-left  {
-    padding-right: 14px;
-}
 
 .step-form-box-left .package-select-info-img {
     width: 25px;
@@ -1083,14 +1081,10 @@
         padding-right: 0;
     }
 
+
     .step-form-wrap .continue-btn {
         max-width: 270px;
         height: 60px;
-    }
-
-    .step-form-step-one,
-    .step-form-step-two {
-        padding: 44px 60px 40px 90px;
     }
 
 
@@ -1150,6 +1144,12 @@
         font-size: 18px;
     }
 
+    .step-form-step-one,
+    .step-form-step-two {
+        padding: 44px 20px 40px 20px;
+    }
+
+
     .step-form-step-two .subscription-box-details:first-child {
         margin-bottom: 40px;
     }
@@ -1162,6 +1162,11 @@
         padding-top: 40px;
     }
 
+    .step-form-box-left  {
+        padding-right: 14px;
+    }
+
+
     .step-form-step-two .subscription-payment-box-details-box  .radio-item {
         width: 50%;
     }
@@ -1170,6 +1175,9 @@
         height: 635px;
     }
 
+    .step-form-step-two .step-form-box-center{
+        padding-top: 35px;
+    }
 
     .step-form-step-three .step-form-step-three-img-box{
         margin-bottom: 40px;
@@ -1179,6 +1187,14 @@
     .step-form-step-three span{
         font-size: 22px;
         line-height: 33px;
+    }
+
+}
+
+@media screen and (min-width: 1642px){
+    .step-form-step-one,
+    .step-form-step-two {
+        padding: 44px 60px 40px 90px;
     }
 
 }
