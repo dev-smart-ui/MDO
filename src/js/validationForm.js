@@ -1,4 +1,5 @@
 function validateField(field) {
+
     if (!field.value.trim()) {
         const errorDiv = document.getElementById('error-' + field.id);
         if (errorDiv) {
@@ -6,6 +7,8 @@ function validateField(field) {
             errorDiv.style.display = 'block';
         }
         return false;
+    } else if (field.id==="email"){
+        validateEmailInput()
     } else {
         const errorDiv = document.getElementById('error-' + field.id);
         if (errorDiv) {
@@ -56,6 +59,26 @@ function validateRadioButtons() {
     }
 }
 
+function validateEmailInput() {
+    const emailInput = document.getElementById('email');
+    const errorDiv = document.getElementById('error-email');
+    const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!emailInput.value.match(emailPattern)) {
+        if (errorDiv) {
+            errorDiv.textContent = 'Please fill properly';
+            errorDiv.style.display = 'block';
+        }
+        return false;
+    } else {
+        if (errorDiv) {
+            errorDiv.textContent = '';
+            errorDiv.style.display = 'none';
+        }
+        return true;
+    }
+}
+
 
 function validateForm() {
     let isValid = true;
@@ -69,11 +92,8 @@ function validateForm() {
     const isValidPayment = validateRadioButtons();
     const isCheckboxAccepted = validateCheckboxAccepted();
 
-    if (!isValidPayment && !isCheckboxAccepted) {
-        return false;
-    } else {
-        return isValid;
-    }
+
+    return !(!isValidPayment && !isCheckboxAccepted);
 
 }
 
@@ -100,4 +120,4 @@ document.querySelectorAll('[required]').forEach(field => {
     });
 });
 
-export {validateField, validateForm,};
+export {validateField, validateForm, validateCheckboxAccepted};
