@@ -775,6 +775,10 @@
     margin-bottom: 10px;
 }
 
+.step-form-step-two .subscription-box-details label{
+    position: relative;
+}
+
 .step-form-step-two .subscription-box-details label:not(:last-child){
     margin-bottom: 20px;
 }
@@ -830,6 +834,11 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 25px;
+    position: relative;
+}
+
+.step-form-step-two .subscription-payment-box-details-box .error-message {
+    bottom: -20px;
 }
 
 
@@ -838,6 +847,7 @@
     position: relative;
     padding: 0 6px;
     margin: 10px 0 0;
+    width: 50%;
 }
 
 .step-form-step-two  .radio-item input[type='radio'] {
@@ -848,6 +858,7 @@
 .step-form-step-two .subscription-payment-box-details-box  .radio-item label {
     color: #15163D;
     font-weight: normal;
+    cursor: pointer;
 }
 
 
@@ -910,8 +921,9 @@
     font-size: 10px;
     font-weight: 400;
     line-height: 15px;
-    padding-left: 6px;
     position: absolute;
+    bottom:-15px;
+    left: 6px;
 }
 
 .step-form-step-two .subscription-select-box .error-message{

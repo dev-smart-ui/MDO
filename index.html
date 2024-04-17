@@ -563,40 +563,43 @@
                                 <div class="subscription-payment-box-details">
                                     <h4>Payment Method</h4>
                                     <div class="subscription-payment-box-details-box">
-                                        <div class="radio-item">
+                                        <div data-radio-item class="radio-item">
                                             <input class="radio-button" type="radio" data-pay-method name="payment" id="visaMastercard"
                                                    value="visaMastercard">
                                             <label for="visaMastercard">Visa/ Mastercard</label>
                                         </div>
 
-                                        <div class="radio-item">
+                                        <div data-radio-item  class="radio-item">
                                             <input class="radio-button" type="radio" data-pay-method name="payment"
                                                    id="check" value="check">
                                             <label for="check">Check</label>
                                         </div>
 
-                                        <div class="radio-item">
+                                        <div data-radio-item  class="radio-item">
                                             <input class="radio-button" type="radio" data-pay-method name="payment"
                                                    id="viseTransfer"
                                                    value="viseTransfer">
                                             <label for="viseTransfer">Wise Transfer (EFT)</label>
                                         </div>
 
-                                        <div class="radio-item">
+                                        <div data-radio-item  class="radio-item">
                                             <input class="radio-button" type="radio" data-pay-method name="payment"
                                                    id="payPal"
                                                    value="payPal">
-                                            <label for="paypal">PayPal</label>
+                                            <label for="payPal">PayPal</label>
                                         </div>
 
+                                        <span class="error-message" id="error-radio"></span>
                                     </div>
+
 
                                     <label class="subscription-box-accepted check-box-label flex items-center">
                                         <input type="checkbox" id="checkboxAccepted" class="checkbox-accepted">
                                         <span class="checkmark"></span>
                                         <span class="ml-8">I Accept Terms of Use</span>
+                                        <span class="error-message" id="error-checkboxAccepted"></span>
                                     </label>
-                                    <span class="error-message" id="error-checkboxAccepted"></span>
+
                                 </div>
                             </div>
 

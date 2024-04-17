@@ -8,7 +8,6 @@ import {
     selectedItems
 } from "./content.js";
 import {
-    validateAccessCheckBox,
     validateForm
 } from "./validationForm.js";
 
@@ -277,7 +276,7 @@ import {
         //load research package default at start
         createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
 
-        checkboxAccepted.addEventListener("click",validateAccessCheckBox )
+        checkboxAccepted.addEventListener("click",validateForm )
 
         packageSelectInfo.addEventListener('click', () => {
             packageSelectInfoText.classList.add("package-select-info-text-toggle");
