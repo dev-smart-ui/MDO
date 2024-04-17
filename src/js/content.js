@@ -158,8 +158,7 @@ function createDropdownsOfUltimate(data, packageTotal) {
     data.map((itemDropDown, index) => {
         const dropdownBox = document.createElement("div");
 
-        if (index === 0) dropdownBox.classList.add("dropdown-box", "default-price");
-        dropdownBox.classList.add("dropdown-box");
+         dropdownBox.classList.add("dropdown-box", "default-price");
 
         const toggleContainer = document.createElement("div");
         toggleContainer.classList.add("toggle-container", "flex");
@@ -183,11 +182,10 @@ function createDropdownsOfUltimate(data, packageTotal) {
 
             const priceBox = document.createElement("span");
             priceBox.classList.add("default-price-string");
-            priceBox.innerText = `$${itemDropDown.price}`;
+            priceBox.innerText = `$${itemDropDown.price}.00`;
 
             dropdownButton.appendChild(priceBox);
             toggleContainer.appendChild(dropdownButton);
-
 
 
 
@@ -367,38 +365,87 @@ const dataDropdownsCustomPackage = [
 const dataDropdownsUltimatePackage = [
     {
         btnTitle: "1Mine / Project Overview",
+        price: 2000.00,
         imgLink: 'src/images/step-form/listItem1.png',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
-        btnTitle: "1Ownership",
+        btnTitle: "2Ownership",
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem2.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
-        btnTitle: "Deposit Type & Geology",
+        btnTitle: "3Deposit Type & Geology",
+        price: 20.00,
         imgLink: 'src/images/step-form/listItem3.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
-        btnTitle: "Reserves & Resources",
+        btnTitle: "4Reserves & Resources",
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem4.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
-        btnTitle: "Commodity Production",
+        btnTitle: "5Commodity Production",
+        price: 10.00,
         imgLink: 'src/images/step-form/listItem5.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
-        btnTitle: "Workforce",
+        btnTitle: "6Workforce",
+        price: 10.00,
         imgLink: 'src/images/step-form/listItem6.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
     },
     {
-        btnTitle: "Mine Financials",
+        btnTitle: "7Mine Financials",
+        price: 12.00,
         imgLink: 'src/images/step-form/listItem7.png',
         itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    },
+    {
+        btnTitle: "1Mine / Project Overview",
+        price: 12.00,
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "1Mine / Project Overview",
+        price: 12.00,
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "1Mine / Project Overview",
+        price: 12.00,
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "1Mine / Project Overview",
+        price: 12.00,
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "1Mine / Project Overview",
+        price: 12.00,
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "1Mine / Project Overview",
+        price: 12.00,
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+    },
+    {
+        btnTitle: "1Mine / Project Overview",
+        price: 12.00,
+        imgLink: 'src/images/step-form/listItem1.png',
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
 ];
 
