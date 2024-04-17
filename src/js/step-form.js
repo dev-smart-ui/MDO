@@ -23,6 +23,12 @@ import {
         const optionsDetails = document.getElementById('optionsDetails');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
         const selectedOptions = document.getElementById('selectedOptions');
+        const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
+        const packageChooseInfo = document.getElementById('packageChooseInfo');
+        const stepFormWrap = document.getElementById('stepFormWrap');
+        const packageChooseName = document.getElementById('packageChooseName');
+        const packageChooseTotal = document.getElementById('packageChooseTotal');
+        const prevButton = document.getElementById('prevButton');
         const nameOfChoosePackage = document.getElementById('nameOfChoosePackage');
         const globalCheckbox = document.querySelector('input[value="global"]');
         const checkboxes = document.querySelectorAll('#regionsSelect .regions-item-box input[type="checkbox"]');
@@ -30,9 +36,10 @@ import {
         const regionsSelect = document.getElementById('regionsSelect');
         const regionsItemBox = document.getElementById('regionsItemBox');
         const totalCounter = document.getElementById('totalCounter');
+        const totalCounterSecond = document.getElementById('totalCounterSecond');
         const packageSelectInfo = document.getElementById('packageSelectInfo');
         const packageSelectInfoText = document.getElementById('packageSelectInfoText');
-        const packageSelectInfoTextClose = document.getElementById('packageSelectInfoTextClose');
+        const closeBtns = document.querySelectorAll("[data-close-modal]");
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
         let formData = {};
@@ -206,6 +213,10 @@ import {
 
         //step2
 
+        prevButton.addEventListener("click", ()=>{
+            resetForm()
+        })
+
 
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
@@ -225,7 +236,10 @@ import {
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
                         nameOfChoosePackage.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
+                        packageChooseName.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
+                        totalCounterSecond.innerHTML = '0';
+                        packageChooseTotal.innerHTML = '$0';
                     }
 
 
@@ -244,7 +258,6 @@ import {
                                 } else {
                                     formData[input.id] = input.value;
                                 }
-
                             });
                         }
                     }
@@ -274,20 +287,27 @@ import {
             steps[currentStep].classList.add('active');
 
             disabledContainer.classList.add("disabled-step-form-box-right")
+
             //load research package default at start
-            optionalSelectContent.researchPackage.innerContent(dataDropdownsCustomPackage, 0);
+            createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
         }
 
         //open dropdowns
-        optionsDetails.addEventListener('click', (event) => {
-            const dropDownButton = event.target.closest('.dropdown-toggle');
-            if (dropDownButton) {
-                const dropdownBox = dropDownButton.closest('.dropdown-box');
-                if (dropdownBox) {
-                    dropdownBox.classList.toggle('drop-down-item-open');
+
+        function setupDropdownToggle(element) {
+            element.addEventListener('click', (event) => {
+                const dropDownButton = event.target.closest('.dropdown-toggle');
+                if (dropDownButton) {
+                    const dropdownBox = dropDownButton.closest('.dropdown-box');
+                    if (dropdownBox) {
+                        dropdownBox.classList.toggle('drop-down-item-open');
+                    }
                 }
-            }
-        });
+            });
+        }
+        setupDropdownToggle(optionsDetails)
+        setupDropdownToggle(selectedOptions)
+
 
         //load research package default at start
         createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
@@ -298,16 +318,32 @@ import {
             packageSelectInfoText.classList.add("package-select-info-text-toggle");
         });
 
-        packageSelectInfoTextClose.addEventListener('click', () => {
-            packageSelectInfoText.classList.remove("package-select-info-text-toggle");
-        });
 
+        closeBtns.forEach(btnClose=>{
+            btnClose.addEventListener('click', () => {
+                packageSelectInfoText.classList.remove("package-select-info-text-toggle");
+                selectedOptionsContainer.classList.remove("selected-options-container-show")
+                stepFormWrap.classList.remove("step-form-wrap-open-package")
+            });
+        })
+
+
+        packageChooseInfo.addEventListener("click", ()=>{
+            selectedOptionsContainer.classList.add("selected-options-container-show")
+            stepFormWrap.classList.add("step-form-wrap-open-package")
+        })
 
         document.addEventListener('click', (event) => {
             if (!packageSelectInfo.contains(event.target)) {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
             }
         });
+
+      /*  document.addEventListener('click', (event) => {
+            if (!packageChooseInfo.contains(event.target)) {
+                selectedOptionsContainer.classList.remove("selected-options-container-show")
+            }
+        });*/
     });
 
 })();

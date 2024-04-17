@@ -363,7 +363,7 @@
 
 
 
-<section class="step-form-wrap lg:bg-gray">
+<section class="step-form-wrap lg:bg-gray" id="stepFormWrap" >
     <div class="lg:container h-full">
         <div class="rounded-[20px] step-form-box" id="stepForm">
             <!-- step1-->
@@ -422,7 +422,7 @@
                     <div class="select-box package-select-box">
                         <div class="select-title-box mb-3 flex items-center relative">
                             <div class="package-select-info-text" id="packageSelectInfoText">
-                                <img class="absolute package-select-info-close" id="packageSelectInfoTextClose"
+                                <img class="absolute package-select-info-close" data-close-modal id="packageSelectInfoTextClose"
                                      src="./src/images/step-form/close.png" loading="lazy" alt="close"/>
                                 <h4>Select you package</h4>
                                 <span>Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!</span>
@@ -475,15 +475,24 @@
             </div>
 
             <!-- step2- -->
-            <div data-step-form class="step-form-step lg:bg-white  step-form-step-two hidden " id="step2">
+            <div data-step-form class="step-form-step lg:bg-white step-form-step-two hidden " id="step2">
                 <button id="prevButton" class="close-btn">
                     <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
                 </button>
                     <div class="step-form-step-two-left-column">
                         <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold ">Subscription</h2>
+
+                        <div class="modal-package-info items-center justify-between flex lg:hidden">
+                            <button class="package-select-info-subscribe-img absolute right-[5px] top-[5px] lg:hidden" id="packageChooseInfo">
+                                <img src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
+                            </button>
+                            <span class="modal-package-info-name font-semibold" id="packageChooseName"></span>
+                            <div class="modal-package-info-total font-semibold">Total:
+                                <span class="modal-package-info-sum font-semibold" id="packageChooseTotal"></span>
+                            </div>
+                        </div>
                         <div class="step-form-step-two-details">
                             <div class="step-form-box-left flex flex-col ">
-
                                 <div class="subscription-box-details flex flex-col ">
                                     <h4>Your details</h4>
                                     <label>
@@ -608,13 +617,21 @@
                         </div>
                     </div>
                 <div class="step-form-box-right flex flex-col ">
-                    <h3 class="name-of-choose-package" id="nameOfChoosePackage"></h3>
-                    <div class="optional-content w-full" id="selectedOptions"></div>
+                    <div class="selected-options-container hidden lg:block" id="selectedOptionsContainer">
+                        <div class="selected-options-container-inner">
+                            <button data-close-modal  class="close-btn block lg:hidden">
+                                <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
+                            </button>
+                            <h3 class="name-of-choose-package" id="nameOfChoosePackage"></h3>
+                            <div class="optional-content w-full" id="selectedOptions"></div>
+
+                            <div class="total-counter hidden lg:block">
+                                Total: $<span id="totalCounterSecond"></span>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="bottom-container">
-                        <div class="total-counter">
-                            Total: $<span id="totalCounter1"></span>
-                        </div>
                         <button data-next-btn
                                 class="flex items-center justify-center  continue-btn rounded-[12px] font-medium text-[16px] text-white">
                             Continue to billing >

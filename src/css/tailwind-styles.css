@@ -196,20 +196,24 @@
     min-height: 1061px;
     padding: clamp(32px, 5.56vw, 111px) 10px clamp(32px, 5.56vw, 111px) 24px;
 }
+.step-form-wrap.step-form-wrap-open-package{
+    padding: clamp(32px, 5.56vw, 111px) 0 clamp(32px, 5.56vw, 111px) 0
+}
+
+.step-form-wrap.step-form-wrap-open-package .step-form-step-two-left-column {
+    padding: 0 10px 0 24px;
+}
+
 
 .step-form-step-one.active,
 .step-form-step-three.active {
     display: flex;
 }
+
 .step-form-step-two.active {
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
-
-.step-form-step-one,
-.step-form-step-two {
-    padding: 24px;
-}
-
 
 .step-form-box-right .optional-content {
     height: 590px;
@@ -478,6 +482,7 @@
     font-weight: 600;
     line-height: 33px;
     margin-bottom: 10px;
+    text-align: end;
 }
 
 .step-form-box-right .bottom-container{
@@ -765,9 +770,8 @@
 }
 
 .step-form-step-two .step-form-step-two-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+   flex-direction: column;
 }
 
 .step-form-step-two  .name-of-choose-package{
@@ -777,8 +781,8 @@
     margin-bottom: 15px;
 }
 
-.step-form-step-two .subscription-box-details:first-child {
-    margin-bottom: 40px;
+.step-form-step-two .subscription-box-details {
+    margin-bottom: 20px;
 }
 
 
@@ -810,7 +814,7 @@
 }
 
 .step-form-step-two  input::placeholder{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 27px;
     color: #151515;
@@ -842,6 +846,62 @@
 
 .step-form-step-two .choices__inner .choices__list--single {
     padding: 0;
+}
+
+.step-form-step-two .subscription-payment-box-details{
+    padding-top: 10px;
+}
+
+
+.step-form-step-two .modal-package-info{
+    background: #FAFAFA;
+    padding: 15px 12px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.step-form-step-two  .modal-package-info-name{
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.step-form-step-two  .modal-package-info-total{
+    font-size: 14px;
+    line-height: 21px;
+    padding-right: 10px;
+}
+
+.step-form-step-two  .modal-package-info-sum{
+    font-size: 22px;
+    line-height: 33px;
+}
+
+.step-form-step-two .package-select-info-subscribe-img {
+    width: 16px;
+}
+
+.step-form-step-two .selected-options-container.selected-options-container-show{
+    display: block;
+    position: absolute;
+    top: -60px;
+    bottom: 0;
+    width: 100%;
+    background: #00000096;
+}
+
+.step-form-step-two .selected-options-container.selected-options-container-show .selected-options-container-inner{
+    background: #FFFFFF;
+    border-radius: 26px;
+    margin-top: 115px;
+    padding: 38px 18px 18px 18px;
+    position: relative;
+}
+
+
+.step-form-step-two .selected-options-container .close-btn{
+    top: 20px;
+    right: 20px;
 }
 
 
@@ -945,6 +1005,10 @@
     bottom: -5px;
 }
 
+.step-form-step-two .step-form-box-center{
+    padding-right: 14px;
+}
+
 
 /*step2 finish */
 
@@ -1032,7 +1096,7 @@
     }
 
     .step-form-box-right .optional-content {
-        margin-bottom: 41px;
+        margin-bottom: 10px;
     }
 
     .step-form-box-right .bottom-container{
@@ -1041,6 +1105,7 @@
 
     .step-form-box-left .additional-text-options {
         display: block;
+        max-width: 608px;
     }
 
     .regions-select-wrap, .package-select-wrap, .licences-select-wrap {
@@ -1064,8 +1129,36 @@
     }
 
     .step-form-box-right .total-counter{
-        margin-bottom: 22px;
+        margin-bottom: 10px;
     }
+
+    .step-form-step-two.active {
+        display: grid;
+    }
+
+    .step-form-step-two .step-form-step-two-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .step-form-step-two  input::placeholder{
+        font-size: 18px;
+    }
+
+    .step-form-step-two .subscription-box-details:first-child {
+        margin-bottom: 40px;
+    }
+
+    .step-form-step-two .step-form-box-center{
+        padding-right: 0;
+    }
+
+    .step-form-step-two .subscription-payment-box-details{
+        padding-top: 40px;
+    }
+
+
 }
 
 
