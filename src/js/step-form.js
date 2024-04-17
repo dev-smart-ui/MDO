@@ -23,6 +23,7 @@ import {
         const optionsDetails = document.getElementById('optionsDetails');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
         const selectedOptions = document.getElementById('selectedOptions');
+        const nameOfChoosePackage = document.getElementById('nameOfChoosePackage');
         const globalCheckbox = document.querySelector('input[value="global"]');
         const checkboxes = document.querySelectorAll('#regionsSelect .regions-item-box input[type="checkbox"]');
         const regionSelectedItems = document.getElementById('selectedItems');
@@ -186,14 +187,17 @@ import {
 
         const optionalSelectContent = {
             researchPackage: {
+                name:"Research Package",
                 innerContent: () => createDropdownsOfPackageResearch(dataDropdownsResearchPackage, researchPackageTotal),
                 additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
             },
             customPackage: {
+                name:"Custom Package",
                 innerContent: () => createDropdownsOfPackageCustom(dataDropdownsCustomPackage, customPackageTotal),
                 additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
             },
             ultimatePackage: {
+                name:"Ultimate Package",
                 innerContent: () => createDropdownsOfUltimateCustom(dataDropdownsUltimatePackage, ultimatePackageTotal),
                 additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
             },
@@ -220,6 +224,7 @@ import {
 
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
+                        nameOfChoosePackage.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
                     }
 
@@ -232,6 +237,7 @@ import {
                         } else {
                             console.log('Form on second step is valid');
                             dataSubscriptionInputs.forEach(input => {
+                                if(input.type === 'radio'&& !input.checked) return
 
                                 if(input.type === 'radio'&& input.checked){
                                     formData["paymentMethod"] = input.value;

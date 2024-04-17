@@ -6,7 +6,7 @@ function validateField(field) {
             errorDiv.style.display = 'block';
         }
         return false;
-    }else {
+    } else {
         const errorDiv = document.getElementById('error-' + field.id);
         if (errorDiv) {
             errorDiv.textContent = '';
@@ -75,6 +75,7 @@ function validateEmailInput() {
         return true;
     }
 }
+
 function validatePhone() {
     const phoneInput = document.getElementById('phone');
     const errorDiv = document.getElementById('error-phone');
@@ -97,19 +98,20 @@ function validatePhone() {
 }
 
 function validateForm() {
-    let isValid = true;
+    let isValidAllInputs = true;
 
     // Check each required field
     const requiredFields = document.querySelectorAll('[required]');
     requiredFields.forEach(field => {
-        isValid &= validateField(field);
+        isValidAllInputs &= validateField(field);
     });
 
     const isValidPayment = validateRadioButtons();
     const isCheckboxAccepted = validateCheckboxAccepted();
+    const isValidEmail = validateEmailInput();
     const isValidatePhone = validatePhone();
-    debugger
-    if (isValidPayment && isCheckboxAccepted && isValid) {
+
+    if (isValidPayment && isCheckboxAccepted && isValidEmail && isValidatePhone && isValidAllInputs) {
         return true;
     } else {
         return false;
@@ -131,7 +133,7 @@ document.querySelectorAll('[required]').forEach(field => {
     });
 });
 
-document.getElementById('phone').addEventListener('input', function() {
+document.getElementById('phone').addEventListener('input', function () {
     this.value = this.value.replace(/[^+\d]/g, '');
     this.value = this.value.replace(/(\+\d*)[^0-9].*/, '$1');
 });

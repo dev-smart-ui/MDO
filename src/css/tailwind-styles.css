@@ -193,6 +193,7 @@
 
 
 .step-form-wrap {
+    min-height: 1061px;
     padding: clamp(32px, 5.56vw, 111px) 10px clamp(32px, 5.56vw, 111px) 24px;
 }
 
@@ -203,6 +204,12 @@
 .step-form-step-two.active {
     display: grid;
 }
+
+.step-form-step-one,
+.step-form-step-two {
+    padding: 24px;
+}
+
 
 .step-form-box-right .optional-content {
     height: 590px;
@@ -749,6 +756,7 @@
 .step-form-step-two{
     grid-template-columns: 2fr 1fr;
     gap: 20px;
+    position: relative;
 }
 
 .step-form-step-two .step-form-step-two-left-column{
@@ -762,7 +770,14 @@
     gap: 20px;
 }
 
-.step-form-step-two .subscription-box-details {
+.step-form-step-two  .name-of-choose-package{
+    font-size: 24px;
+    line-height: 36px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.step-form-step-two .subscription-box-details:first-child {
     margin-bottom: 40px;
 }
 
@@ -931,8 +946,60 @@
 }
 
 
-
 /*step2 finish */
+
+/*step3 start */
+.step-form-step-three{
+    max-width: 790px;
+    height: 635px;
+    border-radius: 20px;
+    box-shadow: 13px 11px 60px 0px #0000000D;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.step-form-step-three .step-form-step-three-img-box{
+  border: 2px solid #3AAC4C;
+    width: 100px;
+    height: 100px;
+    padding: 24px;
+}
+
+.step-form-step-three h3{
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: clamp(2.25rem, 1.882rem + 1.498vw, 3.75rem);
+}
+
+.step-form-step-three span{
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 33px;
+    text-align: center;
+}
+
+.step-form-step-two .close-btn,
+.step-form-step-three .close-btn{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+}
+
+.step-form-step-three .close-btn{
+    top: 30px;
+    right: 30px;
+}
+
+.step-form-step-two .close-btn{
+    top: 15px;
+    right: 15px;
+}
+
+
+
+/*step3 finish */
 
 
 /*media steps form start*/
@@ -953,9 +1020,11 @@
         height: 60px;
     }
 
-    .step-form-box {
-        padding: clamp(32px, 2.16vw, 43px) clamp(24px, 1.75vw, 35px) clamp(16px, 2.41vw, 48px) clamp(24px, 4.01vw, 80px);
+    .step-form-step-one,
+    .step-form-step-two {
+        padding: 44px 60px 40px 90px;
     }
+
 
     .step-form-box-right .dropdown-box,
     .step-form-box-right .menu-box {
