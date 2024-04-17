@@ -148,40 +148,64 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
     });
 }
 
-function createDropdownsOfUltimateCustom(data, packageTotal) {
+function createDropdownsOfUltimate(data, packageTotal) {
     const optionsDetails = document.getElementById('optionsDetails');
     const totalCounter = document.getElementById('totalCounter');
 
     optionsDetails.innerHTML = '';
-    data.map((itemDropDown, index) => {
-        const menuBox = document.createElement("div");
-        menuBox.classList.add("menu-box");
+    let total = packageTotal;
 
-        const titleBox = document.createElement("div");
-        titleBox.classList.add("menu-title", "flex", "items-center", "flex-row-reverse", "justify-end");
+    data.map((itemDropDown, index) => {
+        const dropdownBox = document.createElement("div");
+
+        if (index === 0) dropdownBox.classList.add("dropdown-box", "default-price");
+        dropdownBox.classList.add("dropdown-box");
+
+        const toggleContainer = document.createElement("div");
+        toggleContainer.classList.add("toggle-container", "flex");
+
+        const dropdownButton = document.createElement("button");
+        dropdownButton.classList.add("dropdown-toggle", "dropdown-custom", "flex", "items-center", "flex-row-reverse", "justify-end");
+
+        const titleArrowBox = document.createElement("div");
+        titleArrowBox.classList.add("title-arrow-box");
+        const titleBox = document.createElement("span");
         titleBox.innerText = itemDropDown.btnTitle;
 
+
+        titleArrowBox.appendChild(titleBox);
         const imgBox = document.createElement("div");
-        imgBox.classList.add("menu-img-box", "flex", "justify-center", "items-center",);
+        imgBox.classList.add("dropdown-toggle-img-box", "flex", "justify-center", "items-center",);
         const imgItem = document.createElement("img");
         imgItem.setAttribute('src', itemDropDown.imgLink);
         imgBox.appendChild(imgItem);
 
 
-        titleBox.appendChild(imgBox);
-        menuBox.appendChild(titleBox);
+            const priceBox = document.createElement("span");
+            priceBox.classList.add("default-price-string");
+            priceBox.innerText = `$${itemDropDown.price}`;
+
+            dropdownButton.appendChild(priceBox);
+            toggleContainer.appendChild(dropdownButton);
+
+
+
+
+        dropdownButton.appendChild(titleArrowBox);
+        dropdownButton.appendChild(imgBox);
+        dropdownBox.appendChild(toggleContainer);
 
         const list = document.createElement("ul");
-        list.classList.add("list-menu", "list-disc");
+        list.classList.add("dropdown-menu", "list-disc");
         itemDropDown.itemsArr.map((dropDownItemInList) => {
             const listItem = document.createElement("li");
-            listItem.classList.add("list-item");
+            listItem.classList.add("dropdown-item");
             listItem.innerText = `${dropDownItemInList}`;
             list.appendChild(listItem);
         });
 
-        menuBox.appendChild(list);
-        optionsDetails.appendChild(menuBox);
+        dropdownBox.appendChild(list);
+        optionsDetails.appendChild(dropdownBox);
         totalCounter.innerText = packageTotal;
     });
 }
@@ -381,7 +405,7 @@ const dataDropdownsUltimatePackage = [
 export {
     createDropdownsOfPackageResearch,
     createDropdownsOfPackageCustom,
-    createDropdownsOfUltimateCustom,
+    createDropdownsOfUltimate,
     dataDropdownsResearchPackage,
     dataDropdownsCustomPackage,
     dataDropdownsUltimatePackage,

@@ -1,13 +1,14 @@
 import {
-    createDropdownsOfPackageResearch,
-    dataDropdownsResearchPackage,
+    createDropdownsOfPackageCustom,
+    createDropdownsOfPackageResearch, createDropdownsOfUltimate, dataDropdownsCustomPackage,
+    dataDropdownsResearchPackage, dataDropdownsUltimatePackage,
     selectedItems
 } from "./content.js";
 import {
     validateForm,
     validateCheckboxAccepted
 } from "./validationForm.js";
-import {optionalSelectContent, setupDropdownToggle} from "./helpers.js";
+import { setupDropdownToggle} from "./helpers.js";
 
 
 (() => {
@@ -187,9 +188,27 @@ import {optionalSelectContent, setupDropdownToggle} from "./helpers.js";
             additionalTextOptionsSelect.style.paddingTop = '16px';
         });
 
+        const optionalSelectContent = {
+            researchPackage: {
+                name:"Research Package",
+                innerContent: () => createDropdownsOfPackageResearch(dataDropdownsResearchPackage, researchPackageTotal),
+                additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
+            },
+            customPackage: {
+                name:"Custom Package",
+                innerContent: () => createDropdownsOfPackageCustom(dataDropdownsCustomPackage, customPackageTotal),
+                additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
+            },
+            ultimatePackage: {
+                name:"Ultimate Package",
+                innerContent: () => createDropdownsOfUltimate(dataDropdownsUltimatePackage, ultimatePackageTotal),
+                additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
+            },
+        };
 
 
         //step2
+
 
         //open dropdowns
 
