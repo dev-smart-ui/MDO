@@ -63,7 +63,7 @@ function validateEmailInput() {
 
     if (!emailInput.value.match(emailPattern)) {
         if (errorDiv) {
-            errorDiv.textContent = 'Please fill properly';
+            errorDiv.textContent = 'Please fill';
             errorDiv.style.display = 'block';
         }
         return false;

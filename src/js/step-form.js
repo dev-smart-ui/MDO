@@ -1,16 +1,13 @@
 import {
-    createDropdownsOfPackageCustom,
     createDropdownsOfPackageResearch,
-    createDropdownsOfUltimateCustom,
-    dataDropdownsCustomPackage,
     dataDropdownsResearchPackage,
-    dataDropdownsUltimatePackage,
     selectedItems
 } from "./content.js";
 import {
     validateForm,
     validateCheckboxAccepted
 } from "./validationForm.js";
+import {optionalSelectContent, setupDropdownToggle} from "./helpers.js";
 
 
 (() => {
@@ -192,31 +189,48 @@ import {
 
 
 
-        const optionalSelectContent = {
-            researchPackage: {
-                name:"Research Package",
-                innerContent: () => createDropdownsOfPackageResearch(dataDropdownsResearchPackage, researchPackageTotal),
-                additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
-            },
-            customPackage: {
-                name:"Custom Package",
-                innerContent: () => createDropdownsOfPackageCustom(dataDropdownsCustomPackage, customPackageTotal),
-                additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
-            },
-            ultimatePackage: {
-                name:"Ultimate Package",
-                innerContent: () => createDropdownsOfUltimateCustom(dataDropdownsUltimatePackage, ultimatePackageTotal),
-                additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
-            },
-        };
-
-
         //step2
+
+        //open dropdowns
+
+        setupDropdownToggle(optionsDetails)
+        setupDropdownToggle(selectedOptions)
+
+
+        //load research package default at start
+        createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
+
+        //change checkbox accepted state
+        checkboxAccepted.addEventListener("click",validateCheckboxAccepted )
+
+
+        packageSelectInfo.addEventListener('click', () => {
+            packageSelectInfoText.classList.add("package-select-info-text-toggle");
+        });
+
+        closeBtns.forEach(btnClose=>{
+            btnClose.addEventListener('click', () => {
+                packageSelectInfoText.classList.remove("package-select-info-text-toggle");
+                selectedOptionsContainer.classList.remove("selected-options-container-show")
+                stepFormWrap.classList.remove("step-form-wrap-open-package")
+            });
+        })
+
+
+        packageChooseInfo.addEventListener("click", ()=>{
+            selectedOptionsContainer.classList.add("selected-options-container-show")
+            stepFormWrap.classList.add("step-form-wrap-open-package")
+        })
+
+        document.addEventListener('click', (event) => {
+            if (!packageSelectInfo.contains(event.target)) {
+                packageSelectInfoText.classList.remove("package-select-info-text-toggle");
+            }
+        });
 
         prevButton.addEventListener("click", ()=>{
             resetForm()
         })
-
 
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
@@ -292,58 +306,6 @@ import {
             createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
         }
 
-        //open dropdowns
-
-        function setupDropdownToggle(element) {
-            element.addEventListener('click', (event) => {
-                const dropDownButton = event.target.closest('.dropdown-toggle');
-                if (dropDownButton) {
-                    const dropdownBox = dropDownButton.closest('.dropdown-box');
-                    if (dropdownBox) {
-                        dropdownBox.classList.toggle('drop-down-item-open');
-                    }
-                }
-            });
-        }
-        setupDropdownToggle(optionsDetails)
-        setupDropdownToggle(selectedOptions)
-
-
-        //load research package default at start
-        createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);
-
-        checkboxAccepted.addEventListener("click",validateCheckboxAccepted )
-
-        packageSelectInfo.addEventListener('click', () => {
-            packageSelectInfoText.classList.add("package-select-info-text-toggle");
-        });
-
-
-        closeBtns.forEach(btnClose=>{
-            btnClose.addEventListener('click', () => {
-                packageSelectInfoText.classList.remove("package-select-info-text-toggle");
-                selectedOptionsContainer.classList.remove("selected-options-container-show")
-                stepFormWrap.classList.remove("step-form-wrap-open-package")
-            });
-        })
-
-
-        packageChooseInfo.addEventListener("click", ()=>{
-            selectedOptionsContainer.classList.add("selected-options-container-show")
-            stepFormWrap.classList.add("step-form-wrap-open-package")
-        })
-
-        document.addEventListener('click', (event) => {
-            if (!packageSelectInfo.contains(event.target)) {
-                packageSelectInfoText.classList.remove("package-select-info-text-toggle");
-            }
-        });
-
-      /*  document.addEventListener('click', (event) => {
-            if (!packageChooseInfo.contains(event.target)) {
-                selectedOptionsContainer.classList.remove("selected-options-container-show")
-            }
-        });*/
     });
 
 })();

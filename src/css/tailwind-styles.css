@@ -922,7 +922,7 @@
     position: relative;
     padding: 0 6px;
     margin: 10px 0 0;
-    width: 50%;
+    width: 100%;
 }
 
 .step-form-step-two  .radio-item input[type='radio'] {
@@ -1015,7 +1015,7 @@
 /*step3 start */
 .step-form-step-three{
     max-width: 790px;
-    height: 635px;
+    height: 485px;
     border-radius: 20px;
     box-shadow: 13px 11px 60px 0px #0000000D;
     align-items: center;
@@ -1029,18 +1029,19 @@
     width: 100px;
     height: 100px;
     padding: 24px;
+    margin-bottom: 24px;
 }
 
 .step-form-step-three h3{
     text-align: center;
     margin-bottom: 24px;
-    font-size: clamp(2.25rem, 1.882rem + 1.498vw, 3.75rem);
+    font-size: clamp(32px, 3vw, 40px);
 }
 
 .step-form-step-three span{
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 33px;
+    line-height: 27px;
     text-align: center;
 }
 
@@ -1158,6 +1159,24 @@
         padding-top: 40px;
     }
 
+    .step-form-step-two .subscription-payment-box-details-box  .radio-item {
+        width: 50%;
+    }
+
+    .step-form-step-three{
+        height: 635px;
+    }
+
+
+    .step-form-step-three .step-form-step-three-img-box{
+        margin-bottom: 40px;
+    }
+
+
+    .step-form-step-three span{
+        font-size: 22px;
+        line-height: 33px;
+    }
 
 }
 
