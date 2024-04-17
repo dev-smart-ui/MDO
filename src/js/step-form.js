@@ -42,8 +42,8 @@ import {optionalSelectContent, setupDropdownToggle} from "./helpers.js";
         let formData = {};
         const mainRegionSelectValue = "Global";
         let regionsIng = [];
-        let researchPackageTotal = 5600;
-        let ultimatePackageTotal = 5600;
+        let researchPackageTotal = 100;
+        let ultimatePackageTotal = 100;
         let customPackageTotal = 2000;
         let currentPackageInnerHtmRight = '';
 
