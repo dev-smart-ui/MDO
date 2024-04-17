@@ -204,6 +204,9 @@
     padding: 0 10px 0 24px;
 }
 
+.step-form-step{
+    border-radius: 20px;
+}
 
 .step-form-step-one.active,
 .step-form-step-three.active {
