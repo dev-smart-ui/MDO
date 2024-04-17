@@ -19,6 +19,7 @@ import {
         let currentStep = 0;
         const steps = document.querySelectorAll('[data-step-form]');
         const nextButtons = document.querySelectorAll('[data-next-btn]');
+        const dataSubscriptionInputs = document.querySelectorAll('[data-subscription-input]');
         const optionsDetails = document.getElementById('optionsDetails');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
         const selectedOptions = document.getElementById('selectedOptions');
@@ -206,7 +207,6 @@ import {
             btn.addEventListener('click', () => {
                 if (index < steps.length - 1) {
                     if (currentStep === 0) {
-
                         formData = {
                             selectedRegions: regionsIng,
                             selectedPackageOption: optionsPackageSelect.getValue(true),
@@ -225,12 +225,21 @@ import {
 
 
                     if (currentStep === 1) {
-                        if (!validateForm()) {
+                        const isValidForm=validateForm();
+                        if (!isValidForm) {
                             console.log('Form on second step is not valid');
                             return;
                         } else {
                             console.log('Form on second step is valid');
+                            dataSubscriptionInputs.forEach(input => {
 
+                                if(input.type === 'radio'&& input.checked){
+                                    formData["paymentMethod"] = input.value;
+                                } else {
+                                    formData[input.id] = input.value;
+                                }
+
+                            });
                         }
                     }
 

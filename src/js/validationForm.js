@@ -1,5 +1,4 @@
 function validateField(field) {
-
     if (!field.value.trim()) {
         const errorDiv = document.getElementById('error-' + field.id);
         if (errorDiv) {
@@ -7,9 +6,7 @@ function validateField(field) {
             errorDiv.style.display = 'block';
         }
         return false;
-    } else if (field.id==="email"){
-        validateEmailInput()
-    } else {
+    }else {
         const errorDiv = document.getElementById('error-' + field.id);
         if (errorDiv) {
             errorDiv.textContent = '';
@@ -78,7 +75,26 @@ function validateEmailInput() {
         return true;
     }
 }
-
+function validatePhone() {
+    const phoneInput = document.getElementById('phone');
+    const errorDiv = document.getElementById('error-phone');
+    const regex = /^\d+$/;
+    if (phoneInput.value.trim() === '' || !regex.test(phoneInput.value)) {
+        phoneInput.value = phoneInput.value.replace(/[^+\d]/g, '');
+        phoneInput.value = phoneInput.value.replace(/(\+\d*)[^0-9].*/, '$1');
+        if (errorDiv) {
+            errorDiv.textContent = 'Please fill';
+            errorDiv.style.display = 'block';
+        }
+        return false;
+    } else {
+        if (errorDiv) {
+            errorDiv.textContent = '';
+            errorDiv.style.display = 'none';
+        }
+        return true;
+    }
+}
 
 function validateForm() {
     let isValid = true;
@@ -91,21 +107,16 @@ function validateForm() {
 
     const isValidPayment = validateRadioButtons();
     const isCheckboxAccepted = validateCheckboxAccepted();
-
-
-    return !(!isValidPayment && !isCheckboxAccepted);
+    const isValidatePhone = validatePhone();
+    debugger
+    if (isValidPayment && isCheckboxAccepted && isValid) {
+        return true;
+    } else {
+        return false;
+    }
 
 }
 
-//number input validation
-window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('phone').addEventListener('input', function (e) {
-        const regex = /^[+0-9\s-]*$/;
-        if (!regex.test(this.value)) {
-            this.value = this.value.replace(/[^+0-9\s-]/g, '');
-        }
-    });
-});
 
 //update radio buttons error state
 document.querySelectorAll('[data-radio-item]').forEach(item => {
@@ -118,6 +129,11 @@ document.querySelectorAll('[required]').forEach(field => {
     field.addEventListener('input', () => {
         validateField(field);
     });
+});
+
+document.getElementById('phone').addEventListener('input', function() {
+    this.value = this.value.replace(/[^+\d]/g, '');
+    this.value = this.value.replace(/(\+\d*)[^0-9].*/, '$1');
 });
 
 export {validateField, validateForm, validateCheckboxAccepted};
