@@ -521,11 +521,13 @@
     pointer-events: none;
 }
 
+.licences-select-wrap .regions-item-label.choose ,
 .regions-select-wrap .regions-item-label.choose {
     font-weight: 600;
 }
 
 
+.licences-select-wrap .select-choices-inner ,
 .regions-select-wrap .select-choices-inner {
     border: 1px solid #CFCFCF;
     width: 100%;
@@ -539,6 +541,7 @@
     position: relative;
 }
 
+.licences-select-wrap .select-choices-inner:after ,
 .regions-select-wrap .select-choices-inner:after {
     content: '';
     position: absolute;
@@ -548,6 +551,7 @@
 }
 
 
+.licences-select-wrap .select-choices-inner.open,
 .regions-select-wrap .select-choices-inner.open {
     border: 1px solid #02A1D3
 }
@@ -716,6 +720,7 @@
   padding: 6px;
 }
 
+.licences-select-box .choices:after,
 .package-select-box .choices:after{
   border: 6px solid transparent;
   border-top: 6px solid #74879B;
@@ -724,17 +729,21 @@
 }
 
 
+.licences-select-box .choices.is-open:after,
 .package-select-box .choices.is-open:after{
   border: 6px solid transparent;
   border-top: 6px solid #74879B;
   margin-top: 0;
 }
+.licences-select-box  .choices__list.choices__list--dropdown .choices__list{
+height: 120px
+}
 
+.licences-select-box  .choices__list.choices__list--dropdown,
 .package-select-box  .choices__list.choices__list--dropdown{
   width: 100%;
   visibility: hidden;
   opacity: 0;
-  max-height: 0;
   overflow: hidden;
   position: absolute;
   transition: opacity 0.3s, max-height 0.5s ease-out, visibility 0.3s;
@@ -747,23 +756,28 @@
   left: 0;
   border: none;
   margin-top: 0;
+
 }
 
+.licences-select-box .choices__list.choices__list--dropdown.is-active,
 .package-select-box .choices__list.choices__list--dropdown.is-active {
-  visibility: visible !important;
-  opacity: 1 !important;
-  max-height: 500px !important;
-  transition: opacity 0.3s, max-height 0.5s ease-in;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: opacity 0.3s, max-height 0.5s ease-in;
+    max-height: 150px;
 }
 
+
+.licences-select-box .choices__item,
 .package-select-box .choices__item {
-  border-radius: 8px;
-  padding: 6px !important;
-  transition: .3s ease-in-out;
+    border-radius: 8px;
+    padding: 6px !important;
+    transition: .3s ease-in-out;
 }
 
+.licences-select-box .choices__item.is-highlighted,
 .package-select-box .choices__item.is-highlighted {
-  background: #D9D9D9 !important;
+    background: #D9D9D9 !important;
 }
 
 /*option select styles finish*/

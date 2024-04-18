@@ -49,16 +49,20 @@ export const newSumOfPackage = {
     //step1
     document.addEventListener('DOMContentLoaded', () => {
         //create licenses select
+        const choicesArray = [];
+        for (let i = 1; i <= 99; i++) {
+            choicesArray.push({
+                value: `${i}`,
+                label: `${i}`
+            });
+        }
+
         const licencesSelect = new Choices('#licencesSelect', {
             searchEnabled: false,
             itemSelectText: '',
             shouldSort: false,
             position: 'bottom',
-            choices: [
-                {value: '1', label: '1'},
-                {value: '2', label: '2'},
-                {value: '3', label: '3'}
-            ],
+            choices: choicesArray,
         });
         //create option select
         const optionsPackageSelect = new Choices('#optionsSelect', {
