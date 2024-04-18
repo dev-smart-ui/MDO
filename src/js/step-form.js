@@ -8,8 +8,42 @@ import {
     selectedItems
 } from "./content.js";
 import {validateCheckboxAccepted, validateForm} from "./validationForm.js";
-import {setupDropdownToggle} from "./helpers.js";
-import {SpinnerPicker} from "./spinner_picker.js";
+import {calculateTotal, setupDropdownToggle} from "./helpers.js";
+
+export const optionalSelectContent = {
+    researchPackage: {
+        name: "Research Package",
+        additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
+    },
+    customPackage: {
+        name: "Custom Package",
+        additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
+    },
+    ultimatePackage: {
+        name: "Ultimate Package",
+        additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
+    },
+};
+
+
+export const basePriceValues = {
+    researchPackage: 1000,
+    customPackage: 2000,
+    ultimatePackage: 1000,
+};
+
+export let isGlobalSelected = false;
+export let regionsIngLength = 0;
+export const mainRegionSelectValue = "Global";
+export const maxRegionsValues = 5;
+export const basePercent = 10;
+
+export const newSumOfPackage = {
+    researchPackage: 1000,
+    customPackage: 2000,
+    ultimatePackage: 1000,
+};
+
 
 
 (() => {
@@ -40,32 +74,32 @@ import {SpinnerPicker} from "./spinner_picker.js";
             ],
         });
 
-     /*   new SpinnerPicker(
-            document.getElementById("licenceSelectMain"),
-            function(index) {
-                if(index < 0 || index > 99) {
-                    return null;
-                }
-                return index + 1;
-            },
-            {
-                index: 0,
-                animation_speed: 10,
-                animation_steps: 5,
-                font_color: "#000000",
-                selection_color: "#000000",
-                font: "Arial",
-                onclick: true,
-                ondblclick: true,
-                onkeydown: true,
-                onwheel: true,
-                ontouchmove: true,
-                onresize: true
-            },
-            function(index) {
-                console.log(`You are ${this.getValue()} years old.`);
-            }
-        );*/
+        /*   new SpinnerPicker(
+               document.getElementById("licenceSelectMain"),
+               function(index) {
+                   if(index < 0 || index > 99) {
+                       return null;
+                   }
+                   return index + 1;
+               },
+               {
+                   index: 0,
+                   animation_speed: 10,
+                   animation_steps: 5,
+                   font_color: "#000000",
+                   selection_color: "#000000",
+                   font: "Arial",
+                   onclick: true,
+                   ondblclick: true,
+                   onkeydown: true,
+                   onwheel: true,
+                   ontouchmove: true,
+                   onresize: true
+               },
+               function(index) {
+                   console.log(`You are ${this.getValue()} years old.`);
+               }
+           );*/
 
         let currentStep = 0;
         const steps = document.querySelectorAll('[data-step-form]');
@@ -87,7 +121,6 @@ import {SpinnerPicker} from "./spinner_picker.js";
         const regionSelectedItems = document.getElementById('selectedItems');
         const regionsSelect = document.getElementById('regionsSelect');
         const regionsItemBox = document.getElementById('regionsItemBox');
-        const totalCounter = document.getElementById('totalCounter');
         const totalCounterSecond = document.getElementById('totalCounterSecond');
         const packageSelectInfo = document.getElementById('packageSelectInfo');
         const packageSelectInfoText = document.getElementById('packageSelectInfoText');
@@ -95,41 +128,13 @@ import {SpinnerPicker} from "./spinner_picker.js";
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
         let formData = {};
-        const mainRegionSelectValue = "Global";
-        const maxRegionsValues = 5;
+
         let regionsIng = [];
         let currentPackageInnerHtmRight = '';
-        const basePercent = 10;
 
-        const basePriceValues = {
-            researchPackage: 1000,
-            customPackage: 2000,
-            ultimatePackage: 1000,
-        };
 
-        const newSumOfPackage = {
-            researchPackage: 1000,
-            customPackage: 2000,
-            ultimatePackage: 1000,
-        };
 
-        const optionalSelectContent = {
-            researchPackage: {
-                name: "Research Package",
-                innerContent: () => createDropdownsOfPackageResearch(dataDropdownsResearchPackage, newSumOfPackage.researchPackage),
-                additionalTextBottom: "Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!",
-            },
-            customPackage: {
-                name: "Custom Package",
-                innerContent: () => createDropdownsOfPackageCustom(dataDropdownsCustomPackage, newSumOfPackage.customPackage),
-                additionalTextBottom: "Ideal for business development, specialized research or when your budget is limited! Includes all Research Package data points plus your selection of optional data modules.",
-            },
-            ultimatePackage: {
-                name: "Ultimate Package",
-                innerContent: () => createDropdownsOfUltimate(dataDropdownsUltimatePackage, newSumOfPackage.ultimatePackage),
-                additionalTextBottom: "Comprehensive mining intelligence! Best suitable for large corporations, consulting firms and institutional investors. Includes all Research Package data points and all optional data modules.",
-            },
-        };
+
 
 
         //region custom select code start
@@ -149,6 +154,12 @@ import {SpinnerPicker} from "./spinner_picker.js";
             }
         });
 
+        function updateGlobalSelection() {
+            isGlobalSelected = regionsIng.includes(mainRegionSelectValue);
+            regionsIngLength = regionsIng.length;
+        }
+
+
         //update regions select when choose value
         function updateItemsDisplay() {
             regionsIng = [];
@@ -156,6 +167,7 @@ import {SpinnerPicker} from "./spinner_picker.js";
             if (globalCheckbox.checked) {
                 regionSelectedItems.textContent = mainRegionSelectValue;
                 regionsIng.push(mainRegionSelectValue);
+
                 console.log("updateItemsDisplay", regionsIng.length);
                 return mainRegionSelectValue;
             } else {
@@ -202,7 +214,11 @@ import {SpinnerPicker} from "./spinner_picker.js";
                 }
             }
             updateItemsDisplay();
-            calculateTotal();
+            updateGlobalSelection();
+            calculateTotal(
+                optionsPackageSelect.getValue().value,
+                licencesSelect.getValue()?.value,
+            );
         }
 
 
@@ -242,66 +258,42 @@ import {SpinnerPicker} from "./spinner_picker.js";
         // change event for option select
         optionsPackageSelect.passedElement.element.addEventListener('change', (event) => {
             const value = event.detail.value;
-            calculateTotal();
+            calculateTotal(
+                optionsPackageSelect.getValue().value,
+                licencesSelect.getValue()?.value,
+            );
             if (document.querySelector(".disabled-step-form-box-right")) {
                 document.querySelector(".disabled-step-form-box-right").classList.remove("disabled-step-form-box-right");
             }
 
-            optionalSelectContent[value].innerContent();
+            if(optionsPackageSelect.getValue().value==="researchPackage"){
+                createDropdownsOfPackageResearch(dataDropdownsResearchPackage, newSumOfPackage.researchPackage)
+            }
+
+            if(optionsPackageSelect.getValue().value==="customPackage"){
+                createDropdownsOfPackageCustom(
+                    dataDropdownsCustomPackage,
+                    optionsPackageSelect.getValue().value,
+                    licencesSelect.getValue()?.value,
+
+                )
+            }
+
+            if( optionsPackageSelect.getValue().value==="ultimatePackage"){
+                createDropdownsOfUltimate(dataDropdownsUltimatePackage, newSumOfPackage.ultimatePackage)
+            }
+
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
         });
 
         // change event for licenses select
-        licencesSelect.passedElement.element.addEventListener('change', calculateTotal);
-
-       /* function calculateTotal() {
-            let total = 0;
-
-            const basePrice = basePriceValues[optionsPackageSelect.getValue().value];
-            const isPackageSelect = optionsPackageSelect.getValue().value;
-
-            const isGlobalSelected = regionsIng.includes("Global");
-            const selectedRegionCount = isGlobalSelected ? maxRegionsValues : regionsIng.length;
-            const additionalRegionCost = selectedRegionCount * basePercent / 100 * basePrice;
-
-
-            const licensesCount = parseInt(licencesSelect.getValue()?.value);
-            const additionalLicenseCost = licensesCount * basePercent / 100 * basePrice;
-
-            total = basePrice + additionalRegionCost + additionalLicenseCost;
-            newSumOfPackage[optionsPackageSelect.getValue().value] = total;
-
-            if (isPackageSelect) {
-                document.getElementById("totalCounter").innerText = total;
-                document.getElementById("totalCounterSecond").innerText = total;
-            }
-
-        }*/
-
-
-        function calculateRegionCost() {
-            const isGlobalSelected = regionsIng.includes(mainRegionSelectValue);
-            const selectedRegionCount = isGlobalSelected ? maxRegionsValues : regionsIng.length;
-            return selectedRegionCount * basePercent / 100 * basePriceValues[optionsPackageSelect.getValue().value];
-        }
-
-
-        function calculateLicenseCost() {
-            const licensesCount = parseInt(licencesSelect.getValue()?.value);
-            return licensesCount * basePercent / 100 * basePriceValues[optionsPackageSelect.getValue().value];
-        }
-
-
-        function calculateTotal() {
-            const basePrice = basePriceValues[optionsPackageSelect.getValue().value];
-            const additionalRegionCost = calculateRegionCost();
-            const additionalLicenseCost = calculateLicenseCost();
-            const total = basePrice + additionalRegionCost + additionalLicenseCost;
-            newSumOfPackage[optionsPackageSelect.getValue().value] = total;
-            totalCounter.innerText = `${total}`;
-            totalCounterSecond.innerText = `${total}`;
-        }
+        licencesSelect.passedElement.element.addEventListener('change', () => {
+            calculateTotal(
+                optionsPackageSelect.getValue().value,
+                licencesSelect.getValue()?.value,
+            );
+        });
 
 
         //step2
@@ -347,17 +339,11 @@ import {SpinnerPicker} from "./spinner_picker.js";
             resetForm();
         });
 
-        function setActiveStep(newIndex) {
-            steps[currentStep].classList.remove('active');
-            currentStep = newIndex;
-            steps[currentStep].classList.add('active');
-        }
 
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
                 if (index < steps.length - 1) {
                     if (currentStep === 0) {
-                        setActiveStep(index + 1)
                         formData = {
                             selectedRegions: regionsIng,
                             selectedPackageOption: optionsPackageSelect.getValue(true),
@@ -418,11 +404,11 @@ import {SpinnerPicker} from "./spinner_picker.js";
             regionsIng = [];
 
             checkboxes.forEach(checkbox => {
-                if(checkbox.value===mainRegionSelectValue.toLowerCase()){
+                if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
                     checkbox.checked = true;
                     checkbox.parentNode.classList.add('choose');
-                    updateItemsDisplay()
-                    handleCheckboxChange()
+                    updateItemsDisplay();
+                    handleCheckboxChange();
                 } else {
                     checkbox.checked = false;
                     checkbox.parentNode.classList.remove('choose');

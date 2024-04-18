@@ -456,6 +456,10 @@
     position: relative;
 }
 
+#selectedOptions .check-box-label{
+    pointer-events: none;
+}
+
 .step-form-step-one .step-form-box-right .check-box-label{
     cursor: pointer;
 }

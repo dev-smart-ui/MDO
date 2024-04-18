@@ -1,3 +1,5 @@
+import {calculateTotal} from "./helpers.js";
+let selectedItems = {};
 function createDropdownsOfPackageResearch(data, packageTotal) {
     const optionsDetails = document.getElementById('optionsDetails');
     const totalCounter = document.getElementById('totalCounter');
@@ -43,14 +45,11 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
     });
 }
 
-let selectedItems = {};
-
-function createDropdownsOfPackageCustom(data, packageTotal) {
+function createDropdownsOfPackageCustom( data, currentPackageSelect, licensesValue,) {
     const optionsDetails = document.getElementById('optionsDetails');
-    const totalCounter = document.getElementById('totalCounter');
 
     optionsDetails.innerHTML = '';
-    let total = packageTotal;
+
 
     data.map((itemDropDown, index) => {
         const dropdownBox = document.createElement("div");
@@ -103,14 +102,15 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
                         price: itemDropDown.price
                     };
 
-                    total += itemDropDown.price;
+                    calculateTotal(currentPackageSelect,  licensesValue,)
                     checkBox.classList.add("checked-custom-value");
                 } else {
-                    total -= itemDropDown.price;
+                    delete selectedItems[index];
+
+                    calculateTotal(currentPackageSelect,  licensesValue)
                     checkBox.classList.remove("checked-custom-value");
                 }
 
-                totalCounter.innerText = `${total}`;
             });
 
 
@@ -144,7 +144,6 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
 
         dropdownBox.appendChild(list);
         optionsDetails.appendChild(dropdownBox);
-        totalCounter.innerText = packageTotal;
     });
 }
 

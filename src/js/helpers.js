@@ -1,3 +1,12 @@
+import {selectedItems} from "./content.js";
+import {
+    basePercent,
+    basePriceValues,
+    isGlobalSelected,
+    maxRegionsValues,
+    newSumOfPackage,
+    regionsIngLength
+} from "./step-form.js";
 
 function setupDropdownToggle(element) {
     element.addEventListener('click', (event) => {
@@ -11,5 +20,32 @@ function setupDropdownToggle(element) {
     });
 }
 
+ function calculateTotal(currentPackageSelect, licensesValue) {
+    let total = 0;
 
-export {setupDropdownToggle}
+    if (currentPackageSelect) {
+        const basePrice = basePriceValues[currentPackageSelect];
+
+        total+=basePrice;
+        Object.keys(selectedItems).forEach(key => {
+            total += selectedItems[key].price;
+        });
+
+        const selectedRegionCount = isGlobalSelected ? maxRegionsValues : regionsIngLength;
+        const additionalRegionCost = selectedRegionCount * basePercent / 100 * basePrice;
+        total += additionalRegionCost;
+        const licensesCount = parseInt(licensesValue);
+        const additionalLicenseCost = licensesCount * basePercent / 100 * basePrice;
+
+        total += additionalLicenseCost;
+
+        newSumOfPackage[currentPackageSelect] = total;
+
+        document.getElementById("totalCounter").innerText = total;
+        document.getElementById("totalCounterSecond").innerText = total;
+    }
+
+}
+
+
+export {setupDropdownToggle, calculateTotal}
