@@ -126,7 +126,6 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
 
             dropdownButton.appendChild(priceBox);
             toggleContainer.appendChild(dropdownButton);
-
         }
 
 

@@ -1087,7 +1087,7 @@
 /*media steps form start*/
 
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
     .step-form-box-left  {
         padding-right: 20px;
     }

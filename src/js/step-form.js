@@ -255,7 +255,7 @@ import {SpinnerPicker} from "./spinner_picker.js";
         // change event for licenses select
         licencesSelect.passedElement.element.addEventListener('change', calculateTotal);
 
-        function calculateTotal() {
+       /* function calculateTotal() {
             let total = 0;
 
             const basePrice = basePriceValues[optionsPackageSelect.getValue().value];
@@ -277,6 +277,30 @@ import {SpinnerPicker} from "./spinner_picker.js";
                 document.getElementById("totalCounterSecond").innerText = total;
             }
 
+        }*/
+
+
+        function calculateRegionCost() {
+            const isGlobalSelected = regionsIng.includes(mainRegionSelectValue);
+            const selectedRegionCount = isGlobalSelected ? maxRegionsValues : regionsIng.length;
+            return selectedRegionCount * basePercent / 100 * basePriceValues[optionsPackageSelect.getValue().value];
+        }
+
+
+        function calculateLicenseCost() {
+            const licensesCount = parseInt(licencesSelect.getValue()?.value);
+            return licensesCount * basePercent / 100 * basePriceValues[optionsPackageSelect.getValue().value];
+        }
+
+
+        function calculateTotal() {
+            const basePrice = basePriceValues[optionsPackageSelect.getValue().value];
+            const additionalRegionCost = calculateRegionCost();
+            const additionalLicenseCost = calculateLicenseCost();
+            const total = basePrice + additionalRegionCost + additionalLicenseCost;
+            newSumOfPackage[optionsPackageSelect.getValue().value] = total;
+            totalCounter.innerText = `${total}`;
+            totalCounterSecond.innerText = `${total}`;
         }
 
 
