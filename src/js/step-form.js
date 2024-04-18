@@ -26,11 +26,10 @@ export const optionalSelectContent = {
 };
 
 
-export const basePriceValues = {
-    researchPackage: 1000,
-    customPackage: 2000,
-    ultimatePackage: 1000,
-};
+const ultimatePackageTotal = dataDropdownsUltimatePackage.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.price,
+    0,
+);
 
 export let isGlobalSelected = false;
 export let regionsIngLength = 0;
@@ -38,10 +37,15 @@ export const mainRegionSelectValue = "Global";
 export const maxRegionsValues = 5;
 export const basePercent = 10;
 
+export const basePriceValues = {
+    researchPackage: 1000,
+    customPackage: 2000,
+    ultimatePackage: ultimatePackageTotal,
+};
 export const newSumOfPackage = {
     researchPackage: 1000,
     customPackage: 2000,
-    ultimatePackage: 1000,
+    ultimatePackage: ultimatePackageTotal,
 };
 
 
@@ -64,6 +68,7 @@ export const newSumOfPackage = {
             position: 'bottom',
             choices: choicesArray,
         });
+
         //create option select
         const optionsPackageSelect = new Choices('#optionsSelect', {
             searchEnabled: false,
