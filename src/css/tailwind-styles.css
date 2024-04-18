@@ -757,6 +757,22 @@
 
 /*option select styles finish*/
 
+/*license select styles start*/
+
+.step-form-step-one .custom-licences-select-box{
+    position: relative;
+    width: 50px;
+    height: 100px;
+}
+
+.step-form-step-one .custom-licences-select-box canvas{
+   width: 100%;
+    position: absolute;
+}
+
+
+/*license select styles finish*/
+
 /*step2 start */
 
 .step-form-step-two{

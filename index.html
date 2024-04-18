@@ -30,9 +30,9 @@
     <link rel="stylesheet" href="./src/css/style.css">
 
 </head>
-<body class="bg-white font-primary font-normal ">
+<body class="bg-white font-primary font-normal overflow-hidden ">
 
-<div class=" swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden" id="page-slider">
+<div class="h-dvh swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden" id="page-slider">
     <div class="snap-y snap-mandatory overflow-x-hidden overflow-y-scroll h-full">
         <header class="sticky top-0 w-full z-10 bg-[#0c0c11] h-[56px]">
             <img src="./src/images/Menu-mobile.png" alt="" class="w-full h-full lg:hidden mx-auto max-w-[393px]">
@@ -358,312 +358,326 @@
             <div class="comprehensive-coverage-pagination flex items-center gap-[14px] justify-center mx-auto"></div>
         </div>
 
-    </div>
-</div>
+
+        <section class="swiper-slide snap-start step-form-wrap lg:bg-gray" id="stepFormWrap" >
+            <div class="lg:container h-full">
+                <div class="rounded-[20px] step-form-box" id="stepForm">
+                    <!-- step1-->
+                    <div data-step-form class="step-form-step lg:bg-white  step-form-step-one flex  active  flex-col lg:flex-row  hidden" id="step1">
+                        <div class="step-form-box-left lg:w-2/4">
+                            <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold">Packages and<br> Modules</h2>
+                            <div class="select-box regions-select-box">
+                                <div class="select-title-box mb-3 flex items-center">
+                                    <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy"
+                                         alt="Select your region"/>
+                                    <span class="font-semibold text-[14px] lg:text-[22px]">1. Select your region(s):</span>
+                                </div>
+
+                                <div id="regionsSelect" class="regions-select-wrap">
+                                    <div class="select-choices-inner" id="selectedItems">Global</div>
+                                    <div class="regions-item-box" id="regionsItemBox">
+                                        <label class="regions-item-label hover:font-semibold ease-in">
+                                            <input type="checkbox" value="global" checked>
+                                            <span class="checkmark"></span>
+                                            Global
+                                        </label>
+                                        <label class="regions-item-label hover:font-semibold ease-in">
+                                            <input type="checkbox" value="Oceania">
+                                            <span class="checkmark"></span>
+                                            Oceania
+                                        </label>
+                                        <label class="regions-item-label hover:font-semibold ease-in">
+                                            <input type="checkbox" value="USA">
+                                            <span class="checkmark"></span>
+                                            USA
+                                        </label>
+                                        <label class="regions-item-label hover:font-semibold ease-in">
+                                            <input type="checkbox" value="Canada">
+                                            <span class="checkmark"></span>
+                                            Canada
+                                        </label>
+                                        <label class="regions-item-label hover:font-semibold ease-in">
+                                            <input type="checkbox" value="LatinAmerica">
+                                            <span class="checkmark"></span>
+                                            Latin America
+                                        </label>
+                                        <label class="regions-item-label hover:font-semibold ease-in">
+                                            <input type="checkbox" value="Africa">
+                                            <span class="checkmark"></span>
+                                            Africa
+                                        </label>
+                                        <label class="regions-item-label hover:font-semibold ease-in">
+                                            <input type="checkbox" value="Europe+Asia">
+                                            <span class="checkmark"></span>
+                                            Europe + Asia
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="select-box package-select-box">
+                                <div class="select-title-box mb-3 flex items-center relative">
+                                    <div class="package-select-info-text" id="packageSelectInfoText">
+                                        <img class="absolute package-select-info-close" data-close-modal id="packageSelectInfoTextClose"
+                                             src="./src/images/step-form/close.png" loading="lazy" alt="close"/>
+                                        <h4>Select you package</h4>
+                                        <span>Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!</span>
+                                    </div>
+                                    <button class="package-select-info-img absolute right-0 lg:hidden" id="packageSelectInfo">
+                                        <img src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
+                                    </button>
+                                    <img class="mr-2" src="./src/images/step-form/step2.png" loading="lazy"
+                                         alt="Select you package"/>
+                                    <span class="font-semibold  text-[14px] lg:text-[22px]">2. Select you package:</span>
+                                </div>
+
+                                <div class="package-select-wrap">
+                                    <select id="optionsSelect">
+                                        <option value="" class="hidden" disabled selected>Choose package</option>
+                                    </select>
+                                </div>
+
+                                <div class="text-[12px] additional-text-options" id="additionalTextOptionsSelect">
+
+                                </div>
+                            </div>
+
+                            <div class="select-box licences-select-box">
+                                <div class="select-title-box mb-3 flex items-center">
+                                    <img class="mr-2" src="./src/images/step-form/step3.png" loading="lazy"
+                                         alt="Select you package"/>
+                                    <span class="font-semibold  text-[14px] lg:text-[22px]">3. Select the number of licences:</span>
+                                </div>
+
+                                <!--       <div class="licences-select-wrap">
+                                          <div class="custom-licences-select-box">
+                                              <canvas id="licenceSelectMain"></canvas>
+                                          </div>
+
+                                      </div> -->
 
 
-
-<section class="step-form-wrap lg:bg-gray" id="stepFormWrap" >
-    <div class="lg:container h-full">
-        <div class="rounded-[20px] step-form-box" id="stepForm">
-            <!-- step1-->
-            <div data-step-form class="step-form-step lg:bg-white  step-form-step-one flex  active  flex-col lg:flex-row  hidden" id="step1">
-                <div class="step-form-box-left lg:w-2/4">
-                    <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold">Packages and<br> Modules</h2>
-                    <div class="select-box regions-select-box">
-                        <div class="select-title-box mb-3 flex items-center">
-                            <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy"
-                                 alt="Select your region"/>
-                            <span class="font-semibold text-[14px] lg:text-[22px]">1. Select your region(s):</span>
-                        </div>
-
-                        <div id="regionsSelect" class="regions-select-wrap">
-                            <div class="select-choices-inner" id="selectedItems">Global</div>
-                            <div class="regions-item-box" id="regionsItemBox">
-                                <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="global" checked>
-                                    <span class="checkmark"></span>
-                                    Global
-                                </label>
-                                <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="Oceania">
-                                    <span class="checkmark"></span>
-                                    Oceania
-                                </label>
-                                <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="USA">
-                                    <span class="checkmark"></span>
-                                    USA
-                                </label>
-                                <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="Canada">
-                                    <span class="checkmark"></span>
-                                    Canada
-                                </label>
-                                <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="LatinAmerica">
-                                    <span class="checkmark"></span>
-                                    Latin America
-                                </label>
-                                <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="Africa">
-                                    <span class="checkmark"></span>
-                                    Africa
-                                </label>
-                                <label class="regions-item-label hover:font-semibold ease-in">
-                                    <input type="checkbox" value="Europe+Asia">
-                                    <span class="checkmark"></span>
-                                    Europe + Asia
-                                </label>
+                                <div class="licences-select-wrap">
+                                    <select id="licencesSelect"></select>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="step-form-box-right disabled-step-form-box-right flex flex-col items-end lg:w-2/4"
+                             id="disabledContainer">
+                            <div class="optional-content w-full" id="optionsDetails"></div>
 
-                    <div class="select-box package-select-box">
-                        <div class="select-title-box mb-3 flex items-center relative">
-                            <div class="package-select-info-text" id="packageSelectInfoText">
-                                <img class="absolute package-select-info-close" data-close-modal id="packageSelectInfoTextClose"
-                                     src="./src/images/step-form/close.png" loading="lazy" alt="close"/>
-                                <h4>Select you package</h4>
-                                <span>Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!</span>
+                            <div class="bottom-container">
+                                <div class="total-counter">
+                                    Total: $<span id="totalCounter"></span>
+                                </div>
+                                <button data-next-btn
+                                        class="continue-btn flex items-center justify-center rounded-[12px] font-medium text-[16px] text-white">
+                                    Continue to billing >
+                                </button>
                             </div>
-                            <button class="package-select-info-img absolute right-0 lg:hidden" id="packageSelectInfo">
-                                <img src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
-                            </button>
-                            <img class="mr-2" src="./src/images/step-form/step2.png" loading="lazy"
-                                 alt="Select you package"/>
-                            <span class="font-semibold  text-[14px] lg:text-[22px]">2. Select you package:</span>
-                        </div>
-
-                        <div class="package-select-wrap">
-                            <select id="optionsSelect">
-                                <option value="" class="hidden" disabled selected>Choose package</option>
-                            </select>
-                        </div>
-
-                        <div class="text-[12px] additional-text-options" id="additionalTextOptionsSelect">
 
                         </div>
                     </div>
 
-                    <div class="select-box licences-select-box">
-                        <div class="select-title-box mb-3 flex items-center">
-                            <img class="mr-2" src="./src/images/step-form/step3.png" loading="lazy"
-                                 alt="Select you package"/>
-                            <span class="font-semibold  text-[14px] lg:text-[22px]">3. Select the number of licences:</span>
-                        </div>
-
-                        <div class="licences-select-wrap">
-                            <select id="licencesSelect"></select>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-form-box-right disabled-step-form-box-right flex flex-col items-end lg:w-2/4" id="disabledContainer">
-                    <div class="optional-content w-full" id="optionsDetails"></div>
-
-                    <div class="bottom-container">
-                        <div class="total-counter">
-                            Total: $<span id="totalCounter"></span>
-                        </div>
-                        <button data-next-btn
-                                class="continue-btn flex items-center justify-center rounded-[12px] font-medium text-[16px] text-white">
-                            Continue to billing >
+                    <!-- step2- -->
+                    <div data-step-form class="step-form-step lg:bg-white step-form-step-two hidden " id="step2">
+                        <button id="prevButton" class="close-btn">
+                            <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
                         </button>
-                    </div>
+                        <div class="step-form-step-two-left-column">
+                            <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold ">Subscription</h2>
 
-                </div>
-            </div>
-
-            <!-- step2- -->
-            <div data-step-form class="step-form-step lg:bg-white step-form-step-two hidden " id="step2">
-                <button id="prevButton" class="close-btn">
-                    <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
-                </button>
-                    <div class="step-form-step-two-left-column">
-                        <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold ">Subscription</h2>
-
-                        <div class="modal-package-info items-center justify-between flex lg:hidden">
-                            <button class="package-select-info-subscribe-img absolute right-[5px] top-[5px] lg:hidden" id="packageChooseInfo">
-                                <img src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
-                            </button>
-                            <span class="modal-package-info-name font-semibold" id="packageChooseName"></span>
-                            <div class="modal-package-info-total font-semibold">Total:
-                                <span class="modal-package-info-sum font-semibold" id="packageChooseTotal"></span>
+                            <div class="modal-package-info items-center justify-between flex lg:hidden">
+                                <button class="package-select-info-subscribe-img absolute right-[5px] top-[5px] lg:hidden" id="packageChooseInfo">
+                                    <img src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
+                                </button>
+                                <span class="modal-package-info-name font-semibold" id="packageChooseName"></span>
+                                <div class="modal-package-info-total font-semibold">Total:
+                                    <span class="modal-package-info-sum font-semibold" id="packageChooseTotal"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="step-form-step-two-details">
-                            <div class="step-form-box-left flex flex-col ">
-                                <div class="subscription-box-details flex flex-col ">
-                                    <h4>Your details</h4>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="First name" id="firstName">
-                                        <span class="error-message" id="error-firstName"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="Last Name" id="lastName">
-                                        <span class="error-message" id="error-lastName"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input type="tel" id="phone" name="phone" placeholder="Phone" pattern="\+\d{1,3}-\d{3}-\d{4}" required>
-                                        <span class="error-message" id="error-phone"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input required type="email" placeholder="Email" id="email">
-                                        <span class="error-message" id="error-email"></span>
-                                    </label>
-                                </div>
-
-                                <div class="subscription-box-details flex flex-col ">
-                                    <h4>Company details</h4>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="Company Name" id="companyName">
-                                        <span class="error-message" id="error-companyName"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input type="text" placeholder="Departament" id="departament">
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="Position" id="position">
-                                        <span class="error-message" id="error-position"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="Company Address 1" id="companyAddress1">
-                                        <span class="error-message" id="error-companyAddress1"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="Company Address 2" id="companyAddress2">
-                                        <span class="error-message" id="error-companyAddress2"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="Country" id="сountry">
-                                        <span class="error-message" id="error-сountry"></span>
-                                    </label>
-
-                                </div>
-
-                            </div>
-                            <div class="step-form-box-center flex flex-col ">
-
-                                <div class="subscription-box-details flex flex-col ">
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="City" id="сity">
-                                        <span class="error-message" id="error-сity"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="State" id="state">
-                                        <span class="error-message" id="error-state"></span>
-                                    </label>
-
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="Zip/Postal Code" id="postalCode">
-                                        <span class="error-message" id="error-postalCode"></span>
-                                    </label>
-                                </div>
-
-                                <div class="subscription-box-details flex flex-col ">
-                                    <h4>Security</h4>
-                                    <label> <input data-subscription-input required type="text" placeholder="Password" id="password">
-                                        <span class="error-message" id="error-password"></span>
-                                    </label>
-                                    <label>
-                                        <input data-subscription-input required type="text" placeholder="Confirm Password" id="confirmPassword">
-                                        <span class="error-message" id="error-confirmPassword"></span>
-                                    </label>
-                                </div>
-
-                                <div class="subscription-payment-box-details">
-                                    <h4>Payment Method</h4>
-                                    <div class="subscription-payment-box-details-box">
-                                        <div data-radio-item  class="radio-item">
-                                            <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment" id="visaMastercard"
-                                                   value="visaMastercard">
-                                            <label for="visaMastercard">Visa/ Mastercard</label>
-                                        </div>
-
-                                        <div data-radio-item  class="radio-item">
-                                            <input data-subscription-input   class="radio-button" type="radio" data-pay-method name="payment"
-                                                   id="check" value="check">
-                                            <label for="check">Check</label>
-                                        </div>
-
-                                        <div data-radio-item  class="radio-item">
-                                            <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment"
-                                                   id="viseTransfer"
-                                                   value="viseTransfer">
-                                            <label for="viseTransfer">Wise Transfer (EFT)</label>
-                                        </div>
-
-                                        <div data-radio-item  class="radio-item">
-                                            <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment"
-                                                   id="payPal"
-                                                   value="payPal">
-                                            <label for="payPal">PayPal</label>
-                                        </div>
-
-                                        <span class="error-message" id="error-radio"></span>
+                            <div class="step-form-step-two-details">
+                                <div class="step-form-box-left flex flex-col ">
+                                    <div class="subscription-box-details flex flex-col ">
+                                        <h4>Your details</h4>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="First name" id="firstName">
+                                            <span class="error-message" id="error-firstName"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="Last Name" id="lastName">
+                                            <span class="error-message" id="error-lastName"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input type="tel" id="phone" name="phone" placeholder="Phone" pattern="\+\d{1,3}-\d{3}-\d{4}" required>
+                                            <span class="error-message" id="error-phone"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input required type="email" placeholder="Email" id="email">
+                                            <span class="error-message" id="error-email"></span>
+                                        </label>
                                     </div>
 
+                                    <div class="subscription-box-details flex flex-col ">
+                                        <h4>Company details</h4>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="Company Name" id="companyName">
+                                            <span class="error-message" id="error-companyName"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input type="text" placeholder="Departament" id="departament">
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="Position" id="position">
+                                            <span class="error-message" id="error-position"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="Company Address 1" id="companyAddress1">
+                                            <span class="error-message" id="error-companyAddress1"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="Company Address 2" id="companyAddress2">
+                                            <span class="error-message" id="error-companyAddress2"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="Country" id="сountry">
+                                            <span class="error-message" id="error-сountry"></span>
+                                        </label>
 
-                                    <label class="subscription-box-accepted check-box-label flex items-center">
-                                        <input type="checkbox" id="checkboxAccepted" class="checkbox-accepted">
-                                        <span class="checkmark"></span>
-                                        <span class="ml-8">I Accept Terms of Use</span>
-                                        <span class="error-message" id="error-checkboxAccepted"></span>
-                                    </label>
+                                    </div>
 
+                                </div>
+                                <div class="step-form-box-center flex flex-col ">
+
+                                    <div class="subscription-box-details flex flex-col ">
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="City" id="сity">
+                                            <span class="error-message" id="error-сity"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="State" id="state">
+                                            <span class="error-message" id="error-state"></span>
+                                        </label>
+
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="Zip/Postal Code" id="postalCode">
+                                            <span class="error-message" id="error-postalCode"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="subscription-box-details flex flex-col ">
+                                        <h4>Security</h4>
+                                        <label> <input data-subscription-input required type="text" placeholder="Password" id="password">
+                                            <span class="error-message" id="error-password"></span>
+                                        </label>
+                                        <label>
+                                            <input data-subscription-input required type="text" placeholder="Confirm Password" id="confirmPassword">
+                                            <span class="error-message" id="error-confirmPassword"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="subscription-payment-box-details">
+                                        <h4>Payment Method</h4>
+                                        <div class="subscription-payment-box-details-box">
+                                            <div data-radio-item  class="radio-item">
+                                                <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment" id="visaMastercard"
+                                                       value="visaMastercard">
+                                                <label for="visaMastercard">Visa/ Mastercard</label>
+                                            </div>
+
+                                            <div data-radio-item  class="radio-item">
+                                                <input data-subscription-input   class="radio-button" type="radio" data-pay-method name="payment"
+                                                       id="check" value="check">
+                                                <label for="check">Check</label>
+                                            </div>
+
+                                            <div data-radio-item  class="radio-item">
+                                                <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment"
+                                                       id="viseTransfer"
+                                                       value="viseTransfer">
+                                                <label for="viseTransfer">Wise Transfer (EFT)</label>
+                                            </div>
+
+                                            <div data-radio-item  class="radio-item">
+                                                <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment"
+                                                       id="payPal"
+                                                       value="payPal">
+                                                <label for="payPal">PayPal</label>
+                                            </div>
+
+                                            <span class="error-message" id="error-radio"></span>
+                                        </div>
+
+
+                                        <label class="subscription-box-accepted check-box-label flex items-center">
+                                            <input type="checkbox" id="checkboxAccepted" class="checkbox-accepted">
+                                            <span class="checkmark"></span>
+                                            <span class="ml-8">I Accept Terms of Use</span>
+                                            <span class="error-message" id="error-checkboxAccepted"></span>
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="step-form-box-right flex flex-col ">
+                            <div class="selected-options-container hidden lg:block" id="selectedOptionsContainer">
+                                <div class="selected-options-container-inner">
+                                    <button data-close-modal  class="close-btn block lg:hidden">
+                                        <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
+                                    </button>
+                                    <h3 class="name-of-choose-package" id="nameOfChoosePackage"></h3>
+                                    <div class="optional-content w-full" id="selectedOptions"></div>
+
+                                    <div class="total-counter hidden lg:block">
+                                        Total: $<span id="totalCounterSecond"></span>
+                                    </div>
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                <div class="step-form-box-right flex flex-col ">
-                    <div class="selected-options-container hidden lg:block" id="selectedOptionsContainer">
-                        <div class="selected-options-container-inner">
-                            <button data-close-modal  class="close-btn block lg:hidden">
-                                <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
-                            </button>
-                            <h3 class="name-of-choose-package" id="nameOfChoosePackage"></h3>
-                            <div class="optional-content w-full" id="selectedOptions"></div>
-
-                            <div class="total-counter hidden lg:block">
-                                Total: $<span id="totalCounterSecond"></span>
+                            <div class="bottom-container">
+                                <button data-next-btn
+                                        class="flex items-center justify-center  continue-btn rounded-[12px] font-medium text-[16px] text-white">
+                                    Continue to billing >
+                                </button>
                             </div>
                         </div>
+
                     </div>
 
-                    <div class="bottom-container">
-                        <button data-next-btn
-                                class="flex items-center justify-center  continue-btn rounded-[12px] font-medium text-[16px] text-white">
-                            Continue to billing >
+                    <!-- step3-->
+                    <div data-step-form class="step-form-step step-form-step-three hidden items-center  flex-col" id="step3">
+                        <div class="step-form-step-three-img-box rounded-full">
+                            <img src="./src/images/step-form/check-big.png" alt="check" class="w-full h-full">
+                        </div>
+
+                        <h3 class="font-bold leading-[40px] lg:leading-[81px]">Subscription Successful!</h3>
+                        <span>Your request has been submitted.<br> We will get back to you shortly</span>
+                        <button data-next-btn class="close-btn">
+                            <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
                         </button>
                     </div>
-                    </div>
-
-            </div>
-
-            <!-- step3-->
-            <div data-step-form class="step-form-step step-form-step-three hidden items-center  flex-col" id="step3">
-                <div class="step-form-step-three-img-box rounded-full">
-                    <img src="./src/images/step-form/check-big.png" alt="check" class="w-full h-full">
                 </div>
-
-                <h3 class="font-bold leading-[40px] lg:leading-[81px]">Subscription Successful!</h3>
-                <span>Your request has been submitted.<br> We will get back to you shortly</span>
-                <button data-next-btn class="close-btn">
-                    <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
-                </button>
             </div>
-        </div>
+        </section>
+
     </div>
-</section>
+
+
+</div>
+
 
 
 
 <!-- Include Choices JavaScript (latest) -->
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script defer type="module" src="./src/js/helpers.js"></script>
-<script defer type="module" src="./src/js/content.js"></script>
-<script defer type="module" src="./src/js/validationForm.js"></script>
-<script defer type="module" src="./src/js/step-form.js"></script>
+<script  type="module" src="./src/js/spinner_picker.js"></script>
+<script  type="module" src="./src/js/helpers.js"></script>
+<script  type="module" src="./src/js/content.js"></script>
+<script  type="module" src="./src/js/validationForm.js"></script>
+<script  type="module" src="./src/js/step-form.js"></script>
 <script defer src="./src/js/script.js"></script>
+</body>
+</html>

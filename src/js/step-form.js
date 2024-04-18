@@ -9,6 +9,7 @@ import {
 } from "./content.js";
 import {validateCheckboxAccepted, validateForm} from "./validationForm.js";
 import {setupDropdownToggle} from "./helpers.js";
+import {SpinnerPicker} from "./spinner_picker.js";
 
 
 (() => {
@@ -38,11 +39,40 @@ import {setupDropdownToggle} from "./helpers.js";
                 {value: 'ultimatePackage', label: 'Ultimate Package'}
             ],
         });
+
+     /*   new SpinnerPicker(
+            document.getElementById("licenceSelectMain"),
+            function(index) {
+                if(index < 0 || index > 99) {
+                    return null;
+                }
+                return index + 1;
+            },
+            {
+                index: 0,
+                animation_speed: 10,
+                animation_steps: 5,
+                font_color: "#000000",
+                selection_color: "#000000",
+                font: "Arial",
+                onclick: true,
+                ondblclick: true,
+                onkeydown: true,
+                onwheel: true,
+                ontouchmove: true,
+                onresize: true
+            },
+            function(index) {
+                console.log(`You are ${this.getValue()} years old.`);
+            }
+        );*/
+
         let currentStep = 0;
         const steps = document.querySelectorAll('[data-step-form]');
         const nextButtons = document.querySelectorAll('[data-next-btn]');
         const dataSubscriptionInputs = document.querySelectorAll('[data-subscription-input]');
         const optionsDetails = document.getElementById('optionsDetails');
+        const step3 = document.getElementById('step3');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
@@ -225,7 +255,6 @@ import {setupDropdownToggle} from "./helpers.js";
         // change event for licenses select
         licencesSelect.passedElement.element.addEventListener('change', calculateTotal);
 
-
         function calculateTotal() {
             let total = 0;
 
@@ -237,7 +266,7 @@ import {setupDropdownToggle} from "./helpers.js";
             const additionalRegionCost = selectedRegionCount * basePercent / 100 * basePrice;
 
 
-            const licensesCount = parseInt(licencesSelect.getValue()?.value); // кол-во выбранных лицензий
+            const licensesCount = parseInt(licencesSelect.getValue()?.value);
             const additionalLicenseCost = licensesCount * basePercent / 100 * basePrice;
 
             total = basePrice + additionalRegionCost + additionalLicenseCost;
@@ -294,10 +323,17 @@ import {setupDropdownToggle} from "./helpers.js";
             resetForm();
         });
 
+        function setActiveStep(newIndex) {
+            steps[currentStep].classList.remove('active');
+            currentStep = newIndex;
+            steps[currentStep].classList.add('active');
+        }
+
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
                 if (index < steps.length - 1) {
                     if (currentStep === 0) {
+                        setActiveStep(index + 1)
                         formData = {
                             selectedRegions: regionsIng,
                             selectedPackageOption: optionsPackageSelect.getValue(true),
@@ -321,7 +357,7 @@ import {setupDropdownToggle} from "./helpers.js";
 
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (!isValidForm) {
+                        if (isValidForm) {
                             console.log('Form on second step is not valid');
                             return;
                         } else {
@@ -342,6 +378,7 @@ import {setupDropdownToggle} from "./helpers.js";
                     steps[currentStep].classList.remove('active');
                     currentStep++;
                     steps[currentStep].classList.add('active');
+
                 } else {
                     resetForm();
                 }

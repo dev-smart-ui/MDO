@@ -107,6 +107,7 @@ function createDropdownsOfPackageCustom(data, packageTotal) {
                     checkBox.classList.add("checked-custom-value");
                 } else {
                     total -= itemDropDown.price;
+                    checkBox.classList.remove("checked-custom-value");
                 }
 
                 totalCounter.innerText = `${total}`;
