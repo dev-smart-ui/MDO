@@ -43,6 +43,7 @@ import { setupDropdownToggle} from "./helpers.js";
         let formData = {};
         const mainRegionSelectValue = "Global";
         let regionsIng = [];
+        const basePercent=10
         let researchPackageTotal = 100;
         let ultimatePackageTotal = 100;
         let customPackageTotal = 2000;
@@ -76,10 +77,16 @@ import { setupDropdownToggle} from "./helpers.js";
                 regionsIng.push(mainRegionSelectValue);
                 return mainRegionSelectValue;
             } else {
-                regionSelectedItems.textContent = selectedCheckboxes.map(c => {
-                    regionsIng.push(c.value);
-                    return c.value;
-                }).join(", ") + ` (${selectedCheckboxes.length})`;
+                selectedCheckboxes.forEach(c => regionsIng.push(c.value));
+                const count = selectedCheckboxes.length;
+                if(count>=2){
+                    regionSelectedItems.textContent = `Regions (${count})`;
+                    return `Regions (${count})`;
+                } else {
+                    regionSelectedItems.textContent = `Region (${count})`;
+                    return `Region (${count})`;
+                }
+
 
             }
         }
