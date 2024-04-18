@@ -1,5 +1,7 @@
 import {calculateTotal} from "./helpers.js";
+
 let selectedItems = {};
+
 function createDropdownsOfPackageResearch(data, packageTotal) {
     const optionsDetails = document.getElementById('optionsDetails');
     const totalCounter = document.getElementById('totalCounter');
@@ -45,7 +47,7 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
     });
 }
 
-function createDropdownsOfPackageCustom( data, currentPackageSelect, licensesValue,) {
+function createDropdownsOfPackageCustom(data, currentPackageSelect, licensesValue,) {
     const optionsDetails = document.getElementById('optionsDetails');
 
     optionsDetails.innerHTML = '';
@@ -102,12 +104,12 @@ function createDropdownsOfPackageCustom( data, currentPackageSelect, licensesVal
                         price: itemDropDown.price
                     };
 
-                    calculateTotal(currentPackageSelect,  licensesValue,)
+                    calculateTotal(currentPackageSelect, licensesValue,);
                     checkBox.classList.add("checked-custom-value");
                 } else {
                     delete selectedItems[index];
 
-                    calculateTotal(currentPackageSelect,  licensesValue)
+                    calculateTotal(currentPackageSelect, licensesValue);
                     checkBox.classList.remove("checked-custom-value");
                 }
 
@@ -157,7 +159,7 @@ function createDropdownsOfUltimate(data, packageTotal) {
     data.map((itemDropDown, index) => {
         const dropdownBox = document.createElement("div");
 
-         dropdownBox.classList.add("dropdown-box", "default-price");
+        dropdownBox.classList.add("dropdown-box", "default-price");
 
         const toggleContainer = document.createElement("div");
         toggleContainer.classList.add("toggle-container", "flex");
@@ -179,13 +181,12 @@ function createDropdownsOfUltimate(data, packageTotal) {
         imgBox.appendChild(imgItem);
 
 
-            const priceBox = document.createElement("span");
-            priceBox.classList.add("default-price-string");
-            priceBox.innerText = `$${itemDropDown.price}.00`;
+        const priceBox = document.createElement("span");
+        priceBox.classList.add("default-price-string");
+        priceBox.innerText = `$${itemDropDown.price}.00`;
 
-            dropdownButton.appendChild(priceBox);
-            toggleContainer.appendChild(dropdownButton);
-
+        dropdownButton.appendChild(priceBox);
+        toggleContainer.appendChild(dropdownButton);
 
 
         dropdownButton.appendChild(titleArrowBox);
@@ -217,234 +218,233 @@ const dataDropdownsResearchPackage = [
     {
         btnTitle: "Ownership",
         imgLink: 'src/images/step-form/listItem2.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Deposit Type & Geology",
         imgLink: 'src/images/step-form/listItem3.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Reserves & Resources",
         imgLink: 'src/images/step-form/listItem4.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Commodity Production",
         imgLink: 'src/images/step-form/listItem5.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Workforce",
         imgLink: 'src/images/step-form/listItem6.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Mine Financials",
         imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
-        btnTitle: "Mine Financials",
+        btnTitle: "Technical & Annual Reports",
         imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
-        btnTitle: "Mine Financials",
+        btnTitle: "Data Download",
         imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company"]
     },
     {
-        btnTitle: "Mine Financials",
+        btnTitle: "Search Assets by:",
         imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company"]
     },
-    {
-        btnTitle: "Mine Financials",
-        imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
-    },
-    {
-        btnTitle: "Mine Financials",
-        imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
-    },
-    {
-        btnTitle: "Mine Financials",
-        imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
-    },
+
+
 ];
 const dataDropdownsCustomPackage = [
     {
-        btnTitle: "1Mine / Project Overview",
+        btnTitle: "Research Package",
         price: 2000.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        imgLink: 'src/images/step-form/custom1.png',
+        itemsArr: ["Mine / Project Overview", "Ownership", "Deposit Type & Geology", "Reserves & Resources", "Commodity Production", "Workforce", "Mine Financials", "Technical & Annual Reports", "Data Download", "Search Assets by",]
     },
     {
-        btnTitle: "2Ownership",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem2.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Key Managers and Superintendents",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom2.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "3Deposit Type & Geology",
-        price: 20.00,
-        imgLink: 'src/images/step-form/listItem3.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Heavy Mobile Equipment (optional)",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom3.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "4Reserves & Resources",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem4.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Mineral Processing",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom4.png',
+        itemsArr: ["Processing Technologies", "Reagents", "Recovery Technologies", "Recovery Rates", "Flowsheet Diagrams",]
     },
     {
-        btnTitle: "5Commodity Production",
-        price: 10.00,
-        imgLink: 'src/images/step-form/listItem5.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Project Costs and Returns ",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom5.png',
+        itemsArr: ["CapEx", "OpEx", "Revenue", "Cash Flow"]
     },
     {
-        btnTitle: "6Workforce",
-        price: 10.00,
-        imgLink: 'src/images/step-form/listItem6.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Mining Contracts (optional)",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom6.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "7Mine Financials",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Mapper and Coordinates",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom7.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Mining Operations (optional)",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom8.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Crushing and Grinding Equipment",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom9.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Production Costs",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom10.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Project Timeline",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom11.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Remote Camps",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom12.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Pipelines and Water Supply",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom13.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company", ]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Additional user license",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom14.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
+    },
+    {
+        btnTitle: "Power Supply",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom15.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
 ];
 const dataDropdownsUltimatePackage = [
-    {
-        btnTitle: "1Mine / Project Overview",
+     {
+        btnTitle: "Research Package",
         price: 2000.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        imgLink: 'src/images/step-form/custom1.png',
+        itemsArr: ["Mine / Project Overview", "Ownership", "Deposit Type & Geology", "Reserves & Resources", "Commodity Production", "Workforce", "Mine Financials", "Technical & Annual Reports", "Data Download", "Search Assets by",]
     },
     {
-        btnTitle: "2Ownership",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem2.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Key Managers and Superintendents",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom2.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "3Deposit Type & Geology",
-        price: 20.00,
-        imgLink: 'src/images/step-form/listItem3.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Heavy Mobile Equipment (optional)",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom3.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "4Reserves & Resources",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem4.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Mineral Processing",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom4.png',
+        itemsArr: ["Processing Technologies", "Reagents", "Recovery Technologies", "Recovery Rates", "Flowsheet Diagrams",]
     },
     {
-        btnTitle: "5Commodity Production",
-        price: 10.00,
-        imgLink: 'src/images/step-form/listItem5.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Project Costs and Returns ",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom5.png',
+        itemsArr: ["CapEx", "OpEx", "Revenue", "Cash Flow"]
     },
     {
-        btnTitle: "6Workforce",
-        price: 10.00,
-        imgLink: 'src/images/step-form/listItem6.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Mining Contracts (optional)",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom6.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "7Mine Financials",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem7.png',
-        itemsArr: ["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]
+        btnTitle: "Mapper and Coordinates",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom7.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Mining Operations (optional)",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom8.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Crushing and Grinding Equipment",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom9.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Production Costs",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom10.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Project Timeline",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom11.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Remote Camps",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom12.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Pipelines and Water Supply",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom13.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company", ]
     },
     {
-        btnTitle: "1Mine / Project Overview",
-        price: 12.00,
-        imgLink: 'src/images/step-form/listItem1.png',
-        itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
+        btnTitle: "Additional user license",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom14.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
+    },
+    {
+        btnTitle: "Power Supply",
+        price: 100.00,
+        imgLink: 'src/images/step-form/custom15.png',
+        itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
 ];
 

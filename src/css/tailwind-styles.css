@@ -193,8 +193,15 @@
 
 
 .step-form-wrap {
-    min-height: 1061px;
-    padding: clamp(32px, 5.56vw, 111px) 24px clamp(32px, 5.56vw, 111px) 24px;
+/*    min-height: 1061px;*/
+    padding-top: clamp(60px, 9dvh, 21dvw);
+    padding-bottom: clamp(30px, 4.5dvh, 10dvw);
+
+}
+.step-form-step-one,
+.step-form-step-two{
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .step-form-wrap.step-form-wrap-open-package{
@@ -442,8 +449,8 @@
 }
 
 
-.step-form-box-right .list-item:not(:last-child) ,
-.step-form-box-right .dropdown-item:not(:last-child) {
+.step-form-box-right .list-item,
+.step-form-box-right .dropdown-item {
     margin-bottom: 12px;
 }
 
@@ -1097,10 +1104,8 @@
     }
 
     .step-form-wrap{
-        padding-left: 0;
-        padding-right: 0;
+        padding: clamp(60px, 13dvh, 9dvw) 0 clamp(30px, 6dvh, 4dvw);
     }
-
 
     .step-form-wrap .continue-btn {
         max-width: 270px;

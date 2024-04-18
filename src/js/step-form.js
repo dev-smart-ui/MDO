@@ -45,7 +45,6 @@ export const newSumOfPackage = {
 };
 
 
-
 (() => {
     //step1
     document.addEventListener('DOMContentLoaded', () => {
@@ -128,13 +127,8 @@ export const newSumOfPackage = {
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
         let formData = {};
-
         let regionsIng = [];
         let currentPackageInnerHtmRight = '';
-
-
-
-
 
 
         //region custom select code start
@@ -266,21 +260,20 @@ export const newSumOfPackage = {
                 document.querySelector(".disabled-step-form-box-right").classList.remove("disabled-step-form-box-right");
             }
 
-            if(optionsPackageSelect.getValue().value==="researchPackage"){
-                createDropdownsOfPackageResearch(dataDropdownsResearchPackage, newSumOfPackage.researchPackage)
+            if (optionsPackageSelect.getValue().value === "researchPackage") {
+                createDropdownsOfPackageResearch(dataDropdownsResearchPackage, newSumOfPackage.researchPackage);
             }
 
-            if(optionsPackageSelect.getValue().value==="customPackage"){
+            if (optionsPackageSelect.getValue().value === "customPackage") {
                 createDropdownsOfPackageCustom(
                     dataDropdownsCustomPackage,
                     optionsPackageSelect.getValue().value,
                     licencesSelect.getValue()?.value,
-
-                )
+                );
             }
 
-            if( optionsPackageSelect.getValue().value==="ultimatePackage"){
-                createDropdownsOfUltimate(dataDropdownsUltimatePackage, newSumOfPackage.ultimatePackage)
+            if (optionsPackageSelect.getValue().value === "ultimatePackage") {
+                createDropdownsOfUltimate(dataDropdownsUltimatePackage, newSumOfPackage.ultimatePackage);
             }
 
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
@@ -299,7 +292,6 @@ export const newSumOfPackage = {
         //step2
 
         //open dropdowns
-
         setupDropdownToggle(optionsDetails);
         setupDropdownToggle(selectedOptions);
 
@@ -401,6 +393,7 @@ export const newSumOfPackage = {
             steps.forEach(step => step.classList.remove('active'));
             steps[0].classList.add('active');
             optionsPackageSelect.setChoiceByValue('');
+            licencesSelect.setChoiceByValue('1');
             regionsIng = [];
 
             checkboxes.forEach(checkbox => {
