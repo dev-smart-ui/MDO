@@ -7,7 +7,7 @@ import {
     dataDropdownsUltimatePackage,
     selectedItems
 } from "./content.js";
-import {validateCheckboxAccepted, validateForm} from "./validationForm.js";
+import {resetFormElements, validateCheckboxAccepted, validateForm} from "./validationForm.js";
 import {calculateTotal, setupDropdownToggle} from "./helpers.js";
 
 export const optionalSelectContent = {
@@ -114,7 +114,6 @@ export const newSumOfPackage = {
         const nextButtons = document.querySelectorAll('[data-next-btn]');
         const dataSubscriptionInputs = document.querySelectorAll('[data-subscription-input]');
         const optionsDetails = document.getElementById('optionsDetails');
-        const step3 = document.getElementById('step3');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
@@ -425,8 +424,8 @@ export const newSumOfPackage = {
             steps[currentStep].classList.remove('active');
             currentStep = 0;
             steps[currentStep].classList.add('active');
-
             disabledContainer.classList.add("disabled-step-form-box-right");
+            resetFormElements()
 
             //load research package default at start
             createDropdownsOfPackageResearch(dataDropdownsResearchPackage, 0);

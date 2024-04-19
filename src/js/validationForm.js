@@ -130,6 +130,23 @@ function validateForm() {
 
 }
 
+export function resetFormElements() {
+    // Сброс всех текстовых полей
+    const inputs = document.querySelectorAll('[data-subscription-input]');
+
+    inputs.forEach(input => {
+        input.value = '';
+        input.checked = false;
+        input.parentNode.classList.remove("error-border")
+    });
+
+
+    const errorMessages = document.querySelectorAll('#step2 .error-message');
+    errorMessages.forEach(message => {
+        message.innerText = '';
+    });
+}
+
 
 //update radio buttons error state
 document.querySelectorAll('[data-radio-item]').forEach(item => {
