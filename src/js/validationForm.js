@@ -4,6 +4,7 @@ function validateField(field) {
         if (errorDiv) {
             errorDiv.textContent = 'Please fill';
             errorDiv.style.display = 'block';
+            errorDiv.parentNode.classList.add("error-border")
         }
         return false;
     } else {
@@ -11,6 +12,7 @@ function validateField(field) {
         if (errorDiv) {
             errorDiv.textContent = '';
             errorDiv.style.display = 'none';
+            errorDiv.parentNode.classList.remove("error-border")
         }
         return true;
     }
@@ -61,9 +63,18 @@ function validateEmailInput() {
     const errorDiv = document.getElementById('error-email');
     const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (!emailInput.value.match(emailPattern)) {
+
+    if (emailInput.value==='') {
         if (errorDiv) {
             errorDiv.textContent = 'Please fill';
+            errorDiv.style.display = 'block';
+        }
+        return false;
+    }
+
+    if (!emailInput.value.match(emailPattern)) {
+        if (errorDiv) {
+            errorDiv.textContent = 'Please fill properly';
             errorDiv.style.display = 'block';
         }
         return false;

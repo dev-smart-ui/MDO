@@ -120,6 +120,7 @@ export const newSumOfPackage = {
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
         const stepFormWrap = document.getElementById('stepFormWrap');
+        const stepForm = document.getElementById('stepForm');
         const packageChooseName = document.getElementById('packageChooseName');
         const packageChooseTotal = document.getElementById('packageChooseTotal');
         const prevButton = document.getElementById('prevButton');
@@ -365,14 +366,14 @@ export const newSumOfPackage = {
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                     }
 
-
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (isValidForm) {
+                        if (!isValidForm) {
                             console.log('Form on second step is not valid');
                             return;
                         } else {
                             console.log('Form on second step is valid');
+                            stepForm.classList.add('step-form-h-full');
                             dataSubscriptionInputs.forEach(input => {
                                 if (input.type === 'radio' && !input.checked) return;
 
@@ -405,6 +406,7 @@ export const newSumOfPackage = {
             optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
             regionsIng = [];
+            stepForm.classList.remove('step-form-h-full');
 
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {

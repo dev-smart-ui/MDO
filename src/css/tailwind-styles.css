@@ -203,6 +203,10 @@
     position: relative;
 }
 
+.step-form-box.step-form-h-full{
+    height: 100% !important;
+}
+
 .step-form-step-one{
     padding-left: 24px;
     padding-right: 24px;
@@ -246,7 +250,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -100%)  scale(0);
+    transform: translate(-50%, -50%)  scale(0);
     transition: opacity 0.4s, transform 0.4s ease-in-out;
 }
 
@@ -254,7 +258,7 @@
 .step-form-step-three.active {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, -100%)  scale(1);
+    transform: translate(-50%, -50%)  scale(1);
     transition: opacity 0.2s, transform 0.4s ease-in-out;
 }
 
@@ -740,6 +744,10 @@
 
 /*option select styles start*/
 
+.step-form-step-one .select-box{
+    margin-bottom: 10px;
+}
+
 .package-select-box .choices,
 .licences-select-box .choices{
   border: 1px solid #CFCFCF;
@@ -907,6 +915,10 @@
     padding: 6px 16px;
     border-radius: 8px;
     height: 40px;
+}
+
+.step-form-step-two .subscription-box-details .error-border input{
+    border: 1px solid #D34E4E;
 }
 
 .step-form-step-two  input::placeholder{
@@ -1312,6 +1324,7 @@
     .step-form-step-one,
     .step-form-step-two {
         padding: 44px 40px 40px 40px;
+        height: 924px !important;
     }
 
 
@@ -1414,10 +1427,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .step-form-step-one,
-    .step-form-step-two {
-        padding: 80px 60px 40px 80px;
-    }
 
 }
 
