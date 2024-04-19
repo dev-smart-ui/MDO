@@ -368,7 +368,7 @@ export const newSumOfPackage = {
 
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (!isValidForm) {
+                        if (isValidForm) {
                             console.log('Form on second step is not valid');
                             return;
                         } else {
