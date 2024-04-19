@@ -198,15 +198,36 @@
     padding-bottom: clamp(30px, 4.5dvh, 10dvw);
 
 }
+
+.step-form-box {
+    position: relative;
+}
+
 .step-form-step-one{
     padding-left: 24px;
     padding-right: 24px;
 }
 
 
+.step-form-step-one,
+.step-form-step-two{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50px);
+    transition: opacity 0.4s, transform 0.4s ease-in-out;
+}
 
-.step-form-step{
-    border-radius: 20px;
+.step-form-step-one.active,
+.step-form-step-two.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity 0.4s, transform 0.4s ease-in-out;
+    animation-delay: 1s;
 }
 
 .step-form-step-one.active,
@@ -218,6 +239,31 @@
     display: flex;
     flex-direction: column;
 }
+
+.step-form-step-three {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%)  scale(0);
+    transition: opacity 0.4s, transform 0.4s ease-in-out;
+}
+
+
+.step-form-step-three.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -100%)  scale(1);
+    transition: opacity 0.2s, transform 0.4s ease-in-out;
+}
+
+
+.step-form-step{
+    border-radius: 20px;
+}
+
+
 
 .step-form-box-right .optional-content {
     height: 590px;
@@ -338,7 +384,6 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
-
 }
 
 
@@ -639,6 +684,10 @@
     border: 1.5px solid #27AE60;
 }
 
+.step-form-step-two .subscription-box-accepted input:checked ~ .checkmark{
+    background: #27AE60 ;
+}
+
 .step-form-step-two .subscription-box-accepted .checkmark:after,
 .regions-select-wrap .checkmark:after,
 .step-form-box-right .toggle-container .checkmark:after {
@@ -665,6 +714,12 @@
     background: url("../images/step-form/check-green.png") no-repeat center center;
     background-size: contain;
 }
+
+.step-form-step-two .subscription-box-accepted .checkmark:after{
+    background: url("../images/step-form/check-white.png") no-repeat center center;
+    background-size: contain;
+}
+
 
 .step-form-step-two .subscription-box-accepted .checkmark:after {
     width: 9px;
@@ -1058,7 +1113,6 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    position: relative;
 }
 
 .step-form-step-three .step-form-step-three-img-box{

@@ -402,6 +402,7 @@ export const newSumOfPackage = {
             steps.forEach(step => step.classList.remove('active'));
             steps[0].classList.add('active');
             optionsPackageSelect.setChoiceByValue('');
+            optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
             regionsIng = [];
 
