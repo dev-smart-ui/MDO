@@ -20,7 +20,6 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
         const titleBox = document.createElement("span");
         titleBox.innerText = itemDropDown.btnTitle;
 
-
         titleArrowBox.appendChild(titleBox);
         const imgBox = document.createElement("div");
         imgBox.classList.add("dropdown-toggle-img-box", "flex", "justify-center", "items-center",);
