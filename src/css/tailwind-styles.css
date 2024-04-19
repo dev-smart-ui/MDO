@@ -365,8 +365,8 @@
 
 .step-form-box-right .dropdown-toggle .dropdown-toggle-img-box ,
 .step-form-box-right .menu-title .menu-img-box {
-    width: 100%;
     max-width: 20px;
+    min-width: 20px;
     height: 20px;
     margin-right: 16px;
 }
@@ -1294,7 +1294,7 @@
     }
 
     .step-form-step-two .title-arrow-box{
-        width: 50%;
+        width: 40%;
     }
 
     .step-form-step-three .step-form-step-three-img-box{
