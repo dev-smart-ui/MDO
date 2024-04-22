@@ -109,6 +109,8 @@ window.addEventListener("load", function () {
         };
     }
 
+    sliderTextToggle(); // force hide slider contents (page onload)
+
     // find all next elements after "element"
     function nextAll(element) {
         let matched = [];
@@ -215,8 +217,11 @@ window.addEventListener("load", function () {
     
 
     function initCounters() {
-        const counter = document.querySelector('.counter-grid');
-        if (counter) {
+        const counters = document.querySelectorAll('.counter-grid');
+
+        if (!counters || !counters.length) return
+
+        counters.forEach((counter) => {
             const numbers = counter.querySelectorAll('.counter-item .number');
 
             if (numbers.length > 0) {
@@ -225,7 +230,8 @@ window.addEventListener("load", function () {
                 })
                 countUp(numbers, 600)
             }
-        }
+        });
+        
     }
 
     function checkDeviceWidth() {
