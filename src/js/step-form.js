@@ -8,7 +8,7 @@ import {
     selectedItems
 } from "./content.js";
 import {resetFormElements, validateCheckboxAccepted, validateForm} from "./validationForm.js";
-import {calculateTotal, setupDropdownToggle} from "./helpers.js";
+import {adjustContainerHeight, calculateTotal, setupDropdownToggle} from "./helpers.js";
 
 export const optionalSelectContent = {
     researchPackage: {
@@ -118,8 +118,8 @@ export const newSumOfPackage = {
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
-        const stepFormWrap = document.getElementById('stepFormWrap');
         const stepForm = document.getElementById('stepForm');
+        const stepFormWrap = document.getElementById('stepFormWrap');
         const packageChooseName = document.getElementById('packageChooseName');
         const packageChooseTotal = document.getElementById('packageChooseTotal');
         const prevButton = document.getElementById('prevButton');
@@ -338,11 +338,13 @@ export const newSumOfPackage = {
 
         prevButton.addEventListener("click", () => {
             resetForm();
+            setTimeout(adjustContainerHeight, 400);
         });
 
 
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
+                setTimeout(adjustContainerHeight, 400);
                 if (index < steps.length - 1) {
                     if (currentStep === 0) {
                         formData = {
@@ -367,12 +369,12 @@ export const newSumOfPackage = {
 
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (!isValidForm) {
+                        if (isValidForm) {
                             console.log('Form on second step is not valid');
                             return;
                         } else {
                             console.log('Form on second step is valid');
-                            stepForm.classList.add('step-form-h-full');
+                            stepForm.style.position="static"
                             dataSubscriptionInputs.forEach(input => {
                                 if (input.type === 'radio' && !input.checked) return;
 
@@ -386,6 +388,7 @@ export const newSumOfPackage = {
                     }
 
                     console.log(formData);
+
                     steps[currentStep].classList.remove('active');
                     currentStep++;
                     steps[currentStep].classList.add('active');
@@ -405,8 +408,7 @@ export const newSumOfPackage = {
             optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
             regionsIng = [];
-            stepForm.classList.remove('step-form-h-full');
-
+            stepForm.style.position="relative"
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
                     checkbox.checked = true;
