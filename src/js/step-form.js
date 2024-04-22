@@ -38,6 +38,7 @@ export let regionsIngLength = 0;
 export const mainRegionSelectValue = "Global";
 export const maxRegionsValues = 5;
 export const basePercent = 10;
+export const licensesValue=0
 
 export const basePriceValues = {
     researchPackage: 2000,
@@ -50,39 +51,42 @@ export const newSumOfPackage = {
     ultimatePackage: ultimatePackageTotal,
 };
 
+//create licenses select
+const choicesArray = [];
+for (let i = 1; i <= 99; i++) {
+    choicesArray.push({
+        value: `${i}`,
+        label: `${i}`
+    });
+}
+
+export const licencesSelect = new Choices('#licencesSelect', {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    position: 'bottom',
+    choices: choicesArray,
+});
+
+//create option select
+export const optionsPackageSelect = new Choices('#optionsSelect', {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    position: 'bottom',
+    choices: [
+        {value: 'researchPackage', label: 'Research Package'},
+        {value: 'customPackage', label: 'Custom Package'},
+        {value: 'ultimatePackage', label: 'Ultimate Package'}
+    ],
+});
+
 
 (() => {
     //step1
     document.addEventListener('DOMContentLoaded', () => {
-        //create licenses select
-        const choicesArray = [];
-        for (let i = 1; i <= 99; i++) {
-            choicesArray.push({
-                value: `${i}`,
-                label: `${i}`
-            });
-        }
 
-        const licencesSelect = new Choices('#licencesSelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            position: 'bottom',
-            choices: choicesArray,
-        });
 
-        //create option select
-        const optionsPackageSelect = new Choices('#optionsSelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            position: 'bottom',
-            choices: [
-                {value: 'researchPackage', label: 'Research Package'},
-                {value: 'customPackage', label: 'Custom Package'},
-                {value: 'ultimatePackage', label: 'Ultimate Package'}
-            ],
-        });
 
         /*   new SpinnerPicker(
                document.getElementById("licenceSelectMain"),
@@ -192,6 +196,7 @@ export const newSumOfPackage = {
                    else if (count === 0 &&  !item.checked) {
                         regionSelectedItems.textContent = `Region (${count})`;
                         regionsIng.push(item.value);
+                        regionsIng=[];
 
                         return `Region (${count})`;
                     }
@@ -238,7 +243,6 @@ export const newSumOfPackage = {
             updateGlobalSelection();
             calculateTotal(
                 optionsPackageSelect.getValue().value,
-                licencesSelect.getValue()?.value,
             );
         }
 
@@ -279,10 +283,7 @@ export const newSumOfPackage = {
         // change event for option select
         optionsPackageSelect.passedElement.element.addEventListener('change', (event) => {
             const value = event.detail.value;
-            calculateTotal(
-                optionsPackageSelect.getValue().value,
-                licencesSelect.getValue()?.value,
-            );
+
             if (document.querySelector(".disabled-step-form-box-right")) {
                 document.querySelector(".disabled-step-form-box-right").classList.remove("disabled-step-form-box-right");
             }
@@ -295,13 +296,16 @@ export const newSumOfPackage = {
                 createDropdownsOfPackageCustom(
                     dataDropdownsCustomPackage,
                     optionsPackageSelect.getValue().value,
-                    licencesSelect.getValue()?.value,
                 );
             }
 
             if (optionsPackageSelect.getValue().value === "ultimatePackage") {
                 createDropdownsOfUltimate(dataDropdownsUltimatePackage, newSumOfPackage.ultimatePackage);
             }
+
+            calculateTotal(
+                optionsPackageSelect.getValue().value,
+            );
 
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
@@ -311,7 +315,6 @@ export const newSumOfPackage = {
         licencesSelect.passedElement.element.addEventListener('change', () => {
             calculateTotal(
                 optionsPackageSelect.getValue().value,
-                licencesSelect.getValue()?.value,
             );
         });
 

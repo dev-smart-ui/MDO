@@ -2,7 +2,7 @@ import {selectedItems} from "./content.js";
 import {
     basePercent,
     basePriceValues,
-    isGlobalSelected,
+    isGlobalSelected, licencesSelect,
     maxRegionsValues,
     newSumOfPackage,
     regionsIngLength
@@ -20,27 +20,48 @@ function setupDropdownToggle(element) {
     });
 }
 
- function calculateTotal(currentPackageSelect, licensesValue) {
+
+ function calculateTotal(currentPackageSelect) {
     let total = 0;
+   const  licensesValue= licencesSelect.getValue()?.value
 
     if (currentPackageSelect) {
         const basePrice = basePriceValues[currentPackageSelect];
-
         total+=basePrice;
-        Object.keys(selectedItems).forEach(key => {
-            total += selectedItems[key].price;
-        });
+        if(currentPackageSelect==="customPackage"){
+            let newBaseCustomPercent=total;
+            Object.keys(selectedItems).forEach(key => {
+                newBaseCustomPercent += selectedItems[key].price;
+            });
 
-        const selectedRegionCount = isGlobalSelected ? maxRegionsValues : regionsIngLength;
-        const additionalRegionCost = selectedRegionCount * basePercent / 100 * basePrice;
-        total += additionalRegionCost;
-        const licensesCount = parseInt(licensesValue);
-        const additionalLicenseCost = licensesCount * basePercent / 100 * basePrice;
+            total=newBaseCustomPercent
 
-        total += additionalLicenseCost;
+            const selectedRegionCount = isGlobalSelected ? 10 : regionsIngLength;
+            const additionalRegionCost = selectedRegionCount * basePercent / 100 * newBaseCustomPercent;
+            total += additionalRegionCost;
+
+            const licenceFormatted=parseInt(licensesValue)
+            const licensesCount = licenceFormatted>1?licenceFormatted-1:0;
+            const additionalLicenseCost = licensesCount * basePercent / 100 * newBaseCustomPercent;
+
+            total += additionalLicenseCost;
+
+        } else {
+
+            const selectedRegionCount = isGlobalSelected ? 10 : regionsIngLength;
+            const additionalRegionCost = selectedRegionCount * basePercent / 100 * basePrice;
+            total += additionalRegionCost;
+
+            const licenceFormatted=parseInt(licensesValue)
+            const licensesCount = licenceFormatted>1?licenceFormatted-1:0;
+            const additionalLicenseCost = licensesCount * basePercent / 100 * basePrice;
+
+            total += additionalLicenseCost;
+
+
+        }
 
         newSumOfPackage[currentPackageSelect] = total;
-
         document.getElementById("totalCounter").innerText = total;
         document.getElementById("totalCounterSecond").innerText = total;
     }
@@ -100,7 +121,7 @@ function adjustContainerHeight() {
 adjustContainerHeight()
 
 
-window.addEventListener('resize', adjustContainerHeight);
+/*window.addEventListener('resize', adjustContainerHeight);*/
 
 
 export {setupDropdownToggle, calculateTotal, adjustContainerHeight}

@@ -46,11 +46,11 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
     });
 }
 
-function createDropdownsOfPackageCustom(data, currentPackageSelect, licensesValue,) {
+function createDropdownsOfPackageCustom(data, currentPackageSelect,) {
     const optionsDetails = document.getElementById('optionsDetails');
 
     optionsDetails.innerHTML = '';
-
+    selectedItems={}
 
     data.map((itemDropDown, index) => {
         const dropdownBox = document.createElement("div");
@@ -103,14 +103,12 @@ function createDropdownsOfPackageCustom(data, currentPackageSelect, licensesValu
                         price: itemDropDown.price
                     };
 
-                    calculateTotal(currentPackageSelect, licensesValue,);
                     checkBox.classList.add("checked-custom-value");
                 } else {
                     delete selectedItems[index];
-
-                    calculateTotal(currentPackageSelect, licensesValue);
                     checkBox.classList.remove("checked-custom-value");
                 }
+                calculateTotal(currentPackageSelect);
 
             });
 
