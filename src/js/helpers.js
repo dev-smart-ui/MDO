@@ -48,7 +48,7 @@ function setupDropdownToggle(element) {
 
         } else {
 
-            const selectedRegionCount = isGlobalSelected ? 10 : regionsIngLength;
+            const selectedRegionCount = isGlobalSelected ? basePercent : regionsIngLength;
             const additionalRegionCost = selectedRegionCount * basePercent / 100 * basePrice;
             total += additionalRegionCost;
 

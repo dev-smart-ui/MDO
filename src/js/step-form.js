@@ -38,7 +38,6 @@ export let regionsIngLength = 0;
 export const mainRegionSelectValue = "Global";
 export const maxRegionsValues = 5;
 export const basePercent = 10;
-export const licensesValue=0
 
 export const basePriceValues = {
     researchPackage: 2000,
@@ -201,9 +200,9 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         return `Region (${count})`;
                     }
                    else if (count >= 2 &&  item.checked) {
-                        regionSelectedItems.textContent = `Region (${count})`;
+                        regionSelectedItems.textContent = `Regions (${count})`;
                         regionsIng.push(item.value);
-                        return `Region (${count})`;
+                        return `Regions (${count})`;
                     }
                 });
 
