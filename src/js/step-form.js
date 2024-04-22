@@ -30,6 +30,8 @@ const ultimatePackageTotal = dataDropdownsUltimatePackage.reduce(
     (accumulator, currentValue) => accumulator + currentValue.price,
     0,
 );
+console.log(ultimatePackageTotal)
+
 
 export let isGlobalSelected = false;
 export let regionsIngLength = 0;
@@ -38,12 +40,12 @@ export const maxRegionsValues = 5;
 export const basePercent = 10;
 
 export const basePriceValues = {
-    researchPackage: 1000,
+    researchPackage: 2000,
     customPackage: 2000,
     ultimatePackage: ultimatePackageTotal,
 };
 export const newSumOfPackage = {
-    researchPackage: 1000,
+    researchPackage: 2000,
     customPackage: 2000,
     ultimatePackage: ultimatePackageTotal,
 };
@@ -177,6 +179,7 @@ export const newSumOfPackage = {
                 selectedCheckboxes.forEach(c => regionsIng.push(c.value));
                 console.log("updateItemsDisplay", regionsIng.length);
                 const count = selectedCheckboxes.length;
+
                 if (count >= 2) {
                     regionSelectedItems.textContent = `Regions (${count})`;
                     return `Regions (${count})`;
@@ -374,7 +377,7 @@ export const newSumOfPackage = {
                             return;
                         } else {
                             console.log('Form on second step is valid');
-                            stepForm.style.position="static"
+
                             dataSubscriptionInputs.forEach(input => {
                                 if (input.type === 'radio' && !input.checked) return;
 
@@ -408,7 +411,6 @@ export const newSumOfPackage = {
             optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
             regionsIng = [];
-            stepForm.style.position="relative"
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
                     checkbox.checked = true;

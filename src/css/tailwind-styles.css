@@ -245,7 +245,6 @@
     visibility: visible;
     transform: translateX(0);
     transition: opacity 0.4s, transform 0.4s ease-in-out;
-    animation-delay: 1s;
 }
 
 .step-form-step-one.active,
@@ -258,29 +257,19 @@
     flex-direction: column;
 }
 
-.step-form-step-three {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)  scale(0);
-    transition: opacity 0.4s, transform 0.4s ease-in-out;
-}
-
 
 .step-form-step-three.active {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%)  scale(1);
-    transition: opacity 0.2s, transform 0.4s ease-in-out;
+    transition: opacity 0.2s , transform 0.4s ease;
+    transition-delay: .4s;
 }
 
 
 .step-form-step{
     border-radius: 20px;
 }
-
 
 
 .step-form-box-right .optional-content {
@@ -308,7 +297,6 @@
 
 .step-form-box-right.disabled-step-form-box-right {
     opacity: 0.6;
-    pointer-events: none;
 }
 
 .step-form-box-right.disabled-step-form-box-right .continue-btn{
@@ -1143,8 +1131,17 @@
     justify-content: center;
     margin: 0 auto;
     padding: 20px;
-
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -75%) scale(0);
+    transition: opacity 0.3s , transform 0.4s ease;
+    transform-origin: center;
+    transition-delay: .4s;
 }
+
 
 .step-form-step-three .step-form-step-three-img-box{
   border: 2px solid #3AAC4C;

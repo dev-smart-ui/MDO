@@ -362,11 +362,14 @@
         <section class="snap-start step-form-wrap lg:bg-gray" id="stepFormWrap" >
             <div class="lg:container h-full">
 
-                    <div class="step-form-box overflow-auto" id="stepForm">
+                    <div class="step-form-box" id="stepForm">
                         <!-- step1-->
-                        <div data-step-form class="step-form-step lg:bg-white step-form-step-one flex items-stretch  active  flex-col lg:flex-row  " id="step1">
+                        <div data-step-form
+                             class="step-form-step lg:bg-white step-form-step-one flex items-stretch  active  flex-col lg:flex-row  "
+                             id="step1">
                             <div class="step-form-box-left lg:w-2/4">
-                                <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold">Packages and<br> Modules</h2>
+                                <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold">Packages and<br>
+                                    Modules</h2>
                                 <div class="select-box regions-select-box">
                                     <div class="select-title-box mb-3 flex items-center">
                                         <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy"
@@ -419,12 +422,14 @@
                                 <div class="select-box package-select-box">
                                     <div class="select-title-box mb-3 flex items-center relative">
                                         <div class="package-select-info-text" id="packageSelectInfoText">
-                                            <img class="absolute package-select-info-close" data-close-modal id="packageSelectInfoTextClose"
+                                            <img class="absolute package-select-info-close" data-close-modal
+                                                 id="packageSelectInfoTextClose"
                                                  src="./src/images/step-form/close.png" loading="lazy" alt="close"/>
                                             <h4>Select you package</h4>
                                             <span>Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!</span>
                                         </div>
-                                        <button class="package-select-info-img absolute right-0 lg:hidden" id="packageSelectInfo">
+                                        <button class="package-select-info-img absolute right-0 lg:hidden"
+                                                id="packageSelectInfo">
                                             <img src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
                                         </button>
                                         <img class="mr-2" src="./src/images/step-form/step2.png" loading="lazy"
@@ -481,7 +486,9 @@
                         </div>
 
                         <!-- step2- -->
-                        <div data-step-form class="step-form-step overflow-hidden  lg:bg-white step-form-step-two items-stretch" id="step2">
+                        <div data-step-form
+                             class="step-form-step overflow-hidden  lg:bg-white step-form-step-two items-stretch"
+                             id="step2">
                             <button id="prevButton" class="close-btn">
                                 <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
                             </button>
@@ -489,12 +496,14 @@
                                 <h2 class="leading-[48px] lg:leading-[81px] step-title font-bold ">Subscription</h2>
 
                                 <div class="modal-package-info items-center justify-between flex lg:hidden">
-                                    <button class="package-select-info-subscribe-img absolute right-[5px] top-[5px] lg:hidden" id="packageChooseInfo">
+                                    <button class="package-select-info-subscribe-img absolute right-[5px] top-[5px] lg:hidden"
+                                            id="packageChooseInfo">
                                         <img src="./src/images/step-form/info.png" loading="lazy" alt="info"/>
                                     </button>
                                     <span class="modal-package-info-name font-semibold" id="packageChooseName"></span>
                                     <div class="modal-package-info-total font-semibold">Total:
-                                        <span class="modal-package-info-sum font-semibold" id="packageChooseTotal"></span>
+                                        <span class="modal-package-info-sum font-semibold"
+                                              id="packageChooseTotal"></span>
                                     </div>
                                 </div>
                                 <div class="step-form-step-two-details">
@@ -502,19 +511,23 @@
                                         <div class="subscription-box-details flex flex-col ">
                                             <h4>Your details</h4>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="First name" id="firstName">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="First name" id="firstName">
                                                 <span class="error-message" id="error-firstName"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="Last Name" id="lastName">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="Last Name" id="lastName">
                                                 <span class="error-message" id="error-lastName"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input type="tel" id="phone" name="phone" placeholder="Phone" pattern="\+\d{1,3}-\d{3}-\d{4}" required>
+                                                <input data-subscription-input type="tel" id="phone" name="phone"
+                                                       placeholder="Phone" pattern="\+\d{1,3}-\d{3}-\d{4}" required>
                                                 <span class="error-message" id="error-phone"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input required type="email" placeholder="Email" id="email">
+                                                <input data-subscription-input required type="email" placeholder="Email"
+                                                       id="email">
                                                 <span class="error-message" id="error-email"></span>
                                             </label>
                                         </div>
@@ -522,26 +535,32 @@
                                         <div class="subscription-box-details flex flex-col ">
                                             <h4>Company details</h4>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="Company Name" id="companyName">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="Company Name" id="companyName">
                                                 <span class="error-message" id="error-companyName"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input type="text" placeholder="Departament" id="departament">
+                                                <input data-subscription-input type="text" placeholder="Departament"
+                                                       id="departament">
                                             </label>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="Position" id="position">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="Position" id="position">
                                                 <span class="error-message" id="error-position"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="Company Address 1" id="companyAddress1">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="Company Address 1" id="companyAddress1">
                                                 <span class="error-message" id="error-companyAddress1"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="Company Address 2" id="companyAddress2">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="Company Address 2" id="companyAddress2">
                                                 <span class="error-message" id="error-companyAddress2"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="Country" id="сountry">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="Country" id="сountry">
                                                 <span class="error-message" id="error-сountry"></span>
                                             </label>
 
@@ -552,27 +571,32 @@
 
                                         <div class="subscription-box-details flex flex-col ">
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="City" id="сity">
+                                                <input data-subscription-input required type="text" placeholder="City"
+                                                       id="сity">
                                                 <span class="error-message" id="error-сity"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="State" id="state">
+                                                <input data-subscription-input required type="text" placeholder="State"
+                                                       id="state">
                                                 <span class="error-message" id="error-state"></span>
                                             </label>
 
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="Zip/Postal Code" id="postalCode">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="Zip/Postal Code" id="postalCode">
                                                 <span class="error-message" id="error-postalCode"></span>
                                             </label>
                                         </div>
 
                                         <div class="subscription-box-details flex flex-col ">
                                             <h4>Security</h4>
-                                            <label> <input data-subscription-input required type="text" placeholder="Password" id="password">
+                                            <label> <input data-subscription-input required type="text"
+                                                           placeholder="Password" id="password">
                                                 <span class="error-message" id="error-password"></span>
                                             </label>
                                             <label>
-                                                <input data-subscription-input required type="text" placeholder="Confirm Password" id="confirmPassword">
+                                                <input data-subscription-input required type="text"
+                                                       placeholder="Confirm Password" id="confirmPassword">
                                                 <span class="error-message" id="error-confirmPassword"></span>
                                             </label>
                                         </div>
@@ -580,27 +604,31 @@
                                         <div class="subscription-payment-box-details">
                                             <h4>Payment Method</h4>
                                             <div class="subscription-payment-box-details-box">
-                                                <div data-radio-item  class="radio-item">
-                                                    <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment" id="visaMastercard"
+                                                <div data-radio-item class="radio-item">
+                                                    <input data-subscription-input class="radio-button" type="radio"
+                                                           data-pay-method name="payment" id="visaMastercard"
                                                            value="visaMastercard">
                                                     <label for="visaMastercard">Visa/ Mastercard</label>
                                                 </div>
 
-                                                <div data-radio-item  class="radio-item">
-                                                    <input data-subscription-input   class="radio-button" type="radio" data-pay-method name="payment"
+                                                <div data-radio-item class="radio-item">
+                                                    <input data-subscription-input class="radio-button" type="radio"
+                                                           data-pay-method name="payment"
                                                            id="check" value="check">
                                                     <label for="check">Check</label>
                                                 </div>
 
-                                                <div data-radio-item  class="radio-item">
-                                                    <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment"
+                                                <div data-radio-item class="radio-item">
+                                                    <input data-subscription-input class="radio-button" type="radio"
+                                                           data-pay-method name="payment"
                                                            id="viseTransfer"
                                                            value="viseTransfer">
                                                     <label for="viseTransfer">Wise Transfer (EFT)</label>
                                                 </div>
 
-                                                <div data-radio-item  class="radio-item">
-                                                    <input data-subscription-input  class="radio-button" type="radio" data-pay-method name="payment"
+                                                <div data-radio-item class="radio-item">
+                                                    <input data-subscription-input class="radio-button" type="radio"
+                                                           data-pay-method name="payment"
                                                            id="payPal"
                                                            value="payPal">
                                                     <label for="payPal">PayPal</label>
@@ -611,7 +639,8 @@
 
 
                                             <label class="subscription-box-accepted check-box-label flex items-center">
-                                                <input data-subscription-input type="checkbox" id="checkboxAccepted" class="checkbox-accepted">
+                                                <input data-subscription-input type="checkbox" id="checkboxAccepted"
+                                                       class="checkbox-accepted">
                                                 <span class="checkmark"></span>
                                                 <span class="ml-8">I Accept Terms of Use</span>
                                                 <span class="error-message" id="error-checkboxAccepted"></span>
@@ -625,8 +654,9 @@
                             <div class="step-form-box-right flex flex-col ">
                                 <div class="selected-options-container hidden lg:block" id="selectedOptionsContainer">
                                     <div class="selected-options-container-inner">
-                                        <button data-close-modal  class="close-btn block lg:hidden">
-                                            <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
+                                        <button data-close-modal class="close-btn block lg:hidden">
+                                            <img src="./src/images/step-form/close.png" alt="close"
+                                                 class="w-full h-full">
                                         </button>
                                         <h3 class="name-of-choose-package" id="nameOfChoosePackage"></h3>
                                         <div class="optional-content w-full" id="selectedOptions"></div>
@@ -647,7 +677,6 @@
 
                         </div>
 
-
                         <!-- step3-->
                         <div data-step-form
                              class="step-form-step step-form-step-three  w-full items-center  flex-col" id="step3">
@@ -663,13 +692,10 @@
                         </div>
                     </div>
 
-
             </div>
         </section>
     </div>
 </div>
-
-
 
 
 <!-- Include Choices JavaScript (latest) -->

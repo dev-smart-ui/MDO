@@ -49,7 +49,7 @@ function setupDropdownToggle(element) {
 
 function scrollToStepForm() {
     if (window.innerWidth < 1024) {
-        const container = document.querySelector('.step-form-step');
+        const container = document.getElementById('stepFormWrap');
         if (container) {
             container.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -60,16 +60,29 @@ function adjustContainerHeight() {
     const activeStep = document.querySelector('.step-form-step.active');
     const container = document.querySelector('.step-form-box');
 
-    if (activeStep.classList.contains("step-form-step-three")) {
-        container.style.height = `${window.innerHeight}px`;
-    }else {
-        container.style.height = ``
+    if (window.innerWidth > 1024) {
+            container.style.height = ``
 
-        if (activeStep) {
-            const height = activeStep.scrollHeight;
-            container.style.height = `${height}px`;
+            if (activeStep) {
+                const height = activeStep.scrollHeight;
+                container.style.height = `${height}px`;
+            }
+
+    } else {
+
+        if (activeStep.classList.contains("step-form-step-three")) {
+            container.style.height = `${window.innerHeight}px`;
+        }else {
+            container.style.height = ``
+
+            if (activeStep) {
+                const height = activeStep.scrollHeight;
+                container.style.height = `${height}px`;
+            }
         }
     }
+
+
 
     scrollToStepForm()
 }
