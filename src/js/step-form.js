@@ -127,7 +127,7 @@ export const newSumOfPackage = {
         const prevButton = document.getElementById('prevButton');
         const nameOfChoosePackage = document.getElementById('nameOfChoosePackage');
         const globalCheckbox = document.querySelector('input[value="global"]');
-        const checkboxes = document.querySelectorAll('#regionsSelect .regions-item-box input[type="checkbox"]');
+        const checkboxes = document.querySelectorAll('[data-regions-input]');
         const regionSelectedItems = document.getElementById('selectedItems');
         const regionsSelect = document.getElementById('regionsSelect');
         const regionsItemBox = document.getElementById('regionsItemBox');
@@ -177,17 +177,30 @@ export const newSumOfPackage = {
                 return mainRegionSelectValue;
             } else {
                 const count = selectedCheckboxes.length;
-                selectedCheckboxes.forEach(item=>{
-                    if(count===1 && !globalCheckbox.checked){
-                        regionSelectedItems.textContent = item.value;
-                        regionsIng.push(item.value)
+
+                checkboxes.forEach(item => {
+
+                    if(!item.checked){
+                        item.parentNode.classList.remove("choose")
+                    }
+
+                    if (count === 1 && item.checked) {
+                        regionSelectedItems.textContent = item.name;
+                        regionsIng.push(item.value);
                         return item.value;
-                    } else {
+                    }
+                   else if (count === 0 &&  !item.checked) {
                         regionSelectedItems.textContent = `Region (${count})`;
-                        regionsIng.push(item.value)
+                        regionsIng.push(item.value);
+
                         return `Region (${count})`;
                     }
-                })
+                   else if (count >= 2 &&  item.checked) {
+                        regionSelectedItems.textContent = `Region (${count})`;
+                        regionsIng.push(item.value);
+                        return `Region (${count})`;
+                    }
+                });
 
             }
         }
