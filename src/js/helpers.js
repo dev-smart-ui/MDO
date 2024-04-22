@@ -58,28 +58,37 @@ function scrollToStepForm() {
 
 function adjustContainerHeight() {
     const activeStep = document.querySelector('.step-form-step.active');
+    const stepFormStep = document.querySelector('.step-form-step');
     const container = document.querySelector('.step-form-box');
 
     if (window.innerWidth > 1024) {
-            container.style.height = ``
-
-            if (activeStep) {
-                const height = activeStep.scrollHeight;
-                container.style.height = `${height}px`;
-            }
-
-    } else {
+        if (activeStep) {
+            const height = activeStep.scrollHeight;
+            container.style.height = `${height}px`;
+        }
 
         if (activeStep.classList.contains("step-form-step-three")) {
+
+            const height = stepFormStep.scrollHeight;
+            container.style.height = `${height}px`;
+        }
+
+
+
+
+
+    } else {
+        if (activeStep) {
             container.style.height = `${window.innerHeight}px`;
-        }else {
-            container.style.height = ``
+        }
+
+       /* else {
 
             if (activeStep) {
                 const height = activeStep.scrollHeight;
                 container.style.height = `${height}px`;
             }
-        }
+        }*/
     }
 
 

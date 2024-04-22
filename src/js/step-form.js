@@ -176,17 +176,19 @@ export const newSumOfPackage = {
                 console.log("updateItemsDisplay", regionsIng.length);
                 return mainRegionSelectValue;
             } else {
-                selectedCheckboxes.forEach(c => regionsIng.push(c.value));
-                console.log("updateItemsDisplay", regionsIng.length);
                 const count = selectedCheckboxes.length;
+                selectedCheckboxes.forEach(item=>{
+                    if(count===1 && !globalCheckbox.checked){
+                        regionSelectedItems.textContent = item.value;
+                        regionsIng.push(item.value)
+                        return item.value;
+                    } else {
+                        regionSelectedItems.textContent = `Region (${count})`;
+                        regionsIng.push(item.value)
+                        return `Region (${count})`;
+                    }
+                })
 
-                if (count >= 2) {
-                    regionSelectedItems.textContent = `Regions (${count})`;
-                    return `Regions (${count})`;
-                } else {
-                    regionSelectedItems.textContent = `Region (${count})`;
-                    return `Region (${count})`;
-                }
             }
         }
 
