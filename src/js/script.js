@@ -84,6 +84,10 @@ window.addEventListener("load", function () {
                 updateSlideClasses.call(this);
                 this.updateSlides()
             },
+            sliderMove: function () {
+                updateSlideClasses.call(this);
+                this.updateSlides()
+            },
         }
     });
 

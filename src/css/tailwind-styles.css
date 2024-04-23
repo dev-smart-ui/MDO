@@ -1648,7 +1648,19 @@
 
 @media screen and (min-width: 2300px) and (min-height: 1000px) {
   .comprehensive-coverage .swiper-slide {
-    min-height: 550px;
+    min-height: 750px;
+  }
+
+  div.comprehensive-coverage .content p {
+    font-size: 50px;
+  }
+  
+  div.comprehensive-coverage .content ul {
+    font-size: 26px;
+  }
+
+  #comprehensive-slider .swiper-slide .swiper-slide-inner {
+    border-radius: 32px;
   }
 }
 
@@ -1740,5 +1752,31 @@
 
   .comprehensive-coverage .content p {
     font-size: clamp(16px, 25px, 3dvh);
+  }
+}
+
+
+
+
+
+
+@media screen and (min-width: 2200px) {
+  .hero-section > .container {
+    position: relative;
+  }
+
+  .hero-section .image-block {
+    top: 0;
+    right: -15%;
+  }
+
+  .hero-section .light-block {
+    top: 0;
+    width: 90%;
+    right: -25%;
+  }
+
+  .hero-section-content {
+    max-width: 60%;
   }
 }
