@@ -273,6 +273,17 @@
     overflow: hidden;
 }
 
+.step-form-step-one .select-box{
+    margin-bottom: 10px;
+}
+
+.step-form-step-one .step-form-box-right{
+    height: 100%;
+    overflow-x: scroll;
+    padding-bottom: 100px;
+}
+
+
 
 .step-form-step-one .step-title  br{
     display: none;
@@ -769,15 +780,6 @@
 
 /*option select styles start*/
 
-.step-form-step-one .select-box{
-    margin-bottom: 10px;
-}
-
-.step-form-step-one .step-form-box-right{
-    height: 100%;
-    overflow-x: scroll;
-    padding-bottom: 100px;
-}
 
 
 .package-select-box .choices,
@@ -1440,7 +1442,6 @@
 
     .step-form-step-one{
         padding: 47px 40px 50px 80px;
-        height: auto;
         overflow: visible;
     }
 
