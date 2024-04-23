@@ -2,8 +2,8 @@ import {selectedItems} from "./content.js";
 import {
     basePercent,
     basePriceValues,
-    isGlobalSelected, licencesSelect,
-    maxRegionsValues,
+    isGlobalSelected,
+    licencesSelect,
     newSumOfPackage,
     regionsIngLength
 } from "./step-form.js";
@@ -21,27 +21,27 @@ function setupDropdownToggle(element) {
 }
 
 
- function calculateTotal(currentPackageSelect) {
+function calculateTotal(currentPackageSelect) {
     let total = 0;
-   const  licensesValue= licencesSelect.getValue()?.value
+    const licensesValue = licencesSelect.getValue()?.value;
 
     if (currentPackageSelect) {
         const basePrice = basePriceValues[currentPackageSelect];
-        total+=basePrice;
-        if(currentPackageSelect==="customPackage"){
-            let newBaseCustomPercent=total;
+        total += basePrice;
+        if (currentPackageSelect === "customPackage") {
+            let newBaseCustomPercent = total;
             Object.keys(selectedItems).forEach(key => {
                 newBaseCustomPercent += selectedItems[key].price;
             });
 
-            total=newBaseCustomPercent
+            total = newBaseCustomPercent;
 
             const selectedRegionCount = isGlobalSelected ? 10 : regionsIngLength;
             const additionalRegionCost = selectedRegionCount * basePercent / 100 * newBaseCustomPercent;
             total += additionalRegionCost;
 
-            const licenceFormatted=parseInt(licensesValue)
-            const licensesCount = licenceFormatted>1?licenceFormatted-1:0;
+            const licenceFormatted = parseInt(licensesValue);
+            const licensesCount = licenceFormatted > 1 ? licenceFormatted - 1 : 0;
             const additionalLicenseCost = licensesCount * basePercent / 100 * newBaseCustomPercent;
 
             total += additionalLicenseCost;
@@ -52,8 +52,8 @@ function setupDropdownToggle(element) {
             const additionalRegionCost = selectedRegionCount * basePercent / 100 * basePrice;
             total += additionalRegionCost;
 
-            const licenceFormatted=parseInt(licensesValue)
-            const licensesCount = licenceFormatted>1?licenceFormatted-1:0;
+            const licenceFormatted = parseInt(licensesValue);
+            const licensesCount = licenceFormatted > 1 ? licenceFormatted - 1 : 0;
             const additionalLicenseCost = licensesCount * basePercent / 100 * basePrice;
 
             total += additionalLicenseCost;
@@ -72,56 +72,30 @@ function scrollToStepForm() {
     if (window.innerWidth < 1024) {
         const container = document.getElementById('stepFormWrap');
         if (container) {
-            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            container.scrollIntoView({behavior: 'smooth', block: 'start'});
         }
     }
 }
 
 function adjustContainerHeight() {
     const activeStep = document.querySelector('.step-form-step.active');
-    const stepFormStep = document.querySelector('.step-form-step');
     const container = document.querySelector('.step-form-box');
 
-    if (window.innerWidth > 1024) {
-        if (activeStep) {
-            const height = activeStep.scrollHeight;
-            container.style.height = `${height}px`;
-        }
-
-        if (activeStep.classList.contains("step-form-step-three")) {
-
-            const height = stepFormStep.scrollHeight;
-            container.style.height = `${height}px`;
-        }
-
-
-
-
-
-    } else {
-        if (activeStep) {
-            container.style.height = `${window.innerHeight}px`;
-        }
-
-       /* else {
-
-            if (activeStep) {
-                const height = activeStep.scrollHeight;
-                container.style.height = `${height}px`;
-            }
-        }*/
+    if (!activeStep || !container) {
+        return;
     }
 
+    if (activeStep) {
+        container.style.maxHeight = `${window.innerHeight}px`;
+    }
 
-
-    scrollToStepForm()
+    scrollToStepForm();
 }
 
 
-adjustContainerHeight()
+document.addEventListener('DOMContentLoaded', adjustContainerHeight);
+window.addEventListener('resize', adjustContainerHeight);
+window.addEventListener('orientationchange', adjustContainerHeight);
 
 
-/*window.addEventListener('resize', adjustContainerHeight);*/
-
-
-export {setupDropdownToggle, calculateTotal, adjustContainerHeight}
+export {setupDropdownToggle, calculateTotal, adjustContainerHeight};

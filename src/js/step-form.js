@@ -84,36 +84,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 (() => {
     //step1
     document.addEventListener('DOMContentLoaded', () => {
-
-
-
-        /*   new SpinnerPicker(
-               document.getElementById("licenceSelectMain"),
-               function(index) {
-                   if(index < 0 || index > 99) {
-                       return null;
-                   }
-                   return index + 1;
-               },
-               {
-                   index: 0,
-                   animation_speed: 10,
-                   animation_steps: 5,
-                   font_color: "#000000",
-                   selection_color: "#000000",
-                   font: "Arial",
-                   onclick: true,
-                   ondblclick: true,
-                   onkeydown: true,
-                   onwheel: true,
-                   ontouchmove: true,
-                   onresize: true
-               },
-               function(index) {
-                   console.log(`You are ${this.getValue()} years old.`);
-               }
-           );*/
-
         let currentStep = 0;
         const steps = document.querySelectorAll('[data-step-form]');
         const nextButtons = document.querySelectorAll('[data-next-btn]');
@@ -123,7 +93,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
-        const stepForm = document.getElementById('stepForm');
         const continueBtnStepOne = document.getElementById('continueBtnStepOne');
         const stepFormWrap = document.getElementById('stepFormWrap');
         const packageChooseName = document.getElementById('packageChooseName');
@@ -392,7 +361,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (isValidForm) {
+                        if (!isValidForm) {
                             console.log('Form on second step is not valid');
                             return;
                         } else {
