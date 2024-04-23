@@ -331,6 +331,12 @@
     height: 56px;
 }
 
+.step-form-wrap .continue-btn.disabled-btn {
+  pointer-events: none;
+    background: #9ca3af;
+    opacity: .5;
+}
+
 .step-form-wrap .continue-btn:hover {
     font-size: 17px;
     background: #02A1D3;

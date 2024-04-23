@@ -124,6 +124,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
         const stepForm = document.getElementById('stepForm');
+        const continueBtnStepOne = document.getElementById('continueBtnStepOne');
         const stepFormWrap = document.getElementById('stepFormWrap');
         const packageChooseName = document.getElementById('packageChooseName');
         const packageChooseTotal = document.getElementById('packageChooseTotal');
@@ -190,18 +191,20 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                     if (count === 1 && item.checked) {
                         regionSelectedItems.textContent = item.name;
                         regionsIng.push(item.value);
+                        continueBtnStepOne.classList.remove('disabled-btn')
                         return item.value;
                     }
                    else if (count === 0 &&  !item.checked) {
                         regionSelectedItems.textContent = `Region (${count})`;
                         regionsIng.push(item.value);
                         regionsIng=[];
-
+                        continueBtnStepOne.classList.add('disabled-btn')
                         return `Region (${count})`;
                     }
                    else if (count >= 2 &&  item.checked) {
                         regionSelectedItems.textContent = `Regions (${count})`;
                         regionsIng.push(item.value);
+                        continueBtnStepOne.classList.remove('disabled-btn')
                         return `Regions (${count})`;
                     }
                 });
