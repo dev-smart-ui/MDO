@@ -146,7 +146,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 regionSelectedItems.textContent = mainRegionSelectValue;
                 regionsIng.push(mainRegionSelectValue);
 
-                console.log("updateItemsDisplay", regionsIng.length);
+                continueBtnStepOne.classList.remove('disabled-btn')
                 return mainRegionSelectValue;
             } else {
                 const count = selectedCheckboxes.length;
