@@ -184,32 +184,22 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
         //change state for regions select values
         function handleCheckboxChange() {
-            if (globalCheckbox.checked) {
-                globalCheckbox.parentNode.classList.add('choose');
-                checkboxes.forEach(c => {
-                    if (c !== globalCheckbox) {
-                        c.checked = false;
-                        c.disabled = true;
-                        c.parentNode.classList.add('disabled');
-                        c.parentNode.classList.remove('choose');
-                    }
-                });
-            } else {
                 const selectedCount = Array.from(checkboxes).filter(c => c.checked && c.value !== mainRegionSelectValue.toLowerCase()).length;
                 if (selectedCount >= maxRegionsValues) {
+
                     checkboxes.forEach(c => {
                         if (!c.checked) {
                             c.disabled = true;
                         }
                     });
                 } else {
+
                     checkboxes.forEach(c => {
-                        c.disabled = false;
-                        c.parentNode.classList.remove('disabled');
+
                     });
-                    globalCheckbox.disabled = false;
+
                 }
-            }
+
             updateItemsDisplay();
             updateGlobalSelection();
             calculateTotal(
