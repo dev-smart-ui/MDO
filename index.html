@@ -41,9 +41,9 @@
         </header>
 
         <!--hero-->
-        <div class="swiper-slide snap-start hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh] relative">
+        <div class="swiper-slide snap-start snap-always hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh] relative">
             <div class="container h-full flex flex-col justify-between ">
-                <div class="absolute top-[56px] left-[-15%] lg:left-auto lg:right-[-10%] 3xl:top-[26px] w-[135%] h-[65%] lg:w-[70%] lg:h-[90%]">
+                <div class="light-block absolute top-[56px] left-[-15%] lg:left-auto lg:right-[-10%] 3xl:top-[26px] w-[135%] h-[65%] lg:w-[70%] lg:h-[90%]">
                     <img src="./src/images/light-mobile.png" alt="" class="w-full h-full lg:hidden">
                     <img src="./src/images/light-1440.png" alt="" class="w-full h-full hidden lg:block 3xl:hidden">
                     <img src="./src/images/light-desktop.png" alt="" class="w-full h-full hidden 3xl:block">
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="flex flex-col justify-between lg:h-full w-full text-white relative z-[1]">
-                    <div class="flex flex-col gap-[1.6dvh] lg:gap-[3.3dvh] 3xl:gap-[3.7dvh] lg:mb-[4dvh]">
+                    <div class="flex flex-col gap-[1.6dvh] lg:gap-[3.3dvh] 3xl:gap-[3.7dvh] lg:mb-[4dvh] hero-section-content">
                         <h1 class="text-[8.4dvw] lg:text-[8.4dvw] 3xl:text-[7.3dvw] leading-[1.04] lg:leading-[0.92] 3xl:leading-[0.95] font-secondary lg:max-w-[50dvw] 3xl:max-w-[44dvw] w-full">
                             <span class="text-[#3F97EB]">Discover</span>
                             <span class="text-[#93C246]">Analyze</span>
@@ -111,7 +111,7 @@
         </div>
 
         <!-- counter mobile-->
-        <div class="swiper-slide snap-start bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
+        <div class="swiper-slide snap-start snap-always bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
             <div class="container">
                 <p class="text-[9vw] leading-[1.45] counter-title max-w-[70%] mb-[7.6dvh]">Mining Database in numbers</p>
                 <div class="counter-grid grid grid-cols-[repeat(2,calc(50%_-_10px))] gap-x-[14px] gap-y-[8.7dvh]">
@@ -150,7 +150,7 @@
         </div>
 
         <!--comprehensive coverage-->
-        <div class="swiper-slide snap-start comprehensive-coverage pt-[15dvh] pb-[5.5dvh] lg:pt-[13dvh] lg:pb-[6dvh] text-text-black flex flex-col justify-between">
+        <div class="swiper-slide snap-start snap-always comprehensive-coverage pt-[15dvh] pb-[5.5dvh] lg:pt-[13dvh] lg:pb-[6dvh] text-text-black flex flex-col justify-between">
             <div class="container">
                 <h2 class="leading-[1.34] text-[9.2vw] lg:text-[4.46vw] font-bold mb-[2.7dvh] lg:mb-[2dvh] 3xl:text-[3.5dvw]">Comprehensive coverage</h2>
                 <p class="leading-[1.7] text-[4.04vw] lg:text-[1.25vw] lg:leading-[1.8] subtitle 3xl:text-[0.9dvw] 3xl:leading-[1.6]">MDO provides in-depth mining intelligence on operating
@@ -359,7 +359,7 @@
         </div>
 
 
-        <section class="swiper-slide snap-start step-form-wrap lg:bg-gray" id="stepFormWrap" >
+        <section class="swiper-slide snap-start snap-always step-form-wrap lg:bg-gray" id="stepFormWrap" >
             <div class="lg:container h-full">
                 <div class="rounded-[20px] step-form-box h-full lg:h-auto" id="stepForm">
                     <!-- step1-->
@@ -669,7 +669,7 @@
 
 <!-- Include Choices JavaScript (latest) -->
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script  type="module" src="./src/js/spinner_picker.js"></script>
 <script  type="module" src="./src/js/helpers.js"></script>
 <script  type="module" src="./src/js/content.js"></script>
