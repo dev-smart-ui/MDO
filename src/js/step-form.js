@@ -8,7 +8,7 @@ import {
     selectedItems
 } from "./content.js";
 import {resetFormElements, validateCheckboxAccepted, validateForm} from "./validationForm.js";
-import {calculateTotal, setupDropdownToggle} from "./helpers.js";
+import {adjustContainerHeight, calculateTotal, setupDropdownToggle} from "./helpers.js";
 
 export const optionalSelectContent = {
     researchPackage: {
@@ -30,6 +30,8 @@ const ultimatePackageTotal = dataDropdownsUltimatePackage.reduce(
     (accumulator, currentValue) => accumulator + currentValue.price,
     0,
 );
+console.log(ultimatePackageTotal)
+
 
 export let isGlobalSelected = false;
 export let regionsIngLength = 0;
@@ -38,49 +40,52 @@ export const maxRegionsValues = 5;
 export const basePercent = 10;
 
 export const basePriceValues = {
-    researchPackage: 1000,
+    researchPackage: 2000,
     customPackage: 2000,
     ultimatePackage: ultimatePackageTotal,
 };
 export const newSumOfPackage = {
-    researchPackage: 1000,
+    researchPackage: 2000,
     customPackage: 2000,
     ultimatePackage: ultimatePackageTotal,
 };
+
+//create licenses select
+const choicesArray = [];
+for (let i = 1; i <= 99; i++) {
+    choicesArray.push({
+        value: `${i}`,
+        label: `${i}`
+    });
+}
+
+export const licencesSelect = new Choices('#licencesSelect', {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    position: 'bottom',
+    choices: choicesArray,
+});
+
+//create option select
+export const optionsPackageSelect = new Choices('#optionsSelect', {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    position: 'bottom',
+    choices: [
+        {value: 'researchPackage', label: 'Research Package'},
+        {value: 'customPackage', label: 'Custom Package'},
+        {value: 'ultimatePackage', label: 'Ultimate Package'}
+    ],
+});
 
 
 (() => {
     //step1
     document.addEventListener('DOMContentLoaded', () => {
-        //create licenses select
-        const choicesArray = [];
-        for (let i = 1; i <= 99; i++) {
-            choicesArray.push({
-                value: `${i}`,
-                label: `${i}`
-            });
-        }
 
-        const licencesSelect = new Choices('#licencesSelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            position: 'bottom',
-            choices: choicesArray,
-        });
 
-        //create option select
-        const optionsPackageSelect = new Choices('#optionsSelect', {
-            searchEnabled: false,
-            itemSelectText: '',
-            shouldSort: false,
-            position: 'bottom',
-            choices: [
-                {value: 'researchPackage', label: 'Research Package'},
-                {value: 'customPackage', label: 'Custom Package'},
-                {value: 'ultimatePackage', label: 'Ultimate Package'}
-            ],
-        });
 
         /*   new SpinnerPicker(
                document.getElementById("licenceSelectMain"),
@@ -118,14 +123,14 @@ export const newSumOfPackage = {
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
-        const stepFormWrap = document.getElementById('stepFormWrap');
         const stepForm = document.getElementById('stepForm');
+        const stepFormWrap = document.getElementById('stepFormWrap');
         const packageChooseName = document.getElementById('packageChooseName');
         const packageChooseTotal = document.getElementById('packageChooseTotal');
         const prevButton = document.getElementById('prevButton');
         const nameOfChoosePackage = document.getElementById('nameOfChoosePackage');
         const globalCheckbox = document.querySelector('input[value="global"]');
-        const checkboxes = document.querySelectorAll('#regionsSelect .regions-item-box input[type="checkbox"]');
+        const checkboxes = document.querySelectorAll('[data-regions-input]');
         const regionSelectedItems = document.getElementById('selectedItems');
         const regionsSelect = document.getElementById('regionsSelect');
         const regionsItemBox = document.getElementById('regionsItemBox');
@@ -174,16 +179,33 @@ export const newSumOfPackage = {
                 console.log("updateItemsDisplay", regionsIng.length);
                 return mainRegionSelectValue;
             } else {
-                selectedCheckboxes.forEach(c => regionsIng.push(c.value));
-                console.log("updateItemsDisplay", regionsIng.length);
                 const count = selectedCheckboxes.length;
-                if (count >= 2) {
-                    regionSelectedItems.textContent = `Regions (${count})`;
-                    return `Regions (${count})`;
-                } else {
-                    regionSelectedItems.textContent = `Region (${count})`;
-                    return `Region (${count})`;
-                }
+
+                checkboxes.forEach(item => {
+
+                    if(!item.checked){
+                        item.parentNode.classList.remove("choose")
+                    }
+
+                    if (count === 1 && item.checked) {
+                        regionSelectedItems.textContent = item.name;
+                        regionsIng.push(item.value);
+                        return item.value;
+                    }
+                   else if (count === 0 &&  !item.checked) {
+                        regionSelectedItems.textContent = `Region (${count})`;
+                        regionsIng.push(item.value);
+                        regionsIng=[];
+
+                        return `Region (${count})`;
+                    }
+                   else if (count >= 2 &&  item.checked) {
+                        regionSelectedItems.textContent = `Regions (${count})`;
+                        regionsIng.push(item.value);
+                        return `Regions (${count})`;
+                    }
+                });
+
             }
         }
 
@@ -220,7 +242,6 @@ export const newSumOfPackage = {
             updateGlobalSelection();
             calculateTotal(
                 optionsPackageSelect.getValue().value,
-                licencesSelect.getValue()?.value,
             );
         }
 
@@ -261,10 +282,7 @@ export const newSumOfPackage = {
         // change event for option select
         optionsPackageSelect.passedElement.element.addEventListener('change', (event) => {
             const value = event.detail.value;
-            calculateTotal(
-                optionsPackageSelect.getValue().value,
-                licencesSelect.getValue()?.value,
-            );
+
             if (document.querySelector(".disabled-step-form-box-right")) {
                 document.querySelector(".disabled-step-form-box-right").classList.remove("disabled-step-form-box-right");
             }
@@ -277,13 +295,16 @@ export const newSumOfPackage = {
                 createDropdownsOfPackageCustom(
                     dataDropdownsCustomPackage,
                     optionsPackageSelect.getValue().value,
-                    licencesSelect.getValue()?.value,
                 );
             }
 
             if (optionsPackageSelect.getValue().value === "ultimatePackage") {
                 createDropdownsOfUltimate(dataDropdownsUltimatePackage, newSumOfPackage.ultimatePackage);
             }
+
+            calculateTotal(
+                optionsPackageSelect.getValue().value,
+            );
 
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
@@ -293,7 +314,6 @@ export const newSumOfPackage = {
         licencesSelect.passedElement.element.addEventListener('change', () => {
             calculateTotal(
                 optionsPackageSelect.getValue().value,
-                licencesSelect.getValue()?.value,
             );
         });
 
@@ -338,11 +358,13 @@ export const newSumOfPackage = {
 
         prevButton.addEventListener("click", () => {
             resetForm();
+            setTimeout(adjustContainerHeight, 400);
         });
 
 
         nextButtons.forEach((btn, index) => {
             btn.addEventListener('click', () => {
+                setTimeout(adjustContainerHeight, 400);
                 if (index < steps.length - 1) {
                     if (currentStep === 0) {
                         formData = {
@@ -367,12 +389,12 @@ export const newSumOfPackage = {
 
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (!isValidForm) {
+                        if (isValidForm) {
                             console.log('Form on second step is not valid');
                             return;
                         } else {
                             console.log('Form on second step is valid');
-                            stepForm.classList.add('step-form-h-full');
+
                             dataSubscriptionInputs.forEach(input => {
                                 if (input.type === 'radio' && !input.checked) return;
 
@@ -386,6 +408,7 @@ export const newSumOfPackage = {
                     }
 
                     console.log(formData);
+
                     steps[currentStep].classList.remove('active');
                     currentStep++;
                     steps[currentStep].classList.add('active');
@@ -405,8 +428,6 @@ export const newSumOfPackage = {
             optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
             regionsIng = [];
-            stepForm.classList.remove('step-form-h-full');
-
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
                     checkbox.checked = true;
