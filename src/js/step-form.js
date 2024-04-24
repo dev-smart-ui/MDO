@@ -33,7 +33,7 @@ const ultimatePackageTotal = dataDropdownsUltimatePackage.reduce(
 console.log(ultimatePackageTotal)
 
 
-export let isGlobalSelected = false;
+export let isGlobalSelected = true;
 export let regionsIngLength = 0;
 export const mainRegionSelectValue = "Global";
 export const maxRegionsValues = 5;
@@ -182,34 +182,30 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         }
 
 
-        //change state for regions select values
         function handleCheckboxChange() {
+            const selectedCheckboxes = Array.from(checkboxes).filter(c => c.checked && c !== globalCheckbox);
+
             if (globalCheckbox.checked) {
-                globalCheckbox.parentNode.classList.add('choose');
+                selectedCheckboxes.forEach(c => {
+                    c.checked = false;
+                    c.parentNode.classList.remove('choose');
+                });
+            } else if (selectedCheckboxes.length >= maxRegionsValues) {
+                globalCheckbox.checked = true;
                 checkboxes.forEach(c => {
                     if (c !== globalCheckbox) {
                         c.checked = false;
-                        c.disabled = true;
-                        c.parentNode.classList.add('disabled');
                         c.parentNode.classList.remove('choose');
                     }
                 });
             } else {
-                const selectedCount = Array.from(checkboxes).filter(c => c.checked && c.value !== mainRegionSelectValue.toLowerCase()).length;
-                if (selectedCount >= maxRegionsValues) {
-                    checkboxes.forEach(c => {
-                        if (!c.checked) {
-                            c.disabled = true;
-                        }
-                    });
-                } else {
-                    checkboxes.forEach(c => {
-                        c.disabled = false;
-                        c.parentNode.classList.remove('disabled');
-                    });
-                    globalCheckbox.disabled = false;
-                }
+                checkboxes.forEach(c => {
+                    c.disabled = false;
+                    c.parentNode.classList.remove('disabled');
+                });
+                globalCheckbox.parentNode.classList.remove('choose');
             }
+
             updateItemsDisplay();
             updateGlobalSelection();
             calculateTotal(
@@ -217,37 +213,16 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             );
         }
 
-
         checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function () {
-                if (this.value === mainRegionSelectValue.toLowerCase()) {
-                    checkboxes.forEach(c => {
-                        if (c.value !== mainRegionSelectValue.toLowerCase()) {
-                            c.disabled = this.checked;
-                            c.parentNode.classList.remove('disabled');
-                            globalCheckbox.parentNode.classList.remove('choose');
-                        }
-                    });
-                } else {
-                    const selectedNonGlobalCheckboxes = Array.from(checkboxes).filter(c => {
-
-                        if (c.checked && c.value !== mainRegionSelectValue.toLowerCase()) {
-                            c.parentNode.classList.add('choose');
-                            return c.checked && c.value !== mainRegionSelectValue.toLowerCase();
-                        }
-                    }).length;
-                    if (selectedNonGlobalCheckboxes >= maxRegionsValues) {
-                        globalCheckbox.checked = true;
-                        globalCheckbox.parentNode.classList.add('choose');
-                        handleCheckboxChange();
-                        return;
-                    }
+            checkbox.addEventListener('change', () => {
+                if (checkbox !== globalCheckbox) {
+                    globalCheckbox.checked = false;
+                    globalCheckbox.parentNode.classList.remove('choose');
                 }
                 handleCheckboxChange();
             });
         });
 
-        handleCheckboxChange();
         //region custom select code finish
 
 
@@ -362,11 +337,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
                         if (!isValidForm) {
-                            console.log('Form on second step is not valid');
                             return;
                         } else {
-                            console.log('Form on second step is valid');
-
                             dataSubscriptionInputs.forEach(input => {
                                 if (input.type === 'radio' && !input.checked) return;
 
