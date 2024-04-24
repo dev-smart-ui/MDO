@@ -1569,8 +1569,23 @@
 }
 
 @media screen and (max-width: 392px) {
+
+    .step-form-wrap {
+        padding: 70px 0 16px;
+    }
     .step-form-box-left .package-select-info-text {
         padding: 20px 25px;
+    }
+
+    .step-form-box-right .optional-content {
+        max-height: 400px;
+    }
+
+
+    .step-form-step-one .step-title {
+        margin-bottom: 9px;
+        font-size: 22px;
+        line-height: 30px;
     }
 }
 
