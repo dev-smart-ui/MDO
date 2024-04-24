@@ -832,12 +832,30 @@
   margin-top: 0;
 }
 
+.licences-select-box .choices:after {
+    display: none;
+}
 
 .licences-select-box .choices.is-open:after,
 .package-select-box .choices.is-open:after{
   border: 6px solid transparent;
   border-top: 6px solid #74879B;
   margin-top: 0;
+}
+
+.licences-select-box .choices__list.choices__list--single{
+    text-align: right;
+    position: relative;
+}
+
+.licences-select-box .choices__list.choices__list--single:after{
+   content: "Licences:";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(6px, -50%);
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .licences-select-box .choices__list.choices__list--dropdown .choices__list {

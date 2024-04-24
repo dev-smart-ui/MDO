@@ -90,6 +90,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const dataSubscriptionInputs = document.querySelectorAll('[data-subscription-input]');
         const optionsDetails = document.getElementById('optionsDetails');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
+        const additionalTextOptionsSelectMobile = document.getElementById('additionalTextOptionsSelectMobile');
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
@@ -256,6 +257,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             );
 
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
+            additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
         });
 
