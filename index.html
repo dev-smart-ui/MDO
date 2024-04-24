@@ -362,6 +362,7 @@
         <section class="snap-start step-form-wrap lg:bg-gray h-full" id="stepFormWrap" >
             <div class="step-form-wrap-container h-full">
                 <div class="step-form-box h-full overflow-hidden lg:overflow-visible" id="stepForm">
+
                     <!-- step1-->
                     <div data-step-form
                          class="step-form-step overflow-auto lg:overflow-visible lg:bg-white step-form-step-one flex items-stretch  active  flex-col lg:flex-row  "
@@ -370,7 +371,7 @@
                             <h2 class="step-title font-bold">Packages<br> and
                                 Modules</h2>
                             <div class="select-box regions-select-box">
-                                <div class="select-title-box mb-3 flex items-center">
+                                <div class="select-title-box  flex items-center">
                                     <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy"
                                          alt="Select your region"/>
                                     <span class="font-semibold text-[14px] lg:text-[22px]">1. Select your region(s):</span>
@@ -379,7 +380,7 @@
                                 <div id="regionsSelect" class="regions-select-wrap">
                                     <div class="select-choices-inner" id="selectedItems">Global</div>
                                     <div class="regions-item-box" id="regionsItemBox">
-                                        <label class="regions-item-label hover:font-semibold ease-in">
+                                        <label class="regions-item-label hover:font-semibold ease-in choose">
                                             <input data-regions-input type="checkbox" value="global" name="Global" checked>
                                             <span class="checkmark"></span>
                                             Global
@@ -419,7 +420,7 @@
                             </div>
 
                             <div class="select-box package-select-box">
-                                <div class="select-title-box mb-3 flex items-center relative">
+                                <div class="select-title-box  flex items-center relative">
                                     <div class="package-select-info-text" id="packageSelectInfoText">
                                         <img class="absolute package-select-info-close" data-close-modal
                                              id="packageSelectInfoTextClose"
@@ -448,7 +449,7 @@
                             </div>
 
                             <div class="select-box licences-select-box">
-                                <div class="select-title-box mb-3 flex items-center">
+                                <div class="select-title-box flex items-center">
                                     <img class="mr-2" src="./src/images/step-form/step3.png" loading="lazy"
                                          alt="Select you package"/>
                                     <span class="font-semibold  text-[14px] lg:text-[22px]">3. Select the number of licences:</span>
@@ -661,7 +662,7 @@
                             <div class="bottom-container">
                                 <button data-next-btn
                                         class="flex items-center justify-center  continue-btn rounded-[12px] font-medium text-[16px] text-white">
-                                    Continue to billing >
+                                    Request invoice >
                                 </button>
                             </div>
                         </div>
@@ -681,6 +682,7 @@
                             <img src="./src/images/step-form/close.png" alt="close" class="w-full h-full">
                         </button>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -691,7 +693,6 @@
 <!-- Include Choices JavaScript (latest) -->
 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script  type="module" src="./src/js/spinner_picker.js"></script>
 <script  type="module" src="./src/js/helpers.js"></script>
 <script  type="module" src="./src/js/content.js"></script>
 <script  type="module" src="./src/js/validationForm.js"></script>

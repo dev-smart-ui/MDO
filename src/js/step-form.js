@@ -30,7 +30,6 @@ const ultimatePackageTotal = dataDropdownsUltimatePackage.reduce(
     (accumulator, currentValue) => accumulator + currentValue.price,
     0,
 );
-console.log(ultimatePackageTotal)
 
 
 export let isGlobalSelected = true;
@@ -66,6 +65,7 @@ export const licencesSelect = new Choices('#licencesSelect', {
     position: 'bottom',
     choices: choicesArray,
 });
+
 
 //create option select
 export const optionsPackageSelect = new Choices('#optionsSelect', {
@@ -196,6 +196,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                     if (c !== globalCheckbox) {
                         c.checked = false;
                         c.parentNode.classList.remove('choose');
+                    } else {
+                        c.parentNode.classList.add('choose');
                     }
                 });
             } else {
@@ -336,7 +338,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (!isValidForm) {
+                        if (isValidForm) {
                             return;
                         } else {
                             dataSubscriptionInputs.forEach(input => {
@@ -371,6 +373,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             optionsPackageSelect.setChoiceByValue('');
             optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
+            additionalTextOptionsSelect.innerHTML = '';
             regionsIng = [];
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
@@ -397,7 +400,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         }
 
     });
-
 })();
 
 
