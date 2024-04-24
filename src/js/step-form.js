@@ -338,7 +338,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (isValidForm) {
+                        if (!isValidForm) {
                             return;
                         } else {
                             dataSubscriptionInputs.forEach(input => {
