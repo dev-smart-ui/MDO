@@ -68,14 +68,7 @@ function calculateTotal(currentPackageSelect) {
 
 }
 
-function scrollToStepForm() {
-    if (window.innerWidth < 1024) {
-        const container = document.getElementById('stepFormWrap');
-        if (container) {
-            container.scrollIntoView({behavior: 'smooth', block: 'start'});
-        }
-    }
-}
+
 
 function adjustContainerHeight() {
     const activeStep = document.querySelector('.step-form-step.active');
@@ -89,16 +82,14 @@ function adjustContainerHeight() {
         container.style.maxHeight = `${window.innerHeight}px`;
     }
 
-    scrollToStepForm();
+
 }
 
 document.addEventListener('DOMContentLoaded', adjustContainerHeight);
 window.addEventListener('resize', adjustContainerHeight);
 window.addEventListener('orientationchange', adjustContainerHeight);
 
-window.addEventListener('load', ()=>{
-window.scrollTo(0,0)
-});
+
 
 
 export {setupDropdownToggle, calculateTotal, adjustContainerHeight};
