@@ -33,7 +33,7 @@
 <body class="bg-white font-primary font-normal overflow-hidden ">
 
 <div class="h-dvh swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden" id="page-slider">
-    <div class="snap-y snap-mandatory overflow-x-hidden overflow-y-scroll h-full">
+    <div class="snap-y snap-mandatory overflow-x-hidden overflow-y-scroll h-full" id="app">
         <header class="sticky top-0 w-full z-10 bg-[#0c0c11] h-[56px]">
             <img src="./src/images/Menu-mobile.png" alt="" class="w-full h-full lg:hidden mx-auto max-w-[393px]">
             <img src="./src/images/Menu-1440.png" alt="" class="w-full h-full hidden lg:block 3xl:hidden">
@@ -69,7 +69,7 @@
                     </div>
 
                     <!-- counter desktop-->
-                    <div class="hidden lg:block counter-block">
+                    <div class="hidden lg:block counter-block inView">
                         <p class="lg:text-[2.5dvw] 3xl:text-[2.76dvw] leading-[1.5] lg:mb-[2.3dvw] 3xl:mb-[2.1dvw] counter-title">
                             Mining Database in numbers</p>
                         <div class="counter-grid grid grid-cols-[repeat(6,148px)] lg:gap-[20px] 3xl:gap-[29px]">

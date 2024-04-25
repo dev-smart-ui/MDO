@@ -1,5 +1,9 @@
 "use strict"
 
+
+const app = document.querySelector('#app');
+const counters = document.querySelectorAll('.counter-block');
+
 //touch screen check
 function isTouchEnabled() {
     return ('ontouchstart' in window) ||
@@ -222,24 +226,64 @@ window.addEventListener("load", function () {
     
 
     function initCounters() {
-        const counters = document.querySelectorAll('.counter-grid');
+        try {
+            if (!counters || !counters.length) return
 
-        if (!counters || !counters.length) return
+            counters.forEach((counter) => {
+                const numbers = counter.querySelectorAll('.counter-item .number');
 
-        counters.forEach((counter) => {
-            const numbers = counter.querySelectorAll('.counter-item .number');
-
-            if (numbers.length > 0) {
-                numbers.forEach((number) => {
-                    number.textContent = '0'
-                })
-                countUp(numbers, 600)
-            }
-        });
-        
+                if (numbers.length > 0) {
+                    numbers.forEach((number) => {
+                        number.textContent = '0'
+                    })
+                    countUp(numbers, 600)
+                }
+            });
+            
+            return true;
+        } catch(err) {
+            console.warn(err);
+        }
     }
 
     function checkDeviceWidth() {
         return window.innerWidth
     }
+
+    const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+        const { top, left, bottom, right } = el.getBoundingClientRect();
+        const { innerHeight, innerWidth } = window;
+        
+        return partiallyVisible
+          ? ((top > 0 && top < innerHeight) ||
+              (bottom > 0 && bottom < innerHeight)) &&
+              ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+          : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+    };
+
+
+    
+
+    app.addEventListener('scroll', function () {
+        try {
+            const isMobileCounter = getComputedStyle(counters[0]).display == 'none';
+            let targetCounter;
+            
+            if (isMobileCounter) {
+                targetCounter = counters[1].querySelector('.counter-grid');
+            } else {
+                targetCounter = counters[0];
+            }
+
+            const isCounterIntoView = elementIsVisibleInViewport(targetCounter, true);
+
+            if (isCounterIntoView) {
+                !targetCounter.classList.contains('inView') && initCounters() && targetCounter.classList.add('inView')
+            } else {
+                targetCounter.classList.contains('inView') && targetCounter.classList.remove('inView')
+            }
+        } catch(err) {
+            console.warn(err);
+        }
+    })
 });
