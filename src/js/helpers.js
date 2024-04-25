@@ -92,10 +92,13 @@ function adjustContainerHeight() {
     scrollToStepForm();
 }
 
-
 document.addEventListener('DOMContentLoaded', adjustContainerHeight);
 window.addEventListener('resize', adjustContainerHeight);
 window.addEventListener('orientationchange', adjustContainerHeight);
+
+window.addEventListener('load', ()=>{
+window.scrollTo(0,0)
+});
 
 
 export {setupDropdownToggle, calculateTotal, adjustContainerHeight};

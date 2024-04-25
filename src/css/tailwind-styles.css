@@ -955,6 +955,10 @@
     margin-bottom: 49px;
 }
 
+.step-form-step-two .subscription-box-details.subscription-box-details-mobile {
+    margin-bottom: 0;
+}
+
 .step-form-step-two .subscription-payment-box-details h4,
 .step-form-step-two .subscription-box-details h4{
     font-size: 16px;
