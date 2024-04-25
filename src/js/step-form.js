@@ -30,10 +30,9 @@ const ultimatePackageTotal = dataDropdownsUltimatePackage.reduce(
     (accumulator, currentValue) => accumulator + currentValue.price,
     0,
 );
-console.log(ultimatePackageTotal)
 
 
-export let isGlobalSelected = false;
+export let isGlobalSelected = true;
 export let regionsIngLength = 0;
 export const mainRegionSelectValue = "Global";
 export const maxRegionsValues = 5;
@@ -67,6 +66,7 @@ export const licencesSelect = new Choices('#licencesSelect', {
     choices: choicesArray,
 });
 
+
 //create option select
 export const optionsPackageSelect = new Choices('#optionsSelect', {
     searchEnabled: false,
@@ -84,46 +84,17 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 (() => {
     //step1
     document.addEventListener('DOMContentLoaded', () => {
-
-
-
-        /*   new SpinnerPicker(
-               document.getElementById("licenceSelectMain"),
-               function(index) {
-                   if(index < 0 || index > 99) {
-                       return null;
-                   }
-                   return index + 1;
-               },
-               {
-                   index: 0,
-                   animation_speed: 10,
-                   animation_steps: 5,
-                   font_color: "#000000",
-                   selection_color: "#000000",
-                   font: "Arial",
-                   onclick: true,
-                   ondblclick: true,
-                   onkeydown: true,
-                   onwheel: true,
-                   ontouchmove: true,
-                   onresize: true
-               },
-               function(index) {
-                   console.log(`You are ${this.getValue()} years old.`);
-               }
-           );*/
-
         let currentStep = 0;
         const steps = document.querySelectorAll('[data-step-form]');
         const nextButtons = document.querySelectorAll('[data-next-btn]');
         const dataSubscriptionInputs = document.querySelectorAll('[data-subscription-input]');
         const optionsDetails = document.getElementById('optionsDetails');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
+        const additionalTextOptionsSelectMobile = document.getElementById('additionalTextOptionsSelectMobile');
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
-        const stepForm = document.getElementById('stepForm');
+        const continueBtnStepOne = document.getElementById('continueBtnStepOne');
         const stepFormWrap = document.getElementById('stepFormWrap');
         const packageChooseName = document.getElementById('packageChooseName');
         const packageChooseTotal = document.getElementById('packageChooseTotal');
@@ -176,7 +147,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 regionSelectedItems.textContent = mainRegionSelectValue;
                 regionsIng.push(mainRegionSelectValue);
 
-                console.log("updateItemsDisplay", regionsIng.length);
+                continueBtnStepOne.classList.remove('disabled-btn')
                 return mainRegionSelectValue;
             } else {
                 const count = selectedCheckboxes.length;
@@ -190,18 +161,20 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                     if (count === 1 && item.checked) {
                         regionSelectedItems.textContent = item.name;
                         regionsIng.push(item.value);
+                        continueBtnStepOne.classList.remove('disabled-btn')
                         return item.value;
                     }
                    else if (count === 0 &&  !item.checked) {
                         regionSelectedItems.textContent = `Region (${count})`;
                         regionsIng.push(item.value);
                         regionsIng=[];
-
+                        continueBtnStepOne.classList.add('disabled-btn')
                         return `Region (${count})`;
                     }
                    else if (count >= 2 &&  item.checked) {
                         regionSelectedItems.textContent = `Regions (${count})`;
                         regionsIng.push(item.value);
+                        continueBtnStepOne.classList.remove('disabled-btn')
                         return `Regions (${count})`;
                     }
                 });
@@ -210,34 +183,32 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         }
 
 
-        //change state for regions select values
         function handleCheckboxChange() {
+            const selectedCheckboxes = Array.from(checkboxes).filter(c => c.checked && c !== globalCheckbox);
+
             if (globalCheckbox.checked) {
-                globalCheckbox.parentNode.classList.add('choose');
+                selectedCheckboxes.forEach(c => {
+                    c.checked = false;
+                    c.parentNode.classList.remove('choose');
+                });
+            } else if (selectedCheckboxes.length >= maxRegionsValues) {
+                globalCheckbox.checked = true;
                 checkboxes.forEach(c => {
                     if (c !== globalCheckbox) {
                         c.checked = false;
-                        c.disabled = true;
-                        c.parentNode.classList.add('disabled');
                         c.parentNode.classList.remove('choose');
+                    } else {
+                        c.parentNode.classList.add('choose');
                     }
                 });
             } else {
-                const selectedCount = Array.from(checkboxes).filter(c => c.checked && c.value !== mainRegionSelectValue.toLowerCase()).length;
-                if (selectedCount >= maxRegionsValues) {
-                    checkboxes.forEach(c => {
-                        if (!c.checked) {
-                            c.disabled = true;
-                        }
-                    });
-                } else {
-                    checkboxes.forEach(c => {
-                        c.disabled = false;
-                        c.parentNode.classList.remove('disabled');
-                    });
-                    globalCheckbox.disabled = false;
-                }
+                checkboxes.forEach(c => {
+                    c.disabled = false;
+                    c.parentNode.classList.remove('disabled');
+                });
+                globalCheckbox.parentNode.classList.remove('choose');
             }
+
             updateItemsDisplay();
             updateGlobalSelection();
             calculateTotal(
@@ -245,37 +216,16 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             );
         }
 
-
         checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function () {
-                if (this.value === mainRegionSelectValue.toLowerCase()) {
-                    checkboxes.forEach(c => {
-                        if (c.value !== mainRegionSelectValue.toLowerCase()) {
-                            c.disabled = this.checked;
-                            c.parentNode.classList.remove('disabled');
-                            globalCheckbox.parentNode.classList.remove('choose');
-                        }
-                    });
-                } else {
-                    const selectedNonGlobalCheckboxes = Array.from(checkboxes).filter(c => {
-
-                        if (c.checked && c.value !== mainRegionSelectValue.toLowerCase()) {
-                            c.parentNode.classList.add('choose');
-                            return c.checked && c.value !== mainRegionSelectValue.toLowerCase();
-                        }
-                    }).length;
-                    if (selectedNonGlobalCheckboxes >= maxRegionsValues) {
-                        globalCheckbox.checked = true;
-                        globalCheckbox.parentNode.classList.add('choose');
-                        handleCheckboxChange();
-                        return;
-                    }
+            checkbox.addEventListener('change', () => {
+                if (checkbox !== globalCheckbox) {
+                    globalCheckbox.checked = false;
+                    globalCheckbox.parentNode.classList.remove('choose');
                 }
                 handleCheckboxChange();
             });
         });
 
-        handleCheckboxChange();
         //region custom select code finish
 
 
@@ -307,6 +257,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             );
 
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
+            additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
         });
 
@@ -389,12 +340,9 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
                     if (currentStep === 1) {
                         const isValidForm = validateForm();
-                        if (isValidForm) {
-                            console.log('Form on second step is not valid');
+                        if (!isValidForm) {
                             return;
                         } else {
-                            console.log('Form on second step is valid');
-
                             dataSubscriptionInputs.forEach(input => {
                                 if (input.type === 'radio' && !input.checked) return;
 
@@ -427,6 +375,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             optionsPackageSelect.setChoiceByValue('');
             optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
+            additionalTextOptionsSelect.innerHTML = '';
             regionsIng = [];
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
@@ -453,7 +402,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         }
 
     });
-
 })();
 
 

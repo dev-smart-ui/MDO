@@ -61,7 +61,7 @@ function validateRadioButtons() {
 function validateEmailInput() {
     const emailInput = document.getElementById('email');
     const errorDiv = document.getElementById('error-email');
-    const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailPattern = /^[a-z0-9.]+@[a-z0-9.]+$/;
 
 
     if (emailInput.value==='') {
