@@ -48,6 +48,7 @@ window.addEventListener("load", function () {
         autoplay: {
             delay: 5000,
             waitForTransition: true,
+            disableOnInteraction: false,
         },
         grabCursor: true,
         speed: 700,

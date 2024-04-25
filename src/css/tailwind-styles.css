@@ -1480,6 +1480,10 @@
     min-height: 750px;
   }
 
+  #comprehensive-slider {
+    max-height: calc(608px + clamp(15px, 8.7dvh, 9dvw) + clamp(15px, 7dvh, 4dvw));
+  }
+
   div.comprehensive-coverage .content p {
     font-size: 50px;
   }
