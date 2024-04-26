@@ -367,8 +367,11 @@
                          class="step-form-step overflow-auto lg:overflow-visible lg:bg-white step-form-step-one flex items-stretch  active  flex-col lg:flex-row  "
                          id="step1">
                         <div class="step-form-box-left lg:w-2/4">
-                            <h2 class="step-title font-bold">Packages<br> and
+                            <h2 class="step-title step-title-desktop font-bold">Packages<br> and
                                 Modules</h2>
+
+                            <h2 class="step-title step-title-mobile font-bold">Packages & Modules</h2>
+
                             <div class="select-box regions-select-box">
                                 <div class="select-title-box  flex items-center">
                                     <img class="mr-2" src="./src/images/step-form/step1.png" loading="lazy"
@@ -469,9 +472,14 @@
                                 <div class="total-counter">
                                     Total: $<span id="totalCounter"></span>
                                 </div>
-                                <button id="continueBtnStepOne" data-next-btn class="continue-btn flex items-center justify-center rounded-[12px] font-medium text-[16px] text-white">
-                                    Continue to billing >
+                                <button id="continueBtnStepOne" data-next-btn class="continue-btn continue-btn-desktop flex items-center justify-center rounded-[12px] font-medium text-[16px] text-white">
+                                    <span class="continue-btn-inner-text-desktop"> Continue to billing ></span>
+                                    <span class="continue-btn-inner-text-mobile" id="continueBtnTotal">Continue to billing ></span>
+
+
                                 </button>
+
+
                             </div>
 
                         </div>

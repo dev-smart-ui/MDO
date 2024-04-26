@@ -193,7 +193,7 @@
 
 
 .step-form-wrap {
-    padding: 90px 0 16px;
+    padding: 60px 0 22px;
 }
 
 .step-form-wrap.step-form-wrap-open-package{
@@ -248,7 +248,6 @@
 }
 
 
-
 .step-form-step-one.active,
 .step-form-step-two.active {
     opacity: 1;
@@ -293,12 +292,34 @@
 .step-form-step-one .step-form-box-right{
     height: 100%;
     overflow-x: scroll;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+
+.step-form-box-right:after {
+    content: '';
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 46.12%);
+    height: 110px;
 }
 
 
 .step-form-step-one .step-title {
     margin-bottom: 23px;
+}
+
+.step-form-step-one .step-title.step-title-desktop {
+    display: none;
+}
+
+.step-form-step-one .step-title.step-title-mobile {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 5px;
 }
 
 .step-form-step-one .step-title  br{
@@ -347,6 +368,10 @@
     background: #a7a1a1;
 }
 
+.step-form-box-right.disabled-step-form-box-right .bottom-container{
+    padding: 0;
+}
+
 .step-form-box-right  .title-arrow-box{
     position: relative;
     margin-right: 50px;
@@ -375,6 +400,10 @@
     height: 56px;
 }
 
+.step-form-wrap .continue-btn-inner-text-desktop {
+   display: none;
+}
+
 .step-form-wrap .continue-btn.disabled-btn {
   pointer-events: none;
     background: #9ca3af;
@@ -399,6 +428,11 @@
 
 .step-form-box-left .package-select-info-img {
     width: 25px;
+}
+
+.step-form-box-left .package-select-info-img img{
+    width: 100%;
+    height: auto;
 }
 
 .step-form-box-left .package-select-info-text {
@@ -515,6 +549,11 @@
     margin-bottom: 10px;
 }
 
+.step-form-box-right .dropdown-box:last-child,
+.step-form-box-right .menu-box:last-child {
+    margin-bottom: 50px;
+}
+
 
 .step-form-box-right  .dropdown-menu {
     padding-left: 50px;
@@ -605,7 +644,17 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 5;
 }
+
+.step-form-step-two .bottom-container{
+    padding: 0 24px;
+}
+
+.step-form-step-one .bottom-container .total-counter {
+    display: none;
+}
+
 
 /*right side styles finish*/
 
@@ -631,24 +680,31 @@
 .regions-select-wrap .select-choices-inner {
     border: 1px solid #CFCFCF;
     width: 100%;
-    height: 48px;
+    height: 40px;
     padding: 6px 16px 6px 16px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     font-size: 16px;
+    font-weight: 500;
     color: #151515;
     position: relative;
     transition:  .3s ease-in-out;
     cursor: pointer;
 }
 
-.regions-select-wrap .select-choices-inner:after {
+.regions-select-wrap .select-choices-inner:after,
+.package-select-box .choices:after{
     content: '';
     position: absolute;
-    border: 6px solid transparent;
-    border-top: 6px solid #74879B;
-    right: 20px;
+    width: 10px;
+    height: 8px;
+    background: url("../images/step-form/arrow-down.svg") no-repeat center center;
+    right: 13px;
+    background-size: contain;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
 }
 
 
@@ -808,7 +864,7 @@
 .licences-select-box .choices{
   border: 1px solid #CFCFCF;
   width: 100%;
-  height: 48px;
+  height: 40px;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -842,13 +898,6 @@
   padding: 6px;
 }
 
-.licences-select-box .choices:after,
-.package-select-box .choices:after{
-  border: 6px solid transparent;
-  border-top: 6px solid #74879B;
-  right: 20px;
-  margin-top: 0;
-}
 
 .licences-select-box .choices:after {
     display: none;
@@ -958,7 +1007,7 @@
     display: flex;
    flex-direction: column;
     overflow-y: auto;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
     padding-right: 10px;
 }
 
@@ -1054,6 +1103,7 @@
 
 .step-form-step-two .subscription-payment-box-details{
     padding-top: 10px;
+    margin-bottom: 30px;
 }
 
 
@@ -1380,6 +1430,13 @@
         line-height: 81px;
     }
 
+    .step-form-step-one .step-title.step-title-desktop {
+        display: block;
+    }
+
+    .step-form-step-one .step-title.step-title-mobile{
+        display: none;
+    }
 
     .step-form-step-one,
     .step-form-step-two{
@@ -1394,6 +1451,9 @@
 
     .step-form-step-one .step-title  br{
         display: block;
+    }
+    .regions-select-wrap .select-choices-inner {
+        height: 48px;
     }
 
 
@@ -1443,6 +1503,13 @@
     .step-form-step-one .select-title-box {
         margin-bottom: 17px;
     }
+    .step-form-step-one .continue-btn-inner-text-desktop {
+        display: block;
+    }
+
+    .step-form-step-one .continue-btn-inner-text-mobile {
+        display: none;
+    }
 
     .step-form-step-one .step-form-box-right .dropdown-box {
         padding: 13px 14px 15px 17px;
@@ -1453,14 +1520,28 @@
         margin-right: 18px;
     }
 
+    .step-form-box-right .dropdown-box:last-child,
+    .step-form-box-right .menu-box:last-child {
+        margin-bottom: 0;
+    }
+
     .step-form-step-one .step-form-box-right .optional-content {
-        margin-bottom: 65px;
+        margin-bottom: 40px;
     }
 
     .step-form-step-one .step-form-box-right .bottom-container{
         padding: 0;
         padding-right: 20px;
         position: static;
+    }
+
+    .step-form-step-one .bottom-container .total-counter {
+        display: block;
+    }
+
+
+    .step-form-box-right:after {
+       display: none;
     }
 
     .step-form-box-left .additional-text-options {
@@ -1470,6 +1551,7 @@
 
     .regions-select-wrap, .package-select-wrap, .licences-select-wrap {
         max-width: 408px;
+        height: 60px;
     }
 
     .regions-select-wrap .select-choices-inner {
@@ -1569,6 +1651,7 @@
 
     .step-form-step-two .subscription-payment-box-details{
         padding-top: 32px;
+        margin-bottom: 0;
     }
 
     .step-form-step-two .subscription-payment-box-details-box  .radio-item {
@@ -1626,23 +1709,10 @@
 
 @media screen and (max-width: 392px) {
 
-    .step-form-wrap {
-        padding: 70px 0 16px;
-    }
-    .step-form-box-left .package-select-info-text {
-        padding: 20px 25px;
-    }
-
     .step-form-box-right .optional-content {
         max-height: 400px;
     }
 
-
-    .step-form-step-one .step-title {
-        margin-bottom: 9px;
-        font-size: 22px;
-        line-height: 30px;
-    }
 }
 
 

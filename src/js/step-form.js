@@ -95,6 +95,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
         const continueBtnStepOne = document.getElementById('continueBtnStepOne');
+        const continueBtnTotal = document.getElementById('continueBtnTotal');
         const stepFormWrap = document.getElementById('stepFormWrap');
         const packageChooseName = document.getElementById('packageChooseName');
         const packageChooseTotal = document.getElementById('packageChooseTotal');
@@ -259,6 +260,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
+            continueBtnTotal.innerText=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} `
         });
 
         // change event for licenses select
@@ -335,6 +337,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         packageChooseName.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
                         totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
+                        continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
+                        packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                     }
 

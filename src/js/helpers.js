@@ -4,7 +4,7 @@ import {
     basePriceValues,
     isGlobalSelected,
     licencesSelect,
-    newSumOfPackage,
+    newSumOfPackage, optionsPackageSelect,
     regionsIngLength
 } from "./step-form.js";
 
@@ -14,12 +14,18 @@ function setupDropdownToggle(element) {
         if (dropDownButton) {
             const dropdownBox = dropDownButton.closest('.dropdown-box');
             if (dropdownBox) {
-                dropdownBox.classList.toggle('drop-down-item-open');
+
+                document.querySelectorAll('.dropdown-box').forEach(box => {
+                    if (box === dropdownBox) {
+                        box.classList.toggle('drop-down-item-open');
+                    } else {
+                        box.classList.remove('drop-down-item-open');
+                    }
+                });
             }
         }
     });
 }
-
 
 function calculateTotal(currentPackageSelect) {
     let total = 0;
@@ -64,6 +70,7 @@ function calculateTotal(currentPackageSelect) {
         newSumOfPackage[currentPackageSelect] = total;
         document.getElementById("totalCounter").innerText = total;
         document.getElementById("totalCounterSecond").innerText = total;
+        document.getElementById("continueBtnTotal").innerText = `Total: $${total}`;
     }
 
 }
