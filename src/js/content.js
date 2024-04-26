@@ -209,52 +209,52 @@ function createDropdownsOfUltimate(data, packageTotal) {
 const dataDropdownsResearchPackage = [
     {
         btnTitle: "Mine / Project Overview",
-        imgLink: 'src/images/step-form/listItem1.png',
+        imgLink: 'src/images/step-form/listItem1.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Ownership",
-        imgLink: 'src/images/step-form/listItem2.png',
+        imgLink: 'src/images/step-form/listItem2.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Deposit Type & Geology",
-        imgLink: 'src/images/step-form/listItem3.png',
+        imgLink: 'src/images/step-form/listItem3.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Reserves & Resources",
-        imgLink: 'src/images/step-form/listItem4.png',
+        imgLink: 'src/images/step-form/listItem4.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Commodity Production",
-        imgLink: 'src/images/step-form/listItem5.png',
+        imgLink: 'src/images/step-form/listItem5.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Workforce",
-        imgLink: 'src/images/step-form/listItem6.png',
+        imgLink: 'src/images/step-form/listItem6.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Mine Financials",
-        imgLink: 'src/images/step-form/listItem7.png',
+        imgLink: 'src/images/step-form/listItem7.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Technical & Annual Reports",
-        imgLink: 'src/images/step-form/listItem7.png',
+        imgLink: 'src/images/step-form/listItem7.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Data Download",
-        imgLink: 'src/images/step-form/listItem7.png',
+        imgLink: 'src/images/step-form/listItem7.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company"]
     },
     {
         btnTitle: "Search Assets by:",
-        imgLink: 'src/images/step-form/listItem7.png',
+        imgLink: 'src/images/step-form/listItem7.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company"]
     },
 
@@ -264,91 +264,91 @@ const dataDropdownsCustomPackage = [
     {
         btnTitle: "Research Package",
         price: 2000.00,
-        imgLink: 'src/images/step-form/custom1.png',
+        imgLink: 'src/images/step-form/custom1.svg',
         itemsArr: ["Mine / Project Overview", "Ownership", "Deposit Type & Geology", "Reserves & Resources", "Commodity Production", "Workforce", "Mine Financials", "Technical & Annual Reports", "Data Download", "Search Assets by",]
     },
     {
         btnTitle: "Key Managers and Superintendents",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom2.png',
+        imgLink: 'src/images/step-form/custom2.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Heavy Mobile Equipment (optional)",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom3.png',
+        imgLink: 'src/images/step-form/custom3.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Mineral Processing",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom4.png',
+        imgLink: 'src/images/step-form/custom4.svg',
         itemsArr: ["Processing Technologies", "Reagents", "Recovery Technologies", "Recovery Rates", "Flowsheet Diagrams",]
     },
     {
         btnTitle: "Project Costs and Returns ",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom5.png',
+        imgLink: 'src/images/step-form/custom5.svg',
         itemsArr: ["CapEx", "OpEx", "Revenue", "Cash Flow"]
     },
     {
         btnTitle: "Mining Contracts (optional)",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom6.png',
+        imgLink: 'src/images/step-form/custom6.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Mapper and Coordinates",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom7.png',
+        imgLink: 'src/images/step-form/custom7.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Mining Operations (optional)",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom8.png',
+        imgLink: 'src/images/step-form/custom8.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Crushing and Grinding Equipment",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom9.png',
+        imgLink: 'src/images/step-form/custom9.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Production Costs",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom10.png',
+        imgLink: 'src/images/step-form/custom10.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Project Timeline",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom11.png',
+        imgLink: 'src/images/step-form/custom11.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Remote Camps",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom12.png',
+        imgLink: 'src/images/step-form/custom12.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Pipelines and Water Supply",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom13.png',
+        imgLink: 'src/images/step-form/custom13.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company", ]
     },
     {
         btnTitle: "Additional user license",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom14.png',
+        imgLink: 'src/images/step-form/custom14.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Power Supply",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom15.png',
+        imgLink: 'src/images/step-form/custom15.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
 ];
@@ -356,91 +356,91 @@ const dataDropdownsUltimatePackage = [
      {
         btnTitle: "Research Package",
         price: 2000.00,
-        imgLink: 'src/images/step-form/custom1.png',
+        imgLink: 'src/images/step-form/custom1.svg',
         itemsArr: ["Mine / Project Overview", "Ownership", "Deposit Type & Geology", "Reserves & Resources", "Commodity Production", "Workforce", "Mine Financials", "Technical & Annual Reports", "Data Download", "Search Assets by",]
     },
     {
         btnTitle: "Key Managers and Superintendents",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom2.png',
+        imgLink: 'src/images/step-form/custom2.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Heavy Mobile Equipment (optional)",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom3.png',
+        imgLink: 'src/images/step-form/custom3.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Mineral Processing",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom4.png',
+        imgLink: 'src/images/step-form/custom4.svg',
         itemsArr: ["Processing Technologies", "Reagents", "Recovery Technologies", "Recovery Rates", "Flowsheet Diagrams",]
     },
     {
         btnTitle: "Project Costs and Returns ",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom5.png',
+        imgLink: 'src/images/step-form/custom5.svg',
         itemsArr: ["CapEx", "OpEx", "Revenue", "Cash Flow"]
     },
     {
         btnTitle: "Mining Contracts (optional)",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom6.png',
+        imgLink: 'src/images/step-form/custom6.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Mapper and Coordinates",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom7.png',
+        imgLink: 'src/images/step-form/custom7.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Mining Operations (optional)",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom8.png',
+        imgLink: 'src/images/step-form/custom8.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Crushing and Grinding Equipment",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom9.png',
+        imgLink: 'src/images/step-form/custom9.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Production Costs",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom10.png',
+        imgLink: 'src/images/step-form/custom10.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Project Timeline",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom11.png',
+        imgLink: 'src/images/step-form/custom11.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Remote Camps",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom12.png',
+        imgLink: 'src/images/step-form/custom12.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Pipelines and Water Supply",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom13.png',
+        imgLink: 'src/images/step-form/custom13.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company", ]
     },
     {
         btnTitle: "Additional user license",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom14.png',
+        imgLink: 'src/images/step-form/custom14.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
     {
         btnTitle: "Power Supply",
         price: 100.00,
-        imgLink: 'src/images/step-form/custom15.png',
+        imgLink: 'src/images/step-form/custom15.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company",]
     },
 ];
