@@ -383,7 +383,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             optionsPackageSelect.setChoiceByValue('');
             optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
-            additionalTextOptionsSelect.innerHTML = '';
+            additionalTextOptionsSelect.innerHTML = "";
+            additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent["researchPackage"].additionalTextBottom;
             regionsIng = [];
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
@@ -399,6 +400,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             });
             optionsDetails.innerHTML = '';
             selectedOptions.innerHTML = '';
+            continueBtnTotal.innerHTML = `Continue to billing >`;
             steps[currentStep].classList.remove('active');
             currentStep = 0;
             steps[currentStep].classList.add('active');

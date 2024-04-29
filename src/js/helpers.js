@@ -17,7 +17,7 @@ function setupDropdownToggle(element) {
 
                 document.querySelectorAll('.dropdown-box').forEach(box => {
                     if (box === dropdownBox) {
-                        box.classList.toggle('drop-down-item-open');
+                        box.classList.add('drop-down-item-open');
                     } else {
                         box.classList.remove('drop-down-item-open');
                     }

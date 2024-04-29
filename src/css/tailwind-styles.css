@@ -342,7 +342,8 @@
 
 
 .step-form-box-right .optional-content {
-    max-height: 590px;
+    max-height: 100%;
+    height: 100%;
     overflow-x: auto;
 
     ::-webkit-scrollbar {
@@ -432,7 +433,7 @@
 
 
 .step-form-wrap .step-title {
-    font-size: 36px;
+    font-size: 28px;
     line-height: 48px;
 }
 
@@ -576,6 +577,7 @@
     background: #FAFAFA;
     padding: 12px 16px;
     border-radius: 8px;
+    transition: all .2s ease-in-out;
 }
 
 .step-form-box-right .dropdown-box:not(:last-child),
@@ -593,11 +595,12 @@
     padding-left: 50px;
     font-size: 14px;
     line-height: 14px;
-    visibility: hidden;
-    opacity: 0.8;
     max-height: 0;
-    overflow: hidden;
-    transition:  max-height 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    height: 100%;
+    transition-property: max-height, padding-top, padding-bottom;
+    transition-duration: 0.65s;
+    transition-timing-function: linear;
+    overflow-y: hidden;
 }
 
 .step-form-box-right  .list-menu {
@@ -610,7 +613,7 @@
 
 .step-form-box-right .drop-down-item-open .dropdown-menu {
     visibility: visible;
-    max-height: 500px;
+    max-height: 400px;
     transition: visibility 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
 
@@ -953,7 +956,7 @@
     top: 50%;
     left: 0;
     transform: translate(6px, -50%);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -1167,28 +1170,43 @@
     width: 16px;
 }
 
-.step-form-step-two .selected-options-container.selected-options-container-show{
-    display: block;
+.step-form-step-two .selected-options-container{
+    transition: all 0.25s ease-in-out;
     position: fixed;
     top: -60px;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-   z-index: 10;
+    z-index: -2;
     overflow-y: auto;
+}
+
+
+.step-form-step-two .selected-options-container.selected-options-container-show{
+    z-index: 10;
+    transition: all 0.25s ease-in-out;
 }
 .step-form-step-two .selected-options-container-show .dropdown-box:last-child,
 .step-form-step-two .selected-options-container-show  .menu-box:last-child {
     margin-bottom: 0;
 }
 
-.step-form-step-two .selected-options-container.selected-options-container-show .selected-options-container-inner{
+.step-form-step-two .selected-options-container .selected-options-container-inner{
     background: #FFFFFF;
-    border-radius: 26px;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
     margin-top: 180px;
     padding: 38px 18px 18px 18px;
-    position: relative;
+    min-height: 100%;
+    transform: translateY(100%);
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+}
+
+.step-form-step-two .selected-options-container.selected-options-container-show .selected-options-container-inner{
+    transform: translateY(0);
+    transition: all 0.25s ease-in-out;
 }
 
 
@@ -1462,6 +1480,10 @@
         padding: 140px 0 85px;
     }
 
+    .step-form-box-right .optional-content {
+        max-height: 590px;
+    }
+
     .step-form-wrap .step-title {
         font-size: 60px;
         line-height: 81px;
@@ -1607,6 +1629,10 @@
         font-size: 18px;
     }
 
+    .licences-select-box .choices__list.choices__list--single:after{
+        font-size: 18px;
+    }
+
     .step-form-step-one .step-form-box-right .total-counter{
         margin-bottom: 20px;
         margin-right: 20px;
@@ -1630,6 +1656,18 @@
     .step-form-step-two {
         grid-template-columns: 2fr minmax(auto, 400px);
         gap: 20px;
+    }
+
+
+    .step-form-step-two .selected-options-container {
+        position: static;
+        z-index:0;
+    }
+
+    .step-form-step-two .selected-options-container .selected-options-container-inner{
+        transform: none;
+        margin-top: 0;
+        padding-top:0 ;
     }
 
 
@@ -1734,25 +1772,23 @@
         line-height: 45px;
     }
 
+
+    .step-form-step-two .name-of-choose-package {
+        margin-bottom: 10px;
+    }
+
     .step-form-step-two .subscription-box-details input {
         height: 38px;
     }
 
     .step-form-step-two .step-form-box-right .optional-content {
-        max-height: 528px;
+        max-height: 510px;
     }
 
     .step-form-step-two .subscription-box-details:first-child {
         margin-bottom: 15px;
     }
 
-}
-
-@media screen and (max-width: 392px) {
-
-    .step-form-box-right .optional-content {
-        max-height: 400px;
-    }
 }
 
 
@@ -1764,6 +1800,7 @@
     .step-form-step-two {
         grid-template-columns: 2fr minmax(auto, 400px);
     }
+
 }
 
 
