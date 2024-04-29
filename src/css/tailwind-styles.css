@@ -1180,12 +1180,14 @@
     width: 100%;
     z-index: -2;
     overflow-y: auto;
+    opacity: 0;
 }
 
 
 .step-form-step-two .selected-options-container.selected-options-container-show{
     z-index: 10;
     transition: all 0.25s ease-in-out;
+    opacity: 1;
 }
 .step-form-step-two .selected-options-container-show .dropdown-box:last-child,
 .step-form-step-two .selected-options-container-show  .menu-box:last-child {
@@ -1662,6 +1664,7 @@
     .step-form-step-two .selected-options-container {
         position: static;
         z-index:0;
+        opacity: 1;
     }
 
     .step-form-step-two .selected-options-container .selected-options-container-inner{
