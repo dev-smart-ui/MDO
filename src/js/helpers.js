@@ -4,7 +4,7 @@ import {
     basePriceValues,
     isGlobalSelected,
     licencesSelect,
-    newSumOfPackage, optionsPackageSelect,
+    newSumOfPackage,
     regionsIngLength
 } from "./step-form.js";
 
@@ -85,7 +85,12 @@ function adjustContainerHeight() {
         return;
     }
 
-    if (activeStep) {
+    if(activeStep && window.innerHeight>=1500){
+        console.log(window.innerHeight>1500)
+        container.style.maxHeight = `1100px`;
+    }
+
+    if (activeStep && window.innerHeight<1500) {
         container.style.maxHeight = `${window.innerHeight}px`;
     }
 

@@ -427,7 +427,7 @@
 
 
 .step-form-box-left .package-select-info-img {
-    width: 25px;
+    width: 18px;
 }
 
 .step-form-box-left .package-select-info-img img{
@@ -1143,7 +1143,7 @@
     right: 0;
     bottom: 0;
     width: 100%;
-   z-index: 3;
+   z-index: 10;
     overflow-y: auto;
 }
 
@@ -1693,12 +1693,16 @@
         padding: 20px 37px 20px 80px;
     }
 
-    .step-form-wrap .select-box:not(:last-child) {
-        margin-bottom: 30px;
+    .step-form-step-two .step-title{
+        line-height: 45px;
+    }
+
+    .step-form-step-two .subscription-box-details input {
+        height: 38px;
     }
 
     .step-form-step-two .step-form-box-right .optional-content {
-        max-height: 510px;
+        max-height: 528px;
     }
 
     .step-form-step-two .subscription-box-details:first-child {
@@ -1712,7 +1716,6 @@
     .step-form-box-right .optional-content {
         max-height: 400px;
     }
-
 }
 
 
@@ -1734,9 +1737,7 @@
     }
 
 
-    .step-form-step-two .subscription-box-details input {
-        height: 30px;
-    }
+
     .step-form-step-two .subscription-box-details {
         margin-bottom: 20px;
     }
@@ -1771,7 +1772,7 @@
     }
 
     .step-form-step-two .step-form-box-right .optional-content {
-        max-height: 350px;
+        max-height: 495px;
     }
 
     .step-form-step-two .subscription-box-details:first-child {
@@ -1785,31 +1786,28 @@
 
     .step-form-step-two .step-title{
         margin-bottom: 0;
+        line-height: 45px;
     }
 
     .step-form-step-one .step-title{
         margin-bottom: 15px;
     }
 
-
-    .step-form-wrap .select-box:not(:last-child) {
-        margin-bottom: 20px;
-    }
-
 }
 
-@media screen and (min-width: 1400px) {
-    .step-form-step-two {
-        padding: 47px 40px 50px 80px;
+@media screen and (min-width: 1024px) and (max-height: 892px) {
+    .step-form-step-two .step-form-box-right .optional-content {
+        max-height: 460px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 860px) {
+    .step-form-step-two .step-form-box-right .optional-content {
+        max-height: 430px;
     }
 
-    .step-form-step-two .subscription-box-details:first-child {
-        margin-bottom: 35px;
-    }
-
-
-    .step-form-step-two {
-        grid-template-columns: 2fr minmax(auto, 545px);
+    .step-form-step-two .subscription-box-details input {
+        height: 35px;
     }
 }
 
@@ -1820,12 +1818,66 @@
     }
 }
 
-@media screen and (min-width: 1024px) and (max-height: 740px) {
-
-    .step-form-wrap .select-box:not(:last-child) {
-        margin-bottom: 10px;
+@media screen and (min-width: 1024px) and (max-height: 825px) {
+    .step-form-step-two .step-form-box-right .optional-content {
+        max-height: 395px;
     }
 
+    .step-form-step-two .subscription-box-details input {
+        height: 32px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 800px) {
+    .step-form-wrap .subscription-box-details:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 790px) {
+    .step-form-step-one .step-title.step-title-desktop br {
+        display: none;
+    }
+
+
+    .step-form-step-two .subscription-box-details input {
+        height: 30px;
+    }
+
+    .step-form-step-two .step-form-box-right .optional-content {
+        max-height: 375px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 780px) {
+    .step-form-step-two .step-title {
+        line-height: 35px;
+    }
+
+    .step-form-step-two .subscription-box-details input {
+        height: 27px;
+    }
+
+    .step-form-step-two .step-form-box-right .optional-content {
+        max-height: 345px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-height: 755px) {
+    .step-form-step-one .select-box:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .step-form-step-two {
+        padding: 47px 40px 50px 80px;
+    }
+
+
+    .step-form-step-two {
+        grid-template-columns: 2fr minmax(auto, 545px);
+    }
 }
 
 @media screen and (min-width: 1600px) and (max-height: 940px) {
@@ -1834,6 +1886,22 @@
        }
 }
 
+@media screen and (min-width: 1024px) and (min-height: 1500px) {
+
+    .step-form-step-two{
+        align-content: center;
+    }
+
+    .step-form-box-left, .step-form-box-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .step-form-step-two .step-form-step-two-left-column{
+        align-items: center;
+    }
+}
 
 
 
