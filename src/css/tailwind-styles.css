@@ -1146,6 +1146,10 @@
    z-index: 10;
     overflow-y: auto;
 }
+.step-form-step-two .selected-options-container-show .dropdown-box:last-child,
+.step-form-step-two .selected-options-container-show  .menu-box:last-child {
+    margin-bottom: 0;
+}
 
 .step-form-step-two .selected-options-container.selected-options-container-show .selected-options-container-inner{
     background: #FFFFFF;
