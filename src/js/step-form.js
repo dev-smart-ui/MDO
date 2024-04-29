@@ -109,6 +109,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const totalCounterSecond = document.getElementById('totalCounterSecond');
         const packageSelectInfo = document.getElementById('packageSelectInfo');
         const packageSelectInfoText = document.getElementById('packageSelectInfoText');
+        const stepFormWrapContainer = document.getElementById('stepFormWrapContainer');
         const closeBtns = document.querySelectorAll("[data-close-modal]");
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
@@ -287,6 +288,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
         packageSelectInfo.addEventListener('click', () => {
             packageSelectInfoText.classList.add("package-select-info-text-toggle");
+            stepFormWrapContainer.classList.add("step-form-blur");
         });
 
         closeBtns.forEach(btnClose => {
@@ -294,6 +296,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
                 selectedOptionsContainer.classList.remove("selected-options-container-show");
                 stepFormWrap.classList.remove("step-form-wrap-open-package");
+                stepFormWrapContainer.classList.remove("step-form-blur");
             });
         });
 
@@ -306,6 +309,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         document.addEventListener('click', (event) => {
             if (!packageSelectInfo.contains(event.target)) {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
+                stepFormWrapContainer.classList.remove("step-form-blur");
             }
         });
 

@@ -196,6 +196,11 @@
     padding: 60px 0 22px;
 }
 
+
+.step-form-wrap-container {
+    transition: 0.3s ease-in-out;
+}
+
 .step-form-wrap.step-form-wrap-open-package{
     padding: 0;
 }
@@ -446,25 +451,43 @@
     height: auto;
 }
 
-.step-form-box-left .package-select-info-text {
+.step-form-blur{
+    filter: blur(3px);
+}
+
+.package-select-info-text-wrap {
     position: absolute;
-    top: 100%;
-    right: 0;
+    background: rgba(19, 21, 23, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-select-info-text {
     box-shadow: 13px 11px 60px 0px #0000000D;
     border-radius: 20px;
     background: white;
     padding: 66px 31px;
     max-width: 345px;
     width: 100%;
-    z-index: 4;
-    display: none;
+    position: relative;
 }
 
-.step-form-box-left .package-select-info-text.package-select-info-text-toggle {
-    display: block;
+.package-select-info-text-wrap.package-select-info-text-toggle {
+    z-index: 1000;
+    opacity: 1;
+    margin: unset;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.step-form-box-left .package-select-info-text h4 {
+.package-select-info-text h4 {
     font-size: 24px;
     font-weight: 700;
     line-height: 40px;
@@ -472,14 +495,14 @@
     color: #151515;
 }
 
-.step-form-box-left .package-select-info-text span {
+ .package-select-info-text span {
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
     text-align: left;
 }
 
-.step-form-box-left .package-select-info-text img {
+ .package-select-info-text img {
     top: 20px;
     right: 20px;
     width: 24px;
@@ -488,7 +511,7 @@
 }
 
 
-.step-form-box-left .additional-text-options {
+.additional-text-options {
     display: none;
 }
 
@@ -1261,6 +1284,7 @@
 .step-form-step-two .subscription-box-accepted-text{
     font-size: 18px;
     opacity: 0.7;
+    cursor: pointer;
 }
 
 .step-form-step-two .subscription-box-accepted-text a{

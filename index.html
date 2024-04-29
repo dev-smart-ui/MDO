@@ -360,7 +360,17 @@
 
 
         <section class="snap-start step-form-wrap lg:bg-gray h-full" id="stepFormWrap" >
-            <div class="step-form-wrap-container flex items-center h-full">
+            <div class="package-select-info-text-wrap" id="packageSelectInfoText">
+                <div class="package-select-info-text" >
+                    <img class="absolute package-select-info-close" data-close-modal
+                         id="packageSelectInfoTextClose"
+                         src="./src/images/step-form/close.png"  alt="close"/>
+                    <h4>Select you package</h4>
+
+                    <span id="additionalTextOptionsSelectMobile">Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!</span>
+                </div>
+            </div>
+            <div class="step-form-wrap-container flex items-center h-full" id="stepFormWrapContainer">
                 <div class="step-form-box h-full overflow-hidden lg:overflow-visible" id="stepForm">
                     <!-- step1-->
                     <div data-step-form
@@ -423,14 +433,7 @@
 
                             <div class="select-box package-select-box">
                                 <div class="select-title-box  flex items-center relative">
-                                    <div class="package-select-info-text" id="packageSelectInfoText">
-                                        <img class="absolute package-select-info-close" data-close-modal
-                                             id="packageSelectInfoTextClose"
-                                             src="./src/images/step-form/close.png"  alt="close"/>
-                                        <h4>Select you package</h4>
 
-                                        <span id="additionalTextOptionsSelectMobile">Perfect for mining industry research! Encompasses Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM, Workforce, and Financials. Exceptonal value for your dollar!</span>
-                                    </div>
                                     <button class="package-select-info-img absolute right-0 lg:hidden"
                                             id="packageSelectInfo">
                                         <img src="./src/images/step-form/info.svg"  alt="info"/>
@@ -695,6 +698,7 @@
                 </div>
             </div>
         </section>
+
     </div>
 </div>
 
