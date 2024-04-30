@@ -188,6 +188,21 @@
   opacity: 1;
 }
 
+.comprehensive-coverage .swiper-slide {
+  transform: scale(0.82);
+  transform-origin: right center;
+  min-height: 408px;
+}
+
+.comprehensive-coverage .swiper-slide.swiper-slide-active {
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+.comprehensive-coverage .afterActive {
+  transform-origin: left center;
+}
+
 
 /*common styles of step form  start*/
 
@@ -1485,8 +1500,6 @@
 /*media steps form start*/
 
 
-
-
 @media screen and (min-width: 1642px){
     .step-form-step-one,
     .step-form-step-two {
@@ -1506,21 +1519,6 @@
 
   .comprehensive-coverage .subtitle br {
     display: block;
-  }
-
-  .comprehensive-coverage .swiper-slide {
-    transform: scale(0.82);
-    transform-origin: right center;
-    min-height: 408px;
-  }
-
-  .comprehensive-coverage .swiper-slide.swiper-slide-active {
-    transform: scale(1);
-    transform-origin: center center;
-  }
-
-  .comprehensive-coverage .afterActive {
-    transform-origin: left center;
   }
 
   .swiper-slide.comprehensive-coverage {
