@@ -95,6 +95,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
         const continueBtnStepOne = document.getElementById('continueBtnStepOne');
+        const continueBtnTotal = document.getElementById('continueBtnTotal');
         const stepFormWrap = document.getElementById('stepFormWrap');
         const packageChooseName = document.getElementById('packageChooseName');
         const packageChooseTotal = document.getElementById('packageChooseTotal');
@@ -108,6 +109,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const totalCounterSecond = document.getElementById('totalCounterSecond');
         const packageSelectInfo = document.getElementById('packageSelectInfo');
         const packageSelectInfoText = document.getElementById('packageSelectInfoText');
+        const stepFormWrapContainer = document.getElementById('stepFormWrapContainer');
         const closeBtns = document.querySelectorAll("[data-close-modal]");
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
@@ -259,6 +261,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
+            continueBtnTotal.innerText=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} `
         });
 
         // change event for licenses select
@@ -285,6 +288,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
         packageSelectInfo.addEventListener('click', () => {
             packageSelectInfoText.classList.add("package-select-info-text-toggle");
+            stepFormWrapContainer.classList.add("step-form-blur");
         });
 
         closeBtns.forEach(btnClose => {
@@ -292,6 +296,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
                 selectedOptionsContainer.classList.remove("selected-options-container-show");
                 stepFormWrap.classList.remove("step-form-wrap-open-package");
+                stepFormWrapContainer.classList.remove("step-form-blur");
             });
         });
 
@@ -304,6 +309,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         document.addEventListener('click', (event) => {
             if (!packageSelectInfo.contains(event.target)) {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
+                stepFormWrapContainer.classList.remove("step-form-blur");
             }
         });
 
@@ -335,6 +341,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         packageChooseName.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
                         totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
+                        continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
+                        packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                     }
 
@@ -375,7 +383,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             optionsPackageSelect.setChoiceByValue('');
             optionsPackageSelect.getValue(false);
             licencesSelect.setChoiceByValue('1');
-            additionalTextOptionsSelect.innerHTML = '';
+            additionalTextOptionsSelect.innerHTML = "";
+            additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent["researchPackage"].additionalTextBottom;
             regionsIng = [];
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
@@ -391,6 +400,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             });
             optionsDetails.innerHTML = '';
             selectedOptions.innerHTML = '';
+            continueBtnTotal.innerHTML = `Continue to billing >`;
             steps[currentStep].classList.remove('active');
             currentStep = 0;
             steps[currentStep].classList.add('active');
