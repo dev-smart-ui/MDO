@@ -1993,6 +1993,10 @@
         max-height: 430px;
     }
 
+    .step-form-step-one .select-box:not(:last-child) {
+        margin-bottom: 40px;
+    }
+
     .step-form-step-two .subscription-box-details input {
         height: 35px;
     }
