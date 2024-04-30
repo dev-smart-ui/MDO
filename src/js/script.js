@@ -144,7 +144,7 @@ window.addEventListener("load", function () {
 
         active.classList.remove('afterActive');
         active.style.right = '0'
-        if (checkDeviceWidth() >= 1024) {
+        if (checkDeviceWidth() >= 1) {
             this.slides.forEach(i => {
                 i.classList.remove('afterActive')
             })
