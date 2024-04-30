@@ -14,12 +14,15 @@ function setupDropdownToggle(element) {
         if (dropDownButton) {
             const dropdownBox = dropDownButton.closest('.dropdown-box');
             if (dropdownBox) {
-
                 document.querySelectorAll('.dropdown-box').forEach(box => {
                     if (box === dropdownBox) {
+                        box.classList.remove('closing');
                         box.classList.add('drop-down-item-open');
                     } else {
-                        box.classList.remove('drop-down-item-open');
+                        box.classList.add('closing');
+                        setTimeout(() => {
+                            box.classList.remove('drop-down-item-open');
+                        }, 10);
                     }
                 });
             }
