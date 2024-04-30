@@ -88,8 +88,9 @@ function adjustContainerHeight() {
         return;
     }
 
-    if(activeStep && window.innerHeight>=1061){
+    if(activeStep && window.innerWidth>=1024 && window.innerHeight>=1061){
         container.style.maxHeight = `839px`;
+        console.log( window.innerWidth>=1024)
     }
 
     if (activeStep && window.innerHeight<1061) {

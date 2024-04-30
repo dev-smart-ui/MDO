@@ -1229,6 +1229,7 @@
 
 .step-form-step-two .selected-options-container-show .dropdown-menu{
     list-style: none;
+    padding-left: 15px;
 }
 
 .step-form-step-two .selected-options-container .selected-options-container-inner{
@@ -1253,6 +1254,11 @@
     padding-right: 35px;
 }
 
+.step-form-step-two .selected-options-container.selected-options-container-show .title-arrow-box{
+    margin-right: 0;
+}
+
+
 
 .step-form-step-two .selected-options-container.selected-options-container-show .title-arrow-box:after{
  display: none;
@@ -1260,7 +1266,13 @@
 
 .step-form-step-two .selected-options-container.selected-options-container-show .title-arrow-box span{
    font-size: 18px;
+    display: inline-block;
+    margin-right: 5px;
 }
+.step-form-step-two .selected-options-container.selected-options-container-show .default-price span{
+   font-weight: 500;
+}
+
 
 .step-form-step-two .selected-options-container.selected-options-container-show li{
     font-size: 16px;
@@ -1281,24 +1293,21 @@
 }
 
 .step-form-step-two .selected-options-container.selected-options-container-show .toggle-container:after{
-    content: "";
+    content: '';
     position: absolute;
+    background: url("../images/step-form/arrow-dd.png") no-repeat center center;
+    width: 11px;
+    height: 11px;
+    right: -25px;
+    background-size: contain;
     top: 50%;
-    transform: translate(-50%, -50%)  rotate(45deg);
-    right: -16px;
-    display: block;
-    width: 10px;
-    height: 10px;
-    border: #74879B 1px solid;
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    transition: all 0.3s ease-in-out;
+    transform: translate(-50%, -50%) rotate(270deg);
     transform-origin: center center;
+    transition: all 0.3s ease-in-out;
 }
 
 .step-form-step-two .selected-options-container.selected-options-container-show .dropdown-box.drop-down-item-open .toggle-container:after{
-    transform: translate(-50%, -50%)  rotate(135deg);
-    top: 40%;
+    transform: translate(-50%, -50%)  rotate(360deg);
 }
 
 
@@ -1539,6 +1548,12 @@
 @media screen and (min-width: 450px) {
     .step-form-box-right  .title-arrow-box{
         width: auto;
+    }
+}
+
+@media screen and (max-width: 392px) {
+    .step-form-step-two .selected-options-container.selected-options-container-show .title-arrow-box span{
+        font-size: 16px;
     }
 }
 

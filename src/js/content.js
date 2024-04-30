@@ -12,6 +12,9 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
         dropdownBox.classList.add("dropdown-box");
         index === 0 && dropdownBox.classList.add("drop-down-item-open");
 
+        const toggleContainer = document.createElement("div");
+        toggleContainer.classList.add("toggle-container", "flex");
+
         const dropdownButton = document.createElement("button");
         dropdownButton.classList.add("dropdown-toggle", "flex", "items-center", "flex-row-reverse", "justify-end");
 
@@ -27,9 +30,12 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
         imgItem.setAttribute('src', itemDropDown.imgLink);
         imgBox.appendChild(imgItem);
 
+
+        toggleContainer.appendChild(dropdownButton);
         dropdownButton.appendChild(titleArrowBox);
         dropdownButton.appendChild(imgBox);
-        dropdownBox.appendChild(dropdownButton);
+
+        dropdownBox.appendChild(toggleContainer);
 
         const list = document.createElement("ul");
         list.classList.add("dropdown-menu", "list-disc");
