@@ -191,7 +191,6 @@
 .comprehensive-coverage .swiper-slide {
   transform: scale(0.82);
   transform-origin: right center;
-  min-height: 408px;
 }
 
 .comprehensive-coverage .swiper-slide.swiper-slide-active {
@@ -1550,6 +1549,10 @@
     margin: 0;
     width: 15px;
     height: 15px;
+  }
+
+  .comprehensive-coverage .swiper-slide {
+    min-height: 408px;
   }
 }
 
