@@ -88,16 +88,13 @@ function adjustContainerHeight() {
         return;
     }
 
-    if(activeStep && window.innerHeight>=1500){
-        console.log(window.innerHeight>1500)
-        container.style.maxHeight = `1100px`;
+    if(activeStep && window.innerHeight>=1061){
+        container.style.maxHeight = `839px`;
     }
 
-    if (activeStep && window.innerHeight<1500) {
+    if (activeStep && window.innerHeight<1061) {
         container.style.maxHeight = `${window.innerHeight}px`;
     }
-
-
 }
 
 document.addEventListener('DOMContentLoaded', adjustContainerHeight);
