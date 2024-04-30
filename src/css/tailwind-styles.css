@@ -252,7 +252,7 @@
     right: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .4s, transform 0.7s ease-in-out;
+    transition: opacity .2s, transform 0.7s ease-in-out;
     padding-left: 24px;
     padding-right: 21px;
     height: auto;
@@ -264,26 +264,22 @@
 
 
 .step-form-step-two{
+    display: flex;
+    flex-direction: column;
     transform: translateX(50px);
 }
-
 
 .step-form-step-one.active,
 .step-form-step-two.active {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-    transition: opacity .4s, transform 0.4s ease-in-out;
+    transition: opacity .2s, transform 0.4s ease-in-out;
 }
 
 .step-form-step-one.active,
 .step-form-step-three.active {
     display: flex;
-}
-
-.step-form-step-two.active {
-    display: flex;
-    flex-direction: column;
 }
 
 
@@ -292,7 +288,7 @@
     visibility: visible;
     transform: translate(-50%, -50%)  scale(1);
     transition: opacity 0.4s , transform 0.4s ease;
-    transition-delay: .4s;
+    transition-delay: .2s;
 }
 
 .step-form-step-one{
@@ -397,7 +393,6 @@
 .step-form-box-right  .title-arrow-box{
     position: relative;
     margin-right: 50px;
-    width: 100%;
 }
 
 .step-form-box-right  .title-arrow-box:after{
@@ -1577,6 +1572,11 @@
         display: none;
     }
 
+    .step-form-step-two{
+        display: grid;
+    }
+
+
     .step-form-step-one,
     .step-form-step-two{
         height: 100%;
@@ -1854,9 +1854,7 @@
 
 
 @media screen and (min-width: 1024px) and (max-height: 1059px) {
-    .step-form-step-one {
-        padding: 20px 37px 20px 80px;
-    }
+
 
     .step-form-step-two .name-of-choose-package {
         margin-bottom: 10px;
@@ -1918,9 +1916,6 @@
         margin-bottom: 15px;
     }
 
-    .step-form-step-two .title-arrow-box {
-        width: 70%;
-    }
     .step-form-step-two .step-form-step-two-left-column {
         padding-right: 0;
         height: auto;
@@ -1942,7 +1937,7 @@
     }
 
     .step-form-wrap .step-title {
-        line-height: 40px;
+        line-height: 55px;
         font-size: 35px;
     }
 
