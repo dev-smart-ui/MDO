@@ -88,19 +88,44 @@ function adjustContainerHeight() {
         return;
     }
 
-    if(activeStep && window.innerWidth>=1024 && window.innerHeight>=1061){
-        container.style.maxHeight = `839px`;
-        console.log( window.innerWidth>=1024)
-    }
 
-    if (activeStep && window.innerHeight<1061) {
+    if (activeStep && window.innerHeight<1061 || (window.innerHeight>=1061 && window.innerWidth<=1024) ) {
         container.style.maxHeight = `${window.innerHeight}px`;
     }
+
+
+    if(activeStep && window.innerWidth>=1024 && window.innerHeight>=1061){
+        container.style.maxHeight = `839px`;
+    }
+
 }
 
 document.addEventListener('DOMContentLoaded', adjustContainerHeight);
 window.addEventListener('resize', adjustContainerHeight);
 window.addEventListener('orientationchange', adjustContainerHeight);
+
+
+const optionsDetails = document.getElementById('optionsDetails');
+const disabledContainer = document.getElementById('disabledContainer');
+
+    optionsDetails.addEventListener("scroll",()=>{
+        const atBottom = optionsDetails.scrollTop + optionsDetails.clientHeight >= optionsDetails.scrollHeight;
+
+
+
+        if(optionsDetails.scrollTop>2 && !atBottom) {
+            disabledContainer.classList.add('shadow-top')
+            disabledContainer.classList.add('shadow-bottom')
+        } else if (atBottom){
+            disabledContainer.classList.remove('shadow-bottom')
+            disabledContainer.classList.add('shadow-top')
+        } else {
+            disabledContainer.classList.remove('shadow-top')
+        }
+
+    })
+
+
 
 
 
