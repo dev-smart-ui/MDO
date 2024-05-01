@@ -123,6 +123,29 @@ const disabledContainer = document.getElementById('disabledContainer');
     })
 
 
+//determine position of licenses select
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.licences-select-wrap');
+    const dropdownContent = document.querySelector('.licences-select-wrap .choices__list--dropdown');
+
+    dropdown.addEventListener('click', function (event) {
+        const dropdownRect = dropdown.getBoundingClientRect();
+
+        const spaceBelow = window.innerHeight - dropdownRect.bottom;
+        const dropdownHeight = dropdownContent.offsetHeight;
+
+        if (spaceBelow < 130) {
+            dropdownContent.style.top = `-${dropdownHeight}px`;
+            dropdownContent.style.bottom = 'auto';
+        } else {
+            dropdownContent.style.top = '100%';
+            dropdownContent.style.bottom = 'auto';
+        }
+
+        dropdownContent.classList.toggle('show');
+    });
+});
+
 
 
 export {setupDropdownToggle, calculateTotal, adjustContainerHeight};
