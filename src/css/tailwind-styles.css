@@ -306,7 +306,6 @@
 
 .step-form-step-one .step-form-box-right{
     height: 100%;
-    overflow-x: scroll;
     padding-bottom: 60px;
     position: relative;
 }
