@@ -276,6 +276,7 @@
     transition: opacity .7s, transform .6s ease-in-out;
 }
 
+
 .step-form-step-one.active,
 .step-form-step-three.active {
     display: flex;
