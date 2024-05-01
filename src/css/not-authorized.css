@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+.authorized-user .top-links-not-auth {
+  display: none;
+}
+
+.top-links li .subscribe-button {
+  width: 97px;
+  text-align: center;
+  background-color: var(--subscribe-btn-color);
+  padding: 6px 13px;
+  border-radius: 8px;
+  transition: all .2s ease-in-out;
+}
+
+.top-links li .subscribe-button:hover {
+  background-color: var(--subscribe-btn-color-hover);
+}
+
+.top-links li .subscribe-button:active {
+  transition: all .1s ease-in-out;
+  background-color: var(--subscribe-btn-color-focus);
+}
+
+.top-links li .subscribe-button {
+  opacity: 1;
+  color: var(--color-white);
+  text-align: center;
+  font-size: 14px;
+  font-family: "Poppins";
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.login a {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.login a span:first-child {
+  margin-right: 8px;
+  text-wrap: none;
+}
+
+.login-icon {
+  height: 28px;
+  width: 28px;
+  display: inline-block;
+}
+
+.login-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.login-icon-focus {
+  height: 28px;
+  width: 28px;
+  display: none;
+}
+
+.login:hover .login-icon,
+.login:focus .login-icon {
+  display: none;
+}
+
+.login:hover .login-icon-focus,
+.login:focus .login-icon-focus {
+  display: inline-block;
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 1150px) {
+  .top-links li.login {
+    width: 100%;
+    color: var(--checkbox-text-color);
+  }
+
+  .top-links li.login:hover a {
+    background-color: var(--header-mobile-nav-click);
+  }
+
+  .top-links li.login:active a {
+    background-color: var(--header-mobile-nav-click);
+  }
+
+  .top-links li.login a::after {
+    content: none;
+  }
+
+  .top-links li.login a:before {
+    background: url("../images/icons/login-black.svg") no-repeat center center;
+    transform: rotate(180deg);
+  }
+
+  .login .login-icon-focus,
+  .login:hover .login-icon-focus,
+  .login:focus .login-icon-focus,
+  .login .login-icon {
+    display: none;
+  }
+
+  .authorized-user .top-links-not-auth {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .top-links li.nav-button-demo {
+    margin-top: auto;
+  }
+
+  .top-links li.nav-button-demo a,
+  .top-links li .subscribe-button {
+    display: block;
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .top-links li.nav-button-demo a {
+    background-color: var(--color-blue);
+  }
+
+  .top-links li.nav-button-demo a:hover {
+    background-color: var(--blue-btn-color-hover);
+  }
+
+  .top-links li.nav-button-demo a:active {
+    background-color: var(--blue-btn-color-focus);
+  }
+
+  .top-links li .subscribe-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    background-color: var(--subscribe-btn-color);
+  }
+
+  .top-links li .subscribe-button:before,
+  .top-links li .subscribe-button:after,
+  .top-links li.nav-button-demo a:after,
+  .top-links li.nav-button-demo a:before {
+    content: none;
+  }
+}

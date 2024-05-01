@@ -1,0 +1,105 @@
+.authorized-block-mobile {
+    display: none;
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 1150px) {
+    .authorized-block-mobile {
+        display: block;
+    }
+
+    .top-links li a.settings {
+        margin-top: 36px;
+    }
+
+    .top-links li a.sign-out {
+        margin-bottom: 44px;
+    }
+
+    .top-links li a.sign-out:active {
+        background-color: var(--sibebar-select-bg-color);
+    }
+
+    .top-links li a.settings:before {
+        background: url(../images/icons/settings-black.svg) no-repeat center center;
+    }
+
+    .top-links li a.notification:before {
+        background: url(../images/icons/notifications-black.svg) no-repeat center center;
+    }
+
+    .top-links li a.sign-out:before {
+        background: url(../images/icons/login-black.svg) no-repeat center center;
+    }
+    .top-links li a.sign-out:after {
+        content: none;
+    }
+
+    .top-links li.login span {
+        -webkit-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
+
+    .top-links li.login:hover span {
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+
+    .top-links li.login:active span {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+
+    .top-links li a.nav-button-demo {
+        transition: all .2s ease-in-out;
+        color: var(--color-white);
+        background-color: var(--color-blue);
+    }
+
+    .top-links li a.nav-button-demo:hover {
+        color: var(--color-white);
+        background-color: var(--blue-btn-color-hover);
+    }
+
+    .top-links li a.nav-button-demo:active {
+        transition: all .1s ease-in-out;
+        color: var(--color-white);
+        background-color: var(--blue-btn-color-focus);
+    }
+
+    .top-links li a.nav-button {
+        transition: all .2s ease-in-out;
+        margin-bottom: 32px;
+        color: var(--color-white);
+        background-color: var(--subscribe-btn-color);
+    }
+
+    .top-links li a.nav-button:hover {
+        background-color: var(--subscribe-btn-color-hover);
+    }
+
+    .top-links li a.nav-button:active {
+        transition: all .1s ease-in-out;
+        background-color: var(--subscribe-btn-color-focus);
+    }
+
+    .top-links li a.nav-button,
+    .top-links li a.nav-button-demo {
+        justify-content: center;
+    }
+
+    .top-links li a.nav-button-demo:before,
+    .top-links li a.nav-button:before,
+    .top-links li a.nav-button-demo:after,
+    .top-links li a.nav-button:after {
+        content: none;
+    }
+
+    .not-authorized-user .authorized-block-mobile {
+        display: none;
+    }
+}
