@@ -74,7 +74,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
     shouldSort: false,
     position: 'bottom',
     choices: [
-        {value: 'researchPackage', label: 'Research Package'},
+        {value: 'researchPackage', label: 'Research Package', },
         {value: 'customPackage', label: 'Custom Package'},
         {value: 'ultimatePackage', label: 'Ultimate Package'}
     ],
@@ -85,6 +85,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
     //step1
     document.addEventListener('DOMContentLoaded', () => {
         let currentStep = 0;
+        const header = document.querySelector('header');
         const steps = document.querySelectorAll('[data-step-form]');
         const nextButtons = document.querySelectorAll('[data-next-btn]');
         const dataSubscriptionInputs = document.querySelectorAll('[data-subscription-input]');
@@ -113,6 +114,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const closeBtns = document.querySelectorAll("[data-close-modal]");
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
+        const selectedItem = document.querySelector('.is-highlighted');
         let formData = {};
         let regionsIng = [];
         let currentPackageInnerHtmRight = '';
@@ -163,6 +165,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                     if (count === 1 && item.checked) {
                         regionSelectedItems.textContent = item.name;
                         regionsIng.push(item.value);
+                        item.parentNode.classList.add("choose")
                         continueBtnStepOne.classList.remove('disabled-btn')
                         return item.value;
                     }
@@ -176,6 +179,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                    else if (count >= 2 &&  item.checked) {
                         regionSelectedItems.textContent = `Regions (${count})`;
                         regionsIng.push(item.value);
+                        item.parentNode.classList.add("choose")
                         continueBtnStepOne.classList.remove('disabled-btn')
                         return `Regions (${count})`;
                     }
@@ -232,6 +236,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
 
         // change event for option select
+
+        selectedItem.classList.remove('is-highlighted') //update class
         optionsPackageSelect.passedElement.element.addEventListener('change', (event) => {
             const value = event.detail.value;
 
@@ -261,7 +267,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
-            continueBtnTotal.innerText=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} `
+            continueBtnTotal.innerHTML=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD  <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`
         });
 
         // change event for licenses select
@@ -289,6 +295,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         packageSelectInfo.addEventListener('click', () => {
             packageSelectInfoText.classList.add("package-select-info-text-toggle");
             stepFormWrapContainer.classList.add("step-form-blur");
+            header.classList.add("step-form-blur");
         });
 
         closeBtns.forEach(btnClose => {
@@ -297,6 +304,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 selectedOptionsContainer.classList.remove("selected-options-container-show");
                 stepFormWrap.classList.remove("step-form-wrap-open-package");
                 stepFormWrapContainer.classList.remove("step-form-blur");
+                header.classList.remove("step-form-blur");
             });
         });
 
@@ -310,6 +318,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             if (!packageSelectInfo.contains(event.target)) {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
                 stepFormWrapContainer.classList.remove("step-form-blur");
+                header.classList.remove("step-form-blur");
             }
         });
 
@@ -341,7 +350,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         packageChooseName.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
                         totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
-                        continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
+                        continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                     }
@@ -380,8 +389,10 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             formData = {};
             steps.forEach(step => step.classList.remove('active'));
             steps[0].classList.add('active');
-            optionsPackageSelect.setChoiceByValue('');
             optionsPackageSelect.getValue(false);
+            optionsPackageSelect.setChoiceByValue('');
+            const selectedItem = document.querySelector('.is-highlighted');
+            selectedItem.classList.remove('is-highlighted')
             licencesSelect.setChoiceByValue('1');
             additionalTextOptionsSelect.innerHTML = "";
             additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent["researchPackage"].additionalTextBottom;
@@ -399,8 +410,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
             });
             optionsDetails.innerHTML = '';
-            selectedOptions.innerHTML = '';
-            continueBtnTotal.innerHTML = `Continue to billing >`;
+            continueBtnTotal.innerHTML = `Continue to billing <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
             steps[currentStep].classList.remove('active');
             currentStep = 0;
             steps[currentStep].classList.add('active');

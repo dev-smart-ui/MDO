@@ -73,7 +73,7 @@ function calculateTotal(currentPackageSelect) {
         newSumOfPackage[currentPackageSelect] = total;
         document.getElementById("totalCounter").innerText = total;
         document.getElementById("totalCounterSecond").innerText = total;
-        document.getElementById("continueBtnTotal").innerText = `Total: $${total}`;
+        document.getElementById("continueBtnTotal").innerHTML = `Total: $${total} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
     }
 
 }
@@ -111,21 +111,12 @@ const disabledContainer = document.getElementById('disabledContainer');
     optionsDetails.addEventListener("scroll",()=>{
         const atBottom = optionsDetails.scrollTop + optionsDetails.clientHeight >= optionsDetails.scrollHeight;
 
-
-
         if(optionsDetails.scrollTop>2 && !atBottom) {
-            disabledContainer.classList.add('shadow-top')
             disabledContainer.classList.add('shadow-bottom')
         } else if (atBottom){
             disabledContainer.classList.remove('shadow-bottom')
-            disabledContainer.classList.add('shadow-top')
-        } else {
-            disabledContainer.classList.remove('shadow-top')
         }
-
     })
-
-
 
 
 
