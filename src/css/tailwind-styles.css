@@ -251,7 +251,7 @@
     right: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .5s, transform .4s ease-in-out;
+    transition: opacity .7s, transform .6s ease-in-out;
     padding-left: 24px;
     padding-right: 21px;
     height: auto;
@@ -273,8 +273,9 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-    transition: opacity .7s, transform .4s ease-in-out;
+    transition: opacity .7s, transform .6s ease-in-out;
 }
+
 
 .step-form-step-one.active,
 .step-form-step-three.active {
@@ -286,8 +287,8 @@
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%)  scale(1);
-    transition: opacity 0.7s , transform 0.4s ease;
-    transition-delay: .2s;
+    transition: opacity 0.5s , transform 0.4s ease;
+    transition-delay: .4s;
 }
 
 .step-form-step-one{
@@ -423,6 +424,7 @@
     transform: translate(-50%, -50%);
     transform-origin: center center;
     transition: .2s ease-in-out;
+    display: none;
 }
 
 .step-form-wrap .continue-btn {

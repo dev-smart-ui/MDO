@@ -75,8 +75,18 @@ function createDropdownsOfPackageCustom(data, currentPackageSelect,) {
         const titleBox = document.createElement("span");
         titleBox.innerText = itemDropDown.btnTitle;
 
+        const imgSpan = document.createElement("span");
+        const arrowImg = document.createElement("img");
+        arrowImg.setAttribute('src', "src/images/step-form/arrow-dd.svg");
+
+        imgSpan.appendChild(arrowImg);
+
 
         titleArrowBox.appendChild(titleBox);
+        titleArrowBox.appendChild(titleBox);
+        titleArrowBox.appendChild(imgSpan);
+
+
         const imgBox = document.createElement("div");
         imgBox.classList.add("dropdown-toggle-img-box", "flex", "justify-center", "items-center",);
         const imgItem = document.createElement("img");
