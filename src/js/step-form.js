@@ -264,7 +264,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
-            continueBtnTotal.innerText=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD > `
+            continueBtnTotal.innerHTML=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD  <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`
         });
 
         // change event for licenses select
@@ -347,7 +347,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         packageChooseName.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
                         selectedOptions.innerHTML = currentPackageInnerHtmRight;
                         totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
-                        continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD >`;
+                        continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                     }
@@ -406,7 +406,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             });
             optionsDetails.innerHTML = '';
             selectedOptions.innerHTML = '';
-            continueBtnTotal.innerHTML = `Continue to billing >`;
+            continueBtnTotal.innerHTML = `Continue to billing <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
             steps[currentStep].classList.remove('active');
             currentStep = 0;
             steps[currentStep].classList.add('active');
