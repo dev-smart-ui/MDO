@@ -114,13 +114,9 @@ const disabledContainer = document.getElementById('disabledContainer');
 
 
         if(optionsDetails.scrollTop>2 && !atBottom) {
-            disabledContainer.classList.add('shadow-top')
             disabledContainer.classList.add('shadow-bottom')
         } else if (atBottom){
             disabledContainer.classList.remove('shadow-bottom')
-            disabledContainer.classList.add('shadow-top')
-        } else {
-            disabledContainer.classList.remove('shadow-top')
         }
 
     })
