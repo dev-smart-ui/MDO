@@ -434,6 +434,13 @@
 
 .step-form-wrap .continue-btn-inner-text{
     transition: all .2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-form-wrap .continue-btn-inner-text img{
+  margin-left: 20px;
 }
 
 .step-form-wrap .continue-btn:hover .continue-btn-inner-text {
@@ -1684,7 +1691,9 @@
         margin-bottom: 17px;
     }
     .step-form-step-one .continue-btn-inner-text-desktop {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .step-form-step-one .continue-btn-inner-text-mobile {
