@@ -1,0 +1,537 @@
+.isSignInModalPosition {
+  left: 0 !important;
+  right: 0;
+  padding: 0;
+  margin: 0 auto;
+  transition: opacity 0.3s ease-in-out;
+  background: transparent;
+}
+
+.signIn-modal-active {
+  overflow-x: hidden;
+}
+
+.signIn-modal-active .main-content {
+  margin: unset;
+  filter: blur(3px);
+}
+
+.signIn-modal-active .ui-widget-overlay {
+  opacity: 0.6;
+  background-color: var(--overlay-bg-color);
+}
+
+.signIn-modal-active .ui-dialog .ui-dialog-titlebar-close {
+  filter: brightness(10);
+}
+
+.signIn-modal-active .ui-dialog .ui-dialog-titlebar {
+  height: 114px;
+  display: flex;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: var(--color-black);
+  padding: 0;
+}
+
+.signIn-modal-active .ui-dialog .ui-dialog-title {
+  display: none;
+}
+
+.signIn-modal-active .ui-dialog .ui-dialog-titlebar img {
+  margin: auto;
+}
+
+#MainBody_Overview_pnlSignIn {
+  flex-direction: column;
+  padding: 28px 94px 56px;
+  background-color: var(--dropdown-item-hover);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  line-height: 1;
+}
+
+.signIn-modal-active #MainBody_Overview_pnlSignIn {
+  display: flex;
+}
+
+#signIn-modal-logo {
+  width: 166px;
+  height: 40px;
+}
+
+.signIn-modal-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signIn-modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0em;
+  font-family: "Poppins";
+}
+
+.signIn-modal-fields {
+  gap: 24px;
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+}
+
+.signIn-modal-fields-input {
+  height: 52px;
+  border: none;
+  outline: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-white);
+  font-family: "Poppins" !important;
+  font-weight: 400;
+  transition-property: transform, background-color, border;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.signIn-modal-fields-input:hover {
+  border: 1px solid var(--auth-checkbox-border);
+}
+
+.signIn-modal-fields-input:focus {
+  border: 1px solid var(--spinner-color);
+}
+
+.signIn-modal-fields-input::placeholder {
+  color: #757575;
+}
+
+.signIn-modal-options {
+  display: flex;
+  margin-top: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.signIn-modal-options-check {
+  gap: 8px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  color: var(--auth-checkbox-border);
+  transition: all 0.3s ease-in-out;
+}
+
+.signIn-modal-options-check:hover {
+  color: var(--color-black);
+}
+
+.signIn-modal-options-check-input {
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  outline: 1.5px solid var(--auth-checkbox-border);
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.signIn-modal-options-check-input.checked {
+  outline: 1.5px solid var(--auth-checkbox-background);
+  background-color: var(--auth-checkbox-background);
+}
+
+.signIn-modal-options-check-input.checked::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  background: url("../images/icons/check.svg") no-repeat center;
+  filter: brightness(10);
+}
+
+.signIn-modal-options-forgotPassword {
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--auth-checkbox-border);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  font-family: "Poppins";
+  background-color: unset;
+  transition: all 0.3s ease-in-out;
+}
+
+.signIn-modal-options-forgotPassword:hover {
+  color: var(--color-black);
+}
+
+.signIn-modal-button {
+  width: 100%;
+  height: 6.5vh;
+  padding: 1.1vh;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: var(--color-blue);
+  position: absolute;
+  bottom: 56px;
+  width: calc(100% - 188px);
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signIn-modal-button:hover {
+  background-color: var(--blue-btn-color-hover);
+}
+
+.signIn-modal-button-icon {
+  filter: brightness(10);
+  transform: scale(-1, 1);
+  transition: all 0.2s ease-in-out;
+}
+
+.signIn-modal-button:hover .signIn-modal-button-icon {
+  transform: scale(-1.2, 1.2);
+}
+
+.signIn-modal-button:active .signIn-modal-button-icon {
+  transform: scale(-1, 1);
+}
+
+.signIn-modal-button-text {
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  font-family: "Poppins";
+  transition: all 0.2s ease-in-out;
+}
+
+.signIn-modal-button:hover .signIn-modal-button-text {
+  transform: scale(1.05);
+}
+
+.signIn-modal-button:active .signIn-modal-button-text {
+  transform: scale(1);
+}
+
+.signIn-modal-header_mobile {
+  display: none;
+}
+
+.signIn-modal-button-wrapper {
+  display: none;
+}
+
+.user-auth {
+  display: none;
+}
+
+.user-auth-desktop {
+  display: flex;
+  align-items: center;
+}
+
+/* @media screen and (max-width: 768px) { */
+@media screen and (max-width: 1150px) {
+  /* @media screen and (max-width: 1200px) { */
+
+  .isSignInModalPosition {
+    max-width: 100%;
+    top: 56px !important;
+    /* TODO: Hide page animation */
+    transition: all 0.4s ease-in-out;
+
+    /*transition: all 30s ease-in-out;*/
+    /* Problem in transform timing animation */
+    /*transition: left 0.4s ease-in-out, right .4s ease-in-out, translate .4s ease-in-out, opacity .4s ease-in-out;*/
+  }
+
+  body:not(.menu-open) .isSignInModalPosition {
+    max-height: 0 !important;
+    height: 0 !important;
+    opacity: 0;
+  }
+
+  body:not(.menu-open) .isSignInModalPosition #MainBody_Overview_pnlSignIn {
+    opacity: 0 !important;
+    padding: 0 !important;
+  }
+
+  .sign-in-visible {
+    opacity: 1 !important;
+  }
+
+  .sign-in-hidden {
+    height: 0;
+    opacity: 0;
+    max-height: 0;
+    visibility: hidden;
+  }
+
+  .sign-in-hidden #MainBody_Overview_pnlSignIn {
+    padding: 0 !important;
+  }
+
+  .sign-in-animation-in {
+    opacity: 1;
+    max-height: 100%;
+    transform: translateX(100%);
+  }
+
+  .sign-in-animation-out {
+    transform: translateX(0);
+  }
+
+  .signIn-modal-active .isSignInModalPosition {
+    visibility: visible;
+    display: block !important;
+  }
+
+  .isSignInModalPosition .ui-dialog-titlebar {
+    display: none !important;
+  }
+
+  .signIn-modal-active .main-content {
+    filter: blur(0);
+  }
+
+  .ui-widget-overlay {
+    display: none;
+  }
+
+  .signIn-modal-title {
+    display: none;
+  }
+
+  .signIn-modal-active .ui-dialog .ui-dialog-titlebar {
+    height: 40px;
+    border-radius: unset;
+  }
+
+  #signIn-modal-logo {
+    width: 99px;
+    height: 24px;
+  }
+
+  .signIn-modal-active .ui-dialog .ui-dialog-titlebar-close {
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+  }
+
+  .signIn-modal-active .ui-dialog .ui-button .ui-icon {
+    margin: auto;
+  }
+
+  .signIn-modal-active .ui-widget.ui-widget-content {
+    /*height: calc(100% - 40px) !important;*/
+    height: calc(100dvh - 40px) !important;
+    width: 100% !important;
+    border-radius: unset;
+    position: fixed;
+    max-height: 100%;
+
+    /*overflow: scroll*/
+  }
+
+  .top-menu-nav-wrapper #MainBody_Overview_pnlSignIn {
+    display: none;
+  }
+
+  #MainBody_Overview_pnlSignIn {
+    display: flex;
+    height: 100% !important;
+    max-height: 100% !important;
+    transition: all 0.4s ease-in-out;
+    border-radius: unset;
+    padding: 24px 20px 52px !important;
+    background-color: var(--color-white) !important;
+  }
+
+  .signIn-modal-active .signIn-modal-header_mobile {
+    display: flex;
+    padding-right: 24px;
+    align-items: center;
+  }
+
+  .signIn-modal-header_mobile-icon {
+    cursor: pointer;
+  }
+
+  .signIn-modal-header_mobile-title {
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    font-family: "Poppins";
+  }
+
+  .signIn-modal-fields {
+    margin-top: 12.9vh;
+  }
+
+  .signIn-modal-fields-input {
+    border: 1px solid var(--sibebar-select-bg-color);
+  }
+
+  .signIn-modal-options {
+    margin-top: 12px;
+  }
+
+  .signIn-modal-button {
+    margin: 42px 0 14px;
+    position: initial;
+    width: 100%;
+    border-radius: 6px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+
+  .signIn-modal-button:active {
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    background-color: var(  --blue-btn-color-focus);
+  }
+
+  .signIn-modal-button:active .signIn-modal-button-text {
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    transform: scale(1);
+  }
+
+  .signIn-modal-button:active .signIn-modal-button-icon {
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    transform: scale(-1, 1);
+  }
+
+  .signIn-modal-button-wrapper {
+    display: flex;
+    row-gap: 14px;
+    margin: auto 0 0;
+    flex-direction: column;
+  }
+
+  .signIn-modal-button-demo,
+  .signIn-modal-button-subscribe {
+    outline: none;
+    display: block;
+    position: absolute;
+    bottom: 15vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    padding: 1.8vh 0;
+    border-radius: 6px;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-blue);
+
+    color: var(--dark-blue);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0em;
+    text-decoration: none;
+    font-family: "Poppins";
+
+    transition: all 0.4s ease-in-out;
+  }
+
+  .signIn-modal-button-subscribe {
+    bottom: 6vh;
+    background-color: var(--subscribe-btn-color);
+    border: 2px solid var(--subscribe-btn-color);
+
+    color: var(--color-white) !important;
+  }
+
+  .signIn-modal-active .signIn-modal-button-demo,
+  .signIn-modal-active .signIn-modal-button-subscribe {
+    width: calc(100% - 40px);
+  }
+
+  .signIn-modal-active .signIn-modal-button-demo:hover {
+    background-color: var(--color-blue);
+  }
+
+  .signIn-modal-active .signIn-modal-button-demo:active {
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    background-color: var(--blue-btn-color-hover);
+    border-color: var(--blue-btn-color-hover);
+  }
+
+  .signIn-modal-active .signIn-modal-button-demo:hover span,
+  .signIn-modal-active .signIn-modal-button-demo:active span {
+    color: var(--color-white);
+  }
+
+  .signIn-modal-active .signIn-modal-button-subscribe:hover {
+    background-color: var(--subscribe-btn-color-hover);
+    border-color: var(--subscribe-btn-color-hover);
+  }
+
+  .signIn-modal-active .signIn-modal-button-subscribe:active {
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    background-color: var(--subscribe-btn-color-focus);
+    border-color: var(--subscribe-btn-color-focus);
+  }
+
+  .user-auth {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(2, 100%);
+  }
+
+  .user-unauth {
+    height: calc(100dvh - 104px);
+  }
+
+  .auth-user,
+  .not-auth-user {
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+    background-color: var(--color-white);
+  }
+
+  .user-unauth .not-auth-user {
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .top-links-not-auth {
+    display: flex;
+  }
+
+  .user-auth-desktop {
+    display: none;
+  }
+}

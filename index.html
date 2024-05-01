@@ -27,17 +27,240 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
     />
+    <link rel="stylesheet" href="./src/css/jquery_ui_1.13.2.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/variables.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/authorized-block.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/authorized-block-mobile-bottom.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/mdo.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/auth.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/not-authorized.css"/>
+    
     <link rel="stylesheet" href="./src/css/style.css">
 
 </head>
 <body class="bg-white font-primary font-normal overflow-hidden ">
 
-<div class="h-dvh swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden" id="page-slider">
+<div class="h-dvh swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden main-content" id="page-slider">
     <div class="snap-y snap-mandatory overflow-x-hidden overflow-y-scroll h-full" id="app">
-        <header class="sticky top-0 w-full z-10 bg-[#0c0c11] h-[56px]">
-            <img src="./src/images/Menu-mobile.png" alt="" class="w-full h-full lg:hidden mx-auto max-w-[393px]">
-            <img src="./src/images/Menu-1440.png" alt="" class="w-full h-full hidden lg:block 3xl:hidden">
-            <img src="./src/images/Menu-desktop.png" alt="" class="w-full h-full hidden 3xl:block mx-auto max-w-[1995px]">
+        <header class="sticky top-0 z-10 leading-[1]">
+            <div class="header-content">
+                <div class="header">
+                    <button type="button" class="header-menu-button" onclick="toggleHeaderMenu()">
+                        <span class="burger-animated"></span>
+                    </button>
+                    <div class="logo-block justify-self-center">
+                        <a href="/" class="logo"><img src="./src/images/logo.svg" alt="MDO" title="Mining Data Online"/></a>
+                        <div class="top-slogan">Mining Intelligence and News</div>
+                    </div>
+                    <button class="header-subscribe-mobile-button justify-self-end goToSubscribe">Subscribe</button>              
+                    <nav class="top-menu authorized-user" id="header_nav">
+                        <div class="top-menu-nav-wrapper">
+                            <div class="user-auth-desktop">
+                                <ul class="top-links main-nav">
+                                    <!--button type="button" onclick="toggleTableLoader()">Toggle loader</button-->
+                                    <li><a class="home" href="/">Home</a></li>
+                                    <li><a class="contact" href="https://miningdataonline.com/#Contacts">Contact</a>
+                                    </li>
+                                    <li><a class="news" href="https://miningdataonline.com/newslist.aspx">News</a></li>
+                                    <li><a class="database" href="/property/list.aspx?vw=1">Database</a></li>
+                                </ul>
+                                <ul class="top-links authorized-block">
+                                    <li class="user-dropdown dropdown">
+                                        <label for="user-menu">Wade Warren</label>
+                                        <ul class="submenu">
+                                            <li><a href="#">
+                                                <span class="user-menu-icon"><img src="./src/images/icons/login.svg"/></span>
+                                                <span>Account</span>
+                                            </a></li>
+                                            <li><a href="#">
+                                                <span class="user-menu-icon"><img src="./src/images/icons/settings.svg"/></span>
+                                                <span>Settings</span>
+                                            </a></li>
+                                            <li><a href="#">
+                                                <span class="user-menu-icon"><img
+                                                        src="./src/images/icons/notifications.svg"/></span>
+                                                <span>Notifications</span>
+                                            </a></li>
+                                            <li><a href="javascript:void(0)" onclick="signOut()">
+                                                <span class="user-menu-icon"><img src="./src/images/icons/logout.svg"/></span>
+                                                <span>Sign Out</span>
+                                            </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="user">
+                                        <span class="avatar inline-block"><img src="./src/images/icons/avatar.svg" alt="Avatar"/></span>
+                                        <p class="user-name mobile-only">Cameron Williamson</p>
+                                    </li>
+                                </ul>
+                                <ul class="top-links top-links-not-auth">
+                                    <li class="login">
+                                        <a href="javascript:void(0)"
+                                           onclick="signIn()">
+                                            <span>Sign In</span>
+                                            <span class="login-icon"><img src="./src/images/icons/login.svg"/></span>
+                                            <span class="login-icon-focus"><img src="./src/images/icons/login-focus.svg"/></span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-button-demo mobile-only signIn-modal-button-demo btn">
+                                        <a href="#"><span>Request a demo</span></a>
+                                    </li>
+                                    <li>
+                                        <a class="subscribe-button btn goToSubscribe" href="https://miningdataonline.com?a=1"><span>Subscribe</span></a>
+                                    </li>
+                                </ul>
+                                <div id="MainBody_Overview_pnlSignIn" class="dialog">
+
+                                    <form onsubmit="signInSubmit()" class="signIn-modal-form">
+                                        <h3 class="signIn-modal-title">Sign In</h3>
+                                        <div class="signIn-modal-header_mobile">
+                                            <img
+                                                    src="./src/images/icons/back.svg"
+                                                    alt="Back"
+                                                    class="signIn-modal-header_mobile-icon"
+                                            />
+                                            <h3 class="signIn-modal-header_mobile-title">Sign In</h3>
+                                        </div>
+                                        <div class="signIn-modal-fields">
+                                            <input
+                                                    id="signIn-email"
+                                                    type="email"
+                                                    placeholder="Email"
+                                                    class="signIn-modal-fields-input"
+                                            />
+                                            <input
+                                                    id="signIn-password"
+                                                    type="password"
+                                                    placeholder="Password"
+                                                    class="signIn-modal-fields-input"
+                                            />
+                                        </div>
+                                        <div class="signIn-modal-options">
+                                            <label
+                                                    for="signIn-checkbox"
+                                                    class="signIn-modal-options-check"
+                                                    onclick="checkBoxHandler(); return false;"
+                                            >
+                                                <input
+                                                        id="signIn-checkbox"
+                                                        type="checkbox"
+                                                        class="signIn-modal-options-check-input"
+                                                />
+                                                keep me signed
+                                            </label>
+                                            <button type="button" class="signIn-modal-options-forgotPassword">
+                                                Forgot password?
+                                            </button>
+                                        </div>
+                                        <button type="submit" class="signIn-modal-button">
+                                            <img
+                                                    src="./src/images/icons/login-black.svg"
+                                                    alt="Sign In"
+                                                    class="signIn-modal-button-icon"
+                                            />
+                                            <span class="signIn-modal-button-text">Sign In</span>
+                                        </button>
+                                        <div class="signIn-modal-button-wrapper">
+                                            <a href="#" class="nav-button-demo mobile-only signIn-modal-button-demo btn"
+                                            ><span>Request a demo</span>
+                                            </a>
+                                        </div>
+                                    </form> <!-- forma" -->
+                                </div>
+                            </div>
+                            <div class="user-auth">
+                                <div
+                                        class="not-auth-user"
+                                >
+                                    <ul class="top-links main-nav">
+                                        <li class="user">
+					  <span class="avatar"
+                      ><img class="inline-block" src="./src/images/icons/avatar.svg" alt="Avatar"
+                      /></span>
+                                            <p class="user-name mobile-only">Cameron Williamson</p>
+                                        </li>
+                                        <li><a class="home" href="/">Home</a></li>
+                                        <li>
+                                            <a class="contact" href="https://miningdataonline.com/#Contacts"
+                                            >Contact</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                    class="news"
+                                                    href="https://miningdataonline.com/newslist.aspx"
+                                            >News</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="database" href="/property/list.aspx?vw=1">Database</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="top-links authorized-block-mobile mobile-only">
+                                        <li>
+                                            <a class="settings" href="#">
+                                                <span>Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="notification" href="#">
+                                                <span>Notifications</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                    class="sign-out"
+                                                    href="javascript:void(0)"
+                                                    onclick="signOut()"
+                                            >
+                                                <span>Sign Out</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-button-demo btn" href="#"><span>Request a demo</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="auth-user">
+                                    <ul class="top-links main-nav">
+                                        <li><a class="home" href="/">Home</a></li>
+                                        <li>
+                                            <a class="contact" href="https://miningdataonline.com/#Contacts"
+                                            >Contact</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                    class="news"
+                                                    href="https://miningdataonline.com/newslist.aspx"
+                                            >News</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a class="database" href="/property/list.aspx?vw=1">Database</a>
+                                        </li>
+                                    </ul>
+                                    <mdo-auth></mdo-auth>
+                                    <ul class="top-links top-links-not-auth">
+                                        <li class="login">
+                                            <a href="javascript:void(0)" onclick="signIn()">
+                                                <span>Sign In</span>
+                                                <span class="login-icon"><img src="./src/images/icons/login.svg"/></span>
+                                                <span class="login-icon-focus"
+                                                ><img src="./src/images/icons/login-focus.svg"
+                                                /></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-button-demo mobile-only">
+                                            <a class="btn" href="#"><span>Request a demo</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </header>
 
         <!--hero-->
@@ -708,6 +931,17 @@
 <script  type="module" src="./src/js/content.js"></script>
 <script  type="module" src="./src/js/validationForm.js"></script>
 <script  type="module" src="./src/js/step-form.js"></script>
+
+<script src="./src/js/jquery-3.6.0.js"></script>
+<script src="./src/js/jquery_ui_1.13.2.js"></script>
+<script  type="text/javascript" src="./src/js/public-methods.js"></script>
+<script  type="text/javascript" src="./src/js/dialog.js"></script>
+<script  type="text/javascript" src="./src/js/auth.js"></script> 
+
+<script>
+    document.dispatchEvent(dialogEvent);
+</script>
+
 <script defer src="./src/js/script.js"></script>
 </body>
 </html>

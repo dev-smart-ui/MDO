@@ -3,6 +3,8 @@
 
 const app = document.querySelector('#app');
 const counters = document.querySelectorAll('.counter-block');
+const goToSubscribe = document.querySelectorAll('.goToSubscribe');
+const stepFormWrap = document.querySelector('#stepFormWrap');
 
 //touch screen check
 function isTouchEnabled() {
@@ -285,5 +287,15 @@ window.addEventListener("load", function () {
         } catch(err) {
             console.warn(err);
         }
+    })
+
+
+    goToSubscribe.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
+        })
     })
 });
