@@ -273,7 +273,7 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-    transition: opacity .5s, transform .4s ease-in-out;
+    transition: opacity .7s, transform .4s ease-in-out;
 }
 
 .step-form-step-one.active,
@@ -286,7 +286,7 @@
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%)  scale(1);
-    transition: opacity 0.4s , transform 0.4s ease;
+    transition: opacity 0.7s , transform 0.4s ease;
     transition-delay: .2s;
 }
 
@@ -423,7 +423,6 @@
     transform: translate(-50%, -50%);
     transform-origin: center center;
     transition: .2s ease-in-out;
-    display: none;
 }
 
 .step-form-wrap .continue-btn {

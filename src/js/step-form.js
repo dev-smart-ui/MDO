@@ -74,7 +74,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
     shouldSort: false,
     position: 'bottom',
     choices: [
-        {value: 'researchPackage', label: 'Research Package'},
+        {value: 'researchPackage', label: 'Research Package', },
         {value: 'customPackage', label: 'Custom Package'},
         {value: 'ultimatePackage', label: 'Ultimate Package'}
     ],
@@ -114,6 +114,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const closeBtns = document.querySelectorAll("[data-close-modal]");
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
+        const selectedItem = document.querySelector('.is-highlighted');
         let formData = {};
         let regionsIng = [];
         let currentPackageInnerHtmRight = '';
@@ -235,6 +236,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
 
         // change event for option select
+
+        selectedItem.classList.remove('is-highlighted') //update class
         optionsPackageSelect.passedElement.element.addEventListener('change', (event) => {
             const value = event.detail.value;
 
@@ -386,8 +389,10 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             formData = {};
             steps.forEach(step => step.classList.remove('active'));
             steps[0].classList.add('active');
-            optionsPackageSelect.setChoiceByValue('');
             optionsPackageSelect.getValue(false);
+            optionsPackageSelect.setChoiceByValue('');
+            const selectedItem = document.querySelector('.is-highlighted');
+            selectedItem.classList.remove('is-highlighted')
             licencesSelect.setChoiceByValue('1');
             additionalTextOptionsSelect.innerHTML = "";
             additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent["researchPackage"].additionalTextBottom;
