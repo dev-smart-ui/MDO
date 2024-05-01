@@ -5,7 +5,6 @@ const app = document.querySelector('#app');
 const counters = document.querySelectorAll('.counter-block');
 const goToSubscribe = document.querySelectorAll('.goToSubscribe');
 const stepFormWrap = document.querySelector('#stepFormWrap');
-const headerWrap = document.querySelector('.headerWrap');
 
 //touch screen check
 function isTouchEnabled() {
@@ -264,31 +263,6 @@ window.addEventListener("load", function () {
               ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
           : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
     };
-
-    function getScrollBarWidth() {
-        let div = document.createElement('div');
-      
-        div.style.overflowY = 'scroll';
-        div.style.width = '50px';
-        div.style.height = '50px';
-        div.style.visibility = 'hidden';
-      
-        document.body.appendChild(div);
-        const scrollWidth = div.offsetWidth - div.clientWidth;
-        document.body.removeChild(div);
-        
-        return scrollWidth;
-    }
-
-    function updateHeaderRightOffset() {
-        try {
-            headerWrap.style.right = getScrollBarWidth() + 'px';
-        } catch(err) {
-            console.warn(err);
-        }
-    }
-
-    updateHeaderRightOffset();
 
 
     

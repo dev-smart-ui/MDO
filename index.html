@@ -37,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="./src/css/not-authorized.css"/>
     
     <link rel="stylesheet" href="./src/css/style.css">
-
 </head>
 <body class="bg-white font-primary font-normal overflow-hidden ">
 
-<header class="headerWrap fixed top-0 left-0 right-[16px] z-10 leading-[1]">
+<header class="headerWrap fixed top-0 left-0 right-0 lg:right-[16px] z-10 leading-[1]">
     <div class="header-content">
         <div class="header">
             <button type="button" class="header-menu-button" onclick="toggleHeaderMenu()">
@@ -260,6 +259,35 @@
         </div>
     </div>
 </header>
+
+<script type="text/javascript">
+    const headerWrap = document.querySelector('.headerWrap');
+    
+    function getScrollBarWidth() {
+        let div = document.createElement('div');
+    
+        div.style.overflowY = 'scroll';
+        div.style.width = '50px';
+        div.style.height = '50px';
+        div.style.visibility = 'hidden';
+    
+        document.body.appendChild(div);
+        const scrollWidth = div.offsetWidth - div.clientWidth;
+        document.body.removeChild(div);
+        
+        return scrollWidth;
+    }
+
+    function updateHeaderRightOffset() {
+        try {
+            headerWrap.style.right = getScrollBarWidth() + 'px';
+        } catch(err) {
+            console.warn(err);
+        }
+    }
+
+    updateHeaderRightOffset();
+</script>
 
 <div class="h-dvh swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden main-content" id="page-slider">
     <div class="snap-y snap-mandatory overflow-x-hidden overflow-y-scroll h-full" id="app">
