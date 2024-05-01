@@ -73,7 +73,7 @@ function calculateTotal(currentPackageSelect) {
         newSumOfPackage[currentPackageSelect] = total;
         document.getElementById("totalCounter").innerText = total;
         document.getElementById("totalCounterSecond").innerText = total;
-        document.getElementById("continueBtnTotal").innerText = `Total: $${total}`;
+        document.getElementById("continueBtnTotal").innerText = `Total: $${total} USD >`;
     }
 
 }

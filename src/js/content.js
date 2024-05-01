@@ -250,17 +250,17 @@ const dataDropdownsResearchPackage = [
     },
     {
         btnTitle: "Technical & Annual Reports",
-        imgLink: 'src/images/step-form/listItem7.svg',
+        imgLink: 'src/images/step-form/listItem8.svg',
         itemsArr: ["Geographic Location", "Mine Office Address", "Development Stage", "Mine Type", "Commodities", "Life of Mine"]
     },
     {
         btnTitle: "Data Download",
-        imgLink: 'src/images/step-form/listItem7.svg',
+        imgLink: 'src/images/step-form/listItem9.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company"]
     },
     {
         btnTitle: "Search Assets by:",
-        imgLink: 'src/images/step-form/listItem7.svg',
+        imgLink: 'src/images/step-form/listItem10.svg',
         itemsArr: ["Includes: 7,000 decision makers and consultants", "Search by job category, job title, consulting company"]
     },
 
