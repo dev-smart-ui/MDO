@@ -10,8 +10,12 @@ import {
 
 function setupDropdownToggle(element) {
     element.addEventListener('click', (event) => {
-        const dropDownButton = event.target.closest('.dropdown-toggle');
-        if (dropDownButton) {
+        const checkBox = event.target.closest('.check-box-label');
+        const defaultPrice= event.target.closest('.default-price-string');
+        const dropDownButton = event.target.closest('.dropdown-toggle') || event.target.closest('.toggle-container');
+
+
+        if (!checkBox &&!defaultPrice && dropDownButton ) {
             const dropdownBox = dropDownButton.closest('.dropdown-box');
             if (dropdownBox) {
                 document.querySelectorAll('.dropdown-box').forEach(box => {
