@@ -323,8 +323,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg, #1c1a1a00, #a7a7a7 46.12%);
-    height: 80px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 46.12%);
+    height: 110px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
 }
@@ -335,7 +335,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(0deg, #84141400 0, #e3e3e3);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 46.12%);
     height: 35px;
 }
 
@@ -785,10 +785,10 @@
     transition: opacity 350ms ease, transform 350ms, visibility 0s ease 0s, -webkit-transform 350ms;
     background: white;
     z-index: 3;
-    box-shadow: 0px 3px 20px 0px #00000026;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.1);
     padding: 17.5px 14px;
     border-radius: 8px;
-    top: 103%;
+    top: 107%;
     left: 0;
 }
 
@@ -918,21 +918,26 @@
 /*option select styles start*/
 
 
-
 .package-select-box .choices,
-.licences-select-box .choices{
-  border: 1px solid #CFCFCF;
-  width: 100%;
-  height: 40px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  color: #151515 !important;
-  position: relative;
-  background: transparent;
-  font-weight: 500;
+.licences-select-box .choices {
+    border: 1px solid #CFCFCF;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    color: #151515 !important;
+    position: relative;
+    background: transparent;
+    font-weight: 500;
     transition: .3s ease-in-out;
 }
+
+.package-select-box .choices:after,
+.licences-select-box .choices:after {
+    margin-top: 0;
+}
+
 
 .package-select-box .choices:hover,
 .licences-select-box .choices:hover {
@@ -949,6 +954,14 @@
   border: 1px solid #02A1D3;
 }
 
+.licences-select-box .choices.is-open:after,
+.package-select-box .choices.is-open:after{
+    border: none;
+    border-top:none;
+    margin-top: 0!important;
+}
+
+
 .package-select-box .choices__inner,
 .licences-select-box .choices__inner{
   border: none;
@@ -962,12 +975,6 @@
     display: none;
 }
 
-.licences-select-box .choices.is-open:after,
-.package-select-box .choices.is-open:after{
-  border: 6px solid transparent;
-  border-top: 6px solid #74879B;
-  margin-top: 0;
-}
 
 .licences-select-box .choices__list.choices__list--single{
     text-align: right;
@@ -1001,7 +1008,7 @@
   box-shadow: 0px 3px 20px 0px #00000026;
   padding: 17.5px 14px;
   border-radius: 8px;
-  top: 105%;
+  top: 107%;
   left: 0;
   border: none;
   margin-top: 0;
