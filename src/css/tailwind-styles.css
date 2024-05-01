@@ -251,7 +251,7 @@
     right: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .2s, transform 0.7s ease-in-out;
+    transition: opacity .5s, transform .4s ease-in-out;
     padding-left: 24px;
     padding-right: 21px;
     height: auto;
@@ -273,7 +273,7 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
-    transition: opacity .2s, transform 0.4s ease-in-out;
+    transition: opacity .5s, transform .4s ease-in-out;
 }
 
 .step-form-step-one.active,
@@ -407,6 +407,8 @@
 .step-form-box-right  .title-arrow-box{
     position: relative;
     margin-right: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .step-form-box-right  .title-arrow-box:after{
@@ -421,6 +423,7 @@
     transform: translate(-50%, -50%);
     transform-origin: center center;
     transition: .2s ease-in-out;
+    display: none;
 }
 
 .step-form-wrap .continue-btn {
@@ -791,7 +794,7 @@
     background: white;
     z-index: 3;
     box-shadow: 0 0 9px rgba(0, 0, 0, 0.1);
-    padding: 17.5px 14px;
+    padding: 6px;
     border-radius: 8px;
     top: 107%;
     left: 0;
@@ -807,10 +810,13 @@
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-bottom: 12px;
     cursor: pointer;
     font-size: 14px;
     user-select: none;
+}
+
+.regions-select-wrap .regions-item-label:not(:last-child) {
+    margin-bottom: 12px;
 }
 
 .step-form-step-two .subscription-box-accepted input,
@@ -1011,7 +1017,7 @@
   background: white;
   z-index: 3;
   box-shadow: 0px 3px 20px 0px #00000026;
-  padding: 17.5px 14px;
+  padding: 6px;
   border-radius: 8px;
   top: 107%;
   left: 0;

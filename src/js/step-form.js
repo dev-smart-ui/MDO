@@ -405,7 +405,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
             });
             optionsDetails.innerHTML = '';
-            selectedOptions.innerHTML = '';
             continueBtnTotal.innerHTML = `Continue to billing <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
             steps[currentStep].classList.remove('active');
             currentStep = 0;
