@@ -414,7 +414,7 @@
 .step-form-box-right  .title-arrow-box:after{
     content: '';
     position: absolute;
-    background: url("../images/step-form/arrow-dd.png") no-repeat center center;
+    background: url("../images/step-form/arrow-dd.svg") no-repeat center center;
     width: 10px;
     height: 10px;
     right: -25px;
@@ -574,12 +574,13 @@
     display: none;
 }
 
+
 .step-form-box-right .dropdown-toggle:after ,
 .step-form-box-right .menu-title:after,
 .step-form-box-right .default-price .dropdown-toggle:after {
     content: '';
     position: absolute;
-    background: url("../images/step-form/check.png") no-repeat center center;
+    background: url("../images/step-form/check.svg") no-repeat center center;
     width: 13px;
     height: 13px;
     right: 0;
@@ -887,12 +888,12 @@
     transform: translate(-50%, -50%);
     width: 9px;
     height: 7px;
-    background: url("../images/step-form/check-green.png") no-repeat center center;
+    background: url("../images/step-form/check-green.svg") no-repeat center center;
     background-size: contain;
 }
 
 .step-form-step-two .subscription-box-accepted .checkmark:after{
-    background: url("../images/step-form/check-white.png") no-repeat center center;
+    background: url("../images/step-form/check-white.svg") no-repeat center center;
     background-size: contain;
 }
 
@@ -1302,10 +1303,11 @@
     position: relative;
 }
 
+
 .step-form-step-two .selected-options-container.selected-options-container-show .toggle-container:after{
     content: '';
     position: absolute;
-    background: url("../images/step-form/arrow-dd.png") no-repeat center center;
+    background: url("../images/step-form/arrow-dd.svg") no-repeat center center;
     width: 11px;
     height: 11px;
     right: -25px;
