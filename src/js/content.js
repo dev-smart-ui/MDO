@@ -21,10 +21,12 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
         const titleArrowBox = document.createElement("div");
         titleArrowBox.classList.add("title-arrow-box");
         const titleBox = document.createElement("span");
-        titleArrowBox.innerText = itemDropDown.btnTitle;
+        titleBox.id="text"
+        titleBox.innerText = itemDropDown.btnTitle;
 
 
         const arrowImg = document.createElement("img");
+        arrowImg.id="arrow"
         arrowImg.setAttribute('src', "src/images/step-form/arrow-dd.svg");
 
 

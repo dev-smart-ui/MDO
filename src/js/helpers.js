@@ -134,10 +134,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const dropdownHeight = dropdownContent.offsetHeight;
 
         if (spaceBelow < 130) {
-            dropdownContent.style.top = `-${dropdownHeight}px`;
-            dropdownContent.style.bottom = 'auto';
+            dropdownContent.style.bottom = `107%`;
+            dropdownContent.style.top = 'auto';
         } else {
-            dropdownContent.style.top = '100%';
+            dropdownContent.style.top = '107%';
             dropdownContent.style.bottom = 'auto';
         }
 
