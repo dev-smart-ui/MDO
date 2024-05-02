@@ -438,11 +438,6 @@
   .signIn-modal-button-subscribe {
     outline: none;
     display: block;
-    position: absolute;
-    bottom: 15vh;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
     width: 100%;
     padding: 1.8vh 0;
     border-radius: 6px;
@@ -467,11 +462,6 @@
     border: 2px solid var(--subscribe-btn-color);
 
     color: var(--color-white) !important;
-  }
-
-  .signIn-modal-active .signIn-modal-button-demo,
-  .signIn-modal-active .signIn-modal-button-subscribe {
-    width: calc(100% - 40px);
   }
 
   .signIn-modal-active .signIn-modal-button-demo:hover {
