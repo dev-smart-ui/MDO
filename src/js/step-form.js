@@ -373,8 +373,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         }
                     }
 
-                    console.log(formData);
-
                     steps[currentStep].classList.remove('active');
                     currentStep++;
                     steps[currentStep].classList.add('active');
