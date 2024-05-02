@@ -303,6 +303,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
                 selectedOptionsContainer.classList.remove("selected-options-container-show");
                 stepFormWrap.classList.remove("step-form-wrap-open-package");
+                header.style.zIndex="10"
                 stepFormWrapContainer.classList.remove("step-form-blur");
                 header.classList.remove("step-form-blur");
             });
