@@ -1266,7 +1266,9 @@
 .step-form-step-two .selected-options-container-show .dropdown-menu{
     list-style: none;
     padding-left: 15px;
+    padding-bottom: 10px;
 }
+
 
 .step-form-step-two .selected-options-container .selected-options-container-inner{
     background: #E7E8EC;
@@ -1314,7 +1316,7 @@
 }
 
 .step-form-step-two .selected-options-container.selected-options-container-show li:first-child{
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 
