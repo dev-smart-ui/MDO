@@ -356,8 +356,9 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                     }
 
                     if (currentStep === 1) {
+                        document.querySelector("header").style.display="none"
                         const isValidForm = validateForm();
-                        if (!isValidForm) {
+                        if (isValidForm) {
                             return;
                         } else {
                             dataSubscriptionInputs.forEach(input => {
@@ -374,7 +375,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
                     console.log(formData);
 
-                   document.querySelector("header").style.display="none"
                     steps[currentStep].classList.remove('active');
                     currentStep++;
                     steps[currentStep].classList.add('active');

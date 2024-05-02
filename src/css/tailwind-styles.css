@@ -227,6 +227,14 @@
 
 }
 
+.step-form-wrap.step-form-wrap-open-package .step-form-step-two .close-btn {
+    top: 75px
+}
+
+.step-form-wrap.step-form-wrap-open-package .step-form-step-two .selected-options-container .close-btn {
+    top: 20px
+}
+
 .step-form-wrap.step-form-wrap-open-package .step-form-step-two:after{
     content: '';
     background: #00000096;
