@@ -312,6 +312,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         packageChooseInfo.addEventListener("click", () => {
             selectedOptionsContainer.classList.add("selected-options-container-show");
             stepFormWrap.classList.add("step-form-wrap-open-package");
+            header.style.zIndex="-1"
         });
 
         document.addEventListener('click', (event) => {
