@@ -112,12 +112,12 @@ const optionsDetails = document.getElementById('optionsDetails');
 const disabledContainer = document.getElementById('disabledContainer');
 
     optionsDetails.addEventListener("scroll",()=>{
-        const atBottom = optionsDetails.scrollTop + optionsDetails.clientHeight >= optionsDetails.scrollHeight;
+        const atBottom = optionsDetails.scrollTop + optionsDetails.clientHeight >= optionsDetails.scrollHeight - 1;
 console.log(atBottom)
 console.log(optionsDetails.scrollTop )
 console.log(optionsDetails.clientHeight)
 console.log(optionsDetails.scrollHeight)
-        
+
         if(optionsDetails.scrollTop>2 && !atBottom) {
             disabledContainer.classList.add('shadow-bottom')
         } else if (atBottom){
