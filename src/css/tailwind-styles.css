@@ -1322,6 +1322,10 @@
     margin-bottom: 30px;
 }
 
+.step-form-step-two .selected-options-container.selected-options-container-show li:last-child{
+    margin-bottom: 17px;
+}
+
 
 .step-form-step-two .selected-options-container.selected-options-container-show .toggle-container{
     position: relative;
