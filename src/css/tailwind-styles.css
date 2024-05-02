@@ -222,13 +222,13 @@
 .step-form-wrap.step-form-wrap-open-package .step-form-step-two{
     position: relative;
     overflow: visible;
-    padding-top: clamp(60px, 9dvh, 21dvw);
+    padding-top: 60px;
     padding-bottom: clamp(30px, 4.5dvh, 10dvw);
 
 }
 
 .step-form-wrap.step-form-wrap-open-package .step-form-step-two .close-btn {
-    top: 98px
+    top: 75px
 }
 
 .step-form-wrap.step-form-wrap-open-package .step-form-step-two .selected-options-container .close-btn {
