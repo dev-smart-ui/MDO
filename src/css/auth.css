@@ -11,7 +11,8 @@
   overflow-x: hidden;
 }
 
-.signIn-modal-active .main-content {
+.signIn-modal-active .main-content, 
+.signIn-modal-active .headerWrap {
   margin: unset;
   filter: blur(3px);
 }
