@@ -139,7 +139,7 @@ function createDropdownsOfPackageCustom(data, currentPackageSelect,) {
         } else {
             const priceBox = document.createElement("span");
             priceBox.classList.add("default-price-string");
-            priceBox.innerText = `$${itemDropDown.price}`;
+            priceBox.innerText = `$${itemDropDown.price}.00`;
 
             dropdownButton.appendChild(priceBox);
             toggleContainer.appendChild(dropdownButton);
@@ -169,7 +169,6 @@ function createDropdownsOfUltimate(data, packageTotal) {
     const totalCounter = document.getElementById('totalCounter');
 
     optionsDetails.innerHTML = '';
-    let total = packageTotal;
 
     data.map((itemDropDown, index) => {
         const dropdownBox = document.createElement("div");

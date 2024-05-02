@@ -700,10 +700,17 @@
 }
 
 .step-form-box-right .default-price span{
-    font-weight: 600;
+    font-weight: 500;
     line-height: 16px;
 }
 
+.step-form-box-right .default-price:first-child span{
+    font-weight: 600;
+}
+
+.default-price-string:first-child span{
+    font-weight: 600;
+}
 
 .step-form-box-right .total-counter {
     font-size: 22px;
