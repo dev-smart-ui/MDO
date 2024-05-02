@@ -407,25 +407,32 @@
 }
 
 .step-form-box-right  .title-arrow-box{
-    position: relative;
     margin-right: 50px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
 }
 
-.step-form-box-right  .title-arrow-box:after{
-    content: '';
-    position: absolute;
-    background: url("../images/step-form/arrow-dd.svg") no-repeat center center;
+.title-arrow-box span {
+    flex: 1;
+    margin-right: 10px;
+}
+
+
+.step-form-box-right  .title-arrow-box img{
     width: 10px;
     height: 10px;
-    right: -25px;
-    background-size: contain;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: auto;
     transform-origin: center center;
     transition: .2s ease-in-out;
 }
+
+.step-form-box-right .drop-down-item-open .title-arrow-box img {
+    transform: rotate(180deg);
+    transform-origin: center center;
+}
+
 
 .step-form-wrap .continue-btn {
     width: 100%;
@@ -648,11 +655,6 @@
 
 .step-form-box-right .drop-down-item-open .dropdown-menu {
     max-height: 1000px;
-}
-
-.step-form-box-right .drop-down-item-open .title-arrow-box:after {
-  transform: translate(-50%, -50%) rotate(180deg);
-    transform-origin: center center;
 }
 
 
@@ -1289,8 +1291,7 @@
 }
 
 
-
-.step-form-step-two .selected-options-container.selected-options-container-show .title-arrow-box:after{
+.step-form-step-two .selected-options-container.selected-options-container-show .title-arrow-box img{
  display: none;
 }
 

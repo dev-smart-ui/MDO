@@ -21,9 +21,16 @@ function createDropdownsOfPackageResearch(data, packageTotal) {
         const titleArrowBox = document.createElement("div");
         titleArrowBox.classList.add("title-arrow-box");
         const titleBox = document.createElement("span");
-        titleBox.innerText = itemDropDown.btnTitle;
+        titleArrowBox.innerText = itemDropDown.btnTitle;
+
+
+        const arrowImg = document.createElement("img");
+        arrowImg.setAttribute('src', "src/images/step-form/arrow-dd.svg");
+
 
         titleArrowBox.appendChild(titleBox);
+        titleArrowBox.appendChild(arrowImg);
+
         const imgBox = document.createElement("div");
         imgBox.classList.add("dropdown-toggle-img-box", "flex", "justify-center", "items-center",);
         const imgItem = document.createElement("img");
@@ -75,8 +82,13 @@ function createDropdownsOfPackageCustom(data, currentPackageSelect,) {
         const titleBox = document.createElement("span");
         titleBox.innerText = itemDropDown.btnTitle;
 
+        const arrowImg = document.createElement("img");
+        arrowImg.setAttribute('src', "src/images/step-form/arrow-dd.svg");
+
 
         titleArrowBox.appendChild(titleBox);
+        titleArrowBox.appendChild(arrowImg);
+
         const imgBox = document.createElement("div");
         imgBox.classList.add("dropdown-toggle-img-box", "flex", "justify-center", "items-center",);
         const imgItem = document.createElement("img");
@@ -175,8 +187,13 @@ function createDropdownsOfUltimate(data, packageTotal) {
         const titleBox = document.createElement("span");
         titleBox.innerText = itemDropDown.btnTitle;
 
+        const arrowImg = document.createElement("img");
+        arrowImg.setAttribute('src', "src/images/step-form/arrow-dd.svg");
+
 
         titleArrowBox.appendChild(titleBox);
+        titleArrowBox.appendChild(arrowImg);
+
         const imgBox = document.createElement("div");
         imgBox.classList.add("dropdown-toggle-img-box", "flex", "justify-center", "items-center",);
         const imgItem = document.createElement("img");
