@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 :root {
   --swiper-pagination-bullet-inactive-color: #34384E1A;
   --swiper-pagination-color: #02C2FF;
@@ -127,7 +137,8 @@
   display: none;
 }
 
-.comprehensive-coverage-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+.comprehensive-coverage-pagination.swiper-pagination-bullets .swiper-pagination-bullet, 
+.newsSection .swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0;
   width: 12px;
   height: 12px;
@@ -1590,7 +1601,8 @@
     max-height: calc(408px + clamp(15px, 8.7dvh, 9dvw) + clamp(15px, 7dvh, 4dvw));
   }
 
-  .comprehensive-coverage-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  .comprehensive-coverage-pagination.swiper-pagination-bullets .swiper-pagination-bullet, 
+  .newsSection .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0;
     width: 15px;
     height: 15px;

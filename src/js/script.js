@@ -1,48 +1,30 @@
 "use strict"
 
-
-const app = document.querySelector('#app');
-const counters = document.querySelectorAll('.counter-block');
-const goToSubscribe = document.querySelectorAll('.goToSubscribe');
-const stepFormWrap = document.querySelector('#stepFormWrap');
-
-//touch screen check
-function isTouchEnabled() {
-    return ('ontouchstart' in window) ||
-        (navigator.maxTouchPoints > 0) ||
-        (navigator.msMaxTouchPoints > 0);
-}
-
-window.addEventListener("load", function () {
-    // sliders
+window.addEventListener("load", function () {  
+    const app = document.querySelector('#app');
+    const counters = document.querySelectorAll('.counter-block');
+    const goToSubscribe = document.querySelectorAll('.goToSubscribe');
+    const stepFormWrap = document.querySelector('#stepFormWrap');
+    const newsSection = document.querySelector('#newsSection');
+    const newsSectionNewsList = document.querySelector('#newsSectionNewsList');
+    const newsSectionNewsListProgress = document.querySelector('#newsSectionNewsListProgress');
+    const newsSectionNewsListLogo = document.querySelector('#newsSectionNewsListLogo');
     const s1 = document.querySelector('#page-slider');
     const s2 = document.querySelector('#comprehensive-slider');
-    // let pageSlider = new Swiper("#page-slider", {
-    //     direction: "vertical",
-    //     allowTouchMove: isTouchEnabled(),
-    //     simulateTouch: !isTouchEnabled(),
-    //     slidesPerView: 1,
-    //     speed: 800,
-    //     longSwipesRatio: 0.3,
-    //     freeMode: {
-    //         enabled: !isTouchEnabled(),
-    //         sticky: true,
-    //     },
-    //     mousewheel: {
-    //         forceToAxis: true,
-    //         enabled: !isTouchEnabled(),
-    //         noMousewheelClass: 'swiper-no-swiping',
-    //         releaseOnEdges: true,
-    //         sensitivity: 3,
-    //     },
-    //     on: {
-    //         init: function () {
-    //             initCounters(this.slides[this.activeIndex])
-    //         },
-    //     }
-    // });
 
-    let comprehensiveSlider = new Swiper("#comprehensive-slider", {
+    const newsSectionSliderParams = {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        speed: 700,
+        init: false,
+        observer: true,
+        pagination: {
+            el: ".newsSection .swiper-pagination",
+            clickable: true,
+        },
+    };
+    
+    const comprehensiveSliderParams = {
         slidesPerView: 1.25,
         spaceBetween: 20,
         loop: true,
@@ -63,18 +45,10 @@ window.addEventListener("load", function () {
             clickable: true,
         },
         breakpoints:{
-            768: {
-                slidesPerView: 2,
-            },
-            1024:{
-                slidesPerView: 3.2,
-            },
-            1440:{
-                slidesPerView: 3.8,
-            },
-            1642:{
-                slidesPerView: 4.8,
-            }
+            768: { slidesPerView: 2 },
+            1024:{ slidesPerView: 3.2 },
+            1440:{ slidesPerView: 3.8 },
+            1642:{ slidesPerView: 4.8 }
         },
         on: {
             init: function () {
@@ -95,23 +69,14 @@ window.addEventListener("load", function () {
                 updateSlideClasses.call(this);
                 this.updateSlides()
             },
+            transitionStart: function () {
+                sliderTextToggle();
+            }
         }
-    });
+    };
 
-    //sliders events
-    // pageSlider.on('slideChange', function () {
-    //     initCounters(this.slides[this.activeIndex])
-
-    //     if (this.slides[this.activeIndex].classList.contains('nested')) {
-    //         this.slides[this.activeIndex].classList.add('swiper-no-swiping');
-    //     }
-    // })
-
-    initCounters();
-
-    comprehensiveSlider.on('transitionStart', function () {
-        sliderTextToggle();
-    })
+    let comprehensiveSlider = new Swiper("#comprehensive-slider", comprehensiveSliderParams);
+    let newsSectionSlider = new Swiper("#newsSectionSlider", newsSectionSliderParams);
 
     //functions initialization after loading fonts
     if (document.fonts) {
@@ -119,8 +84,52 @@ window.addEventListener("load", function () {
             sliderTextToggle()
         };
     }
+    
 
+    // GLOBAL RESIZE
+    window.addEventListener('resize', function () {
+        sliderTextToggle();
+        updateHeaderRightOffset();
+        updateNewsSectionHeight();
+        initNewsSlider();
+    });
+
+
+    // GLOBAS SCROLL
+    app.addEventListener('scroll', function (e) {
+        dynamicCounters();
+        newsScrolls(e);
+    });
+
+
+    goToSubscribe.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
+        })
+    })
+
+    
+    initCounters();
     sliderTextToggle(); // force hide slider contents (page onload)
+    updateNewsSectionHeight();
+    initNewsSlider();
+
+
+
+
+
+
+    // FUNCTIONS *****
+
+    //touch screen check
+    function isTouchEnabled() {
+        return ('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0);
+    }
 
     // find all next elements after "element"
     function nextAll(element) {
@@ -187,11 +196,6 @@ window.addEventListener("load", function () {
         }
     }
 
-    window.addEventListener('resize', function () {
-        sliderTextToggle();
-        updateHeaderRightOffset();
-    })
-
     // counter
     function countUp(elements, duration) {
         const animationDuration = duration || 4000,
@@ -226,7 +230,17 @@ window.addEventListener("load", function () {
             }, index * 100)
         })
     }
-    
+
+    function elementIsVisibleInViewport(el, partiallyVisible = false) {
+        const { top, left, bottom, right } = el.getBoundingClientRect();
+        const { innerHeight, innerWidth } = window;
+        
+        return partiallyVisible
+        ? ((top > 0 && top < innerHeight) ||
+            (bottom > 0 && bottom < innerHeight)) &&
+            ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+        : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+    };
 
     function initCounters() {
         try {
@@ -253,21 +267,7 @@ window.addEventListener("load", function () {
         return window.innerWidth
     }
 
-    const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
-        const { top, left, bottom, right } = el.getBoundingClientRect();
-        const { innerHeight, innerWidth } = window;
-        
-        return partiallyVisible
-          ? ((top > 0 && top < innerHeight) ||
-              (bottom > 0 && bottom < innerHeight)) &&
-              ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
-          : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
-    };
-
-
-    
-
-    app.addEventListener('scroll', function () {
+    function dynamicCounters() {
         try {
             const isMobileCounter = getComputedStyle(counters[0]).display == 'none';
             let targetCounter;
@@ -288,15 +288,62 @@ window.addEventListener("load", function () {
         } catch(err) {
             console.warn(err);
         }
-    })
+    }
 
+    function newsScrolls(e) {
+        try {
+            if (checkDeviceWidth() < 1150) return
 
-    goToSubscribe.forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            e.stopPropagation();
+            const sectionOffsetTop = newsSection.getBoundingClientRect().top;
 
-            stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
-        })
-    })
+            if (sectionOffsetTop > 0) return
+            
+            newsSectionNewsList.scrollTo({top: Math.abs(sectionOffsetTop)});
+            newsSectionNewsListLogo.scrollTo({left: sectionOffsetTop / 3.1});
+
+            const isScrollEnd = !(newsSectionNewsList.scrollHeight - newsSectionNewsList.clientHeight - newsSectionNewsList.scrollTop);
+            const targetEndScroll = newsSectionNewsList.scrollHeight - newsSectionNewsList.clientHeight;
+            const scrollProgress = 100 - +(newsSectionNewsList.scrollTop / targetEndScroll * 100).toFixed(2);
+
+            newsSectionNewsListProgress.style.transform = `translateY(-${scrollProgress}%)`;
+
+        } catch(err) {
+            console.warn(err);
+        }
+    }
+
+    function updateNewsSectionHeight() {
+        try {
+            if (checkDeviceWidth() >= 1150) {
+                newsSection.style.height = newsSectionNewsList.scrollHeight + 'px';
+            } else {
+                newsSection.style.removeProperty('height');
+            }      
+        } catch(err) {
+            console.warn(err);
+        }
+    }
+
+    function initNewsSlider() {
+        const isDestroyed = newsSectionSlider.destroyed;
+
+        if (isDestroyed) {
+            newsSectionSlider = new Swiper("#newsSectionSlider", newsSectionSliderParams);
+        }
+
+        const isInit = newsSectionSlider.initialized;
+        const isMobile = checkDeviceWidth() < 1150;
+
+        if (isMobile && !isInit) {
+            newsSectionSlider.init();
+            console.log('newsSectionSlider init...');
+            return
+        }
+
+        if (!isMobile && isInit) {
+            console.log('newsSectionSlider already initialized, destroying...');
+            newsSectionSlider.destroy();
+        }
+    }
+
 });
