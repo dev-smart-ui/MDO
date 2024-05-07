@@ -612,9 +612,20 @@
         </div>
 
 
-        <section class="newsSection snap-start snap-always news relative bg-[#F4F4F4]" id="newsSection">
-            <div class="swiper px-6 2lg:px-20 h-screen sticky top-0 2lg:flex justify-between items-start gap-5 3xl:pl-[256px] 3xl:pr-[270px]" id="newsSectionSlider">
-                <div class="swiper-wrapper pt-16 2lg:px-4 w-full 2lg:w-[47%] 3xl:w-[44%] max-h-full h-auto 2lg:block 2lg:overflow-hidden 2lg:no-scrollbar" id="newsSectionNewsList">
+        <section class="newsSection snap-start snap-always h-full news relative bg-[#F4F4F4] pt-[64px] 2lg:pt-0" id="newsSection">
+            <div class="swiper px-6 2lg:px-20 h-full 2lg:h-screen sticky top-0 2lg:flex flex-row-reverse justify-between items-start gap-5 3xl:pl-[256px] 3xl:pr-[270px]" id="newsSectionSlider">
+
+                <div class="relative 2lg:pr-[80px] 3xl:pr-0 2lg:w-[44%] self-center">
+                    <div>
+                        <h2 class="text-[4vh] leading-[40px] leading-normal 2lg:text-[64px] 3xl:text-[70px] font-bold 2lg:leading-[84px]">Up-To-Date content</h2>
+                        <p class="text-[#5B5B5B] text-[1.8vh] leading-normal 2lg:text-lg 2lg:leading-[2] mt-4 mt-[2vh] 2lg:mt-6 line-clamp-5 2lg:line-clamp-none">MDO team of seasoned professionals closely monitors mining news and press releases. As a result, our Mining Intelligence Database is always updated with the latest industry information available.</p>
+                        <button type="button" class="group w-full mt-8 mt-[4vh] 2lg:w-auto 2lg:mt-10 font-medium text-white bg-[#02A1D3] px-10 py-[2vh] 2lg:py-5 rounded-[12px] leading-[1.2]">
+                            <span class="inline-block group-hover:scale-[1.05] duration-200 text-[2vh] 2lg:text-base">Visit our News website</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="swiper-wrapper mt-8 2lg:mt-0 2lg:pt-16 2lg:px-4 w-full 2lg:w-[47%] 3xl:w-[44%] max-h-full h-auto 2lg:block 2lg:overflow-hidden 2lg:no-scrollbar" id="newsSectionNewsList">
                     <div class="swiper-slide bg-white p-3 2lg:p-6 2lg:mb-5 rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
                         <img src="./src/images/news/news1.jpg" alt="" class="w-full rounded-[12px] max-h-[20vh] 2lg:max-h-[304px] 3xl:max-h-full object-cover">
                         <div class="mt-4 2lg:mt-8">
@@ -649,17 +660,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-pagination static flex items-center gap-[14px] justify-center mx-auto mt-5 2lg:hidden"></div>
 
-                <div class="relative 2lg:pr-[80px] 3xl:pr-0 2lg:w-[44%] mt-6 2lg:mt-0 self-center">
-                    <div>
-                        <h2 class="text-[4vh] leading-[40px] leading-normal 2lg:text-[64px] 3xl:text-[70px] font-bold 2lg:leading-[84px]">Up-To-Date content</h2>
-                        <p class="text-[#5B5B5B] text-[1.8vh] leading-normal 2lg:text-lg 2lg:leading-[2] mt-4 mt-[2vh] 2lg:mt-6 line-clamp-5 2lg:line-clamp-none">MDO team of seasoned professionals closely monitors mining news and press releases. As a result, our Mining Intelligence Database is always updated with the latest industry information available.</p>
-                        <button type="button" class="group w-full mt-8 mt-[4vh] 2lg:w-auto 2lg:mt-10 font-medium text-white bg-[#02A1D3] px-10 py-[2vh] 2lg:py-5 rounded-[12px] leading-[1.2]">
-                            <span class="inline-block group-hover:scale-[1.05] duration-200 text-[2vh] 2lg:text-base">Visit our News website</span>
-                        </button>
-                    </div>
-                </div>
+                <div class="swiper-pagination static flex items-center gap-[14px] justify-center mx-auto mt-5 2lg:hidden"></div>
+                
                 <div dir="rtl" class="absolute top-1/2 -translate-y-1/2 left-0 right-0 overflow-hidden -z-10" id="newsSectionNewsListLogo">
                     <img class="max-w-none 2lgw-[130vw]" src="./src/images/news/logo.svg" alt="">
                 </div>

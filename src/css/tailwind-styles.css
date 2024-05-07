@@ -2232,10 +2232,6 @@
 }
 
 @media screen and (min-width: 2300px) and (min-height: 1000px) {
-  .comprehensive-coverage .swiper-slide {
-    min-height: 750px;
-  }
-
   #comprehensive-slider {
     max-height: calc(608px + clamp(15px, 8.7dvh, 9dvw) + clamp(15px, 7dvh, 4dvw));
   }
@@ -2251,6 +2247,12 @@
   #comprehensive-slider .swiper-slide .swiper-slide-inner {
     border-radius: 32px;
   }
+}
+
+@media screen and (min-width: 2300px) and (min-height: 1200px) {
+    .comprehensive-coverage .swiper-slide {
+      min-height: 750px;
+    }
 }
 
 @media screen and (min-width: 3000px) {
@@ -2367,5 +2369,10 @@
 
   .hero-section-content {
     max-width: 60%;
+  }
+
+  .swiper-slide.comprehensive-coverage {
+    padding-top: clamp(3dvh, 10.4dvh, 15.5dvh);
+    padding-bottom: clamp(15px, 4.3dvh, 8dvw);
   }
 }
