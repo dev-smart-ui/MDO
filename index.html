@@ -40,7 +40,7 @@
 </head>
 <body class="bg-white font-primary font-normal overflow-hidden ">
 
-<header class="headerWrap fixed top-0 left-0 right-0 lg:right-[16px] z-10 leading-[1]">
+<header class="hidden headerWrap fixed top-0 left-0 right-0 lg:right-[16px] z-10 leading-[1]">
     <div class="header-content">
         <div class="header">
             <button type="button" class="header-menu-button" onclick="toggleHeaderMenu()">
@@ -292,7 +292,7 @@
 <div class="h-dvh swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden main-content" id="page-slider">
     <div class="snap-y snap-mandatory overflow-x-hidden overflow-y-scroll h-full" id="app">
         <!--hero-->
-        <div class="swiper-slide snap-start snap-always hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh] relative">
+        <div class="hidden swiper-slide snap-start snap-always hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh] relative">
             <div class="container h-full flex flex-col justify-between ">
                 <div class="light-block absolute top-[56px] left-[-15%] lg:left-auto lg:right-[-10%] 3xl:top-[26px] w-[135%] h-[65%] lg:w-[70%] lg:h-[90%]">
                     <img src="./src/images/light.svg" alt="" class="w-full h-full lg:scale-[1.4] lg:max-h-[90vh] object-contain">
@@ -364,7 +364,7 @@
         </div>
 
         <!-- counter mobile-->
-        <div class="swiper-slide snap-start snap-always bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
+        <div class="hidden swiper-slide snap-start snap-always bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
             <div class="container">
                 <p class="text-[9vw] leading-[1.45] counter-title max-w-[70%] mb-[7.6dvh]">Mining Database in numbers</p>
                 <div class="counter-grid grid grid-cols-[repeat(2,calc(50%_-_10px))] gap-x-[14px] gap-y-[8.7dvh]">
@@ -403,7 +403,7 @@
         </div>
 
         <!--comprehensive coverage-->
-        <div class="swiper-slide snap-start snap-always comprehensive-coverage pt-[15dvh] pb-[5.5dvh] lg:pt-[13dvh] lg:pb-[6dvh] text-text-black flex flex-col justify-between">
+        <div class="hidden swiper-slide snap-start snap-always comprehensive-coverage pt-[15dvh] pb-[5.5dvh] lg:pt-[13dvh] lg:pb-[6dvh] text-text-black flex flex-col justify-between">
             <div class="container">
                 <h2 class="leading-[1.34] text-[9.2vw] lg:text-[4.46vw] font-bold mb-[2.7dvh] lg:mb-[2dvh] 3xl:text-[3.5dvw]">Comprehensive coverage</h2>
                 <p class="leading-[1.7] text-[4.04vw] lg:text-[1.25vw] lg:leading-[1.8] subtitle 3xl:text-[0.9dvw] 3xl:leading-[1.6]">MDO provides in-depth mining intelligence on operating
@@ -612,7 +612,7 @@
         </div>
 
 
-        <section class="newsSection snap-start snap-always h-full news relative bg-[#F4F4F4] pt-[64px] 2lg:pt-0" id="newsSection">
+        <section class="hidden newsSection snap-start snap-always h-full news relative bg-[#F4F4F4] pt-[64px] 2lg:pt-0" id="newsSection">
             <div class="swiper px-6 2lg:px-20 h-full 2lg:h-screen sticky top-0 2lg:flex flex-row-reverse justify-between items-start gap-5 3xl:pl-[256px] 3xl:pr-[270px]" id="newsSectionSlider">
 
                 <div class="relative 2lg:pr-[80px] 3xl:pr-0 2lg:w-[44%] self-center">
@@ -673,8 +673,12 @@
             
         </section>
 
+        <section class="requestDemo bg-[#161822] text-white h-full">
+            <div>123</div>
+        </section>
 
-        <section class="snap-start snap-always step-form-wrap lg:bg-gray h-full" id="stepFormWrap" >
+
+        <section class="hidden snap-start snap-always step-form-wrap lg:bg-gray h-full" id="stepFormWrap" >
             <div class="package-select-info-text-wrap" id="packageSelectInfoText">
                 <div class="package-select-info-text" >
                     <img class="absolute package-select-info-close" data-close-modal
@@ -1014,7 +1018,7 @@
             </div>
         </section>
 
-        <section class="snap-start snap-always contactUs bg-[#313238] text-white h-full pt-[72px] pb-[6vh]">
+        <section class="hidden snap-start snap-always contactUs bg-[#313238] text-white h-full pt-[72px] pb-[6vh]">
             <div class="h-full 4xl:max-w-full px-5 3xl:px-[90px] 4xl:flex flex-col justify-center">
                 <div>
                     <h2 class="text-[3.5vh] lg:text-[7vh] font-bold leading-[1]">Contact Us</h2>
