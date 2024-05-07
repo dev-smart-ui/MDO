@@ -101,6 +101,10 @@ function adjustContainerHeight() {
         container.style.maxHeight = `839px`;
     }
 
+    if(activeStep && window.innerWidth>=2200 && window.innerHeight>=1061){
+        container.style.maxHeight = `100%`;
+    }
+
 }
 
 document.addEventListener('DOMContentLoaded', adjustContainerHeight);

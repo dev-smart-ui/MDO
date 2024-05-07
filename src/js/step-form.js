@@ -115,6 +115,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
         const selectedItem = document.querySelector('.is-highlighted');
+        const app = document.querySelector('#app');
         let formData = {};
         let regionsIng = [];
         let currentPackageInnerHtmRight = '';
@@ -303,7 +304,9 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
                 selectedOptionsContainer.classList.remove("selected-options-container-show");
                 stepFormWrap.classList.remove("step-form-wrap-open-package");
-                header.style.zIndex="10"
+                stepFormWrap.removeAttribute('style');
+                app.style.overflowY = 'scroll';
+                //header.style.zIndex="10"
                 stepFormWrapContainer.classList.remove("step-form-blur");
                 header.classList.remove("step-form-blur");
             });
@@ -313,7 +316,9 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         packageChooseInfo.addEventListener("click", () => {
             selectedOptionsContainer.classList.add("selected-options-container-show");
             stepFormWrap.classList.add("step-form-wrap-open-package");
-            header.style.zIndex="-1"
+            stepFormWrap.style.zIndex = '20';
+            app.style.overflowY = 'hidden';
+            //header.style.zIndex="-1"
         });
 
         document.addEventListener('click', (event) => {

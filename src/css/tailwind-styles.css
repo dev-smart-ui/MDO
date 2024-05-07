@@ -12,6 +12,12 @@
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+    .h-screen {
+      height: -webkit-fill-available;
+    }
+  }
+
 :root {
   --swiper-pagination-bullet-inactive-color: #34384E1A;
   --swiper-pagination-color: #02C2FF;
@@ -115,7 +121,7 @@
 
 @media screen and (min-width: 2500px) {
   .counter-block .counter-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 250px);
   }
 }
 
@@ -2346,26 +2352,126 @@
 
 
 
-
+@media screen and (min-width: 2200px) and (min-height: 1060px) {
+    .step-form-step-two .step-form-box-right .optional-content {
+        max-height: 60vh;
+    }
+}
 
 
 @media screen and (min-width: 2200px) {
+
+  .hero-section {
+    padding-top: 9dvh;
+    padding-bottom: 5.5dvh;
+  }
+
   .hero-section > .container {
     position: relative;
+    max-width: 100%;
+    padding: 0 90px;
   }
 
   .hero-section .image-block {
     top: 0;
-    right: -15%;
   }
 
   .hero-section .light-block {
-    top: 0;
+    /* top: 0;
     width: 90%;
-    right: -25%;
+    right: -25%; */
+  }
+
+  .hero-section h1 {
+    font-size: clamp(4.3dvw,180px,15dvh);
+  }
+
+  .hero-section h2 {
+    font-size: clamp(.9dvw,30px,3dvh);
   }
 
   .hero-section-content {
     max-width: 60%;
   }
+
+  .hero-section .image-block {
+    top: -5%;
+    right: -2%;
+  }
+
+  .hero-section .image-block img {
+    width: 55dvw;
+    max-width: 100%;
+  }
+
+  .hero-section .light-block {
+    width: 90vw;
+    right: -15%;
+    height: auto;
+    top: -10%;
+  }
+
+  .swiper-slide.comprehensive-coverage {
+    padding-top: clamp(3dvh, 10.4dvh, 15.5dvh);
+    padding-bottom: clamp(15px, 4.3dvh, 8dvw);
+  }
+
+  .step-form-wrap-container {
+    max-width: 100%;
+    padding: 0 90px;
+  }
+
+  .step-form-wrap .step-title {
+    font-size: 106px;
+    line-height: 1;
+  }
+
+  .step-form-box-right .toggle-container span {
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .step-form-box-right .dropdown-toggle .dropdown-toggle-img-box, 
+  .step-form-box-right .menu-title .menu-img-box {
+    min-width: 40px;
+    height: 40px;
+  }
+
+  .step-form-box-right .dropdown-menu {
+    font-size: 26px;
+    line-height: 24px;
+  }
+
+  .step-form-box-right .optional-content {
+    max-height: 100%;
+  }
+
+  .step-form-step-one .step-form-box-left {
+    align-self: center;
+  }
+
+  .step-form-step-one .select-title-box span {
+    font-size: 3vh;
+  }
+  
+  .step-form-step-two {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .step-form-step-two .step-form-step-two-left-column {
+    align-items: center;
+    grid-template-rows: auto auto;
+  }
+
+  .step-form-step-two .subscription-box-details h4 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .step-form-step-one, 
+  .step-form-step-two {
+    padding: 0;
+  }
+
+  
 }

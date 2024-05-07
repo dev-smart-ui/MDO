@@ -2,13 +2,16 @@
 
 window.addEventListener("load", function () {  
     const app = document.querySelector('#app');
+
     const counters = document.querySelectorAll('.counter-block');
     const goToSubscribe = document.querySelectorAll('.goToSubscribe');
     const stepFormWrap = document.querySelector('#stepFormWrap');
+
     const newsSection = document.querySelector('#newsSection');
     const newsSectionNewsList = document.querySelector('#newsSectionNewsList');
     const newsSectionNewsListProgress = document.querySelector('#newsSectionNewsListProgress');
     const newsSectionNewsListLogo = document.querySelector('#newsSectionNewsListLogo');
+
     const s1 = document.querySelector('#page-slider');
     const s2 = document.querySelector('#comprehensive-slider');
 
@@ -34,7 +37,7 @@ window.addEventListener("load", function () {
         slideToClickedSlide: true,
         observer: true,
         autoplay: {
-            delay: 5000,
+            delay: 511000,
             waitForTransition: true,
             disableOnInteraction: false,
         },
@@ -101,28 +104,41 @@ window.addEventListener("load", function () {
         newsScrolls(e);
     });
 
-
-    goToSubscribe.forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            e.stopPropagation();
-
-            stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
-        })
-    })
-
     
     initCounters();
     sliderTextToggle(); // force hide slider contents (page onload)
     updateNewsSectionHeight();
     initNewsSlider();
-
-
-
+    goToSubscribeInit();
 
 
 
     // FUNCTIONS *****
+
+    function goToSubscribeInit() {
+        try {
+            goToSubscribe.forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    newsSection.style.display = 'none';
+        
+                    stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
+
+                    let scrollTimeout;
+                    app.addEventListener('scroll', function(e) {
+                        clearTimeout(scrollTimeout);
+                        scrollTimeout = setTimeout(function() {
+                            newsSection.style.display = 'block';
+                        }, 100);
+                    });
+                })
+            })
+        } catch(err) {
+            console.warn(err);
+        }
+    }
 
     //touch screen check
     function isTouchEnabled() {
