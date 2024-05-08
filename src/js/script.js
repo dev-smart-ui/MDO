@@ -9,6 +9,10 @@ window.addEventListener("load", function () {
     const newsSectionNewsList = document.querySelector('#newsSectionNewsList');
     const newsSectionNewsListProgress = document.querySelector('#newsSectionNewsListProgress');
     const newsSectionNewsListLogo = document.querySelector('#newsSectionNewsListLogo');
+    const requestDemoControls = document.querySelectorAll('.requestDemoControl');
+    const requestDemoControlsImage = document.querySelectorAll('.requestDemoControlImage');
+    const requestDemoControlWrap = document.querySelector('.requestDemoControlWrap');
+
     const s1 = document.querySelector('#page-slider');
     const s2 = document.querySelector('#comprehensive-slider');
 
@@ -102,14 +106,17 @@ window.addEventListener("load", function () {
     });
 
 
-    goToSubscribe.forEach(btn => {
+    goToSubscribe.length && goToSubscribe.forEach(btn => {
         btn.addEventListener('click', e => {
             e.preventDefault();
             e.stopPropagation();
 
             stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
         })
-    })
+    });
+
+    // request a demo section animations handler
+    requestDemoControls.length && requestDemoControls.forEach((btn, i) => { btn.addEventListener('click', e => { requestDemoControlsHandler(i) }) });
 
     
     initCounters();
@@ -343,6 +350,82 @@ window.addEventListener("load", function () {
         if (!isMobile && isInit) {
             console.log('newsSectionSlider already initialized, destroying...');
             newsSectionSlider.destroy();
+        }
+    }
+
+    function requestDemoControlsHandler(i) {
+        try {
+            if (i != 0 && i != 1 && i != 2) return    
+            
+            requestDemoControls.forEach(btn => { btn.classList.remove('active') });
+            requestDemoControls[i].classList.add('active');            
+
+            // *** on macbook click
+            if (i == '0') {
+                // current
+                requestDemoControlsImage[0].style.opacity = '1';
+                requestDemoControlsImage[0].style.transform = 'none';
+                requestDemoControlsImage[0].classList.add('active');
+                
+                requestDemoControlWrap.classList.remove('isPhone');
+                requestDemoControlWrap.classList.remove('isTablet');
+                requestDemoControlWrap.classList.add('isLaptop');
+
+                // rest
+                requestDemoControlsImage[1].style.opacity = '0';
+                requestDemoControlsImage[1].style.transform = 'rotate(19deg) translateX(35%) scale(0.9)';
+                requestDemoControlsImage[1].classList.remove('active');
+
+                requestDemoControlsImage[2].style.opacity = '0';
+                requestDemoControlsImage[2].style.transform = 'translateY(50%) scale(0.9)';
+                requestDemoControlsImage[2].classList.remove('active');
+            }
+
+            // *** on iphone click
+            else if (i == '1') {
+                // current
+                requestDemoControlsImage[1].style.opacity = '1';
+                requestDemoControlsImage[1].style.transform = 'none';
+                requestDemoControlsImage[1].classList.add('active');
+                
+                requestDemoControlWrap.classList.remove('isLaptop');
+                requestDemoControlWrap.classList.remove('isTablet');
+                requestDemoControlWrap.classList.add('isPhone');
+
+                // rest
+                requestDemoControlsImage[0].style.opacity = '0';
+                requestDemoControlsImage[0].style.transform = 'rotate(-10deg) translateX(-75%) scale(0.9)';
+                requestDemoControlsImage[0].classList.remove('active');
+
+                requestDemoControlsImage[2].style.opacity = '0';
+                requestDemoControlsImage[2].style.transform = 'rotate(19deg) translateX(10%) scale(0.9)';
+                requestDemoControlsImage[2].classList.remove('active');
+            }
+
+            // *** on ipad click
+            else if (i == '2') {
+                // current
+                requestDemoControlsImage[2].style.opacity = '1';
+                requestDemoControlsImage[2].style.transform = 'none';
+                requestDemoControlsImage[2].classList.add('active');
+                
+                requestDemoControlWrap.classList.remove('isPhone');
+                requestDemoControlWrap.classList.remove('isLaptop');
+                requestDemoControlWrap.classList.add('isTablet');
+
+                // rest
+                requestDemoControlsImage[0].style.opacity = '0';
+                requestDemoControlsImage[0].style.transform = 'rotate(-10deg) translateX(-75%) scale(0.9)';
+                requestDemoControlsImage[0].classList.remove('active');
+
+                requestDemoControlsImage[1].style.opacity = '0';
+                requestDemoControlsImage[1].style.transform = 'rotate(-19deg) translateX(-35%) scale(0.9)';
+                requestDemoControlsImage[1].classList.remove('active');
+            }          
+
+            
+        } catch(err) {
+            console.warn(err);
         }
     }
 
