@@ -4,7 +4,9 @@ window.addEventListener("load", function () {
     const app = document.querySelector('#app');
     const counters = document.querySelectorAll('.counter-block');
     const goToSubscribe = document.querySelectorAll('.goToSubscribe');
+    const goToContact = document.querySelectorAll('.goToContact');
     const stepFormWrap = document.querySelector('#stepFormWrap');
+    const contactUsWrap = document.querySelector('#contactUsWrap');
     const newsSection = document.querySelector('#newsSection');
     const newsSectionNewsList = document.querySelector('#newsSectionNewsList');
     const newsSectionNewsListProgress = document.querySelector('#newsSectionNewsListProgress');
@@ -87,8 +89,7 @@ window.addEventListener("load", function () {
         document.fonts.onloadingdone = () => {
             sliderTextToggle()
         };
-    }
-    
+    }    
 
     // GLOBAL RESIZE
     window.addEventListener('resize', function () {
@@ -112,6 +113,15 @@ window.addEventListener("load", function () {
             e.stopPropagation();
 
             stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
+        })
+    });
+
+    goToContact.length && goToContact.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            contactUsWrap.scrollIntoView({ block: "start", behavior: "smooth" });
         })
     });
 
