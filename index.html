@@ -292,7 +292,7 @@
 <div class="h-dvh swiper swiper-h swiper-initialized swiper-vertical swiper-pointer-events swiper-free-mode swiper-backface-hidden main-content" id="page-slider">
     <div class="snap-y snap-mandatory overflow-x-hidden overflow-y-scroll h-full" id="app">
         <!--hero-->
-        <div class="swiper-slide snap-start snap-always hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh] relative">
+        <div class="hidden swiper-slide snap-start snap-always hero-section bg-dark-blue pt-[10dvh] pb-[6dvh] lg:pt-[14dvh] lg:pb-[9dvh] 3xl:pt-[15dvh] 3xl:pb-[9.5dvh] relative">
             <div class="container h-full flex flex-col justify-between ">
                 <div class="light-block absolute top-[56px] left-[-15%] lg:left-auto lg:right-[-10%] 3xl:top-[26px] w-[135%] h-[65%] lg:w-[70%] lg:h-[90%]">
                     <img src="./src/images/light.svg" alt="" class="w-full h-full lg:scale-[1.4] lg:max-h-[90vh] object-contain">
@@ -364,7 +364,7 @@
         </div>
 
         <!-- counter mobile-->
-        <div class="swiper-slide snap-start snap-always bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
+        <div class="hidden swiper-slide snap-start snap-always bg-[#12131C] lg:hidden text-white pt-[9.5dvh] pb-[10dvh] counter-block">
             <div class="container">
                 <p class="text-[9vw] leading-[1.45] counter-title max-w-[70%] mb-[7.6dvh]">Mining Database in numbers</p>
                 <div class="counter-grid grid grid-cols-[repeat(2,calc(50%_-_10px))] gap-x-[14px] gap-y-[8.7dvh]">
@@ -403,7 +403,7 @@
         </div>
 
         <!--comprehensive coverage-->
-        <div class="swiper-slide snap-start snap-always comprehensive-coverage pt-[15dvh] pb-[5.5dvh] lg:pt-[13dvh] lg:pb-[6dvh] text-text-black flex flex-col justify-between">
+        <div class="hidden swiper-slide snap-start snap-always comprehensive-coverage pt-[15dvh] pb-[5.5dvh] lg:pt-[13dvh] lg:pb-[6dvh] text-text-black flex flex-col justify-between">
             <div class="container">
                 <h2 class="leading-[1.34] text-[9.2vw] lg:text-[4.46vw] font-bold mb-[2.7dvh] lg:mb-[2dvh] 3xl:text-[3.5dvw]">Comprehensive coverage</h2>
                 <p class="leading-[1.7] text-[4.04vw] lg:text-[1.25vw] lg:leading-[1.8] subtitle 3xl:text-[0.9dvw] 3xl:leading-[1.6]">MDO provides in-depth mining intelligence on operating
@@ -612,7 +612,7 @@
         </div>
 
 
-        <section class="newsSection snap-start snap-always h-full news relative bg-[#F4F4F4] pt-[72px] 2lg:pt-0" id="newsSection">
+        <section class="hidden newsSection snap-start snap-always h-full news relative bg-[#F4F4F4] pt-[72px] 2lg:pt-0" id="newsSection">
             <div class="swiper relative px-6 2lg:px-20 h-full 2lg:h-screen 2lg:sticky top-0 2lg:flex flex-row-reverse justify-between items-start gap-5 3xl:pl-[256px] 3xl:pr-[270px] pb-6 2lg:pb-0" id="newsSectionSlider">
 
                 <div class="2lg:pr-[80px] 3xl:pr-0 2lg:w-[44%] self-center">
@@ -673,7 +673,7 @@
             
         </section>
 
-        <section class="requestDemo snap-start snap-always bg-[#161822] text-white h-full 2lg:flex justify-center items-center overflow-hidden pt-[72px] 2lg:py-[72px]">
+        <section class="requestDemo snap-start snap-always bg-[#161822] text-white h-full 2lg:flex 2lg:hidden justify-center items-center overflow-hidden pt-[72px] 2lg:py-[72px]">
             <div class="2lg:grid grid-cols-2 justify-center items-center gap-[64px] w-full px-5 3xl:px-[270px]">
                 <div class="relative w-full min-h-[25dvh] 2lg:min-h-[413px] 3xl:translate-y-[72px]">
                     <div class="group active absolute top-0 bottom-0 2lg:flex justify-center items-center duration-300 requestDemoControlImage w-full text-center z-10">
@@ -723,7 +723,7 @@
         </section>
 
 
-        <section class="snap-start snap-always step-form-wrap lg:bg-gray h-full" id="stepFormWrap" >
+        <section class="hidden snap-start snap-always step-form-wrap lg:bg-gray h-full" id="stepFormWrap" >
             <div class="package-select-info-text-wrap" id="packageSelectInfoText">
                 <div class="package-select-info-text" >
                     <img class="absolute package-select-info-close" data-close-modal
@@ -1063,7 +1063,64 @@
             </div>
         </section>
 
-        <section class="snap-start snap-always contactUs bg-[#313238] text-white h-full pt-[72px] 2lg:pb-[6dvh] overflow-hidden" id="contactUsWrap">
+        <section class="h-full 2lg:py-[72px] px-5 3xl:px-[90px] bg-[#EFEFEF] flex flex-col justify-center">
+            <div class="">
+                <div class="">
+                    <h2 class="text-[70px] font-bold leading-[1]">What our Clients say</h2>
+                    <p class="text-[18px] mt-6 text-[#5B5B5B] max-w-[36%]">MDO provides in-depth mining intelligence on operating mines and mining projects at PEA, Pre-feasibility and Feasibility stages.</p>
+                </div>
+                <div class="swiper pt-[122px] relative overflow-visible" id="reviewsSectionSlider">
+                    <div class="absolute top-0 right-0">
+                        <button class="prev">prev</button>
+                        <button class="next">next</button>
+                    </div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide h-auto bg-white pl-[46px] pr-[34px] py-[68px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                            <p class="text-[31px] font-medium">Darrell Steward</p>
+                            <p class="text-[18px] mt-1 text-[#5B5B5B]">Owner Minetech</p>
+                            <p class="text-[18px] mt-12 text-[#5B5B5B]">Your service is one of the brightest stars in our industry, eminently useful. Now with the addition of new sections, such as Mining Contracts, even more valuable.</p>
+                        </div>
+                        <div class="swiper-slide h-auto bg-white pl-[46px] pr-[34px] py-[68px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                            <p class="text-[31px] font-medium">Robert Fox</p>
+                            <p class="text-[18px] mt-1 text-[#5B5B5B]">Owner Minetech</p>
+                            <p class="text-[18px] mt-12 text-[#5B5B5B]">MDO has been a fantastic tool to help our sales and marketing teams refine our target market for marketing campaigns, direct outreach, and even to assess potential deal values with specific customers based on fleet list data</p>
+                        </div>
+                        <div class="swiper-slide h-auto bg-white pl-[46px] pr-[34px] py-[68px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                            <p class="text-[31px] font-medium">Esther Howard</p>
+                            <p class="text-[18px] mt-1 text-[#5B5B5B]">Owner Minetech</p>
+                            <p class="text-[18px] mt-12 text-[#5B5B5B]">The solution provides great value for the cost, and can fit marketing budgets of all company sizes.Best of all, the team at MDO is incredibly responsive when their customers require additional research to fill data gaps, and are always receptive to design improvements.</p>
+                        </div>
+                        <div class="swiper-slide h-auto bg-white pl-[46px] pr-[34px] py-[68px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                            <p class="text-[31px] font-medium">Darrell Steward</p>
+                            <p class="text-[18px] mt-1 text-[#5B5B5B]">Owner Minetech</p>
+                            <p class="text-[18px] mt-12 text-[#5B5B5B]">Your service is one of the brightest stars in our industry, eminently useful. Now with the addition of new sections, such as Mining Contracts, even more valuable.</p>
+                        </div>       
+                        <div class="swiper-slide h-auto bg-white pl-[46px] pr-[34px] py-[68px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                            <p class="text-[31px] font-medium">Darrell Steward</p>
+                            <p class="text-[18px] mt-1 text-[#5B5B5B]">Owner Minetech</p>
+                            <p class="text-[18px] mt-12 text-[#5B5B5B]">Your service is one of the brightest stars in our industry, eminently useful. Now with the addition of new sections, such as Mining Contracts, even more valuable.</p>
+                        </div>
+                        <div class="swiper-slide h-auto bg-white pl-[46px] pr-[34px] py-[68px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                            <p class="text-[31px] font-medium">Robert Fox</p>
+                            <p class="text-[18px] mt-1 text-[#5B5B5B]">Owner Minetech</p>
+                            <p class="text-[18px] mt-12 text-[#5B5B5B]">MDO has been a fantastic tool to help our sales and marketing teams refine our target market for marketing campaigns, direct outreach, and even to assess potential deal values with specific customers based on fleet list data</p>
+                        </div>
+                        <div class="swiper-slide h-auto bg-white pl-[46px] pr-[34px] py-[68px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                            <p class="text-[31px] font-medium">Esther Howard</p>
+                            <p class="text-[18px] mt-1 text-[#5B5B5B]">Owner Minetech</p>
+                            <p class="text-[18px] mt-12 text-[#5B5B5B]">The solution provides great value for the cost, and can fit marketing budgets of all company sizes.Best of all, the team at MDO is incredibly responsive when their customers require additional research to fill data gaps, and are always receptive to design improvements.</p>
+                        </div>
+                        <div class="swiper-slide h-auto bg-white pl-[46px] pr-[34px] py-[68px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                            <p class="text-[31px] font-medium">Darrell Steward</p>
+                            <p class="text-[18px] mt-1 text-[#5B5B5B]">Owner Minetech</p>
+                            <p class="text-[18px] mt-12 text-[#5B5B5B]">Your service is one of the brightest stars in our industry, eminently useful. Now with the addition of new sections, such as Mining Contracts, even more valuable.</p>
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hidden snap-start snap-always contactUs bg-[#313238] text-white h-full pt-[72px] 2lg:pb-[6dvh] overflow-hidden" id="contactUsWrap">
             <div class="4xl:max-w-full px-5 3xl:px-[90px] 4xl:flex flex-col justify-center">
                 <div>
                     <h2 class="text-[3.5dvh] lg:text-[7dvh] font-bold leading-[1]">Contact Us</h2>

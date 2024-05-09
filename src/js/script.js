@@ -29,6 +29,22 @@ window.addEventListener("load", function () {
             clickable: true,
         },
     };
+
+    const reviewsSectionSliderParams = {
+        slidesPerView: 3.5,
+        spaceBetween: 20,
+        speed: 500,
+        //init: false,
+        observer: true,
+        navigation: {
+            nextEl: '#reviewsSectionSlider .next',
+            prevEl: '#reviewsSectionSlider .prev',
+        },
+        // pagination: {
+        //     el: ".newsSection .swiper-pagination",
+        //     clickable: true,
+        // },
+    };
     
     const comprehensiveSliderParams = {
         slidesPerView: 1.25,
@@ -83,6 +99,7 @@ window.addEventListener("load", function () {
 
     let comprehensiveSlider = new Swiper("#comprehensive-slider", comprehensiveSliderParams);
     let newsSectionSlider = new Swiper("#newsSectionSlider", newsSectionSliderParams);
+    let reviewsSectionSlider = new Swiper("#reviewsSectionSlider", reviewsSectionSliderParams);
 
     //functions initialization after loading fonts
     if (document.fonts) {
