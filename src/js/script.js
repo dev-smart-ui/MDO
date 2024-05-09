@@ -108,21 +108,11 @@ window.addEventListener("load", function () {
 
 
     goToSubscribe.length && goToSubscribe.forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            e.stopPropagation();
-
-            stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
-        })
+        btn.addEventListener('click', e => { appScrollIntoView(e, newsSection, stepFormWrap) })
     });
 
     goToContact.length && goToContact.forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            e.stopPropagation();
-
-            contactUsWrap.scrollIntoView({ block: "start", behavior: "smooth" });
-        })
+        btn.addEventListener('click', e => { appScrollIntoView(e, newsSection, contactUsWrap) })
     });
 
     // request a demo section animations handler
@@ -140,6 +130,26 @@ window.addEventListener("load", function () {
 
 
     // FUNCTIONS *****
+
+    // advanced native scrollIntoView for except add hide/show section which can scroll or swiping, while scrollIntoView end (for correct scrolls calc)
+    function appScrollIntoView(e, barrier, dest) {
+        try {
+            e.preventDefault();
+            e.stopPropagation();
+
+            barrier.style.display = 'none';
+
+            dest.scrollIntoView({ block: "start", behavior: "smooth" });
+
+            let scrollTimeout;
+            app.addEventListener('scroll', function(e) {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(e => { barrier.style.display = 'block' }, 100);
+            });
+        } catch(err) {
+            console.warn(err);
+        }
+    }
 
     //touch screen check
     function isTouchEnabled() {
