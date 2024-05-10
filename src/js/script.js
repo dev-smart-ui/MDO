@@ -4,11 +4,17 @@ window.addEventListener("load", function () {
     const app = document.querySelector('#app');
     const counters = document.querySelectorAll('.counter-block');
     const goToSubscribe = document.querySelectorAll('.goToSubscribe');
+    const goToContact = document.querySelectorAll('.goToContact');
     const stepFormWrap = document.querySelector('#stepFormWrap');
+    const contactUsWrap = document.querySelector('#contactUsWrap');
     const newsSection = document.querySelector('#newsSection');
     const newsSectionNewsList = document.querySelector('#newsSectionNewsList');
     const newsSectionNewsListProgress = document.querySelector('#newsSectionNewsListProgress');
     const newsSectionNewsListLogo = document.querySelector('#newsSectionNewsListLogo');
+    const requestDemoControls = document.querySelectorAll('.requestDemoControl');
+    const requestDemoControlsImage = document.querySelectorAll('.requestDemoControlImage');
+    const requestDemoControlWrap = document.querySelector('.requestDemoControlWrap');
+
     const s1 = document.querySelector('#page-slider');
     const s2 = document.querySelector('#comprehensive-slider');
 
@@ -20,6 +26,28 @@ window.addEventListener("load", function () {
         observer: true,
         pagination: {
             el: ".newsSection .swiper-pagination",
+            clickable: true,
+        },
+    };
+
+    const reviewsSectionSliderParams = {
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        speed: 500,
+        //init: false,
+        observer: true,
+        navigation: {
+            nextEl: '#reviewsSectionSlider .next',
+            prevEl: '#reviewsSectionSlider .prev',
+        },
+        breakpoints:{
+            768: { slidesPerView: 1.7 },
+            992: { slidesPerView: 2.2 },
+            1200:{ slidesPerView: 2.9 },
+            1642:{ slidesPerView: 3.5 }
+        },
+        pagination: {
+            el: ".reviewsSection .swiper-pagination",
             clickable: true,
         },
     };
@@ -77,14 +105,14 @@ window.addEventListener("load", function () {
 
     let comprehensiveSlider = new Swiper("#comprehensive-slider", comprehensiveSliderParams);
     let newsSectionSlider = new Swiper("#newsSectionSlider", newsSectionSliderParams);
+    let reviewsSectionSlider = new Swiper("#reviewsSectionSlider", reviewsSectionSliderParams);
 
     //functions initialization after loading fonts
     if (document.fonts) {
         document.fonts.onloadingdone = () => {
             sliderTextToggle()
         };
-    }
-    
+    }    
 
     // GLOBAL RESIZE
     window.addEventListener('resize', function () {
@@ -102,14 +130,16 @@ window.addEventListener("load", function () {
     });
 
 
-    goToSubscribe.forEach(btn => {
-        btn.addEventListener('click', e => {
-            e.preventDefault();
-            e.stopPropagation();
+    goToSubscribe.length && goToSubscribe.forEach(btn => {
+        btn.addEventListener('click', e => { appScrollIntoView(e, newsSection, stepFormWrap) })
+    });
 
-            stepFormWrap.scrollIntoView({ block: "start", behavior: "smooth" });
-        })
-    })
+    goToContact.length && goToContact.forEach(btn => {
+        btn.addEventListener('click', e => { appScrollIntoView(e, newsSection, contactUsWrap) })
+    });
+
+    // request a demo section animations handler
+    requestDemoControls.length && requestDemoControls.forEach((btn, i) => { btn.addEventListener('click', e => { requestDemoControlsHandler(i) }) });
 
     
     initCounters();
@@ -123,6 +153,26 @@ window.addEventListener("load", function () {
 
 
     // FUNCTIONS *****
+
+    // advanced native scrollIntoView for except add hide/show section which can scroll or swiping, while scrollIntoView end (for correct scrolls calc)
+    function appScrollIntoView(e, barrier, dest) {
+        try {
+            e.preventDefault();
+            e.stopPropagation();
+
+            barrier.style.display = 'none';
+
+            dest.scrollIntoView({ block: "start", behavior: "smooth" });
+
+            let scrollTimeout;
+            app.addEventListener('scroll', function(e) {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(e => { barrier.style.display = 'block' }, 100);
+            });
+        } catch(err) {
+            console.warn(err);
+        }
+    }
 
     //touch screen check
     function isTouchEnabled() {
@@ -343,6 +393,82 @@ window.addEventListener("load", function () {
         if (!isMobile && isInit) {
             console.log('newsSectionSlider already initialized, destroying...');
             newsSectionSlider.destroy();
+        }
+    }
+
+    function requestDemoControlsHandler(i) {
+        try {
+            if (i != 0 && i != 1 && i != 2) return    
+            
+            requestDemoControls.forEach(btn => { btn.classList.remove('active') });
+            requestDemoControls[i].classList.add('active');            
+
+            // *** on macbook click
+            if (i == '0') {
+                // current
+                requestDemoControlsImage[0].style.opacity = '1';
+                requestDemoControlsImage[0].style.transform = 'none';
+                requestDemoControlsImage[0].classList.add('active');
+                
+                requestDemoControlWrap.classList.remove('isPhone');
+                requestDemoControlWrap.classList.remove('isTablet');
+                requestDemoControlWrap.classList.add('isLaptop');
+
+                // rest
+                requestDemoControlsImage[1].style.opacity = '0';
+                requestDemoControlsImage[1].style.transform = 'rotate(19deg) translateX(35%) scale(0.9)';
+                requestDemoControlsImage[1].classList.remove('active');
+
+                requestDemoControlsImage[2].style.opacity = '0';
+                requestDemoControlsImage[2].style.transform = 'translateY(50%) scale(0.9)';
+                requestDemoControlsImage[2].classList.remove('active');
+            }
+
+            // *** on iphone click
+            else if (i == '1') {
+                // current
+                requestDemoControlsImage[1].style.opacity = '1';
+                requestDemoControlsImage[1].style.transform = 'none';
+                requestDemoControlsImage[1].classList.add('active');
+                
+                requestDemoControlWrap.classList.remove('isLaptop');
+                requestDemoControlWrap.classList.remove('isTablet');
+                requestDemoControlWrap.classList.add('isPhone');
+
+                // rest
+                requestDemoControlsImage[0].style.opacity = '0';
+                requestDemoControlsImage[0].style.transform = 'rotate(-10deg) translateX(-75%) scale(0.9)';
+                requestDemoControlsImage[0].classList.remove('active');
+
+                requestDemoControlsImage[2].style.opacity = '0';
+                requestDemoControlsImage[2].style.transform = 'rotate(19deg) translateX(10%) scale(0.9)';
+                requestDemoControlsImage[2].classList.remove('active');
+            }
+
+            // *** on ipad click
+            else if (i == '2') {
+                // current
+                requestDemoControlsImage[2].style.opacity = '1';
+                requestDemoControlsImage[2].style.transform = 'none';
+                requestDemoControlsImage[2].classList.add('active');
+                
+                requestDemoControlWrap.classList.remove('isPhone');
+                requestDemoControlWrap.classList.remove('isLaptop');
+                requestDemoControlWrap.classList.add('isTablet');
+
+                // rest
+                requestDemoControlsImage[0].style.opacity = '0';
+                requestDemoControlsImage[0].style.transform = 'rotate(-10deg) translateX(-75%) scale(0.9)';
+                requestDemoControlsImage[0].classList.remove('active');
+
+                requestDemoControlsImage[1].style.opacity = '0';
+                requestDemoControlsImage[1].style.transform = 'rotate(-19deg) translateX(-35%) scale(0.9)';
+                requestDemoControlsImage[1].classList.remove('active');
+            }          
+
+            
+        } catch(err) {
+            console.warn(err);
         }
     }
 
