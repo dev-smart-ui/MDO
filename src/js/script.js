@@ -31,7 +31,7 @@ window.addEventListener("load", function () {
     };
 
     const reviewsSectionSliderParams = {
-        slidesPerView: 3.5,
+        slidesPerView: 1.1,
         spaceBetween: 20,
         speed: 500,
         //init: false,
@@ -40,10 +40,16 @@ window.addEventListener("load", function () {
             nextEl: '#reviewsSectionSlider .next',
             prevEl: '#reviewsSectionSlider .prev',
         },
-        // pagination: {
-        //     el: ".newsSection .swiper-pagination",
-        //     clickable: true,
-        // },
+        breakpoints:{
+            768: { slidesPerView: 1.7 },
+            992: { slidesPerView: 2.2 },
+            1200:{ slidesPerView: 2.9 },
+            1642:{ slidesPerView: 3.5 }
+        },
+        pagination: {
+            el: ".reviewsSection .swiper-pagination",
+            clickable: true,
+        },
     };
     
     const comprehensiveSliderParams = {
