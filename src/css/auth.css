@@ -11,10 +11,9 @@
   overflow-x: hidden;
 }
 
-.signIn-modal-active .main-content, 
-.signIn-modal-active .headerWrap {
+.signIn-modal-active .main-content {
   margin: unset;
-  filter: blur(3px);
+  /* filter: blur(3px); */
 }
 
 .signIn-modal-active .ui-widget-overlay {
@@ -309,7 +308,7 @@
   }
 
   .signIn-modal-active .main-content {
-    filter: blur(0);
+    /* filter: blur(0); */
   }
 
   .ui-widget-overlay {

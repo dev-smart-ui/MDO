@@ -115,9 +115,11 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
         const selectedItem = document.querySelector('.is-highlighted');
+        const app = document.querySelector('#app');
         let formData = {};
         let regionsIng = [];
         let currentPackageInnerHtmRight = '';
+        
 
 
         //region custom select code start
@@ -294,8 +296,9 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
         packageSelectInfo.addEventListener('click', () => {
             packageSelectInfoText.classList.add("package-select-info-text-toggle");
-            stepFormWrapContainer.classList.add("step-form-blur");
-            header.classList.add("step-form-blur");
+            //stepFormWrapContainer.classList.add("step-form-blur");
+            //header.classList.add("step-form-blur");
+            app.classList.add('has-blur');
         });
 
         closeBtns.forEach(btnClose => {
@@ -303,9 +306,13 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
                 selectedOptionsContainer.classList.remove("selected-options-container-show");
                 stepFormWrap.classList.remove("step-form-wrap-open-package");
-                header.style.zIndex="10"
-                stepFormWrapContainer.classList.remove("step-form-blur");
-                header.classList.remove("step-form-blur");
+                stepFormWrap.classList.remove("relative");
+                stepFormWrap.removeAttribute('style');
+                app.style.overflowY = 'scroll';
+                //header.style.zIndex="10"
+                // stepFormWrapContainer.classList.remove("step-form-blur");
+                // header.classList.remove("step-form-blur");
+                app.classList.remove('has-blur');
             });
         });
 
@@ -313,14 +320,18 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         packageChooseInfo.addEventListener("click", () => {
             selectedOptionsContainer.classList.add("selected-options-container-show");
             stepFormWrap.classList.add("step-form-wrap-open-package");
-            header.style.zIndex="-1"
+            stepFormWrap.classList.add("relative");
+            stepFormWrap.style.zIndex = '30';
+            app.style.overflowY = 'hidden';
+            //header.style.zIndex="-1"
         });
 
         document.addEventListener('click', (event) => {
             if (!packageSelectInfo.contains(event.target)) {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
-                stepFormWrapContainer.classList.remove("step-form-blur");
-                header.classList.remove("step-form-blur");
+                // stepFormWrapContainer.classList.remove("step-form-blur");
+                // header.classList.remove("step-form-blur");
+                app.classList.remove('has-blur');
             }
         });
 
