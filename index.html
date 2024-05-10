@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="./src/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/authorized-block.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/authorized-block-mobile-bottom.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/mdo.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/auth.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/not-authorized.css"/>
@@ -626,7 +627,7 @@
                 </div>
 
                 <div class="swiper-wrapper mt-[4dvh] 2lg:mt-0 2lg:pt-16 2lg:px-4 w-full 2lg:w-[47%] 3xl:w-[44%] max-h-full h-auto 2lg:block 2lg:overflow-hidden 2lg:no-scrollbar" id="newsSectionNewsList">
-                    <div class="swiper-slide bg-white p-3 2lg:p-6 2lg:mb-5 rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                    <div class="swiper-slide h-auto bg-white p-3 2lg:p-6 2lg:mb-5 rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
                         <img src="./src/images/news/news1.jpg" alt="" class="w-full rounded-[12px] max-h-[20dvh] 2lg:max-h-[304px] 3xl:max-h-full object-cover">
                         <div class="mt-[2dvh] 2lg:mt-8">
                             <div class="flex justify-start items-center">
@@ -637,7 +638,7 @@
                             <p class="mt-2 2lg:mt-4 text-[1.7dvh] 2lg:text-[13px] 3xl:text-base leading-normal 2lg:leading-[22px] 3xl:leading-[27px] text-[#5B5B5B] line-clamp-3 2lg:line-clamp-none">The company drilled two groundwater monitoring bores as part of their mining and environmental permitting process for their Tallebung Tin Project in New South Wales. These bores were positioned 140 m west of known tin mineralisation and outside of the conceptual open pit.</p>
                         </div>
                     </div>
-                    <div class="swiper-slide bg-white p-3 2lg:p-6 2lg:mb-5 rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                    <div class="swiper-slide h-auto bg-white p-3 2lg:p-6 2lg:mb-5 rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
                         <img src="./src/images/news/news2.jpg" alt="" class="w-full rounded-[12px] max-h-[20dvh] 2lg:max-h-[304px] 3xl:max-h-full object-cover">
                         <div class="mt-[2dvh] 2lg:mt-8">
                             <div class="flex justify-start items-center">
@@ -648,7 +649,7 @@
                             <p class="mt-2 2lg:mt-4 text-[1.7dvh] 2lg:text-[13px] 3xl:text-base leading-normal 2lg:leading-[22px] 3xl:leading-[27px] text-[#5B5B5B] line-clamp-3 2lg:line-clamp-none">TORONTO, Oct. 6, 2023 /CNW/ - Nickel Creek Platinum Corp. (TSX: NCP) (OTCQB: NCPCF) ("Nickel Creek" or the "Company") is pleased to announce that further to its news release dated August 24, 2023, the Company has filed a Technical</p>
                         </div>
                     </div>
-                    <div class="swiper-slide bg-white p-3 2lg:p-6 2lg:mb-[112px] 3xl:mb-[128px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
+                    <div class="swiper-slide h-auto bg-white p-3 2lg:p-6 2lg:mb-[112px] 3xl:mb-[128px] rounded-[20px] shadow-[5px_7px_16px_#0000000f]">
                         <img src="./src/images/news/news3.jpg" alt="" class="w-full rounded-[12px] max-h-[20dvh] 2lg:max-h-[304px] 3xl:max-h-full object-cover">
                         <div class="mt-[2dvh] 2lg:mt-8">
                             <div class="flex justify-start items-center">
@@ -1127,7 +1128,7 @@
             </div>
         </section>
 
-        <section class="snap-start snap-always contactUs bg-[#313238] text-white h-full pt-[72px] 2lg:pb-[6dvh] overflow-hidden" id="contactUsWrap">
+        <section class="snap-start snap-always relative contactUs bg-[#313238] 2lg:flex flex-col justify-center text-white h-full pt-[72px] 2lg:pb-[6dvh] overflow-hidden" id="contactUsWrap">
             <div class="4xl:max-w-full px-5 3xl:px-[90px] 4xl:flex flex-col justify-center">
                 <div>
                     <h2 class="text-[3.5dvh] lg:text-[7dvh] font-bold leading-[1]">Contact Us</h2>
@@ -1136,7 +1137,7 @@
                 <div class="block lg:flex justify-start items-start mt-[3dvh] lg:mt-[6dvh]">
                     <div class="w-full lg:max-w-[787px] 4xl:max-w-[60%]">
                         <form action="">
-                            <div class="max-h-[34dvh] lg:max-h-[62dvh] overflow-auto">
+                            <div class="max-h-[34dvh] 2lg:max-h-[49dvh] 3xl:max-h-[62dvh] overflow-auto">
                                 <div class="mb-[1.5dvh]">
                                     <input class="text-[1.8dvh] lg:text-sm bg-[#44444a] py-[1.3dvh] lg:py-[1.5dvh] px-3 w-full rounded-lg hover:bg-[#58595d] focus:bg-[#58595d] duration-500 max-h-[48px] lg:max-h-[56px]" type="text" placeholder="First name*" name="firstName" required />
                                 </div>
@@ -1171,32 +1172,54 @@
                     </div>
                     <div class="w-full lg:max-w-[370px] lg:pt-10 lg:ml-[107px] mt-[3dvh] lg:mt-0">
                         <div>
-                            <p class="text-[1.6dvh] lg:text-[24px] font-medium lg:font-[600] leading-[1]">Email</p>
+                            <p class="text-[1.5dvh] lg:text-[24px] font-medium lg:font-[600] leading-[1]">Email</p>
                             <div class="mt-1 lg:mt-2">
-                                <p class="text-[1.9dvh] lg:text-[18px] text-[#c2c2c4]">info@miningdataonline.com</p>
+                                <p class="text-[1.7dvh] lg:text-[18px] text-[#c2c2c4]">info@miningdataonline.com</p>
                             </div>                            
                         </div>
                         <div class="mt-[2dvh] lg:mt-12">
-                            <p class="text-[1.6dvh] lg:text-[24px] font-medium lg:font-[600] leading-[1]">Registered Office</p>
+                            <p class="text-[1.5dvh] lg:text-[24px] font-medium lg:font-[600] leading-[1]">Registered Office</p>
                             <div class="mt-1 lg:mt-2">
-                                <p class="text-[1.9dvh] lg:text-[18px] text-[#c2c2c4]">668 Citadel Parade, Unit</p>
-                                <p class="text-[1.9dvh] lg:text-[18px] text-[#c2c2c4]">#2902Vancouver, BC, Canada V6B 1W6</p>
+                                <p class="text-[1.7dvh] lg:text-[18px] text-[#c2c2c4]">668 Citadel Parade, Unit</p>
+                                <p class="text-[1.7dvh] lg:text-[18px] text-[#c2c2c4]">#2902Vancouver, BC, Canada V6B 1W6</p>
                             </div>
                         </div>
                         <div class="mt-[2dvh] lg:mt-12">
-                            <p class="text-[1.6dvh] lg:text-[24px] font-medium lg:font-[600] leading-[1]">Phone</p>
+                            <p class="text-[1.5dvh] lg:text-[24px] font-medium lg:font-[600] leading-[1]">Phone</p>
                             <div class="mt-1 lg:mt-2">
-                                <p class="text-[1.9dvh] lg:text-[18px] text-[#c2c2c4]">+1 (778) 837-7233</p>
-                                <p class="text-[1.9dvh] lg:text-[18px] text-[#c2c2c4]">Vancouver, BC Canada</p>
+                                <p class="text-[1.7dvh] lg:text-[18px] text-[#c2c2c4]">+1 (778) 837-7233</p>
+                                <p class="text-[1.7dvh] lg:text-[18px] text-[#c2c2c4]">Vancouver, BC Canada</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <footer class="absolute bottom-0 left-0 w-full z-10">
+                <div class="footer-content">
+                    <div class="container footer 2lg:max-w-[1580px] leading-[1]">
+                        <div>© 2022 MDO Data Online Inc.</div>
+                        <div>Terms of Use • Privacy Policy • Contact Info</div>
+                        <div class="social-icons-block">
+                            <a href="javascript:void(0)">
+                                <img src="./src/images/icons/instagram.svg"/>
+                            </a>
+                            <a href="javascript:void(0)">
+                                <img src="./src/images/icons/facebook.svg"/>
+                            </a>
+                            <a href="javascript:void(0)">
+                                <img src="./src/images/icons/twitter.svg"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </section>
 
     </div>
 </div>
+
+
 
 
 <!-- Include Choices JavaScript (latest) -->
