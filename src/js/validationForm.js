@@ -112,7 +112,7 @@ function validateForm() {
     let isValidAllInputs = true;
 
     // Check each required field
-    const requiredFields = document.querySelectorAll('[required]');
+    const requiredFields = document.querySelectorAll('#stepFormWrap [required]');
     requiredFields.forEach(field => {
         isValidAllInputs &= validateField(field);
     });
@@ -121,7 +121,6 @@ function validateForm() {
     const isCheckboxAccepted = validateCheckboxAccepted();
     const isValidEmail = validateEmailInput();
     const isValidatePhone = validatePhone();
-
     if (isValidPayment && isCheckboxAccepted && isValidEmail && isValidatePhone && isValidAllInputs) {
         return true;
     } else {
@@ -155,7 +154,7 @@ document.querySelectorAll('[data-radio-item]').forEach(item => {
 
 
 // Connect the validation function to all fields with the required attribute
-document.querySelectorAll('[required]').forEach(field => {
+document.querySelectorAll('#stepFormWrap [required]').forEach(field => {
     field.addEventListener('input', () => {
         validateField(field);
     });
