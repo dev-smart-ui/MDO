@@ -378,7 +378,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         if (!isValidForm) {
                             return;
                         } else {
-                            console.log(formData)
                             document.querySelector("header").style.display="none"
                             dataSubscriptionInputs.forEach(input => {
                                 if (input.type === 'radio' && !input.checked) return;
