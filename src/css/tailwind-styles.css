@@ -658,13 +658,13 @@
     height: 100%;
     overflow-y: hidden;
     transition-property: max-height;
-    transition-duration: 0.65s;
+    transition-duration: 0.2s;
     transition-timing-function: linear;
 
 }
 
 .step-form-box-right .closing .dropdown-menu {
-    transition-duration: 0s;
+    /* transition-duration: 0s; */
 }
 
 .step-form-box-right  .list-menu {
@@ -675,9 +675,9 @@
 }
 
 
-.step-form-box-right .drop-down-item-open .dropdown-menu {
+/* .step-form-box-right .drop-down-item-open .dropdown-menu {
     max-height: 1000px;
-}
+} */
 
 
 .step-form-box-right .list-item,

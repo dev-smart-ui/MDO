@@ -17,12 +17,26 @@ function setupDropdownToggle(element) {
         if (!checkBox && dropDownButton ) {
             const dropdownBox = dropDownButton.closest('.dropdown-box');
             if (dropdownBox) {
+                const root = dropdownBox.closest('.optional-content');
+                
                 document.querySelectorAll('.dropdown-box').forEach(box => {
+                    const drop = box.querySelector('.dropdown-menu');
+
                     if (box === dropdownBox) {
                         box.classList.remove('closing');
                         box.classList.add('drop-down-item-open');
+
+                        const dropHeight = drop.scrollHeight;
+                        drop.style.maxHeight = `${dropHeight}px`;
+                        
+                        setTimeout(() => { 
+                            if (root.scrollTop > box.offsetTop) { // если дроп за пределами overflow                                
+                                root.scrollTo({ top: root.scrollTop - (root.scrollTop - box.offsetTop), behavior: "smooth" });                                
+                            }
+                         }, 400);                        
                     } else {
                         box.classList.add('closing');
+                        drop.removeAttribute('style');
                         setTimeout(() => {
                             box.classList.remove('drop-down-item-open');
                         }, 10);
