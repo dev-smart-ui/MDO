@@ -1,4 +1,5 @@
 import {
+    createChooseDropdownsOfPackageCustom,
     createDropdownsOfPackageCustom,
     createDropdownsOfPackageResearch,
     createDropdownsOfUltimate,
@@ -90,7 +91,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const dataSubscriptionInputs = document.querySelectorAll('[data-subscription-input]');
         const optionsDetails = document.getElementById('optionsDetails');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
-        const additionalTextOptionsSelectMobile = document.getElementById('additionalTextOptionsSelectMobile');
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
@@ -265,7 +265,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             );
 
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
-            additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
             continueBtnTotal.innerHTML=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD  <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`
         });
@@ -349,10 +348,25 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         }
 
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
-                        currentPackageInnerHtmRight = optionsDetails.innerHTML;
                         nameOfChoosePackage.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
                         packageChooseName.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
-                        selectedOptions.innerHTML = currentPackageInnerHtmRight;
+
+                        if(optionsPackageSelect.getValue().value === "customPackage"){
+                            const criteriaValues = Object.values(formData.selectedCustomPackageValues);
+                            const filteredDropdowns = dataDropdownsCustomPackage.filter((dropdown, index) => {
+                                return index === 0 || criteriaValues.some(criterion => {
+                                    return criterion.name === dropdown.btnTitle && criterion.price === dropdown.price;
+                                });
+                            });
+
+                            createChooseDropdownsOfPackageCustom(
+                                filteredDropdowns,
+                                optionsPackageSelect.getValue().value,
+                            );
+                        } else {
+                            selectedOptions.innerHTML = currentPackageInnerHtmRight;
+                        }
+
                         totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                         continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
@@ -364,6 +378,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         if (!isValidForm) {
                             return;
                         } else {
+                            console.log(formData)
                             document.querySelector("header").style.display="none"
                             dataSubscriptionInputs.forEach(input => {
                                 if (input.type === 'radio' && !input.checked) return;
@@ -399,7 +414,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             selectedItem.classList.remove('is-highlighted')
             licencesSelect.setChoiceByValue('1');
             additionalTextOptionsSelect.innerHTML = "";
-            additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent["researchPackage"].additionalTextBottom;
             regionsIng = [];
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {
