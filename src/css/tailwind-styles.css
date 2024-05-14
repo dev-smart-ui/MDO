@@ -1852,8 +1852,8 @@
 
     .step-form-step-two .selected-options-container {
         position: static;
-        z-index:0;
         opacity: 1;
+        height: 100%;
     }
 
     .step-form-step-two .selected-options-container .selected-options-container-inner{
@@ -1889,6 +1889,7 @@
         display: grid;
         grid-template-columns:  minmax(auto, 400px) minmax(auto, 440px);
         gap: 35px;
+        margin-bottom: 0;
     }
 
     .step-form-step-two .step-form-box-right .optional-content {
@@ -2162,11 +2163,13 @@
         align-content: center;
     }
 
+    /*
     .step-form-box-left, .step-form-box-right {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+    */
 
     .step-form-step-two .step-form-step-two-left-column{
         align-items: center;
