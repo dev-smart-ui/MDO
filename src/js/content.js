@@ -164,6 +164,111 @@ function createDropdownsOfPackageCustom(data, currentPackageSelect,) {
     });
 }
 
+function createChooseDropdownsOfPackageCustom(data, currentPackageSelect,) {
+    const selectedOptions = document.getElementById('selectedOptions');
+
+    selectedOptions.innerHTML = '';
+    selectedItems={}
+
+    data.map((itemDropDown, index) => {
+        const dropdownBox = document.createElement("div");
+
+        if (index === 0) dropdownBox.classList.add("dropdown-box", "default-price");
+        dropdownBox.classList.add("dropdown-box");
+
+        const toggleContainer = document.createElement("div");
+        toggleContainer.classList.add("toggle-container", "flex");
+
+        const dropdownButton = document.createElement("button");
+        dropdownButton.classList.add("dropdown-toggle", "dropdown-custom", "flex", "items-center", "flex-row-reverse", "justify-end");
+
+        const titleArrowBox = document.createElement("div");
+        titleArrowBox.classList.add("title-arrow-box");
+        const titleBox = document.createElement("span");
+        titleBox.innerText = itemDropDown.btnTitle;
+
+        const arrowImg = document.createElement("img");
+        arrowImg.setAttribute('src', "src/images/step-form/arrow-dd.svg");
+
+
+        titleArrowBox.appendChild(titleBox);
+        titleArrowBox.appendChild(arrowImg);
+
+        const imgBox = document.createElement("div");
+        imgBox.classList.add("dropdown-toggle-img-box", "flex", "justify-center", "items-center",);
+        const imgItem = document.createElement("img");
+        imgItem.setAttribute('src', itemDropDown.imgLink);
+        imgBox.appendChild(imgItem);
+
+        if (index > 0) {
+            const label = document.createElement("label");
+            label.htmlFor = `checkbox-${index}`;
+            label.classList.add("check-box-label", "flex", "items-center");
+
+            const checkBox = document.createElement("input");
+            checkBox.type = "checkbox";
+            checkBox.id = `checkbox-${index}`;
+            checkBox.setAttribute("data-name-checkbox", itemDropDown.btnTitle);
+            checkBox.classList.add("check-box-list", "checked-custom-value");
+
+            const checkmark = document.createElement("span");
+            checkmark.classList.add("checkmark");
+
+            const priceString = document.createElement("span");
+            priceString.classList.add("price-string");
+            priceString.innerText = `$${itemDropDown.price}.00`;
+
+
+            checkBox.addEventListener('click', function () {
+                if (this.checked) {
+                    selectedItems[index] = {
+                        name: checkBox.getAttribute("data-name-checkbox"),
+                        price: itemDropDown.price
+                    };
+
+                    checkBox.classList.add("checked-custom-value");
+                } else {
+                    delete selectedItems[index];
+                    checkBox.classList.remove("checked-custom-value");
+                }
+                calculateTotal(currentPackageSelect);
+
+            });
+
+
+            label.appendChild(checkBox);
+            label.appendChild(priceString);
+            label.appendChild(checkmark);
+            toggleContainer.appendChild(dropdownButton);
+            toggleContainer.appendChild(label);
+        } else {
+            const priceBox = document.createElement("span");
+            priceBox.classList.add("default-price-string");
+            priceBox.innerText = `$${itemDropDown.price}.00`;
+
+            dropdownButton.appendChild(priceBox);
+            toggleContainer.appendChild(dropdownButton);
+        }
+
+
+        dropdownButton.appendChild(titleArrowBox);
+        dropdownButton.appendChild(imgBox);
+        dropdownBox.appendChild(toggleContainer);
+
+        const list = document.createElement("ul");
+        list.classList.add("dropdown-menu", "list-disc");
+        itemDropDown.itemsArr.map((dropDownItemInList) => {
+            const listItem = document.createElement("li");
+            listItem.classList.add("dropdown-item");
+            listItem.innerText = `${dropDownItemInList}`;
+            list.appendChild(listItem);
+        });
+
+        dropdownBox.appendChild(list);
+        selectedOptions.appendChild(dropdownBox);
+    });
+}
+
 function createDropdownsOfUltimate(data, packageTotal) {
     const optionsDetails = document.getElementById('optionsDetails');
     const totalCounter = document.getElementById('totalCounter');
@@ -471,6 +576,7 @@ export {
     createDropdownsOfPackageResearch,
     createDropdownsOfPackageCustom,
     createDropdownsOfUltimate,
+    createChooseDropdownsOfPackageCustom,
     dataDropdownsResearchPackage,
     dataDropdownsCustomPackage,
     dataDropdownsUltimatePackage,

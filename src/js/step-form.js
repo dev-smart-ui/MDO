@@ -1,4 +1,5 @@
 import {
+    createChooseDropdownsOfPackageCustom,
     createDropdownsOfPackageCustom,
     createDropdownsOfPackageResearch,
     createDropdownsOfUltimate,
@@ -85,13 +86,11 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
     //step1
     document.addEventListener('DOMContentLoaded', () => {
         let currentStep = 0;
-        const header = document.querySelector('header');
         const steps = document.querySelectorAll('[data-step-form]');
         const nextButtons = document.querySelectorAll('[data-next-btn]');
         const dataSubscriptionInputs = document.querySelectorAll('[data-subscription-input]');
         const optionsDetails = document.getElementById('optionsDetails');
         const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
-        const additionalTextOptionsSelectMobile = document.getElementById('additionalTextOptionsSelectMobile');
         const selectedOptions = document.getElementById('selectedOptions');
         const selectedOptionsContainer = document.getElementById('selectedOptionsContainer');
         const packageChooseInfo = document.getElementById('packageChooseInfo');
@@ -110,7 +109,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const totalCounterSecond = document.getElementById('totalCounterSecond');
         const packageSelectInfo = document.getElementById('packageSelectInfo');
         const packageSelectInfoText = document.getElementById('packageSelectInfoText');
-        const stepFormWrapContainer = document.getElementById('stepFormWrapContainer');
         const closeBtns = document.querySelectorAll("[data-close-modal]");
         const checkboxAccepted = document.getElementById('checkboxAccepted');
         const disabledContainer = document.getElementById('disabledContainer');
@@ -267,7 +265,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             );
 
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
-            additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
             continueBtnTotal.innerHTML=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD  <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`
         });
@@ -296,8 +293,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
         packageSelectInfo.addEventListener('click', () => {
             packageSelectInfoText.classList.add("package-select-info-text-toggle");
-            //stepFormWrapContainer.classList.add("step-form-blur");
-            //header.classList.add("step-form-blur");
             app.classList.add('has-blur');
         });
 
@@ -309,9 +304,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                 stepFormWrap.classList.remove("relative");
                 stepFormWrap.removeAttribute('style');
                 app.style.overflowY = 'scroll';
-                //header.style.zIndex="10"
-                // stepFormWrapContainer.classList.remove("step-form-blur");
-                // header.classList.remove("step-form-blur");
                 app.classList.remove('has-blur');
             });
         });
@@ -329,8 +321,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         document.addEventListener('click', (event) => {
             if (!packageSelectInfo.contains(event.target)) {
                 packageSelectInfoText.classList.remove("package-select-info-text-toggle");
-                // stepFormWrapContainer.classList.remove("step-form-blur");
-                // header.classList.remove("step-form-blur");
                 app.classList.remove('has-blur');
             }
         });
@@ -358,10 +348,25 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                         }
 
                         currentPackageInnerHtmRight = optionsDetails.innerHTML;
-                        currentPackageInnerHtmRight = optionsDetails.innerHTML;
                         nameOfChoosePackage.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
                         packageChooseName.innerHTML = optionalSelectContent[formData.selectedPackageOption].name;
-                        selectedOptions.innerHTML = currentPackageInnerHtmRight;
+
+                        if(optionsPackageSelect.getValue().value === "customPackage"){
+                            const criteriaValues = Object.values(formData.selectedCustomPackageValues);
+                            const filteredDropdowns = dataDropdownsCustomPackage.filter((dropdown, index) => {
+                                return index === 0 || criteriaValues.some(criterion => {
+                                    return criterion.name === dropdown.btnTitle && criterion.price === dropdown.price;
+                                });
+                            });
+
+                            createChooseDropdownsOfPackageCustom(
+                                filteredDropdowns,
+                                optionsPackageSelect.getValue().value,
+                            );
+                        } else {
+                            selectedOptions.innerHTML = currentPackageInnerHtmRight;
+                        }
+
                         totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
                         continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
                         packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
@@ -369,7 +374,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                     }
 
                     if (currentStep === 1) {
-
                         const isValidForm = validateForm();
                         if (!isValidForm) {
                             return;
@@ -409,7 +413,6 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             selectedItem.classList.remove('is-highlighted')
             licencesSelect.setChoiceByValue('1');
             additionalTextOptionsSelect.innerHTML = "";
-            additionalTextOptionsSelectMobile.innerHTML = optionalSelectContent["researchPackage"].additionalTextBottom;
             regionsIng = [];
             checkboxes.forEach(checkbox => {
                 if (checkbox.value === mainRegionSelectValue.toLowerCase()) {

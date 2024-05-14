@@ -386,12 +386,10 @@
     border-radius: 20px;
 }
 
-
-.step-form-box-right .optional-content {
-    max-height: 100%;
-    height: 100%;
-    overflow-y: auto;
-
+.step-form-box-right .optional-content,
+.licences-select-box  .choices__list.choices__list--dropdown,
+.package-select-box  .choices__list.choices__list--dropdown,
+.package-select-info-text-container{
     ::-webkit-scrollbar {
         width: 3px;
     }
@@ -409,6 +407,12 @@
     }
     scrollbar-width: thin; /* 'auto' или 'thin' */
     scrollbar-color: #D9D9D9 transparent;
+}
+
+.step-form-box-right .optional-content{
+    max-height: 100%;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .step-form-box-right.disabled-step-form-box-right {
@@ -529,14 +533,25 @@
     justify-content: center;
 }
 
+.package-select-info-text-container{
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 31px;
+}
+
 .package-select-info-text {
     box-shadow: 13px 11px 60px 0px #0000000D;
     border-radius: 20px;
     background: white;
-    padding: 66px 31px;
+    padding: 66px 0 31px 31px;
+    height: 88%;
     max-width: 345px;
     width: 100%;
     position: relative;
+}
+
+.package-select-info-text-inner:not(:last-child){
+    margin-bottom: 20px;
 }
 
 .package-select-info-text-wrap.package-select-info-text-toggle {
@@ -1837,8 +1852,9 @@
 
     .step-form-step-two .selected-options-container {
         position: static;
-        z-index:0;
         opacity: 1;
+        height: 100%;
+        z-index: 2;
     }
 
     .step-form-step-two .selected-options-container .selected-options-container-inner{
@@ -1874,6 +1890,7 @@
         display: grid;
         grid-template-columns:  minmax(auto, 400px) minmax(auto, 440px);
         gap: 35px;
+        margin-bottom: 0;
     }
 
     .step-form-step-two .step-form-box-right .optional-content {
@@ -2147,11 +2164,13 @@
         align-content: center;
     }
 
+    /*
     .step-form-box-left, .step-form-box-right {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+    */
 
     .step-form-step-two .step-form-step-two-left-column{
         align-items: center;
