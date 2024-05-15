@@ -18,6 +18,7 @@ function setupDropdownToggle(element) {
             const dropdownBox = dropDownButton.closest('.dropdown-box');
             if (dropdownBox) {
                 const root = dropdownBox.closest('.optional-content');
+                const isSelectedOptionsContainer = !!dropdownBox.closest('#selectedOptionsContainer');
                 
                 document.querySelectorAll('.dropdown-box').forEach(box => {
                     const drop = box.querySelector('.dropdown-menu');
@@ -30,8 +31,12 @@ function setupDropdownToggle(element) {
                         drop.style.maxHeight = `${dropHeight}px`;
                         
                         setTimeout(() => { 
-                            if (root.scrollTop > box.offsetTop) { // if the drop is outside of overflow                             
-                                root.scrollTo({ top: root.scrollTop - (root.scrollTop - box.offsetTop), behavior: "smooth" });                                
+                            if (root.scrollTop > box.offsetTop) { // if the drop is outside of overflow        
+                                const scrollVal = isSelectedOptionsContainer ? 
+                                    root.scrollTop - (root.scrollTop - box.offsetTop) - 62 : // add a root title height value
+                                    root.scrollTop - (root.scrollTop - box.offsetTop);
+
+                                root.scrollTo({ top: scrollVal, behavior: "smooth" });                                
                             }
                          }, 400);                        
                     } else {
