@@ -389,7 +389,8 @@
 .step-form-box-right .optional-content,
 .licences-select-box  .choices__list.choices__list--dropdown,
 .package-select-box  .choices__list.choices__list--dropdown,
-.package-select-info-text-container{
+.package-select-info-text-container,
+.terms-of-use-modal-box{
     ::-webkit-scrollbar {
         width: 3px;
     }
@@ -523,7 +524,8 @@
     filter: blur(3px);
 }
 
-.package-select-info-text-wrap {
+.package-select-info-text-wrap,
+.terms-of-use-modal{
     position: absolute;
     background: rgba(19, 21, 23, 0.6);
     opacity: 0;
@@ -539,15 +541,19 @@
     padding-right: 31px;
 }
 
-.package-select-info-text {
+.package-select-info-text,
+.terms-of-use-modal-inner{
     box-shadow: 13px 11px 60px 0px #0000000D;
     border-radius: 20px;
     background: white;
     padding: 66px 0 31px 31px;
     height: 88%;
+    position: relative;
+}
+
+.package-select-info-text{
     max-width: 345px;
     width: 100%;
-    position: relative;
 }
 
 .package-select-info-text-inner:not(:last-child){
@@ -594,6 +600,75 @@
 }
 
 /*left side styles finish*/
+
+/*modal terms start*/
+.terms-of-use-modal-toggle{
+    position: fixed;
+    z-index: 55;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+}
+
+
+.terms-of-use-modal-inner{
+    width: 90%;
+    padding: 66px 0 30px 0;
+    overflow: hidden;
+}
+
+.terms-of-use-modal-box{
+    overflow-y: auto;
+    height: 95%;
+    padding: 30px;
+    font-size: 14px;
+}
+
+.terms-of-use-modal-item{
+    margin-bottom: 20px;
+}
+
+
+.terms-of-use-modal-box h4 {
+    font-weight: 600;
+}
+
+.terms-of-use-modal-title {
+    color: #4c4c4c;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    background: #ececec;
+    padding: 12px 0;
+}
+
+.terms-of-use-modal-close {
+    right: 20px;
+    top: 20px;
+}
+
+.terms-of-use-modal-text-space{
+    margin-bottom: 20px;
+}
+
+.terms-of-use-modal-item-inner {
+    list-style: auto;
+    padding-left: 35px;
+    padding-top: 20px;
+}
+
+.terms-of-use-modal-item-inner-text {
+    margin-bottom: 20px;
+}
+
+.terms-of-use-modal-item-inner-text ul{
+   list-style: disc;
+    padding-left: 30px;
+}
+
+/*modal terms finish*/
 
 /*right side styles start*/
 
@@ -1475,6 +1550,11 @@
     border: 2px solid #27AE60;
 ;
 }
+.subscription-box-accepted-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
 
 .step-form-step-two  .subscription-box-accepted{
     position: relative;
@@ -1486,8 +1566,12 @@
     cursor: pointer;
 }
 
-.step-form-step-two .subscription-box-accepted-text a{
+.subscription-box-accepted-terms{
     text-decoration: underline;
+    font-size: 18px;
+    opacity: .7;
+    cursor: pointer;
+    margin-left: 6px;
 }
 
 .step-form-step-two .subscription-select-box{

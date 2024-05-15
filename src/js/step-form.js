@@ -315,15 +315,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             stepFormWrap.classList.add("relative");
             stepFormWrap.style.zIndex = '30';
             app.style.overflowY = 'hidden';
-            //header.style.zIndex="-1"
         });
 
-        document.addEventListener('click', (event) => {
-            if (!packageSelectInfo.contains(event.target)) {
-                packageSelectInfoText.classList.remove("package-select-info-text-toggle");
-                app.classList.remove('has-blur');
-            }
-        });
 
         prevButton.addEventListener("click", () => {
             resetForm();

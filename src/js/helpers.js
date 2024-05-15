@@ -137,7 +137,7 @@ const disabledContainer = document.getElementById('disabledContainer');
 
 
 //determine position of licenses select
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded',  () =>{
     const dropdown = document.querySelector('.licences-select-wrap');
     const dropdownContent = document.querySelector('.licences-select-wrap .choices__list--dropdown');
 
@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const dropdownRect = dropdown.getBoundingClientRect();
 
         const spaceBelow = window.innerHeight - dropdownRect.bottom;
-        const dropdownHeight = dropdownContent.offsetHeight;
 
         if (spaceBelow < 130) {
             dropdownContent.style.bottom = `107%`;
@@ -159,6 +158,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+    //toggle terms modal
+window.addEventListener('DOMContentLoaded', () => {
+    const termsOfUse = document.getElementById('termsOfUse');
+    const termsOfUseModal = document.getElementById('termsOfUseModal');
+    const termsOfUseClose = document.getElementById('termsOfUseClose');
+    const app = document.getElementById('app');
+
+    termsOfUse.addEventListener('click', (event) => {
+        termsOfUseModal.classList.add("terms-of-use-modal-toggle")
+        app.classList.add('has-blur');
+    });
+
+    termsOfUseClose.addEventListener('click', () => {
+        termsOfUseModal.classList.remove("terms-of-use-modal-toggle")
+        app.classList.remove('has-blur');
+    });
+
+});
 
 
 export {setupDropdownToggle, calculateTotal, adjustContainerHeight};
