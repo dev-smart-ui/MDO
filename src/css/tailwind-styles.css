@@ -1321,7 +1321,7 @@
 }
 
 .step-form-step-two  .modal-package-info-sum{
-    font-size: 22px;
+    font-size: 18px;
     line-height: 33px;
 }
 
@@ -1347,6 +1347,13 @@
     opacity: 0;
 }
 
+
+.step-form-step-two .selected-options-container.selected-options-container-show .optional-content{
+    height: calc(100% - 240px);
+    padding-right: 28px;
+}
+
+
 .step-form-step-two .selected-options-container .dropdown-box{
     background: #F1F2F5;
     transition: background-color 0.4s ease-in-out;
@@ -1361,6 +1368,7 @@
     z-index: 10;
     transition: all 0.25s ease-in-out;
     opacity: 1;
+    overflow: hidden !important;
 }
 
 .step-form-step-two .selected-options-container.selected-options-container-show .name-of-choose-package{
@@ -1398,7 +1406,8 @@
 .step-form-step-two .selected-options-container.selected-options-container-show .selected-options-container-inner{
     transform: translateY(0);
     transition: all 0.25s ease-in-out;
-    padding: 0 28px 20px;
+    padding: 0 0 20px 28px;
+    height: 100%;
 }
 
 .step-form-step-two .selected-options-container.selected-options-container-show .dropdown-box{
@@ -1417,7 +1426,7 @@
 .step-form-step-two .selected-options-container.selected-options-container-show .title-arrow-box span{
    font-size: 18px;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 10px;
     font-weight: 600;
 }
 .step-form-step-two .selected-options-container.selected-options-container-show .default-price span{
@@ -1723,11 +1732,6 @@
 @media screen and (max-width: 392px) {
     .step-form-step-two .selected-options-container.selected-options-container-show .title-arrow-box span{
         font-size: 16px;
-    }
-
-
-    .step-form-step-two .modal-package-info-sum{
-        font-size: 18px;
     }
 }
 
