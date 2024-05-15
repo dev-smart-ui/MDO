@@ -621,8 +621,8 @@
 
 .terms-of-use-modal-box{
     overflow-y: auto;
-    height: 95%;
-    padding: 30px;
+    height: calc(100% - 65px);
+    padding: 30px 30px 0;
     font-size: 14px;
 }
 
@@ -1310,7 +1310,7 @@
 }
 
 .step-form-step-two  .modal-package-info-name{
-    font-size: 18px;
+    font-size: 15px;
     line-height: 27px;
 }
 
