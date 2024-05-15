@@ -14,9 +14,7 @@ window.addEventListener("load", function () {
     const requestDemoControls = document.querySelectorAll('.requestDemoControl');
     const requestDemoControlsImage = document.querySelectorAll('.requestDemoControlImage');
     const requestDemoControlWrap = document.querySelector('.requestDemoControlWrap');
-
-    const s1 = document.querySelector('#page-slider');
-    const s2 = document.querySelector('#comprehensive-slider');
+    const comprehensiveSliderWrap = document.querySelector('#comprehensive-slider');
 
     const newsSectionSliderParams = {
         slidesPerView: 1,
@@ -131,11 +129,29 @@ window.addEventListener("load", function () {
 
 
     goToSubscribe.length && goToSubscribe.forEach(btn => {
-        btn.addEventListener('click', e => { appScrollIntoView(e, newsSection, stepFormWrap) })
+        btn.addEventListener('click', e => { 
+            e.preventDefault();
+            e.stopPropagation();
+
+            app.scrollTo({ top: stepFormWrap.offsetTop, behavior: "smooth" }); 
+         })
     });
 
     goToContact.length && goToContact.forEach(btn => {
-        btn.addEventListener('click', e => { appScrollIntoView(e, newsSection, contactUsWrap) })
+        btn.addEventListener('click', e => { 
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (btn.closest('.user-auth')) { // click from mobile menu
+                toggleHeaderMenu();
+
+                setTimeout(() => {
+                    app.scrollTo({ top: contactUsWrap.offsetTop, behavior: "smooth" });
+                }, 400);
+            } else {
+                app.scrollTo({ top: contactUsWrap.offsetTop, behavior: "smooth" });
+            }                     
+         })
     });
 
     // request a demo section animations handler
@@ -149,37 +165,7 @@ window.addEventListener("load", function () {
 
 
 
-
-
-
     // FUNCTIONS *****
-
-    // advanced native scrollIntoView for except add hide/show section which can scroll or swiping, while scrollIntoView end (for correct scrolls calc)
-    function appScrollIntoView(e, barrier, dest) {
-        try {
-            e.preventDefault();
-            e.stopPropagation();
-
-            barrier.style.display = 'none';
-
-            dest.scrollIntoView({ block: "start", behavior: "smooth" });
-
-            let scrollTimeout;
-            app.addEventListener('scroll', function(e) {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(e => { barrier.style.display = 'block' }, 100);
-            });
-        } catch(err) {
-            console.warn(err);
-        }
-    }
-
-    //touch screen check
-    function isTouchEnabled() {
-        return ('ontouchstart' in window) ||
-            (navigator.maxTouchPoints > 0) ||
-            (navigator.msMaxTouchPoints > 0);
-    }
 
     // find all next elements after "element"
     function nextAll(element) {
@@ -230,19 +216,23 @@ window.addEventListener("load", function () {
 
     //toggle text on comprehensiveSlider cards
     function sliderTextToggle() {
-        const sliderContent = s2.querySelectorAll('.content');
-        if (sliderContent.length > 0) {
-            sliderContent.forEach(i => {
-                if (i.querySelector('.list') && i.querySelector('.list').offsetHeight > 0) {
-                    if (i.closest('.swiper-slide').classList.contains('swiper-slide-active')) {
-                        i.style.transform = `translateY(0)`;
+        try {
+            const sliderContent = comprehensiveSliderWrap.querySelectorAll('.content');
+            if (sliderContent.length > 0) {
+                sliderContent.forEach(i => {
+                    if (i.querySelector('.list') && i.querySelector('.list').offsetHeight > 0) {
+                        if (i.closest('.swiper-slide').classList.contains('swiper-slide-active')) {
+                            i.style.transform = `translateY(0)`;
+                        } else {
+                            i.style.transform = `translateY(${(i.querySelector('.list').offsetHeight)}px)`;
+                        }
                     } else {
-                        i.style.transform = `translateY(${(i.querySelector('.list').offsetHeight)}px)`;
+                        i.style.transform = `translateY(0)`;
                     }
-                } else {
-                    i.style.transform = `translateY(0)`;
-                }
-            })
+                })
+            }
+        } catch(err) {
+            console.warn(err);
         }
     }
 

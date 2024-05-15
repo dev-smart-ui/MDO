@@ -30,7 +30,7 @@ function setupDropdownToggle(element) {
                         drop.style.maxHeight = `${dropHeight}px`;
                         
                         setTimeout(() => { 
-                            if (root.scrollTop > box.offsetTop) { // если дроп за пределами overflow                                
+                            if (root.scrollTop > box.offsetTop) { // if the drop is outside of overflow                             
                                 root.scrollTo({ top: root.scrollTop - (root.scrollTop - box.offsetTop), behavior: "smooth" });                                
                             }
                          }, 400);                        
