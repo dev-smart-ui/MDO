@@ -88,9 +88,9 @@ function calculateTotal(currentPackageSelect) {
         }
 
         newSumOfPackage[currentPackageSelect] = total;
-        document.getElementById("totalCounter").innerText = `${total}`;
-        document.getElementById("totalCounterSecond").innerText = `${total}`;
-        document.getElementById("continueBtnTotal").innerHTML = `Total: $${total} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
+        document.getElementById("totalCounter").innerText = `${total.toLocaleString('en-US')}`;
+        document.getElementById("totalCounterSecond").innerText = `${total.toLocaleString('en-US')}`;
+        document.getElementById("continueBtnTotal").innerHTML = `Total: $${total.toLocaleString('en-US')} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
     }
 
 }
