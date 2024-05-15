@@ -360,10 +360,9 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                             selectedOptions.innerHTML = currentPackageInnerHtmRight;
                         }
 
-                        totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
+                        totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD`;
                         continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
-                        packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
-                        packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
+                        packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD`;
                     }
 
                     if (currentStep === 1) {
