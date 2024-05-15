@@ -108,6 +108,32 @@ function validatePhone() {
     }
 }
 
+function validatePassword() {
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const errorDiv = document.getElementById('error-confirmPassword');
+    if (password.value !== confirmPassword.value && password.value.trim() !== '' && confirmPassword.value.trim() !== '') {
+
+        if (errorDiv) {
+            errorDiv.textContent = 'Use the same password';
+            errorDiv.style.display = 'block';
+        }
+        return false;
+    } else if (password.value.trim() === '' && confirmPassword.value.trim() === '') {
+        if (errorDiv) {
+            errorDiv.textContent = 'Please fill';
+            errorDiv.style.display = 'block';
+        }
+        return false;
+    } else {
+        if (errorDiv) {
+            errorDiv.textContent = '';
+            errorDiv.style.display = 'none';
+        }
+        return true;
+    }
+}
+
 function validateForm() {
     let isValidAllInputs = true;
 
@@ -121,7 +147,8 @@ function validateForm() {
     const isCheckboxAccepted = validateCheckboxAccepted();
     const isValidEmail = validateEmailInput();
     const isValidatePhone = validatePhone();
-    if (isValidPayment && isCheckboxAccepted && isValidEmail && isValidatePhone && isValidAllInputs) {
+    const isValidPassword = validatePassword();
+    if (isValidPayment && isCheckboxAccepted && isValidEmail && isValidatePhone && isValidAllInputs && isValidPassword) {
         return true;
     } else {
         return false;
