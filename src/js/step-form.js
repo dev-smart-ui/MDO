@@ -266,7 +266,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
 
             additionalTextOptionsSelect.innerHTML = optionalSelectContent[value].additionalTextBottom;
             additionalTextOptionsSelect.style.paddingTop = '16px';
-            continueBtnTotal.innerHTML=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD  <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`
+            continueBtnTotal.innerHTML=`Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)].toLocaleString('en-US')} USD  <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`
         });
 
         // change event for licenses select
@@ -315,15 +315,8 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
             stepFormWrap.classList.add("relative");
             stepFormWrap.style.zIndex = '30';
             app.style.overflowY = 'hidden';
-            //header.style.zIndex="-1"
         });
 
-        document.addEventListener('click', (event) => {
-            if (!packageSelectInfo.contains(event.target)) {
-                packageSelectInfoText.classList.remove("package-select-info-text-toggle");
-                app.classList.remove('has-blur');
-            }
-        });
 
         prevButton.addEventListener("click", () => {
             resetForm();
@@ -367,10 +360,9 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
                             selectedOptions.innerHTML = currentPackageInnerHtmRight;
                         }
 
-                        totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
-                        continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)]} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
-                        packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
-                        packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)]}`;
+                        totalCounterSecond.innerHTML = `${newSumOfPackage[optionsPackageSelect.getValue(true)].toLocaleString('en-US')} USD`;
+                        continueBtnTotal.innerHTML = `Total: $${newSumOfPackage[optionsPackageSelect.getValue(true)].toLocaleString('en-US')} USD <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/>`;
+                        packageChooseTotal.innerHTML = `$${newSumOfPackage[optionsPackageSelect.getValue(true)].toLocaleString('en-US')} USD`;
                     }
 
                     if (currentStep === 1) {

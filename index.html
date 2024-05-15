@@ -728,7 +728,7 @@
         <section class="snap-start snap-always step-form-wrap lg:bg-gray h-full" id="stepFormWrap" >
             <div class="package-select-info-text-wrap" id="packageSelectInfoText">
                 <div class="package-select-info-text" >
-                    <img class="absolute package-select-info-close" data-close-modal
+                    <img class="absolute package-select-info-close cursor-pointer" data-close-modal
                          id="packageSelectInfoTextClose"
                          src="./src/images/step-form/close.svg"  alt="close"/>
                     <div class="package-select-info-text-container">
@@ -848,7 +848,7 @@
 
                             <div class="bottom-container">
                                 <div class="total-counter">
-                                    Total: $<span id="totalCounter"></span>
+                                    Total: $<span id="totalCounter"></span> USD
                                 </div>
                                 <button id="continueBtnStepOne" data-next-btn class="continue-btn continue-btn-desktop flex items-center justify-center rounded-[12px] font-medium text-[16px] text-white">
                                     <div class=" continue-btn-inner-text continue-btn-inner-text-desktop">Continue to billing <img src="src/images/step-form/arrow-right-white.svg" alt="arrow"/></div>
@@ -867,7 +867,7 @@
                     <div data-step-form
                          class="step-form-step  overflow-auto lg:overflow-visible  lg:bg-white step-form-step-two items-stretch"
                          id="step2">
-                        <button id="prevButton" class="close-btn">
+                        <button id="prevButton" class="close-btn cursor-pointer">
                             <img src="./src/images/step-form/close.svg" alt="close" class="w-full h-full">
                         </button>
                         <div class="step-form-step-two-left-column">
@@ -1014,15 +1014,16 @@
 
                                             <span class="error-message" id="error-radio"></span>
                                         </div>
-
-
-                                        <label class="subscription-box-accepted check-box-label flex items-center">
-                                            <input data-subscription-input type="checkbox" id="checkboxAccepted"
-                                                   class="checkbox-accepted">
-                                            <span class="checkmark"></span>
-                                            <p class="ml-8 subscription-box-accepted-text">I Accept <a href="https://miningdataonline.com/terms-of-use-agreement.aspx" target="_blank">Terms of Use</a></p>
+                                        <div class="subscription-box-accepted-container">
+                                            <label class="subscription-box-accepted check-box-label flex items-center">
+                                                <input data-subscription-input type="checkbox"
+                                                       class="checkbox-accepted" id="checkboxAccepted" >
+                                                <span class="checkmark"></span>
+                                                <p class="ml-8 subscription-box-accepted-text">I Accept </p>
+                                            </label>
+                                            <span class="subscription-box-accepted-terms" id="termsOfUse">Terms of Use</span>
                                             <span class="error-message" id="error-checkboxAccepted"></span>
-                                        </label>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -1032,7 +1033,7 @@
                         <div class="step-form-box-right flex flex-col ">
                             <div class="selected-options-container  lg:block" id="selectedOptionsContainer">
                                 <div class="selected-options-container-inner">
-                                    <button data-close-modal class="close-btn block lg:hidden">
+                                    <button data-close-modal class="close-btn cursor-pointer block lg:hidden">
                                         <img src="./src/images/step-form/close.svg" alt="close"
                                              class="w-full h-full">
                                     </button>
@@ -1065,9 +1066,195 @@
 
                         <h3 class="font-bold leading-[40px] lg:leading-[81px]">Subscription Successful!</h3>
                         <span>Your request has been submitted.<br> We will get back to you shortly</span>
-                        <button data-next-btn class="close-btn">
+                        <button data-next-btn class="close-btn cursor-pointer">
                             <img src="./src/images/step-form/close.svg" alt="close" class="w-full h-full">
                         </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="terms-of-use-modal" id="termsOfUseModal">
+                <div class="terms-of-use-modal-inner">
+                    <img class="absolute terms-of-use-modal-close cursor-pointer" data-close-modal
+                         id="termsOfUseClose"
+                         src="./src/images/step-form/close.svg" alt="close"/>
+                    <h3 class="terms-of-use-modal-title">Terms of Use Agreement</h3>
+                    <div class="terms-of-use-modal-box">
+                        <p class="terms-of-use-modal-text-space">By using or visiting our
+                            website located at www.miningdataonline.com, other affiliated websites, or using our
+                            services, software or materials (collectively the “Services”), you
+                            acknowledge that you accept the terms, conditions, restrictions and policies outlined in
+                            these Terms of Use (the “Terms”).</p>
+
+                        <ul class="terms-of-use-modal-text-space">
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    1. ACCEPTANCE
+                                </h4>
+                                <p>
+                                    In order to use the Services, provided by MDO Data Online Inc. (MDO) you must first agree to the Terms.
+                                    You may not use the Services if you do not accept the Terms.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    2. USE OF THE SERVICES</h4>
+                                <p>You agree to use the Services
+                                    only for the purposes that are permitted by these Terms and by any applicable law, regulation, or generally accepted practices or guidelines in the relevant
+                                    jurisdictions (including any laws governing the export or import of data or software to and from relevant jurisdictions).</p>
+                                <p>You agree that you will not
+                                    engage in any activity that interferes with or disrupts the Services, or the services or networks which are connected to the Services or on which the
+                                    Services are hosted.</p>
+                                <p class="terms-of-use-modal-text-space">You agree that you are solely
+                                    responsible for, and MDO has no responsibility to you or any third party for, any breach of your obligations under the Terms (including breach of any
+                                    obligations you may have with respect to a Third Party Service) and for the consequences (including any loss or damage which MDO may suffer) of any such
+                                    breach.</p>
+
+                                <p>As a subscriber to the Services you may download and save content of the Services as permitted under copyright law and use it for personal or commercial purposes.</p>
+                                <p class="terms-of-use-modal-text-space">
+                                    HOWEVER, THE CONTENT MAY NOT BE DOWNLOADED, SAVED, DUPLICATED OR MODIFIED FOR ANY FORM OF REDISTRIBUTION WITHOUT A SPECIAL WRITTEN AGREEMENT WITH MDO.
+                                </p>
+
+                                <p>Sharing your Data Access Credentials (i.e., User ID and Password) is prohibited.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    3. UPDATES AND CHANGES TO THE SERVICES</h4>
+                                <p>You acknowledge and agree that
+                                    the form and nature of the Services which we provide may change from time to time without prior notice to you.</p>
+                                <p>You acknowledge and agree that
+                                    we may stop (whether permanently or temporarily) providing the Services (or any features or materials within the Services, including any Third Party Services)
+                                    to you at our sole discretion, without prior notice to you.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    4. THIRD PARTY MATERIALS AND SERVICES</h4>
+                                <p>The Services may also provide an
+                                    opportunity for you to discover other data, materials or products, or link to websites (“Third Party Services”) offered or made available by third parties
+                                    not affiliated with MDO (“Third Party Providers”). These Terms do not apply to such Third Party Services, and these Terms to do not govern the practices of
+                                    such Third Party Providers. When using Third Party Services, you should read the relevant terms of use, including any applicable end user license agreement
+                                    (“EULA”).</p>
+                                <p>You acknowledge and agree that MDO
+                                    is not responsible for any Third Party Services, including content, websites, services, or other software or products provided by Third Party Providers.</p>
+                                <p>You acknowledge and agree that MDO
+                                    does not warrant or endorse, and does not assume and will not have liability to you or any other person for any Third Party Services, and that your use of such
+                                    Third Party Services, is at your own risk.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    5. OWNERSHIP
+                                </h4>
+                                <p>You acknowledge and agree that nothing
+                                    in the Terms gives you a right to use any of our, or Third Party Services, trade names, trademarks, service marks, logos, domain names or other
+                                    distinctive brand features.</p>
+                                <p>You agree that you shall not
+                                    remove, obscure, or alter any proprietary rights notices (including copyright and trademark notices) which may be affixed or contained within or on the
+                                    Services.</p>
+                                <p>
+                                    You acknowledge and agree that you do not acquire any ownership rights by using any part of the	Services.
+                                </p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    6. TERMINATION
+                                </h4>
+                                <p>The Terms will continue to
+                                    apply until terminated by either you or MDO as set out below.</p>
+                                <p>Your rights under this
+                                    Agreement will terminate automatically without notice to you if you violate any provision of these Terms. MDO may immediately terminate these Terms and any use
+                                    of, or access to, the Services at any time, including in the event we determine that the Services or use thereof may result in infringement or violation of
+                                    third party rights or claims thereof..</p>
+                                <p>Any provisions of this
+                                    Agreement that, in order to fulfill the purposes of such provisions, need to survive the termination or expiration of this Agreement, shall be deemed to
+                                    survive for as long as necessary to fulfill such purposes.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    7. ACCOUNT ACTIVATION AND REFUND POLICY
+                                </h4>
+                                <p>
+                                    Once we receive your payment in full, your subscription will be activated and you will be granted access to the set of data you purchased. It may take us between 2 and 24 hours to set up your account.</p>
+                                <p>
+                                    All payments are completely non-refundable and whilst you may choose to terminate or downgrade your MDO subscription during your subscription term, you will not be refunded, in whole or in part.
+                                </p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    8. WARRANTY DISCLAIMER
+                                </h4>
+                                <ul class="terms-of-use-modal-item-inner">
+                                    <li class="terms-of-use-modal-item-inner-text">YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SERVICES IS AT YOUR SOLE
+                                        RISK AND THAT THE SERVICES AND DATA ARE PROVIDED “AS IS” AND “AS AVAILABLE.”</li>
+                                    <li class="terms-of-use-modal-item-inner-text">ALL INFORMATION AND DATA MADE AVAILABLE VIA THE MDO IS PROVIDED FOR INFORMATIONAL
+                                        PURPOSES ONLY, AND IS NOT INTENDED FOR ACTUAL TRADING PURPOSES OR MARKET ADVICE.</li>
+                                    <li class="terms-of-use-modal-item-inner-text">ANY SOFTWARE OR OTHER MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF
+                                        THE SERVICES, AND THE SERVICES, ARE USED AT YOUR OWN DISCRETION AND RISK AND THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR
+                                        OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF ANY SUCH SOFTWARE OR OTHER MATERIAL.</li>
+                                    <li class="terms-of-use-modal-item-inner-text">
+                                        MDO DOES NOT REPRESENT OR WARRANT TO YOU THAT:
+                                        <ul>
+                                            <li>YOUR USE OF THE SERVICES WILL MEET YOUR REQUIREMENTS,</li>
+                                            <li>YOUR USE OF THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE OR FREE FROM ERROR,</li>
+                                            <li>ANY INFORMATION OBTAINED BY YOU AS A RESULT OF YOUR USE OF THE SERVICES WILL BE ACCURATE OR RELIABLE, AND</li>
+                                            <li>THAT DEFECTS IN THE OPERATION OR FUNCTIONALITY OF ANY SERVICES OR SOFTWARE PROVIDED TO YOU WILL BE CORRECTED.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        NO
+                                        ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY YOU FROM MDO OR THROUGH OR FROM THE SERVICES SHALL CREATE ANY WARRANTY NOT EXPRESSLY STATED IN THE TERMS.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    9. LIMITATION OF LIABILITY
+                                </h4>
+                                <p>SUBJECT TO PARAGRAPH 8.1 ABOVE,
+                                    YOU EXPRESSLY UNDERSTAND AND AGREE THAT MDO, ITS SUBSIDIARIES AND AFFILIATES, SHALL NOT BE LIABLE TO YOU FOR:</p>
+                                <p>ANY DIRECT, INDIRECT,
+                                    INCIDENTAL, SPECIAL CONSEQUENTIAL OR EXEMPLARY DAMAGES WHICH MAY BE INCURRED BY YOU, HOWEVER CAUSED AND UNDER ANY THEORY OF LIABILITY. THIS SHALL INCLUDE, BUT
+                                    NOT BE LIMITED TO, ANY LOSS OF PROFIT (WHETHER INCURRED DIRECTLY OR INDIRECTLY), ANY LOSS OF GOODWILL OR BUSINESS REPUTATION, ANY LOSS OF DATA SUFFERED, COST OF
+                                    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, OR OTHER INTANGIBLE LOSS;</p>
+                                <p>ANY LOSS OR DAMAGE WHICH MAY BE
+                                    INCURRED BY YOU, INCLUDING BUT NOT LIMITED TO, LOSS OR DAMAGE AS A RESULT OF ANY CHANGES WHICH MDO MAY MAKE TO THE SERVICES, OR FOR ANY PERMANENT OR
+                                    TEMPORARY CESSATION IN THE PROVISION OF THE SERVICES (OR ANY FEATURES WITHIN THE SERVICES).</p>
+                                <p>THE LIMITATIONS ON MDO’S
+                                    LIABILITY TO YOU IN PARAGRAPH 8.1 ABOVE SHALL APPLY WHETHER OR NOT MDO HAS BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH LOSSES
+                                    ARISING.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    10. CHANGES TO THE TERMS
+                                </h4>
+                                <p>We may make changes to these
+                                    Terms or provide revised or additional terms from time to time. When these changes are made, we will inform you about the changes promptly and
+                                    make an updated version of these Terms available at	https://miningdataonline.com/terms-of-use-agreement.aspx.
+                                </p>
+                                <p>
+                                    You understand and agree that if you continue to use the Services after the date upon which the Terms have been	revised or changed, we will treat your use as acceptance of the updated Terms.
+                                </p>
+                                <p>
+                                    However, if you hold an active subscription and disagree with any changes to the Terms, you may continue using the Services without incurring any penalty or consequence until the expiration of your current subscription term.
+                                </p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    11. MISCELLANEOUS TERMS</h4>
+                                <p>The Terms constitute the whole
+                                    legal agreement between you and MDO and govern your use of the Services.</p>
+                                <p>You agree that MDO may provide
+                                    you with notices, including those regarding changes to the Terms, by email, regular mail, or postings on the Services.</p>
+                                <p>You agree that if any court of
+                                    law, having the jurisdiction to decide on this matter, rules that any provision of these Terms is invalid, then that provision will be removed from the Terms
+                                    without affecting the rest of the Terms. The remaining provisions of the Terms will continue to be valid and enforceable.</p>
+                            </li>
+                        </ul>
+                        <p>
+                            MDO does not and cannot guarantee or represent that any of the
+                            information and data made available via the MDO Search Tools is real-time, accurate, complete, current or appropriate for your needs. Certain information
+                            and data made available via the MDO Search Tools is obtained from Third Party Providers (defined above) who are generally understood to be sources of
+                            reliable information and data. However, due to a variety of different factors, including mechanical and human error, the timeliness, completeness and accuracy
+                            of such information and data are not guaranteed by MDO.
+                        </p>
                     </div>
 
                 </div>
