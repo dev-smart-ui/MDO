@@ -1429,6 +1429,7 @@
     display: inline-block;
     margin-right: 10px;
     font-weight: 600;
+    line-height: 1.1;
 }
 .step-form-step-two .selected-options-container.selected-options-container-show .default-price span{
    font-weight: 600;
