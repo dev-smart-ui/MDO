@@ -390,7 +390,8 @@
 .licences-select-box  .choices__list.choices__list--dropdown,
 .package-select-box  .choices__list.choices__list--dropdown,
 .package-select-info-text-container,
-.terms-of-use-modal-box{
+.terms-of-use-modal-box,
+.contact-form-wrap{
     ::-webkit-scrollbar {
         width: 3px;
     }

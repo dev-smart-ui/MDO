@@ -192,4 +192,32 @@ document.getElementById('phone').addEventListener('input', function () {
     this.value = this.value.replace(/(\+\d*)[^0-9].*/, '$1');
 });
 
-export {validateField, validateForm, validateCheckboxAccepted};
+function validateEmailContact() {
+    const emailInput = document.querySelector('#contactForm input[type="email"]');
+    const emailContactPattern = /^[a-z0-9.]+@[a-z0-9.]+$/;
+
+    if (emailInput.value === '') {
+        return false;
+    }
+
+    return emailInput.value.match(emailContactPattern);
+}
+
+
+function validateContactForm() {
+    let isValid = true;
+    document.querySelectorAll('#contactForm [required]').forEach(field => {
+
+        if (!field.value.trim()) {
+            isValid = false;
+        }
+    });
+    return isValid;
+}
+function clearContactInputs(){
+    document.querySelectorAll('[data-contact-input]').forEach(field => {
+        field.value=''
+    });
+}
+
+export {validateField, validateForm, validateCheckboxAccepted, validateContactForm, validateEmailContact, clearContactInputs};

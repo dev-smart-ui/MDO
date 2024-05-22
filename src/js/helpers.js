@@ -7,6 +7,7 @@ import {
     newSumOfPackage,
     regionsIngLength
 } from "./step-form.js";
+import {clearContactInputs, validateContactForm, validateEmailContact} from "./validationForm.js";
 
 function setupDropdownToggle(element) {
     element.addEventListener('click', (event) => {
@@ -192,19 +193,25 @@ window.addEventListener('DOMContentLoaded', () => {
     const app = document.getElementById('app');
     const header = document.querySelector('header');
 
-    sendMessageBtn.addEventListener('click', (event) => {
-        successfulModal.classList.add("successful-modal-toggle")
-        app.classList.add('has-blur');
-   /*     app.classList.add('has-blur', '!overflow-hidden');
-        header.style.right="0"*/
 
+    sendMessageBtn.addEventListener('click', (event) => {
+        const isValidForm = validateContactForm();
+        const isValidEmail = validateEmailContact();
+
+        if (isValidForm && isValidEmail) {
+            clearContactInputs();
+            successfulModal.classList.add("successful-modal-toggle");
+            app.classList.add('has-blur');
+            /*     app.classList.add('has-blur', '!overflow-hidden');
+                 header.style.right="0"*/
+        }
     });
 
     successfulModalClose.addEventListener('click', () => {
-        successfulModal.classList.remove("successful-modal-toggle")
-                app.classList.remove('has-blur');
-  /*      app.classList.remove('has-blur', '!overflow-hidden');
-        header.style.right="17px"*/
+        successfulModal.classList.remove("successful-modal-toggle");
+        app.classList.remove('has-blur');
+        /*      app.classList.remove('has-blur', '!overflow-hidden');
+              header.style.right="17px"*/
     });
 });
 
