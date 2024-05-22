@@ -185,4 +185,30 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+window.addEventListener('DOMContentLoaded', () => {
+    const sendMessageBtn = document.getElementById('sendMessageBtn');
+    const successfulModal = document.getElementById('successfulModal');
+    const successfulModalClose = document.getElementById('successfulModalClose');
+    const app = document.getElementById('app');
+    const header = document.querySelector('header');
+
+    sendMessageBtn.addEventListener('click', (event) => {
+        successfulModal.classList.add("successful-modal-toggle")
+        app.classList.add('has-blur');
+   /*     app.classList.add('has-blur', '!overflow-hidden');
+        header.style.right="0"*/
+
+    });
+
+    successfulModalClose.addEventListener('click', () => {
+        successfulModal.classList.remove("successful-modal-toggle")
+                app.classList.remove('has-blur');
+  /*      app.classList.remove('has-blur', '!overflow-hidden');
+        header.style.right="17px"*/
+    });
+});
+
+
+
+
 export {setupDropdownToggle, calculateTotal, adjustContainerHeight};

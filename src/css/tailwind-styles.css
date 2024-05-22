@@ -525,7 +525,8 @@
 }
 
 .package-select-info-text-wrap,
-.terms-of-use-modal{
+.terms-of-use-modal,
+.successful-modal{
     position: absolute;
     background: rgba(19, 21, 23, 0.6);
     opacity: 0;
@@ -533,6 +534,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.successful-modal {
+    visibility: hidden;
+}
+
+.successful-modal-inner{
+    position: relative;
+    width: 90%;
+    max-width: 788px;
+    max-height: 635px;
+    height: 90%;
+    border-radius: 20px;
+    box-shadow: 13px 11px 60px 0px #0000000D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background: white;
+    color: #151515;
 }
 
 .package-select-info-text-container{
@@ -549,6 +571,19 @@
     padding: 66px 0 31px 31px;
     height: 88%;
     position: relative;
+}
+
+
+.successful-modal.successful-modal-toggle {
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    margin: unset;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .package-select-info-text{
@@ -1630,7 +1665,8 @@
 }
 
 
-.step-form-step-three .step-form-step-three-img-box{
+.step-form-step-three .step-form-step-three-img-box,
+.successful-modal-img-box{
   border: 2px solid #3AAC4C;
     width: 100px;
     height: 100px;
@@ -1638,13 +1674,15 @@
     margin-bottom: 24px;
 }
 
-.step-form-step-three h3{
+.step-form-step-three h3,
+.successful-modal h3{
     text-align: center;
     margin-bottom: 24px;
     font-size: clamp(32px, 3vw, 40px);
 }
 
-.step-form-step-three span{
+.step-form-step-three span,
+.successful-modal span{
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
@@ -1657,13 +1695,15 @@
 
 
 .step-form-step-two .close-btn,
-.step-form-step-three .close-btn{
+.step-form-step-three .close-btn,
+.successful-modal .close-btn{
     position: absolute;
     width: 24px;
     height: 24px;
 }
 
-.step-form-step-three .close-btn{
+.step-form-step-three .close-btn,
+.successful-modal .close-btn{
     top: 30px;
     right: 30px;
 }

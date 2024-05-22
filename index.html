@@ -1326,6 +1326,20 @@
         </section>
 
         <section class="snap-start snap-always relative contactUs bg-[#313238] 2lg:flex flex-col justify-center text-white h-full pt-[72px] 2lg:pb-[6dvh] overflow-hidden" id="contactUsWrap">
+            <div class="successful-modal" id="successfulModal">
+                <div class="items-center flex-col successful-modal-inner">
+                    <div class="successful-modal-img-box rounded-full">
+                        <img src="./src/images/step-form/check-big.svg" alt="check" class="w-full h-full">
+                    </div>
+
+                    <h3 class="font-bold leading-[40px] lg:leading-[81px]">Subscription Successful!</h3>
+                    <span>Your request has been submitted.<br> We will get back to you shortly</span>
+                    <button id="successfulModalClose" class="close-btn cursor-pointer">
+                        <img src="./src/images/step-form/close.svg" alt="close" class="w-full h-full">
+                    </button>
+                </div>
+            </div>
+
             <div class="4xl:max-w-full px-5 3xl:px-[90px] 4xl:flex flex-col justify-center">
                 <div>
                     <h2 class="text-[3.5dvh] lg:text-[7dvh] font-bold leading-[1]">Contact Us</h2>
@@ -1361,7 +1375,7 @@
                                 </div>
                             </div>
                             <div class="mt-[1dvh] text-right">
-                                <button type="submit" class="group/button w-full lg:w-auto font-medium text-white bg-[#02A1D3] px-10 py-[2dvh] rounded-[12px] leading-[1.2] max-h-[48px] lg:max-h-[56px] flex justify-center items-center ml-auto">
+                                <button id="sendMessageBtn" type="button" class="group/button w-full lg:w-auto font-medium text-white bg-[#02A1D3] px-10 py-[2dvh] rounded-[12px] leading-[1.2] max-h-[48px] lg:max-h-[56px] flex justify-center items-center ml-auto">
                                     <span class="inline-block group-hover/button:scale-[1.05] duration-200 text-[2dvh] lg:text-base">Send Message</span>
                                 </button>
                             </div>
