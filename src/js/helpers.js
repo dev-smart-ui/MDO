@@ -7,7 +7,7 @@ import {
     newSumOfPackage,
     regionsIngLength
 } from "./step-form.js";
-import {clearContactInputs, validateContactForm, validateEmailContact} from "./validationForm.js";
+import {clearContactInputs, validateContactForm, validateEmailContact} from "./validation-form.js";
 
 function setupDropdownToggle(element) {
     element.addEventListener('click', (event) => {

@@ -8,7 +8,7 @@ import {
     dataDropdownsUltimatePackage,
     selectedItems
 } from "./content.js";
-import {resetFormElements, validateCheckboxAccepted, validateForm} from "./validationForm.js";
+import {resetFormElements, validateCheckboxAccepted, validateForm} from "./validation-form.js";
 import {adjustContainerHeight, calculateTotal, setupDropdownToggle} from "./helpers.js";
 
 export const optionalSelectContent = {
