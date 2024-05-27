@@ -118,12 +118,13 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         let regionsIng = [];
         let currentPackageInnerHtmRight = '';
         
-
+console.log("test")
 
         //region custom select code start
 
         //toggle select regions click outside
         regionSelectedItems.addEventListener('click', (event) => {
+
             regionsItemBox.classList.toggle("open");
             regionSelectedItems.classList.add("open");
             event.stopPropagation();
