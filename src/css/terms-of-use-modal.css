@@ -1,0 +1,98 @@
+.presentation-section{
+    .modal-terms-of-use-box {
+        align-items: center;
+    }
+
+    .terms-of-use-modal-toggle {
+        position: fixed;
+        z-index: 55;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 1;
+    }
+
+    .terms-of-use-modal-inner {
+        position: relative;
+        background: rgb(49, 51, 58);
+        padding: 75px 0 24px;
+        border-radius: 20px;
+        height: 90%;
+        width: 90%;
+        color: white;
+    }
+
+    .terms-of-use-modal-box {
+        overflow-y: auto;
+        height: calc(100% - 65px);
+        padding: 10px 20px 0;
+        font-size: 14px;
+    }
+
+    .terms-of-use-modal-item {
+        margin-bottom: 20px;
+    }
+
+    .terms-of-use-modal-box h4 {
+        font-weight: 600;
+    }
+
+    .terms-of-use-modal-title {
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 300;
+        padding: 12px 0;
+        width: 100%;
+    }
+
+    .terms-of-use-modal-close {
+        position: absolute;
+        right: 15px;
+        top: 30px;
+    }
+
+    .terms-of-use-modal-text-space {
+        margin-bottom: 20px;
+    }
+
+    .terms-of-use-modal-item-inner {
+        list-style: auto;
+        padding-left: 35px;
+        padding-top: 20px;
+    }
+
+    .terms-of-use-modal-item-inner-text {
+        margin-bottom: 20px;
+    }
+
+    .terms-of-use-modal-item-inner-text ul {
+        list-style: disc;
+        padding-left: 30px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .terms-of-use-modal-inner {
+            width: 80%;
+            padding: 70px 0 60px;
+            border-radius: 17px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .terms-of-use-modal-box {
+            padding: 10px 50px 0;
+        }
+
+    }
+
+    @media screen and (min-width: 1024px) and (max-height: 800px) {
+        .terms-of-use-modal-inner {
+            padding-bottom: 10dvh;
+            padding-top: 10dvh;
+        }
+    }
+}

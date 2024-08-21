@@ -1,0 +1,140 @@
+.presentation-section{
+
+    .modal-successful {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #1D1F28;
+        align-items: center;
+        justify-content: center;
+        background-image: url("../images/gradient-second.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 24px;
+    }
+
+    .modal-successful-content {
+        background: #1e1e1e61;
+        color: var(--color-white);
+        backdrop-filter: blur(10px);
+        width: 90%;
+        max-width: 790px;
+        min-height: 486px;
+        border-radius: 20px;
+        box-shadow: 13px 11px 60px 0 #0000000d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 20px 30px;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -75%) scale(0);
+        transition: opacity .3s, transform .4s ease;
+        transform-origin: center;
+        transition-delay: .4s;
+    }
+
+    .modal-successful-content.modal-successful-content-show{
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+        transition: opacity .5s, transform .4s ease;
+        transition-delay: .4s;
+    }
+
+
+    .modal-successful-content h3 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 40px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .modal-successful-content span {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: center;
+    }
+
+    .modal-successful-content br {
+        display: none;
+    }
+
+
+    .modal-successful-content-img-box {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px #3AAC4C solid;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .modal-successful-content-img-box img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .modal-successful-close.section-close {
+        width: 48px;
+        height: 48px;
+        right: 20px;
+        top: 20px;
+        border: none;
+    }
+
+    .modal-successful-close.section-close svg {
+        width: 22px;
+        height: 22px;
+        color: #74879B;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .modal-successful-content {
+            background: #444d6436;
+            padding: 40px 20px 24px;
+            height: 634px;
+
+        }
+
+        .modal-successful-content h3 {
+            font-size: 40px;
+            line-height: 81px;
+        }
+
+
+        .modal-successful-content span {
+            font-size: 22px;
+            line-height: 33px;
+        }
+
+        .modal-successful-content br {
+            display: block;
+        }
+
+
+        .modal-successful-close.section-close {
+            border: 2px solid #fff3;
+        }
+
+        .modal-successful-close.section-close svg {
+            color: white;
+        }
+
+    }
+}

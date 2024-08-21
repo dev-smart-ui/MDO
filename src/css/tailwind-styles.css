@@ -1,3 +1,15 @@
+@import "../css/button.css";
+@import "../css/common-styles.css";
+@import "../css/selects.css";
+@import "../css/modal-demo.css";
+@import "../css/modal-successful-content.css";
+@import "../css/modal-select-info-text.css";
+@import "../css/counter.css";
+@import "../css/comprehensive-slider.css";
+@import "../css/terms-of-use-modal.css";
+@import "../css/subscription-step.css";
+@import "../css/tab-panel.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

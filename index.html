@@ -27,8 +27,15 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
     />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+
     <link rel="stylesheet" href="./src/css/jquery_ui_1.13.2.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/variables.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/css/reset.css">
     <link rel="stylesheet" type="text/css" href="./src/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/authorized-block.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/authorized-block-mobile-bottom.css"/>
@@ -36,6 +43,7 @@
     <link rel="stylesheet" type="text/css" href="./src/css/mdo.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/auth.css"/>
     <link rel="stylesheet" type="text/css" href="./src/css/not-authorized.css"/>
+
     
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
@@ -675,6 +683,1510 @@
             
         </section>
 
+        <section class="snap-start snap-always h-full presentation-section">
+            <div class="swiper main-content" id="presentation-slider">
+                <div class="bg-opacity-inner" id="bgOpacityInner"></div>
+                <div class="swiper-wrapper">
+
+                    <!-- slide1 -->
+                    <div class="swiper-slide" id="slide1">
+                        <section class="section section-start">
+                            <div class="main requestDemo bg-[#161822] text-white h-full 2lg:flex justify-center items-center overflow-hidden pt-[72px] 2lg:py-[72px] relative">
+                                <div class="2lg:grid grid-cols-2 justify-center items-center gap-[64px] w-full px-5 3xl:px-[270px]">
+                                    <div class="relative w-full min-h-[25dvh] 2lg:min-h-[413px] 3xl:translate-y-[72px]">
+                                        <div class="group/image active absolute top-0 bottom-0 2lg:flex justify-center items-center duration-300 requestDemoControlImage w-full text-center z-10">
+                                            <div class="inline-block h-full relative after:duration-500 after:content-[''] after:absolute after:bottom-[-30px] 2lg:after:bottom-[-80px] after:h-[20px] 2lg:after:h-[40px] after:bg-[#0F1016] after:left-[10%] after:right-[10%] after:rounded-[50%] after:blur-[8px] 2lg:after:blur-lg after:opacity-0 group-[.active]/image:after:opacity-80 group-[.active]/image:after:delay-50">
+                                                <img class="h-full object-contain" src="./src/images/request-demo/macbook.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="group/image absolute top-0 bottom-0 2lg:flex justify-center items-center duration-300 requestDemoControlImage w-full text-center z-10 opacity-0" style="transform: rotate(19deg) translateX(35%) scale(0.9)">
+                                            <div class="inline-block h-full relative after:duration-500 after:content-[''] after:absolute after:bottom-[-30px] 2lg:after:bottom-[-80px] after:h-[20px] 2lg:after:h-[40px] after:bg-[#0F1016] after:left-[10%] after:right-[10%] after:rounded-[50%] after:blur-[8px] 2lg:after:blur-lg after:opacity-0 group-[.active]/image:after:opacity-80 group-[.active]/image:after:delay-50">
+                                                <img class="h-full object-contain" src="./src/images/request-demo/iphone.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="group/image absolute top-0 bottom-0 2lg:flex justify-center items-center duration-300 requestDemoControlImage w-full text-center z-10 opacity-0" style="transform: translateY(50%) scale(0.9)">
+                                            <div class="inline-block h-full relative after:duration-500 after:content-[''] after:absolute after:bottom-[-30px] 2lg:after:bottom-[-80px] after:h-[20px] 2lg:after:h-[40px] after:bg-[#0F1016] after:left-[10%] after:right-[10%] after:rounded-[50%] after:blur-[8px] 2lg:after:blur-lg after:opacity-0 group-[.active]/image:after:opacity-80 group-[.active]/image:after:delay-50">
+                                                <img class="h-full object-contain" src="./src/images/request-demo/ipad.png" alt="">
+                                            </div>
+                                        </div>
+
+                                        <img src="./src/images/request-demo/light.svg" class="absolute top-0 left-0 w-full h-full scale-[4.5] rotate-[20deg]" alt="">
+                                    </div>
+                                    <div class="w-full relative z-10 mt-[5dvh] 2lg:mt-0 text-center 2lg:text-left">
+                                        <div class="group/wrapper inline-grid grid-cols-3 items-center relative bg-[#252F41] p-2 rounded-[53px] isLaptop requestDemoControlWrap">
+                                            <button class="group/button active requestDemoControl py-[1.5dvh] px-5 2lg:py-3 rounded-[53px] z-10" data-control="0">
+                                                <img class="group-[.active]/button:contrast-200 group-[.active]/button:invert w-6 h-6 object-contain delay-100" src="./src/images/request-demo/icon-laptop.svg" alt="">
+                                            </button>
+                                            <button class="group/button requestDemoControl py-[1.5dvh] px-5 2lg:py-3 rounded-[53px] z-10" data-control="1">
+                                                <img class="group-[.active]/button:contrast-200 group-[.active]/button:invert w-6 h-6 object-contain delay-100" src="./src/images/request-demo/icon-phone.svg" alt="">
+                                            </button>
+                                            <button class="group/button requestDemoControl py-[1.5dvh] px-5 2lg:py-3 rounded-[53px] z-10" data-control="2">
+                                                <img class="group-[.active]/button:contrast-200 group-[.active]/button:invert w-6 h-6 object-contain delay-100" src="./src/images/request-demo/icon-tablet.svg" alt="">
+                                            </button>
+
+                                            <span class="absolute duration-200 top-2 left-2 bottom-2 w-[64px] bg-[#02A1D3] rounded-[53px] group-[.isLaptop]/wrapper:opacity-70 group-[.isPhone]/wrapper:left-[calc(50%_-_32px)] group-[.isTablet]/wrapper:left-[calc(100%_-_64px_-_8px)]"></span>
+                                        </div>
+                                        <h2 class="mt-4 2xl:mt-12 text-[4dvh] text-left 2lg:text-[42px] leading-1 2xl:text-[64px] 3xl:text-[72px] font-medium 2xl:leading-[87px]">Request a Demo</h2>
+                                        <p class="mt-[2dvh] 2lg:mt-[18px] text-[2dvh] 2xl:text-lg text-left text-[#c2c2c4] 2xl:leading-[32px]">MDO’s team of seasoned professionals closely monitors mining news and press releases. As a result, our Mining Intelligence Database is always updated with the latest industry information available.</p>
+                                        <div class="flex flex-col 2lg:flex-row items-center mt-[min(7.5dvh,_60px)] 2lg:mt-[5dvh] gap-[2dvh] 2lg:gap-6">
+                                            <a href="#" class="goToContact group/button w-full flex justify-center items-center text-center 2lg:max-w-[270px] font-medium text-white bg-[#02A1D3] px-10 py-[2vh] 2lg:py-5 rounded-[12px] leading-[1.2]">
+                                                <span class="inline-block group-hover/button:scale-[1.05] duration-200 text-[2vh] 2lg:text-base">Request a Demo</span>
+                                            </a>
+                                            <button  class="group/button w-full flex justify-center items-center text-center 2lg:max-w-[270px] font-medium text-white border-2 border-solid border-[#02A1D3] px-10 py-[2vh] 2lg:py-5 rounded-[12px] leading-[1.2]">
+                                                <span class="inline-block group-hover/button:scale-[1.05] duration-200 text-[2vh] 2lg:text-base" id="getStarted">View Sample</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- slide2 -->
+                    <div class="swiper-slide" id="slide2">
+                        <section class="section section-select-target">
+                            <div class="main flex flex-col">
+                                <img src="./src/images/presentation/gradient.svg" alt="gradient" class="gradient">
+                                <div class="section-back z-[100]" data-section-back-btn>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_332_23416)">
+                                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_332_23416">
+                                                <rect width="16" height="16" fill="white" transform="matrix(1 0 0 -1 0 16)"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="section-close z-[100]">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_1170)">
+                                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_1170">
+                                                <rect width="24" height="24" fill="currentColor"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h2 data-animate-fade-in-bottom class="title">Select your target segment</h2>
+                                <div data-animate data-animate-mobile class="swiper swiper-comprehensive grow w-full "
+                                     id="comprehensive-slider-presentation">
+                                    <div data-section-scroll-class="2" class="swiper-container scroll-gradient section-scroll-bg-bottom section-scroll-bg-top swiper-wrapper" data-section-scroll="2">
+                                        <div class="comprehensive-slide-item" data-segment-item data-segment="Mining"
+                                             data-id="Mining">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/key-mine-personnel-and-workforce.jpeg"
+                                                        alt="Commodity-Production"
+                                                        class="w-full absolute top-0 right-0 bottom-0 left-0 object-cover h-full animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class="slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <div class="content  absolute z-[1] comprehensive-slide-item-top-title-box">
+                                                    <span class="comprehensive-slide-item-top-title text-white">Mining</span>
+                                                </div>
+                                                <div class="content  hidden-content absolute z-[1]">
+                                                    <ol>
+                                                        <li class="list-disc">Drilling & Blasting</li>
+                                                        <li class="list-disc">Loading and Hauling</li>
+                                                        <li class="list-disc">Mine Design</li>
+                                                        <li class="list-disc">Mine Development</li>
+                                                        <li class="list-disc">Mine and Project Management</li>
+                                                    </ol>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="comprehensive-slide-item" data-segment-item data-segment="Backfilling"
+                                             data-id="Backfilling">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/heavy-mobile-equipment.jpeg"
+                                                        alt="Heavy Mobile Equipment"
+                                                        class="w-full object-cover h-full absolute top-0 right-0 bottom-0 left-0 animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class="slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+
+                                                <div class="content absolute z-[1] comprehensive-slide-item-top-title-box">
+                                                    <span class="comprehensive-slide-item-top-title text-white animate__animated">Backfilling</span>
+                                                </div>
+                                                <div class="content hidden-content absolute z-[1] animate__animated">
+                                                    <ol>
+                                                        <li class="list-disc">Backfill type selection</li>
+                                                        <li class="list-disc">Backfill process design</li>
+                                                        <li class="list-disc">Materials and supplies</li>
+                                                    </ol>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="comprehensive-slide-item" data-segment-item data-segment="Comminution"
+                                             data-id="Comminution">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/commodity-production.jpeg"
+                                                        alt="comminution"
+                                                        class="w-full object-cover h-full absolute top-0 right-0 bottom-0 left-0 animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class="slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+
+
+                                                <div class="content absolute z-[1] comprehensive-slide-item-top-title-box">
+                                                    <span class="comprehensive-slide-item-top-title animate__animated text-white">Comminution</span>
+                                                </div>
+                                                <div class="content hidden-content animate__animated absolute z-[1]">
+                                                    <ol>
+                                                        <li class="list-disc">Comminution process design</li>
+                                                        <li class="list-disc">Crushers & Mills fabrication</li>
+                                                        <li class="list-disc">Crushers & Mills maintenance</li>
+                                                        <li class="list-disc">Parts and repairs</li>
+                                                    </ol>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="comprehensive-slide-item" data-segment-item data-segment="Mineral Processing"
+                                             data-id="Mineral Processing">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/mining-operations.jpeg"
+                                                        alt="Mining Operations"
+                                                        class="w-full object-cover h-full absolute top-0 right-0 bottom-0 left-0 animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class=" slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+
+                                                <div class="content absolute z-[1] comprehensive-slide-item-top-title-box">
+                                                    <span class="text-white animate__animated comprehensive-slide-item-top-title">Mineral Processing</span>
+                                                </div>
+                                                <div class="content hidden-content animate__animated absolute z-[1]">
+                                                    <ol>
+                                                        <li class="list-disc">Processing & Recovery design</li>
+                                                        <li class="list-disc">Filltering and Dewatering</li>
+                                                        <li class="list-disc">Reagents supply</li>
+                                                        <li class="list-disc">Equipment fabrication & supply</li>
+                                                    </ol>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="comprehensive-slide-item" data-segment-item data-segment="Mobile Equipment"
+                                             data-id="Mobile Equipment">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/comminution-crushers-and-mills.jpeg"
+                                                        alt="Comminution, Crushers and Mills"
+                                                        class="w-full object-cover h-full absolute top-0 right-0 bottom-0 left-0 animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class=" slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+
+                                                <div class="content absolute z-[1] comprehensive-slide-item-top-title-box">
+                                                    <span class="comprehensive-slide-item-top-title animate__animated text-white">Mobile Equipment</span>
+                                                </div>
+                                                <div class="content hidden-content animate__animated absolute z-[1]">
+                                                    <ol>
+                                                        <li class="list-disc">Design & Fabrication</li>
+                                                        <li class="list-disc">Maintenance</li>
+                                                        <li class="list-disc">Parts and repairs</li>
+                                                        <li class="list-disc">Management & Optimization</li>
+                                                    </ol>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="comprehensive-slide-item" data-segment-item data-segment="Conveyors"
+                                             data-id="Conveyors">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/mineral-processing.jpeg"
+                                                        alt="Mineral Processing"
+                                                        class="w-full object-cover h-full absolute top-0 right-0 bottom-0 left-0 animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class=" slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+
+                                                <div class="content absolute z-[1] comprehensive-slide-item-top-title-box">
+                                                    <span class="comprehensive-slide-item-top-title  animate__animated text-white">Conveyours</span>
+                                                </div>
+                                                <div class="content hidden-content animate__animated absolute z-[1]">
+                                                    <ol>
+                                                        <li class="list-disc">Design & Fabrication</li>
+                                                        <li class="list-disc">Maintenance</li>
+                                                        <li class="list-disc">Parts and repairs</li>
+                                                    </ol>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="comprehensive-slide-item" data-segment-item data-segment="Pumps & Pipelines"
+                                             data-id="Pumps & Pipelines">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/project-costs-and-returns.jpeg"
+                                                        alt="Pumps & Pipelines"
+                                                        class="w-full object-cover h-full absolute top-0 right-0 bottom-0 left-0 animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class=" slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+
+                                                <div class="content absolute z-[1] comprehensive-slide-item-top-title-box">
+                                                    <span class="text-white animate__animated comprehensive-slide-item-top-title ">Pumps & Pipelines</span>
+                                                </div>
+                                                <div class="content hidden-content animate__animated absolute z-[1]">
+                                                    <ol>
+                                                        <li class="list-disc">Design & Fabrication</li>
+                                                        <li class="list-disc">Installation</li>
+                                                        <li class="list-disc">Repair & Maintenance</li>
+                                                    </ol>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="comprehensive-slide-item" data-segment-item data-segment="Camp Services"
+                                             data-id="Camp Services">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/reserves-and-resources.jpeg"
+                                                        alt="Camp Services"
+                                                        class="w-full object-cover h-full absolute top-0 right-0 bottom-0 left-0 animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class=" slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+
+                                                <div class="content absolute z-[1] comprehensive-slide-item-top-title-box">
+                                                    <span class="text-white animate__animated comprehensive-slide-item-top-title">Camp Services</span>
+                                                </div>
+                                                <div class="content hidden-content animate__animated absolute z-[1]">
+                                                    <ol>
+                                                        <li class="list-disc">Camp Design</li>
+                                                        <li class="list-disc">Camp Construction</li>
+                                                        <li class="list-disc">Modulars supply</li>
+                                                        <li class="list-disc">Operations Management</li>
+                                                    </ol>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="comprehensive-slide-item" data-segment-item
+                                             data-segment="Business Development & Investment"
+                                             data-id="Business Development & Investment">
+                                            <div class="swiper-slide-inner">
+                                                <img
+                                                        src="./src/images/presentation/slides/water-supply-and-consumption.jpeg"
+                                                        alt="Business Development & Investment"
+                                                        class="w-full object-cover h-full absolute top-0 right-0 bottom-0 left-0 animated-image"
+                                                />
+                                                <img
+                                                        src="./src/images/icons/slide-checked.svg"
+                                                        alt="slide-checked"
+                                                        class=" slide-checked"
+                                                >
+                                                <svg
+                                                        width="8"
+                                                        height="6"
+                                                        viewBox="0 0 8 6"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        class="absolute"
+                                                >
+                                                    <path d="M1 3L3 5L7 1" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <div class="content absolute comprehensive-slide-item-top-title-space comprehensive-slide-item-top-title-box z-[1]">
+                                                    <span class="text-white animate__animated comprehensive-slide-item-top-title">Business<br> Development & Investment</span>
+                                                </div>
+                                                <div class="content hidden-content animate__animated absolute z-[1]">
+                                                    <ol>
+                                                        <li class="list-disc">Asset benchmarking</li>
+                                                        <li class="list-disc">Acquisition targets</li>
+                                                        <li class="list-disc">Investment opportunities</li>
+                                                    </ol>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-animate-fade-in-up class="flex items-center relative z-[1]  swiper-dots-wrapper">
+                                    <div class="flex items-center hidden lg:flex swiper-dots">
+                                        <div class="swiper-button-prev">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_332_23416)">
+                                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_332_23416">
+                                                        <rect width="16" height="16" fill="white"
+                                                              transform="matrix(1 0 0 -1 0 16)"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <div class="comprehensive-coverage-pagination flex items-center justify-center gap-[14px]"></div>
+                                        <div class="swiper-button-next">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_332_23416)">
+                                                    <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5"
+                                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_332_23416">
+                                                        <rect width="16" height="16" fill="white"
+                                                              transform="matrix(1 0 0 -1 0 16)"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="btn-slider-segments">
+                                        <button
+                                                type="button"
+                                                id="btnSegmentsNext"
+                                                class="btn  btn-rounded btn-blue btn-next ml-auto mr-auto-lg uppercase"
+                                                disabled
+                                        >
+                                            Next
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- slide3 -->
+                    <div class="swiper-slide swiper-slide-3" id="slide3" >
+                        <section class="section section-modules">
+                            <div class="flex flex-nowrap h-full">
+
+                                <div class="section-back z-[100]" data-section-back-btn>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_332_23416)">
+                                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_332_23416">
+                                                <rect width="16" height="16" fill="white" transform="matrix(1 0 0 -1 0 16)"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="section-close z-[100]">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_1170)">
+                                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_1170">
+                                                <rect width="24" height="24" fill="currentColor"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <h2  class="title title-mobile lg:hidden">Packages and Modules</h2>
+                                <div data-animate-right data-animate-mobile
+                                     class="swiper-slide-calculation-item-left  presentation-menu-scroll presentation-menu presentation-menu-big-space section-scroll-bg-top section-scroll-bg-bottom scrolled-bottom"
+                                     data-section-scroll-class="3" id="presentationMenuSlide3">
+                                    <!-- Do not delete this block. It's being used in js -->
+                                </div>
+                                <div class="main package-container-wrap fixed lg:relative flex flex-col"
+                                     data-package-container-wrap>
+                                    <h2 data-animate-left class="title hidden lg:block">Packages and Modules</h2>
+                                    <div  class="package flex flex-col lg:flex-row flex-nowrap flex-grow">
+                                        <div data-package-modal-close class="package-modal-close lg:hidden">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1_1170)">
+                                                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2"
+                                                          stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                                          stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1_1170">
+                                                        <rect width="24" height="24" fill="currentColor"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+
+                                        <div class="package-info-wrapper  w-full ">
+                                            <h3  class="package-info-mobile-title lg:hidden"></h3>
+                                            <div data-section-scroll-class="6"  data-section-scroll="6" class="package-info-inner-wrapper section-scroll-bg-top section-scroll-bg-bottom">
+                                                <div data-animate-left class="package-info">
+                                                    <!-- Do not delete this block. It's being used in js -->
+                                                </div>
+                                                <div class="package-list  w-full flex flex-col ">
+                                                    <div data-animate-left >
+                                                        <div class="accordion-panel-scroll-gradient  section-scroll-bg-top section-scroll-bg-bottom lg:mb-[5px]"
+                                                             data-section-scroll-class="acc3">
+                                                            <div class="accordion-panel" data-animate-width data-section-scroll="acc3" id="accordionPanelSlide3">
+                                                                <!-- Do not delete this block. It's being used in js -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div data-btns-box class="packages-request gap-[10px] selects-box-container-bottom hidden lg:flex justify-end grow items-end">
+                                                    <button data-request-demo type="button"
+                                                            class="btn btn-rounded-plus btn-outline-blue uppercase"
+                                                    >Request a demo
+                                                    </button>
+                                                    <button data-request-invoice type="button"
+                                                            class="btn btn-rounded btn-blue btn-next uppercase"
+                                                    >Request invoice
+                                                        <img src="./src/images/presentation/request-invoice/arrow-right-white.svg" alt="arrow"/>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="packages-request items-center  packages-request-mobile lg:hidden flex justify-end flex-col grow ">
+                                    <button data-request-demo type="button"
+                                            class="btn btn-rounded-plus btn-outline-blue uppercase mr-4"
+                                    >Request a demo
+                                    </button>
+                                    <button data-request-invoice type="button" class="btn btn-rounded btn-blue btn-next uppercase"
+                                    >Request invoice
+                                        <img src="./src/images/presentation/request-invoice/arrow-right-white.svg" alt="arrow"/>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- slide4 -->
+                    <div class="swiper-slide swiper-slide-calculation" id="slide4">
+                        <section class="section section-modules section-calculation">
+                            <div class="flex flex-nowrap h-full">
+                                <div class="section-back z-[100]" data-section-back-btn>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_332_23416)">
+                                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_332_23416">
+                                                <rect width="16" height="16" fill="white" transform="matrix(1 0 0 -1 0 16)"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="section-close z-[100]">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_1_1170)">
+                                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_1_1170">
+                                                <rect width="24" height="24" fill="currentColor"/>
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="section-slide-box w-full flex-col lg:flex-row flex">
+                                    <h2  class="title order-1 title-mobile lg:hidden">Packages and Modules</h2>
+                                    <div data-animate-mobile class="presentation-menu-scroll swiper-slide-calculation-item-left order-3 lg:order-1 presentation-menu-scroll-box section-scroll-bg-top section-scroll-bg-bottom scrolled-bottom"
+                                         data-section-scroll-class="4">
+                                        <div  class="presentation-menu presentation-menu-little-space"
+                                              id="presentationMenuSlide4">
+                                            <!-- Do not delete this block. It's being used in js -->
+                                        </div>
+                                    </div>
+
+                                    <div data-animate-mobile class="calculation-container  order-2 lg:order-2  flex">
+                                        <div  class="main package-container-wrap  fixed lg:relative flex flex-col"
+                                              data-package-container-wrap>
+                                            <h2 class="title  hidden lg:block">Packages and Modules</h2>
+                                            <div class="package package-container package-container-width flex flex-col lg:flex-row flex-nowrap flex-grow">
+                                                <div data-package-modal-close class="package-modal-close lg:hidden">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_1_1170)">
+                                                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2"
+                                                                  stroke-linecap="round"
+                                                                  stroke-linejoin="round"/>
+                                                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                                                  stroke-linecap="round"
+                                                                  stroke-linejoin="round"/>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_1_1170">
+                                                                <rect width="24" height="24" fill="currentColor"/>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="package-info-wrapper w-full">
+                                                    <h3 class="package-info-mobile-title lg:hidden"></h3>
+                                                    <div data-section-scroll-class="7" data-section-scroll="7" class="package-info-inner-wrapper section-scroll-bg-top section-scroll-bg-bottom" >
+                                                        <div class="package-info">
+                                                            <div class="package-info--img relative">
+                                                                <img src="./src/images/presentation/slides/key-mine-personnel-and-workforce.jpeg"
+                                                                     alt="key mine personnel">
+                                                            </div>
+                                                            <h3><!-- Do not delete this block. It's being used in js --></h3>
+                                                            <p><!-- Do not delete this block. It's being used in js --></p>
+                                                        </div>
+                                                        <div class="package-list w-full flex flex-col">
+                                                            <div data-animate-width-max class="accordion-panel-scroll-gradient panel-animation  section-scroll-bg-top section-scroll-bg-bottom"
+                                                                 data-section-scroll-class="acc4">
+                                                                <div class="accordion-panel "  data-section-scroll="acc4"
+                                                                     id="accordionPanelSlide4">
+                                                                    <!-- Do not delete this block. It's being used in js -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="selects-box-container z-20">
+                                            <div data-animate-selects class="selects-box animate__animated  animate__fadeOutDisappear">
+                                                <div class="select-box regions-select-box">
+                                                    <div class="select-title-box  flex items-center">
+                                                        <img class="mr-2" src="./src/images/presentation/request-invoice/region-img.svg"
+                                                             alt="Select your region"/>
+                                                        <span class="font-semibold  text-white">1. Select your region(s):</span>
+                                                    </div>
+
+                                                    <div id="regionsSelectPresentation" class="regions-select-wrap">
+                                                        <div class="select-choices-inner" id="selectedItemsPresentation">Global</div>
+                                                        <div class="regions-item-box" id="regionsItemBoxPresentation">
+                                                            <label class="regions-item-label hover:font-semibold ease-in choose">
+                                                                <input data-regions-input type="checkbox" value="global"
+                                                                       name="Global"
+                                                                       checked>
+                                                                <span class="checkmark"></span>
+                                                                Global
+                                                            </label>
+                                                            <label class="regions-item-label hover:font-semibold ease-in">
+                                                                <input data-regions-input type="checkbox" value="Oceania"
+                                                                       name="Oceania">
+                                                                <span class="checkmark"></span>
+                                                                Oceania
+                                                            </label>
+                                                            <label class="regions-item-label hover:font-semibold ease-in">
+                                                                <input data-regions-input type="checkbox" value="USA" name="USA">
+                                                                <span class="checkmark"></span>
+                                                                USA
+                                                            </label>
+                                                            <label class="regions-item-label hover:font-semibold ease-in">
+                                                                <input data-regions-input type="checkbox" value="Canada"
+                                                                       name="Canada">
+                                                                <span class="checkmark"></span>
+                                                                Canada
+                                                            </label>
+                                                            <label class="regions-item-label hover:font-semibold ease-in">
+                                                                <input data-regions-input type="checkbox" value="LatinAmerica"
+                                                                       name="Latin America">
+                                                                <span class="checkmark"></span>
+                                                                Latin America
+                                                            </label>
+                                                            <label class="regions-item-label hover:font-semibold ease-in">
+                                                                <input data-regions-input type="checkbox" value="Africa"
+                                                                       name="Africa">
+                                                                <span class="checkmark"></span>
+                                                                Africa
+                                                            </label>
+                                                            <label class="regions-item-label hover:font-semibold ease-in">
+                                                                <input data-regions-input type="checkbox" value="EuropeAsia"
+                                                                       name="Europe+Asia">
+                                                                <span class="checkmark"></span>
+                                                                Europe + Asia
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="select-box package-select-box">
+                                                    <div class="select-title-box  flex items-center relative">
+
+                                                        <button class="package-select-info-img absolute right-0 lg:hidden"
+                                                                id="packageSelectInfo">
+                                                            <img src="./src/images/presentation/request-invoice/info.svg" alt="info"/>
+                                                        </button>
+                                                        <img class="mr-2" src="./src/images/presentation/request-invoice/package-img.svg"
+                                                             alt="Select you package"/>
+                                                        <span class="font-semibold text-white">2. Select you package:</span>
+                                                    </div>
+
+                                                    <div class="package-select-wrap">
+                                                        <select id="optionsSelectPresentation">
+                                                            <option data-select-option="customPackage" value="Custom Package"
+                                                                    selected>
+                                                                Custom Package
+                                                            </option>
+                                                            <option data-select-option="researchPackage" value="Research Package">
+                                                                Research Package
+                                                            </option>
+                                                            <option data-select-option="ultimatePackage" value="Ultimate Package">
+                                                                Ultimate Package
+                                                            </option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="text-[11px] lg:text-[12px] hidden lg:block additional-text-options"
+                                                         id="additionalTextOptionsSelect"></div>
+                                                </div>
+
+                                                <div class="select-box licences-select-box">
+                                                    <div class="select-title-box flex items-center">
+                                                        <img class="mr-2" src="./src/images/presentation/request-invoice/licence-img.svg"
+                                                             alt="Select you package"/>
+                                                        <span class="font-semibold text-white">3. Select  License quantity:</span>
+                                                    </div>
+
+
+                                                    <div class="licences-select-wrap">
+                                                        <select id="licencesSelectPresentation"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div data-btns-box class="selects-box-container-bottom">
+                                                <div data-animate-fade-in-bottom class="total-counter hidden lg:block">
+                                                    Total: $<span data-total-counter-box></span> USD
+                                                </div>
+                                                <button data-request-invoice-subscription type="button"
+                                                        class="btn calculation-btn hidden lg:block btn-rounded btn-blue btn-next uppercase"
+                                                >Request invoice
+                                                    <img src="./src/images/presentation/request-invoice/arrow-right-white.svg" alt="arrow"/>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div
+                                            class="packages-request items-center  packages-request-mobile lg:hidden flex justify-end flex-col grow ">
+                                        <button data-request-invoice-subscription type="button"
+                                                class="btn flex lg:hidden btn-rounded btn-blue btn-next uppercase">
+                                            Total: $<span data-total-counter-box></span> USD
+                                            <img src="./src/images/presentation/request-invoice/arrow-right-white.svg" alt="arrow"/>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- slide5 -->
+                    <div class="swiper-slide swiper-slide-5" id="slide5">
+                        <section class="section section-subscription flex flex-nowrap">
+                            <div id="modalSuccessful" class="modal-successful">
+                                <div class="modal-successful-content">
+                                    <div class="section-close modal-successful-close" id="modalSuccessfulClose">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_1_1170)">
+                                                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                      stroke-linejoin="round"/>
+                                                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                      stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_1_1170">
+                                                    <rect width="24" height="24" fill="currentColor"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+
+                                    <div class="modal-successful-content-img-box rounded-full">
+                                        <img src="./images/request-invoice/check-big.svg" alt="check" class="w-full h-full">
+                                    </div>
+
+                                    <h3 class="font-bold">Subscription Successful!</h3>
+                                    <span>Your request has been submitted.<br> We will get back to you shortly</span>
+                                </div>
+                            </div>
+                            <div class="section-close z-[100]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1_1170)">
+                                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1_1170">
+                                            <rect width="24" height="24" fill="currentColor"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="subscription-step" id="subscriptionStep">
+                                <div class="subscription-step-wrap">
+                                    <div class="section-back z-[100]" data-section-back-btn>
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_332_23416)">
+                                                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5"
+                                                      stroke-linecap="round"
+                                                      stroke-linejoin="round"/>
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_332_23416">
+                                                    <rect width="16" height="16" fill="white" transform="matrix(1 0 0 -1 0 16)"/>
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <h2 data-animate-small class="title">Subscription</h2>
+                                    <div data-animate-mobile class="subscription-details-columns-wrapper section-scroll-bg-top section-scroll-bg-bottom"
+                                         data-section-scroll-class="5">
+                                        <div class="subscription-details-columns " data-section-scroll="5">
+                                            <div class="subscription-total-mobile-info lg:hidden"  id="subscriptionModalInfo">
+
+                                                <button class="subscription-total-mobile-img absolute lg:hidden">
+                                                    <img src="./images/request-invoice/info-white.svg" alt="info"/>
+                                                </button>
+
+                                                <span class="subscription-total-mobile-title"
+                                                      id="subscriptionTotalMobileTitle"></span>
+                                                Total: <span
+                                                    class="subscription-total-mobile-sum subscription-total-mobile-sum-space"> $</span><span
+                                                    class="subscription-total-mobile-sum" data-total-counter-box></span>
+                                            </div>
+
+                                            <div data-animate-bottom-left class="subscription-details-column">
+                                                <div class="subscription-box-details flex flex-col ">
+                                                    <h4 class="subscription-details-title">Your details</h4>
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="First name" id="firstName">
+                                                        <span class="error-message" id="error-firstName"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="Last Name" id="lastName">
+                                                        <span class="error-message" id="error-lastName"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input type="tel" id="phone" name="phone"
+                                                               placeholder="Phone" pattern="\+\d{1,3}-\d{3}-\d{4}" required>
+                                                        <span class="error-message" id="error-phone"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input required type="email" placeholder="Email"
+                                                               id="email">
+                                                        <span class="error-message" id="error-email"></span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="subscription-box-details subscription-box-details-space flex flex-col ">
+                                                    <h4 class="subscription-details-title">Company details</h4>
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="Company Name" id="companyName">
+                                                        <span class="error-message" id="error-companyName"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input type="text" placeholder="Departament"
+                                                               id="departament">
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="Position" id="position">
+                                                        <span class="error-message" id="error-position"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="Company Address 1" id="companyAddress1">
+                                                        <span class="error-message" id="error-companyAddress1"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="Company Address 2" id="companyAddress2">
+                                                        <span class="error-message" id="error-companyAddress2"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="Country" id="сountry">
+                                                        <span class="error-message" id="error-сountry"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div data-animate-top-left  class="subscription-details-column">
+                                                <div class="subscription-box-details subscription-box-details-second flex flex-col ">
+                                                    <label>
+                                                        <input data-subscription-input required type="text" placeholder="City"
+                                                               id="сity">
+                                                        <span class="error-message" id="error-сity"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input required type="text" placeholder="State"
+                                                               id="state">
+                                                        <span class="error-message" id="error-state"></span>
+                                                    </label>
+
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="Zip/Postal Code" id="postalCode">
+                                                        <span class="error-message" id="error-postalCode"></span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="subscription-box-details flex flex-col ">
+                                                    <h4 class="subscription-details-title">Security</h4>
+                                                    <label> <input data-subscription-input required type="text"
+                                                                   placeholder="Password" id="password">
+                                                        <span class="error-message" id="error-password"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input data-subscription-input required type="text"
+                                                               placeholder="Confirm Password" id="confirmPassword">
+                                                        <span class="error-message" id="error-confirmPassword"></span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="subscription-payment-box-details">
+                                                    <h4 class="subscription-details-title">Payment Method</h4>
+                                                    <div class="subscription-payment-box-details-box">
+                                                        <div data-radio-item class="radio-item">
+                                                            <input data-subscription-input class="radio-button" type="radio"
+                                                                   data-pay-method name="payment" id="visaMastercard"
+                                                                   value="visaMastercard">
+
+                                                            <label for="visaMastercard">
+                                                                <div class="radio-btn-item"></div>
+                                                                Visa/ Mastercard</label>
+                                                        </div>
+
+                                                        <div data-radio-item class="radio-item">
+                                                            <input data-subscription-input class="radio-button" type="radio"
+                                                                   data-pay-method name="payment"
+                                                                   id="check" value="check">
+                                                            <label for="check">
+                                                                <div class="radio-btn-item"></div>
+                                                                Check</label>
+                                                        </div>
+
+                                                        <div data-radio-item class="radio-item">
+                                                            <input data-subscription-input class="radio-button" type="radio"
+                                                                   data-pay-method name="payment"
+                                                                   id="viseTransfer"
+                                                                   value="viseTransfer">
+                                                            <label for="viseTransfer">
+                                                                <div class="radio-btn-item"></div>
+                                                                Wise Transfer (EFT)</label>
+                                                        </div>
+
+                                                        <div data-radio-item class="radio-item">
+                                                            <input data-subscription-input class="radio-button" type="radio"
+                                                                   data-pay-method name="payment"
+                                                                   id="payPal"
+                                                                   value="payPal">
+                                                            <label for="payPal">
+                                                                <div class="radio-btn-item"></div>
+                                                                PayPal</label>
+                                                        </div>
+
+                                                        <span class="error-message" id="error-radio"></span>
+                                                    </div>
+                                                    <div class="subscription-box-accepted-container">
+                                                        <label class="subscription-box-accepted check-box-label flex items-center">
+                                                            <input data-subscription-input type="checkbox"
+                                                                   class="checkbox-accepted" id="checkboxAccepted">
+                                                            <span class="checkmark"></span>
+                                                            <p class="ml-8 subscription-box-accepted-text">I Accept </p>
+                                                        </label>
+                                                        <span class="subscription-box-accepted-terms"
+                                                              id="termsOfUseOpen">Terms of Use</span>
+                                                        <span class="error-message" id="error-checkboxAccepted"></span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div  class="subscription-step-box" data-package-container-wrap>
+                                    <div class="subscription-accordion-box subscription-accordion">
+                                        <div data-package-modal-close class="package-modal-close lg:hidden">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_1_1170)">
+                                                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2"
+                                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_1_1170">
+                                                        <rect width="24" height="24" fill="currentColor"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <h3 class="subscription-modules-title" id="subscriptionModulesTitle"></h3>
+                                        <div class="h-full">
+                                            <div data-animate-left class="accordion-panel-container h-full ">
+                                                <div data-section-scroll-class="acc5" class="accordion-panel accordion-panel-scroll-gradient section-scroll-bg-top section-scroll-bg-bottom" data-section-scroll="acc5"
+                                                     id="currentBoxModules">
+                                                    <!-- Do not delete this block. It's being used in js -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div  class="subscription-step-bottom-box">
+                                        <div data-animate-fade-in-bottom class="total-counter">
+                                            Total: $<span data-total-counter-box></span> USD
+                                        </div>
+                                        <button type="button" class="btn btn-rounded btn-blue btn-next uppercase"
+                                                data-request-invoice-successful>Request invoice
+                                            <img src="./images/request-invoice/arrow-right-white.svg" alt="arrow"/>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="packages-request items-center  packages-request-mobile lg:hidden flex justify-end flex-col grow ">
+                                <button data-request-invoice-successful type="button"
+                                        class="btn lg:hidden btn-rounded btn-blue btn-next uppercase">
+                                    Total: $<span data-total-counter-box></span> USD
+                                    <img src="./images/request-invoice/arrow-right-white.svg" alt="arrow"/>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div id="modalVideo" class="modal-video modal-wrap">
+                        <div class="modal-demo-content">
+                            <div class="modal-demo-content-close">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1_1170)">
+                                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1_1170">
+                                            <rect width="24" height="24" fill="currentColor"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="modal-demo-box" id="modalVideoContent"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="modalDemo" class="modal-demo modal-wrap">
+                <div class="modal-demo-content">
+                    <div class="modal-demo-content-close">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1_1170)">
+                                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_1170">
+                                    <rect width="24" height="24" fill="currentColor"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="modal-demo-content-title">Request a Demo</h2>
+                    <p class="modal-demo-content-sub-title">Do not hesitate to drop us a line or request a Free
+                        Demo!</p>
+
+                    <form action="" class="contact-form-box" id="contactForm">
+                        <div class="contact-form-wrap">
+                            <input data-contact-input type="text" placeholder="First name*" name="firstName"
+                                   required/>
+                            <input data-contact-input type="text" placeholder="Last name*" name="lastName"
+                                   required/>
+                            <input data-contact-input type="email" placeholder="Email*" name="email" required/>
+                            <input data-contact-input type="number" placeholder="Phone*" name="phone" required/>
+                            <textarea data-contact-input type="text" placeholder="Message"
+                                      name="message"></textarea>
+                        </div>
+
+                        <button id="sendMessageBtn" type="button" class="contact-form-send-btn uppercase">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="termsOfUseModal" class="modal-wrap modal-terms-of-use-box">
+                <div class="terms-of-use-modal-inner">
+                    <div class="terms-of-use-modal-close" id="termsOfUseClose">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1_1170)">
+                                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_1170">
+                                    <rect width="24" height="24" fill="currentColor"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <h3 class="terms-of-use-modal-title">Terms of Use Agreement</h3>
+                    <div class="terms-of-use-modal-box">
+                        <p class="terms-of-use-modal-text-space">By using or visiting our
+                            website located at www.miningdataonline.com, other affiliated websites, or using our
+                            services, software or materials (collectively the “Services”), you
+                            acknowledge that you accept the terms, conditions, restrictions and policies
+                            outlined in
+                            these Terms of Use (the “Terms”).</p>
+
+                        <ul class="terms-of-use-modal-text-space">
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    1. ACCEPTANCE
+                                </h4>
+                                <p>
+                                    In order to use the Services, provided by MDO Data Online Inc. (MDO) you
+                                    must first agree to the Terms.
+                                    You may not use the Services if you do not accept the Terms.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    2. USE OF THE SERVICES</h4>
+                                <p>You agree to use the Services
+                                    only for the purposes that are permitted by these Terms and by any
+                                    applicable law, regulation, or generally accepted practices or guidelines in
+                                    the relevant
+                                    jurisdictions (including any laws governing the export or import of data or
+                                    software to and from relevant jurisdictions).</p>
+                                <p>You agree that you will not
+                                    engage in any activity that interferes with or disrupts the Services, or the
+                                    services or networks which are connected to the Services or on which the
+                                    Services are hosted.</p>
+                                <p class="terms-of-use-modal-text-space">You agree that you are solely
+                                    responsible for, and MDO has no responsibility to you or any third party
+                                    for, any breach of your obligations under the Terms (including breach of any
+                                    obligations you may have with respect to a Third Party Service) and for the
+                                    consequences (including any loss or damage which MDO may suffer) of any such
+                                    breach.</p>
+
+                                <p>As a subscriber to the Services you may download and save content of the
+                                    Services as permitted under copyright law and use it for personal or
+                                    commercial purposes.</p>
+                                <p class="terms-of-use-modal-text-space">
+                                    HOWEVER, THE CONTENT MAY NOT BE DOWNLOADED, SAVED, DUPLICATED OR MODIFIED
+                                    FOR ANY FORM OF REDISTRIBUTION WITHOUT A SPECIAL WRITTEN AGREEMENT WITH MDO.
+                                </p>
+
+                                <p>Sharing your Data Access Credentials (i.e., User ID and Password) is
+                                    prohibited.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    3. UPDATES AND CHANGES TO THE SERVICES</h4>
+                                <p>You acknowledge and agree that
+                                    the form and nature of the Services which we provide may change from time to
+                                    time without prior notice to you.</p>
+                                <p>You acknowledge and agree that
+                                    we may stop (whether permanently or temporarily) providing the Services (or
+                                    any features or materials within the Services, including any Third Party
+                                    Services)
+                                    to you at our sole discretion, without prior notice to you.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    4. THIRD PARTY MATERIALS AND SERVICES</h4>
+                                <p>The Services may also provide an
+                                    opportunity for you to discover other data, materials or products, or link
+                                    to websites (“Third Party Services”) offered or made available by third
+                                    parties
+                                    not affiliated with MDO (“Third Party Providers”). These Terms do not apply
+                                    to such Third Party Services, and these Terms to do not govern the practices
+                                    of
+                                    such Third Party Providers. When using Third Party Services, you should read
+                                    the relevant terms of use, including any applicable end user license
+                                    agreement
+                                    (“EULA”).</p>
+                                <p>You acknowledge and agree that MDO
+                                    is not responsible for any Third Party Services, including content,
+                                    websites, services, or other software or products provided by Third Party
+                                    Providers.</p>
+                                <p>You acknowledge and agree that MDO
+                                    does not warrant or endorse, and does not assume and will not have liability
+                                    to you or any other person for any Third Party Services, and that your use
+                                    of such
+                                    Third Party Services, is at your own risk.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    5. OWNERSHIP
+                                </h4>
+                                <p>You acknowledge and agree that nothing
+                                    in the Terms gives you a right to use any of our, or Third Party Services,
+                                    trade names, trademarks, service marks, logos, domain names or other
+                                    distinctive brand features.</p>
+                                <p>You agree that you shall not
+                                    remove, obscure, or alter any proprietary rights notices (including
+                                    copyright and trademark notices) which may be affixed or contained within or
+                                    on the
+                                    Services.</p>
+                                <p>
+                                    You acknowledge and agree that you do not acquire any ownership rights by
+                                    using any part of the Services.
+                                </p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    6. TERMINATION
+                                </h4>
+                                <p>The Terms will continue to
+                                    apply until terminated by either you or MDO as set out below.</p>
+                                <p>Your rights under this
+                                    Agreement will terminate automatically without notice to you if you violate
+                                    any provision of these Terms. MDO may immediately terminate these Terms and
+                                    any use
+                                    of, or access to, the Services at any time, including in the event we
+                                    determine that the Services or use thereof may result in infringement or
+                                    violation of
+                                    third party rights or claims thereof..</p>
+                                <p>Any provisions of this
+                                    Agreement that, in order to fulfill the purposes of such provisions, need to
+                                    survive the termination or expiration of this Agreement, shall be deemed to
+                                    survive for as long as necessary to fulfill such purposes.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    7. ACCOUNT ACTIVATION AND REFUND POLICY
+                                </h4>
+                                <p>
+                                    Once we receive your payment in full, your subscription will be activated
+                                    and you will be granted access to the set of data you purchased. It may take
+                                    us between 2 and 24 hours to set up your account.</p>
+                                <p>
+                                    All payments are completely non-refundable and whilst you may choose to
+                                    terminate or downgrade your MDO subscription during your subscription term,
+                                    you will not be refunded, in whole or in part.
+                                </p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    8. WARRANTY DISCLAIMER
+                                </h4>
+                                <ul class="terms-of-use-modal-item-inner">
+                                    <li class="terms-of-use-modal-item-inner-text">YOU EXPRESSLY UNDERSTAND AND
+                                        AGREE THAT YOUR USE OF THE SERVICES IS AT YOUR SOLE
+                                        RISK AND THAT THE SERVICES AND DATA ARE PROVIDED “AS IS” AND “AS
+                                        AVAILABLE.”
+                                    </li>
+                                    <li class="terms-of-use-modal-item-inner-text">ALL INFORMATION AND DATA MADE
+                                        AVAILABLE VIA THE MDO IS PROVIDED FOR INFORMATIONAL
+                                        PURPOSES ONLY, AND IS NOT INTENDED FOR ACTUAL TRADING PURPOSES OR MARKET
+                                        ADVICE.
+                                    </li>
+                                    <li class="terms-of-use-modal-item-inner-text">ANY SOFTWARE OR OTHER
+                                        MATERIAL DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF
+                                        THE SERVICES, AND THE SERVICES, ARE USED AT YOUR OWN DISCRETION AND RISK
+                                        AND THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER
+                                        SYSTEM OR
+                                        OTHER DEVICE OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF ANY SUCH
+                                        SOFTWARE OR OTHER MATERIAL.
+                                    </li>
+                                    <li class="terms-of-use-modal-item-inner-text">
+                                        MDO DOES NOT REPRESENT OR WARRANT TO YOU THAT:
+                                        <ul>
+                                            <li>YOUR USE OF THE SERVICES WILL MEET YOUR REQUIREMENTS,</li>
+                                            <li>YOUR USE OF THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE
+                                                OR FREE FROM ERROR,
+                                            </li>
+                                            <li>ANY INFORMATION OBTAINED BY YOU AS A RESULT OF YOUR USE OF THE
+                                                SERVICES WILL BE ACCURATE OR RELIABLE, AND
+                                            </li>
+                                            <li>THAT DEFECTS IN THE OPERATION OR FUNCTIONALITY OF ANY SERVICES
+                                                OR SOFTWARE PROVIDED TO YOU WILL BE CORRECTED.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        NO
+                                        ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY YOU FROM MDO
+                                        OR THROUGH OR FROM THE SERVICES SHALL CREATE ANY WARRANTY NOT EXPRESSLY
+                                        STATED IN THE TERMS.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    9. LIMITATION OF LIABILITY
+                                </h4>
+                                <p>SUBJECT TO PARAGRAPH 8.1 ABOVE,
+                                    YOU EXPRESSLY UNDERSTAND AND AGREE THAT MDO, ITS SUBSIDIARIES AND
+                                    AFFILIATES, SHALL NOT BE LIABLE TO YOU FOR:</p>
+                                <p>ANY DIRECT, INDIRECT,
+                                    INCIDENTAL, SPECIAL CONSEQUENTIAL OR EXEMPLARY DAMAGES WHICH MAY BE INCURRED
+                                    BY YOU, HOWEVER CAUSED AND UNDER ANY THEORY OF LIABILITY. THIS SHALL
+                                    INCLUDE, BUT
+                                    NOT BE LIMITED TO, ANY LOSS OF PROFIT (WHETHER INCURRED DIRECTLY OR
+                                    INDIRECTLY), ANY LOSS OF GOODWILL OR BUSINESS REPUTATION, ANY LOSS OF DATA
+                                    SUFFERED, COST OF
+                                    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, OR OTHER INTANGIBLE LOSS;</p>
+                                <p>ANY LOSS OR DAMAGE WHICH MAY BE
+                                    INCURRED BY YOU, INCLUDING BUT NOT LIMITED TO, LOSS OR DAMAGE AS A RESULT OF
+                                    ANY CHANGES WHICH MDO MAY MAKE TO THE SERVICES, OR FOR ANY PERMANENT OR
+                                    TEMPORARY CESSATION IN THE PROVISION OF THE SERVICES (OR ANY FEATURES WITHIN
+                                    THE SERVICES).</p>
+                                <p>THE LIMITATIONS ON MDO’S
+                                    LIABILITY TO YOU IN PARAGRAPH 8.1 ABOVE SHALL APPLY WHETHER OR NOT MDO HAS
+                                    BEEN ADVISED OF OR SHOULD HAVE BEEN AWARE OF THE POSSIBILITY OF ANY SUCH
+                                    LOSSES
+                                    ARISING.</p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    10. CHANGES TO THE TERMS
+                                </h4>
+                                <p>We may make changes to these
+                                    Terms or provide revised or additional terms from time to time. When these
+                                    changes are made, we will inform you about the changes promptly and
+                                    make an updated version of these Terms available at
+                                    https://miningdataonline.com/terms-of-use-agreement.aspx.
+                                </p>
+                                <p>
+                                    You understand and agree that if you continue to use the Services after the
+                                    date upon which the Terms have been revised or changed, we will treat your
+                                    use as acceptance of the updated Terms.
+                                </p>
+                                <p>
+                                    However, if you hold an active subscription and disagree with any changes to
+                                    the Terms, you may continue using the Services without incurring any penalty
+                                    or consequence until the expiration of your current subscription term.
+                                </p>
+                            </li>
+                            <li class="terms-of-use-modal-item">
+                                <h4>
+                                    11. MISCELLANEOUS TERMS</h4>
+                                <p>The Terms constitute the whole
+                                    legal agreement between you and MDO and govern your use of the Services.</p>
+                                <p>You agree that MDO may provide
+                                    you with notices, including those regarding changes to the Terms, by email,
+                                    regular mail, or postings on the Services.</p>
+                                <p>You agree that if any court of
+                                    law, having the jurisdiction to decide on this matter, rules that any
+                                    provision of these Terms is invalid, then that provision will be removed
+                                    from the Terms
+                                    without affecting the rest of the Terms. The remaining provisions of the
+                                    Terms will continue to be valid and enforceable.</p>
+                            </li>
+                        </ul>
+                        <p>
+                            MDO does not and cannot guarantee or represent that any of the
+                            information and data made available via the MDO Search Tools is real-time, accurate,
+                            complete, current or appropriate for your needs. Certain information
+                            and data made available via the MDO Search Tools is obtained from Third Party
+                            Providers (defined above) who are generally understood to be sources of
+                            reliable information and data. However, due to a variety of different factors,
+                            including mechanical and human error, the timeliness, completeness and accuracy
+                            of such information and data are not guaranteed by MDO.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div id="modalPackageSelectInfoText" class="modal-select-info-text modal-wrap">
+                <div class="modal-select-info-content">
+                    <div class="modal-select-info-close">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1_1170)">
+                                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_1170">
+                                    <rect width="24" height="24" fill="currentColor"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="package-select-info-text-container">
+                        <h4>Research Package</h4>
+                        <p class="package-select-info-text-inner">Perfect for mining industry research! Encompasses
+                            Mine Type, Location, Address, Ownership, Deposit, Reserves, Commodity Production, LOM,
+                            Workforce, and Financials. Exceptonal value for your dollar!</p>
+
+                        <h4>Custom Package</h4>
+                        <p class="package-select-info-text-inner">Ideal for business development, specialized
+                            research or when your budget is limited! Includes all Research Package data points plus
+                            your selection of optional data modules.</p>
+
+                        <h4>Ultimate Package</h4>
+                        <p class="package-select-info-text-inner">Comprehensive mining intelligence! Best suitable
+                            for large corporations, consulting firms and institutional investors. Includes all
+                            Research Package data points and all optional data modules.</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+<!--
+
         <section class="requestDemo snap-start snap-always bg-[#161822] text-white h-full 2lg:flex justify-center items-center overflow-hidden pt-[72px] 2lg:py-[72px]">
             <div class="2lg:grid grid-cols-2 justify-center items-center gap-[64px] w-full px-5 3xl:px-[270px]">
                 <div class="relative w-full min-h-[25dvh] 2lg:min-h-[413px] 3xl:translate-y-[72px]">
@@ -723,6 +2235,7 @@
                 </div>
             </div>
         </section>
+-->
 
 
         <section class="snap-start snap-always step-form-wrap lg:bg-gray h-full" id="stepFormWrap" >
@@ -1438,18 +2951,30 @@
 
 
 <!-- Include Choices JavaScript (latest) -->
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script defer src="./src/js/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="./src/js/jquery-3.6.0.js"></script>
+<script src="./src/js/jquery_ui_1.13.2.js"></script>
+
+
 <script  type="module" src="./src/js/helpers.js"></script>
 <script  type="module" src="./src/js/content.js"></script>
 <script  type="module" src="src/js/validation-form.js"></script>
 <script  type="module" src="./src/js/step-form.js"></script>
 
-<script src="./src/js/jquery-3.6.0.js"></script>
-<script src="./src/js/jquery_ui_1.13.2.js"></script>
+
 <script  type="text/javascript" src="./src/js/public-methods.js"></script>
 <script  type="text/javascript" src="./src/js/dialog.js"></script>
 <script  type="text/javascript" src="./src/js/auth.js"></script>
+
+<script type="module" src="./src/js/data-store.js"></script>
+<script type="module" src="./src/js/sliders.js"></script>
+<script type="module" src="./src/js/helpers-presentation.js"></script>
+<script type="module" src="./src/js/validation-form-presentation.js"></script>
+<script type="module" src="./src/js/request-invoice.js"></script>
+<script type="module" src="./src/js/packages-modules.js"></script>
 
 <script>
     document.dispatchEvent(dialogEvent);

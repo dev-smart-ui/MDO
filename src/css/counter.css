@@ -1,0 +1,38 @@
+.presentation-section{
+
+    .counter-container{
+        color: white;
+    }
+
+    .counter-box{
+
+    }
+
+    .counter-box p{
+        font-size: clamp(12px, 1vw, 14px);
+        opacity: .7;
+        color: white;
+    }
+
+    .counter-title{
+        font-size: clamp(3dvh, 3vw, 41px);
+        margin-bottom: 3dvh;
+        text-align: center;
+    }
+
+    .counter, .counter-box span{
+        color: #02C2FF;
+        font-size: clamp(25px, 2.5vw, 48px);
+    }
+
+
+    .counter-box-wrap{
+        display: flex;
+    }
+
+    .counter-append-plus{
+        display: flex;
+    }
+
+
+}

@@ -117,8 +117,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         let formData = {};
         let regionsIng = [];
         let currentPackageInnerHtmRight = '';
-        
-console.log("test")
+
 
         //region custom select code start
 
