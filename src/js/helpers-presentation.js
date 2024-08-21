@@ -84,7 +84,7 @@ function determineDefaultState(allTargetSegments, allServices, chooseSegments) {
 //show modals
 
 $(document).ready(function () {
-    $("#packageSelectInfo").click(function () {
+    $("#packageSelectInfoPresentation").click(function () {
         $("#modalPackageSelectInfoText").css("display", "flex").hide().fadeIn(500);
         $("#bgOpacityInner").addClass("bg-opacity-inner-open backdrop-blur-sm");
     });
@@ -145,7 +145,7 @@ $(document).ready(function () {
         closeModal();
     });
 
-    $("#sendMessageBtn").click(function () {
+    $("#sendMessageBtnPresentation").click(function () {
         const isValidForm = validateContactForm();
         const isValidEmail = validateEmailContact();
 
@@ -429,7 +429,7 @@ function resetRegions() {
 }
 
 function resetForm() {
-    const additionalTextOptionsSelect = document.getElementById("additionalTextOptionsSelect");
+    const additionalTextOptionsSelect = document.getElementById("additionalTextOptionsSelectPresentation");
 
     const comprehensiveSlideItems = document.querySelectorAll('.comprehensive-slide-item');
     // Reset form and formData for demonstration purposes

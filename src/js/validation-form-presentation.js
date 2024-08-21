@@ -206,7 +206,7 @@ document.getElementById('phone').addEventListener('input', function () {
 });
 
 function validateEmailContact() {
-    const emailInput = document.querySelector('#contactForm input[type="email"]');
+    const emailInput = document.querySelector('#contactFormPresentation input[type="email"]');
     const emailContactPattern = /^[a-z0-9.]+@[a-z0-9.]+$/;
 
     if (emailInput.value === '') {
@@ -222,7 +222,7 @@ function validateEmailContact() {
 
 function validateContactForm() {
     let isValid = true;
-    document.querySelectorAll('#contactForm [required]').forEach(field => {
+    document.querySelectorAll('#contactFormPresentation [required]').forEach(field => {
 
         if (!field.value.trim()) {
             isValid = false;

@@ -691,7 +691,7 @@
                     <!-- slide1 -->
                     <div class="swiper-slide" id="slide1">
                         <section class="section section-start">
-                            <div class="main requestDemo bg-[#161822] text-white h-full 2lg:flex justify-center items-center overflow-hidden pt-[72px] 2lg:py-[72px] relative">
+                            <div class="main requestDemo bg-[#161822] text-white h-full flex justify-center items-center overflow-hidden pt-[72px] 2lg:py-[72px] relative">
                                 <div class="2lg:grid grid-cols-2 justify-center items-center gap-[64px] w-full px-5 3xl:px-[270px]">
                                     <div class="relative w-full min-h-[25dvh] 2lg:min-h-[413px] 3xl:translate-y-[72px]">
                                         <div class="group/image active absolute top-0 bottom-0 2lg:flex justify-center items-center duration-300 requestDemoControlImage w-full text-center z-10">
@@ -732,8 +732,8 @@
                                             <a href="#" class="goToContact group/button w-full flex justify-center items-center text-center 2lg:max-w-[270px] font-medium text-white bg-[#02A1D3] px-10 py-[2vh] 2lg:py-5 rounded-[12px] leading-[1.2]">
                                                 <span class="inline-block group-hover/button:scale-[1.05] duration-200 text-[2vh] 2lg:text-base">Request a Demo</span>
                                             </a>
-                                            <button  class="group/button w-full flex justify-center items-center text-center 2lg:max-w-[270px] font-medium text-white border-2 border-solid border-[#02A1D3] px-10 py-[2vh] 2lg:py-5 rounded-[12px] leading-[1.2]">
-                                                <span class="inline-block group-hover/button:scale-[1.05] duration-200 text-[2vh] 2lg:text-base" id="getStarted">View Sample</span>
+                                            <button id="getStarted"  class="group/button w-full flex justify-center items-center text-center 2lg:max-w-[270px] font-medium text-white border-2 border-solid border-[#02A1D3] px-10 py-[2vh] 2lg:py-5 rounded-[12px] leading-[1.2]">
+                                                <span class="inline-block group-hover/button:scale-[1.05] duration-200 text-[2vh] 2lg:text-base">View Sample</span>
                                             </button>
                                         </div>
                                     </div>
@@ -1442,7 +1442,7 @@
                                                     <div class="select-title-box  flex items-center relative">
 
                                                         <button class="package-select-info-img absolute right-0 lg:hidden"
-                                                                id="packageSelectInfo">
+                                                                id="packageSelectInfoPresentation">
                                                             <img src="./src/images/presentation/request-invoice/info.svg" alt="info"/>
                                                         </button>
                                                         <img class="mr-2" src="./src/images/presentation/request-invoice/package-img.svg"
@@ -1466,7 +1466,7 @@
                                                     </div>
 
                                                     <div class="text-[11px] lg:text-[12px] hidden lg:block additional-text-options"
-                                                         id="additionalTextOptionsSelect"></div>
+                                                         id="additionalTextOptionsSelectPresentation"></div>
                                                 </div>
 
                                                 <div class="select-box licences-select-box">
@@ -1845,8 +1845,8 @@
                     <p class="modal-demo-content-sub-title">Do not hesitate to drop us a line or request a Free
                         Demo!</p>
 
-                    <form action="" class="contact-form-box" id="contactForm">
-                        <div class="contact-form-wrap">
+                    <form action="" class="contact-form-box" id="contactFormPresentation">
+                        <div class="contact-form-wrap-presentation">
                             <input data-contact-input type="text" placeholder="First name*" name="firstName"
                                    required/>
                             <input data-contact-input type="text" placeholder="Last name*" name="lastName"
@@ -1857,7 +1857,7 @@
                                       name="message"></textarea>
                         </div>
 
-                        <button id="sendMessageBtn" type="button" class="contact-form-send-btn uppercase">
+                        <button id="sendMessageBtnPresentation" type="button" class="contact-form-send-btn uppercase">
                             Send Message
                         </button>
                     </form>

@@ -429,7 +429,7 @@
 
 
     .section.section-start .main {
-        padding: 0 24px;
+        padding-top: 60px;
     }
 
     .swiper-slide-calculation-item-left{
@@ -585,7 +585,6 @@
         color: #ffffff;
         fill: currentColor;
         cursor: pointer;
-        z-index: 3;
         -webkit-transition: all .2s ease-in-out;
         -o-transition: all .2s ease-in-out;
         transition: all .2s ease-in-out;
@@ -844,17 +843,15 @@
     }
 
     .package-container-width .package-list {
-        /* flex-basis: 45%;*/
         position: relative;
     }
 
 
-
-    /*
-    .section-calculation .package-container-width .package-list {
-        flex-basis: 54%;
+    .module-info {
+        width: 100%;
     }
-    */
+
+
 
     .accordion__item {
         margin-bottom: 12px;
@@ -1031,10 +1028,6 @@
         }
 
 
-        .module-info {
-            width: 100%;
-        }
-
 
         .module-info span {
             display: inline-block;
@@ -1133,7 +1126,7 @@
 
     @media screen and (max-width: 1024px) {
         .section.section-select-target .main {
-            padding: 30px 0px 0;
+            padding: 75px 0px 0;
         }
 
         .section.section-select-target .gradient {
@@ -1147,7 +1140,7 @@
 
 
         .section-calculation.section {
-            height: calc(100% - 70px);
+            height: 100%;
         }
 
         .section.section-modules .main,
@@ -1165,7 +1158,7 @@
         }
 
         .section-slide-box{
-            padding-top: 20px;
+            padding-top: 67px;
         }
 
         .section-calculation .selects-box-container {
@@ -1350,7 +1343,7 @@
 
         .section-back,
         .section-close {
-            top: 20px;
+            top: 65px;
             width: 36px;
             height: 36px;
         }
@@ -1440,7 +1433,7 @@
 
         .title-mobile {
             position: absolute;
-            padding-top: 25px;
+            padding-top: 72px;
             width: 100%;
             text-align: center !important;
             font-size: 22px !important;
@@ -1494,9 +1487,9 @@
         }
 
         .presentation-menu.presentation-menu-big-space {
-            padding: 50px 0 20px 20px;
+            padding: 97px 0 20px 20px;
             flex-basis: 100%;
-            height: calc(100% - 110px);
+            height: calc(100% - 95px);
         }
 
         .presentation-menu.presentation-menu-little-space {
@@ -1508,8 +1501,8 @@
 
         .swiper-slide-calculation .presentation-menu.presentation-menu-little-space {
             padding: 0 0 20px 20px;
-            height: 100%;
             overflow: hidden;
+            height: calc(100% - 60px);
         }
 
         .presentation-modules {

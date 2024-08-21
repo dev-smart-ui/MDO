@@ -71,7 +71,7 @@
     height: calc(100% - 130px);
 }
 
-.contact-form-wrap {
+.contact-form-wrap-presentation {
     max-width: 640px;
     width: 100%;
     margin-bottom: 24px;
@@ -199,7 +199,7 @@
         align-items: center;
     }
 
-    .contact-form-wrap {
+    .contact-form-wrap-presentation {
         margin-bottom: 10dvh;
         overflow: hidden;
         height: auto;
@@ -271,7 +271,7 @@
         padding-top: 10dvh;
     }
 
-    .contact-form-wrap {
+    .contact-form-wrap-presentation {
         margin-bottom: 4dvh;
     }
 }

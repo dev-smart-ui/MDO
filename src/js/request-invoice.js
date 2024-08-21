@@ -49,12 +49,12 @@ export const optionsPackageSelect = new Choices('#optionsSelectPresentation', {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const globalCheckbox = document.querySelector('input[value="global"]');
-    const checkboxes = document.querySelectorAll('[data-regions-input]');
+    const globalCheckbox = document.querySelector('#presentation-slider input[value="global"]');
+    const checkboxes = document.querySelectorAll('#presentation-slider [data-regions-input]');
     const regionSelectedItems = document.getElementById('selectedItemsPresentation');
     const regionsSelect = document.getElementById('regionsSelectPresentation');
     const regionsItemBox = document.getElementById('regionsItemBoxPresentation');
-    const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelect');
+    const additionalTextOptionsSelect = document.getElementById('additionalTextOptionsSelectPresentation');
     let regionsIng = [];
 
 
@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleCheckboxChange() {
         const selectedCheckboxes = Array.from(checkboxes).filter(c => c.checked && c !== globalCheckbox);
-
         if (globalCheckbox.checked) {
             selectedCheckboxes.forEach(c => {
                 c.checked = false;
