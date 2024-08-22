@@ -197,18 +197,18 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $("#termsOfUseOpen").click(function () {
-        $("#termsOfUseModal").css("display", "flex").hide().fadeIn(500);
+        $("#termsOfUseModalPresentation").css("display", "flex").hide().fadeIn(500);
         $("#bgOpacityInner").addClass("bg-opacity-inner-open backdrop-blur-sm");
     });
 
     function closeModal() {
-        $("#termsOfUseModal").fadeOut(500, function () {
+        $("#termsOfUseModalPresentation").fadeOut(500, function () {
             $(this).css("display", "none");
         });
         $("#bgOpacityInner").removeClass("bg-opacity-inner-open backdrop-blur-sm");
     }
 
-    $("#termsOfUseClose").click(function () {
+    $("#termsOfUseClosePresentation").click(function () {
         closeModal();
     });
 

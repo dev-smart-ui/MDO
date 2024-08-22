@@ -650,70 +650,73 @@
 /*left side styles finish*/
 
 /*modal terms start*/
-.terms-of-use-modal-toggle{
-    position: fixed;
-    z-index: 55;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 1;
-}
 
+.step-form-wrap {
 
-.terms-of-use-modal-inner{
-    width: 90%;
-    padding: 66px 0 30px 0;
-    overflow: hidden;
-}
+    .terms-of-use-modal-toggle {
+        position: fixed;
+        z-index: 55;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 1;
+    }
 
-.terms-of-use-modal-box{
-    overflow-y: auto;
-    height: calc(100% - 65px);
-    padding: 30px 30px 0;
-    font-size: 14px;
-}
+    .terms-of-use-modal-inner {
+        width: 90%;
+        padding: 66px 0 30px 0;
+        overflow: hidden;
+    }
 
-.terms-of-use-modal-item{
-    margin-bottom: 20px;
-}
+    .terms-of-use-modal-box {
+        overflow-y: auto;
+        height: calc(100% - 65px);
+        padding: 30px 30px 0;
+        font-size: 14px;
+    }
 
+    .terms-of-use-modal-item {
+        margin-bottom: 20px;
+    }
 
-.terms-of-use-modal-box h4 {
-    font-weight: 600;
-}
+    .terms-of-use-modal-box h4 {
+        font-weight: 600;
+    }
 
-.terms-of-use-modal-title {
-    color: #4c4c4c;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 300;
-    background: #ececec;
-    padding: 12px 0;
-}
+    .terms-of-use-modal-title {
+        color: #4c4c4c;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 300;
+        background: #ececec;
+        padding: 12px 0;
+    }
 
-.terms-of-use-modal-close {
-    right: 20px;
-    top: 20px;
-}
+    .terms-of-use-modal-close {
+        right: 20px;
+        top: 20px;
+    }
 
-.terms-of-use-modal-text-space{
-    margin-bottom: 20px;
-}
+    .terms-of-use-modal-text-space {
+        margin-bottom: 20px;
+    }
 
-.terms-of-use-modal-item-inner {
-    list-style: auto;
-    padding-left: 35px;
-    padding-top: 20px;
-}
+    .terms-of-use-modal-item-inner {
+        list-style: auto;
+        padding-left: 35px;
+        padding-top: 20px;
+    }
 
-.terms-of-use-modal-item-inner-text {
-    margin-bottom: 20px;
-}
+    .terms-of-use-modal-item-inner-text {
+        margin-bottom: 20px;
+    }
 
-.terms-of-use-modal-item-inner-text ul{
-   list-style: disc;
-    padding-left: 30px;
+    .terms-of-use-modal-item-inner-text ul {
+        list-style: disc;
+        padding-left: 30px;
+    }
+
 }
 
 /*modal terms finish*/

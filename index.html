@@ -1533,7 +1533,7 @@
                                     </div>
 
                                     <div class="modal-successful-content-img-box rounded-full">
-                                        <img src="./images/request-invoice/check-big.svg" alt="check" class="w-full h-full">
+                                        <img src="./src/images/presentation/request-invoice/check-big.svg" alt="check" class="w-full h-full">
                                     </div>
 
                                     <h3 class="font-bold">Subscription Successful!</h3>
@@ -1576,10 +1576,10 @@
                                     <div data-animate-mobile class="subscription-details-columns-wrapper section-scroll-bg-top section-scroll-bg-bottom"
                                          data-section-scroll-class="5">
                                         <div class="subscription-details-columns " data-section-scroll="5">
-                                            <div class="subscription-total-mobile-info lg:hidden"  id="subscriptionModalInfo">
+                                            <div class="subscription-total-mobile-info flex lg:hidden"  id="subscriptionModalInfo">
 
                                                 <button class="subscription-total-mobile-img absolute lg:hidden">
-                                                    <img src="./images/request-invoice/info-white.svg" alt="info"/>
+                                                    <img src="./src/images/presentation/request-invoice/info-white.svg" alt="info"/>
                                                 </button>
 
                                                 <span class="subscription-total-mobile-title"
@@ -1594,23 +1594,23 @@
                                                     <h4 class="subscription-details-title">Your details</h4>
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="First name" id="firstName">
-                                                        <span class="error-message" id="error-firstName"></span>
+                                                               placeholder="First name" id="firstNamePresentation">
+                                                        <span class="error-message" id="error-firstNamePresentation"></span>
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="Last Name" id="lastName">
-                                                        <span class="error-message" id="error-lastName"></span>
+                                                               placeholder="Last Name" id="lastNamePresentation">
+                                                        <span class="error-message" id="error-lastNamePresentation"></span>
                                                     </label>
                                                     <label>
-                                                        <input data-subscription-input type="tel" id="phone" name="phone"
+                                                        <input data-subscription-input type="tel" id="phonePresentation" name="phone"
                                                                placeholder="Phone" pattern="\+\d{1,3}-\d{3}-\d{4}" required>
-                                                        <span class="error-message" id="error-phone"></span>
+                                                        <span class="error-message" id="error-phonePresentation"></span>
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input required type="email" placeholder="Email"
-                                                               id="email">
-                                                        <span class="error-message" id="error-email"></span>
+                                                               id="emailPresentation">
+                                                        <span class="error-message" id="error-emailPresentation"></span>
                                                     </label>
                                                 </div>
 
@@ -1618,32 +1618,32 @@
                                                     <h4 class="subscription-details-title">Company details</h4>
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="Company Name" id="companyName">
-                                                        <span class="error-message" id="error-companyName"></span>
+                                                               placeholder="Company Name" id="companyNamePresentation">
+                                                        <span class="error-message" id="error-companyNamePresentation"></span>
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input type="text" placeholder="Departament"
-                                                               id="departament">
+                                                               id="departamentPresentation">
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="Position" id="position">
-                                                        <span class="error-message" id="error-position"></span>
+                                                               placeholder="Position" id="positionPresentation">
+                                                        <span class="error-message" id="error-positionPresentation"></span>
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="Company Address 1" id="companyAddress1">
-                                                        <span class="error-message" id="error-companyAddress1"></span>
+                                                               placeholder="Company Address 1" id="companyAddress1Presentation">
+                                                        <span class="error-message" id="error-companyAddress1Presentation"></span>
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="Company Address 2" id="companyAddress2">
-                                                        <span class="error-message" id="error-companyAddress2"></span>
+                                                               placeholder="Company Address 2" id="companyAddress2Presentation">
+                                                        <span class="error-message" id="error-companyAddress2Presentation"></span>
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="Country" id="сountry">
-                                                        <span class="error-message" id="error-сountry"></span>
+                                                               placeholder="Country" id="сountryPresentation">
+                                                        <span class="error-message" id="error-сountryPresentation"></span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -1651,32 +1651,32 @@
                                                 <div class="subscription-box-details subscription-box-details-second flex flex-col ">
                                                     <label>
                                                         <input data-subscription-input required type="text" placeholder="City"
-                                                               id="сity">
-                                                        <span class="error-message" id="error-сity"></span>
+                                                               id="сityPresentation">
+                                                        <span class="error-message" id="error-сityPresentation"></span>
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input required type="text" placeholder="State"
-                                                               id="state">
-                                                        <span class="error-message" id="error-state"></span>
+                                                               id="statePresentation">
+                                                        <span class="error-message" id="error-statePresentation"></span>
                                                     </label>
 
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="Zip/Postal Code" id="postalCode">
-                                                        <span class="error-message" id="error-postalCode"></span>
+                                                               placeholder="Zip/Postal Code" id="postalCodePresentation">
+                                                        <span class="error-message" id="error-postalCodePresentation"></span>
                                                     </label>
                                                 </div>
 
                                                 <div class="subscription-box-details flex flex-col ">
                                                     <h4 class="subscription-details-title">Security</h4>
                                                     <label> <input data-subscription-input required type="text"
-                                                                   placeholder="Password" id="password">
-                                                        <span class="error-message" id="error-password"></span>
+                                                                   placeholder="Password" id="passwordPresentation">
+                                                        <span class="error-message" id="error-passwordPresentation"></span>
                                                     </label>
                                                     <label>
                                                         <input data-subscription-input required type="text"
-                                                               placeholder="Confirm Password" id="confirmPassword">
-                                                        <span class="error-message" id="error-confirmPassword"></span>
+                                                               placeholder="Confirm Password" id="confirmPasswordPresentation">
+                                                        <span class="error-message" id="error-confirmPasswordPresentation"></span>
                                                     </label>
                                                 </div>
 
@@ -1685,8 +1685,8 @@
                                                     <div class="subscription-payment-box-details-box">
                                                         <div data-radio-item class="radio-item">
                                                             <input data-subscription-input class="radio-button" type="radio"
-                                                                   data-pay-method name="payment" id="visaMastercard"
-                                                                   value="visaMastercard">
+                                                                   data-pay-method name="payment" id="visaMastercardPresentation"
+                                                                   value="visaMastercardPresentation">
 
                                                             <label for="visaMastercard">
                                                                 <div class="radio-btn-item"></div>
@@ -1696,8 +1696,8 @@
                                                         <div data-radio-item class="radio-item">
                                                             <input data-subscription-input class="radio-button" type="radio"
                                                                    data-pay-method name="payment"
-                                                                   id="check" value="check">
-                                                            <label for="check">
+                                                                   id="checkPresentation" value="check">
+                                                            <label for="checkPresentation">
                                                                 <div class="radio-btn-item"></div>
                                                                 Check</label>
                                                         </div>
@@ -1705,9 +1705,9 @@
                                                         <div data-radio-item class="radio-item">
                                                             <input data-subscription-input class="radio-button" type="radio"
                                                                    data-pay-method name="payment"
-                                                                   id="viseTransfer"
+                                                                   id="viseTransferPresentation"
                                                                    value="viseTransfer">
-                                                            <label for="viseTransfer">
+                                                            <label for="viseTransferPresentation">
                                                                 <div class="radio-btn-item"></div>
                                                                 Wise Transfer (EFT)</label>
                                                         </div>
@@ -1715,25 +1715,25 @@
                                                         <div data-radio-item class="radio-item">
                                                             <input data-subscription-input class="radio-button" type="radio"
                                                                    data-pay-method name="payment"
-                                                                   id="payPal"
+                                                                   id="payPalPresentation"
                                                                    value="payPal">
-                                                            <label for="payPal">
+                                                            <label for="payPalPresentation">
                                                                 <div class="radio-btn-item"></div>
                                                                 PayPal</label>
                                                         </div>
 
-                                                        <span class="error-message" id="error-radio"></span>
+                                                        <span class="error-message" id="error-radioPresentation"></span>
                                                     </div>
                                                     <div class="subscription-box-accepted-container">
                                                         <label class="subscription-box-accepted check-box-label flex items-center">
                                                             <input data-subscription-input type="checkbox"
-                                                                   class="checkbox-accepted" id="checkboxAccepted">
+                                                                   class="checkbox-accepted" id="checkboxAcceptedPresentation">
                                                             <span class="checkmark"></span>
                                                             <p class="ml-8 subscription-box-accepted-text">I Accept </p>
                                                         </label>
                                                         <span class="subscription-box-accepted-terms"
                                                               id="termsOfUseOpen">Terms of Use</span>
-                                                        <span class="error-message" id="error-checkboxAccepted"></span>
+                                                        <span class="error-message" id="error-checkboxAcceptedPresentation"></span>
                                                     </div>
 
                                                 </div>
@@ -1779,7 +1779,7 @@
                                         </div>
                                         <button type="button" class="btn btn-rounded btn-blue btn-next uppercase"
                                                 data-request-invoice-successful>Request invoice
-                                            <img src="./images/request-invoice/arrow-right-white.svg" alt="arrow"/>
+                                            <img src="./src/images/presentation/request-invoice/arrow-right-white.svg" alt="arrow"/>
                                         </button>
                                     </div>
                                 </div>
@@ -1789,7 +1789,7 @@
                                 <button data-request-invoice-successful type="button"
                                         class="btn lg:hidden btn-rounded btn-blue btn-next uppercase">
                                     Total: $<span data-total-counter-box></span> USD
-                                    <img src="./images/request-invoice/arrow-right-white.svg" alt="arrow"/>
+                                    <img src="./src/images/presentation/request-invoice/arrow-right-white.svg" alt="arrow"/>
                                 </button>
                             </div>
                         </section>
@@ -1863,9 +1863,9 @@
                     </form>
                 </div>
             </div>
-            <div id="termsOfUseModal" class="modal-wrap modal-terms-of-use-box">
+            <div id="termsOfUseModalPresentation" class="modal-wrap modal-terms-of-use-box">
                 <div class="terms-of-use-modal-inner">
-                    <div class="terms-of-use-modal-close" id="termsOfUseClose">
+                    <div class="terms-of-use-modal-close" id="termsOfUseClosePresentation">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1_1170)">

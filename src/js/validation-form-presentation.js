@@ -20,7 +20,7 @@ function validateField(field) {
 
 function validateCheckboxAccepted() {
     // Check the agree to terms of use checkbox
-    const termsCheckbox = document.getElementById('checkboxAccepted');
+    const termsCheckbox = document.getElementById('checkboxAcceptedPresentation');
     if (!termsCheckbox.checked) {
         const errorDiv = document.getElementById('error-' + termsCheckbox.id);
         if (errorDiv) {
@@ -164,7 +164,7 @@ function validateForm() {
 
 $(document).ready(function () {
 //change checkbox accepted state
-    const checkboxAccepted = document.getElementById('checkboxAccepted');
+    const checkboxAccepted = document.getElementById('checkboxAcceptedPresentation');
     checkboxAccepted.addEventListener("click", validateCheckboxAccepted);
 });
 

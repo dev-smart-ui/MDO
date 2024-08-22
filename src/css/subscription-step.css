@@ -3,10 +3,11 @@
         width: 100%;
         color: var(--color-white);
         display: flex;
+        background-color: #1D1F28;
     }
 
     .subscription-step-wrap {
-        background: url(../images/gradient.svg);
+        background: url(../images/presentation/gradient.svg);
         background-size: cover;
         background-position: left;
         background-repeat: no-repeat;
@@ -21,7 +22,7 @@
         flex-direction: column;
         flex-basis: 43%;
         padding: 14dvh 3vw 6dvh 3.5vw;
-        background: url(../images/gradient.svg);
+        background: url(../images/presentation/gradient.svg);
         background-size: cover;
         background-position: right;
         background-repeat: no-repeat;
@@ -226,7 +227,6 @@
         border-radius: 16px;
         position: relative;
         padding: 20px;
-        display: flex;
         align-items: flex-end;
         line-height: 1;
     }

@@ -268,7 +268,7 @@ function buildRightPanel(currentService, accordionPanelId, presentationMenuId, s
 
     if (isMobile) {
         const titleH = $('.package-info-mobile-title').outerHeight(true);
-        $('.package-info-inner-wrapper').css('height', `calc(100% - ${titleH}px - 40px)`);
+        $('.package-info-inner-wrapper').css('height', `calc(100% - ${titleH}px - 43px)`);
     }
 
     $("[data-video-btn]").click(function () {
