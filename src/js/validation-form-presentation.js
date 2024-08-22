@@ -39,9 +39,9 @@ function validateCheckboxAccepted() {
 }
 
 function validateRadioButtons() {
-    const radioButtons = document.querySelectorAll('input[type="radio"][name="payment"]');
+    const radioButtons = document.querySelectorAll('#slide5 input[type="radio"][name="payment"]');
     const isSelected = Array.from(radioButtons).some(radio => radio.checked);
-    const errorDiv = document.getElementById('error-radio');
+    const errorDiv = document.getElementById('error-radioPresentation');
 
     if (!isSelected) {
         if (errorDiv) {
@@ -59,8 +59,8 @@ function validateRadioButtons() {
 }
 
 function validateEmailInput() {
-    const emailInput = document.getElementById('email');
-    const errorDiv = document.getElementById('error-email');
+    const emailInput = document.getElementById('emailPresentation');
+    const errorDiv = document.getElementById('error-emailPresentation');
     const emailPattern = /^[a-z0-9.]+@[a-z0-9.]+$/;
 
 
@@ -90,8 +90,8 @@ function validateEmailInput() {
 }
 
 function validatePhone() {
-    const phoneInput = document.getElementById('phone');
-    const errorDiv = document.getElementById('error-phone');
+    const phoneInput = document.getElementById('phonePresentation');
+    const errorDiv = document.getElementById('error-phonePresentation');
     const regex = /^\d+$/;
     if (phoneInput.value.trim() === '' || !regex.test(phoneInput.value)) {
         phoneInput.value = phoneInput.value.replace(/[^+\d]/g, '');
@@ -111,9 +111,9 @@ function validatePhone() {
 }
 
 function validatePassword() {
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirmPassword');
-    const errorDiv = document.getElementById('error-confirmPassword');
+    const password = document.getElementById('passwordPresentation');
+    const confirmPassword = document.getElementById('confirmPasswordPresentation');
+    const errorDiv = document.getElementById('error-confirmPasswordPresentation');
     if (password.value !== confirmPassword.value && password.value.trim() !== '' && confirmPassword.value.trim() !== '') {
 
         if (errorDiv) {
@@ -171,7 +171,7 @@ $(document).ready(function () {
 
 export function resetFormElements() {
 
-    const inputs = document.querySelectorAll('[data-subscription-input]');
+    const inputs = document.querySelectorAll('#subscriptionStep [data-subscription-input]');
 
     inputs.forEach(input => {
         input.value = '';
@@ -188,7 +188,7 @@ export function resetFormElements() {
 
 
 //update radio buttons error state
-document.querySelectorAll('[data-radio-item]').forEach(item => {
+document.querySelectorAll('#subscriptionStep [data-radio-item]').forEach(item => {
     item.addEventListener('click', validateRadioButtons);
 });
 
