@@ -414,7 +414,7 @@ function resetRegions() {
     const selectedItems = document.getElementById('selectedItemsPresentation');
     selectedItems.textContent = 'Global';
 
-    const checkboxes = document.querySelectorAll('[data-regions-input]');
+    const checkboxes = document.querySelectorAll('#regionsSelectPresentation [data-regions-input]');
 
     checkboxes.forEach(checkbox => {
         checkbox.checked = false;

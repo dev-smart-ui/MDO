@@ -102,7 +102,7 @@ export const optionsPackageSelect = new Choices('#optionsSelect', {
         const prevButton = document.getElementById('prevButton');
         const nameOfChoosePackage = document.getElementById('nameOfChoosePackage');
         const globalCheckbox = document.querySelector('input[value="global"]');
-        const checkboxes = document.querySelectorAll('[data-regions-input]');
+        const checkboxes = document.querySelectorAll('#regionsSelect [data-regions-input]');
         const regionSelectedItems = document.getElementById('selectedItems');
         const regionsSelect = document.getElementById('regionsSelect');
         const regionsItemBox = document.getElementById('regionsItemBox');
