@@ -515,6 +515,7 @@ function openModalModule(slideId) {
     const packageContainerWrap = document.querySelector(`#${slideId} [data-package-container-wrap]`);
     const bgOpacityInner = document.getElementById('bgOpacityInner');
     const dropdownTabs = document.querySelectorAll(`#${slideId} [data-mobile-modal-open]`);
+    const app=document.getElementById("app");
 
 
     dropdownTabs.forEach(dropdownTab => {
@@ -527,6 +528,7 @@ function openModalModule(slideId) {
                 if (screenWidth <= 1024) {
                     bgOpacityInner.classList.add('bg-opacity-inner-open');
                     document.querySelector("header").classList.add('header-hide');
+                    app.style.overflowY='hidden'
                 }
             }
 
@@ -540,6 +542,8 @@ document.addEventListener("click", () => {
     const bgOpacityInner = document.getElementById("bgOpacityInner");
     const packageContainerWraps = document.querySelectorAll('[data-package-container-wrap]');
     const subscriptionModalInfo = document.getElementById("subscriptionModalInfo");
+    const app=document.getElementById("app");
+
 
 
     packageModalCloseBtns.forEach(packageModalClose => {
@@ -552,6 +556,7 @@ document.addEventListener("click", () => {
                 }
 
                 openItem.classList.remove("drop-down-item-open");
+                app.style.overflowY='scroll'
 
             });
 
@@ -576,6 +581,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //for add bottom bg shadow
     const scrollWrap = document.querySelector(` [data-section-scroll-class="acc5"]`);
     const scrollElement = document.querySelector("[data-section-scroll='acc5']");
+    const app=document.getElementById("app");
 
     subscriptionModalInfo.addEventListener("click", () => {
         const packageContainerWrap = document.querySelector(`#slide5 .subscription-step-box`);
@@ -584,6 +590,7 @@ document.addEventListener("DOMContentLoaded", () => {
         subscriptionModalInfo.classList.add('subscription-modal-open');
         setTimeout(() => {
             packageContainerWrap.classList.add('subscription-step-box-open');
+            app.style.overflowY='hidden'
             document.querySelector("header").classList.add('header-hide');
             bgOpacityInner.classList.add('bg-opacity-inner-open');
             showModulePanel("Research Package", "", "currentBoxModules",);

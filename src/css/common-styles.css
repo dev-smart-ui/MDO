@@ -994,7 +994,7 @@
     z-index: 1;
     transition: all .25s ease-in-out;
     opacity: 1;
-    position: fixed;
+   /* position: fixed;*/
 }
 
 @media screen and (min-width: 1025px) {
