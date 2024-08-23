@@ -51,7 +51,7 @@ export let store = {
         {
             name: 'Research Package',
             iconImg: './src/images/icons/modules/research.svg',
-            img: '.././src/images/presentation/slides/key-mine-personnel-and-workforce.jpeg',
+            img: './src/images/presentation/slides/key-mine-personnel-and-workforce.jpeg',
             price: 2000.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -160,7 +160,7 @@ export let store = {
         {
             name: 'Heavy Mobile Equipment',
             iconImg: './src/images/icons/modules/mobile-equipment.svg',
-            img: '.././src/images/presentation/slides/heavy-mobile-equipment.jpeg',
+            img: './src/images/presentation/slides/heavy-mobile-equipment.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/1hs4FDhCpfs?si=nryLAk-8HWsfy_-c",
             serviceTabs: [
@@ -196,7 +196,7 @@ export let store = {
         {
             name: 'Mining Operations',
             iconImg: './src/images/icons/modules/mining-operations.svg',
-            img: '.././src/images/presentation/slides/heavy-mobile-equipment.jpeg',
+            img: './src/images/presentation/slides/heavy-mobile-equipment.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -247,7 +247,7 @@ export let store = {
         {
             name: 'Comminution',
             iconImg: './src/images/icons/modules/mining-operations.svg',
-            img: '.././src/images/presentation/slides/commodity-production.jpeg',
+            img: './src/images/presentation/slides/commodity-production.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -299,7 +299,7 @@ export let store = {
         {
             name: 'Mineral Processing',
             iconImg: './src/images/icons/modules/mineral-processing.svg',
-            img: '.././src/images/presentation/slides/mineral-processing.jpeg',
+            img: './src/images/presentation/slides/mineral-processing.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -342,7 +342,7 @@ export let store = {
         {
             name: 'Key Mine Personnel',
             iconImg: './src/images/icons/modules/key-managers.svg',
-            img: '.././src/images/presentation/slides/commodity-production.jpeg',
+            img: './src/images/presentation/slides/commodity-production.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -385,7 +385,7 @@ export let store = {
         {
             name: 'Conveyors',
             iconImg: './src/images/icons/modules/mobile-equipment.svg',
-            img: '.././src/images/presentation/slides/conveyors-and-pipelines.jpeg',
+            img: './src/images/presentation/slides/conveyors-and-pipelines.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -416,7 +416,7 @@ export let store = {
         {
             name: 'Pumps, Pipelines and Water Supply',
             iconImg: './src/images/icons/modules/key-managers.svg',
-            img: '.././src/images/presentation/slides/water-supply-and-consumption.jpeg',
+            img: './src/images/presentation/slides/water-supply-and-consumption.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -453,7 +453,7 @@ export let store = {
         {
             name: 'Project Timeline',
             iconImg: './src/images/icons/modules/key-managers.svg',
-            img: '.././src/images/presentation/slides/project-development-timeline.jpeg',
+            img: './src/images/presentation/slides/project-development-timeline.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -476,7 +476,7 @@ export let store = {
         {
             name: 'Mapper & Coordinates',
             iconImg: './src/images/icons/modules/mapper.svg',
-            img: '.././src/images/presentation/slides/mining-operations.jpeg',
+            img: './src/images/presentation/slides/mining-operations.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -499,7 +499,7 @@ export let store = {
         {
             name: 'Mining Contracts',
             iconImg: './src/images/icons/modules/mining-contracts.svg',
-            img: '.././src/images/presentation/slides/mining-operations.jpeg',
+            img: './src/images/presentation/slides/mining-operations.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -522,7 +522,7 @@ export let store = {
         {
             name: 'Production Costs',
             iconImg: './src/images/icons/modules/key-managers.svg',
-            img: '.././src/images/presentation/slides/project-costs-and-returns.jpeg',
+            img: './src/images/presentation/slides/project-costs-and-returns.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -592,7 +592,7 @@ export let store = {
         {
             name: 'Project Costs & Returns',
             iconImg: './src/images/icons/modules/price-change.svg',
-            img: '.././src/images/presentation/slides/project-costs-and-returns.jpeg',
+            img: './src/images/presentation/slides/project-costs-and-returns.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
@@ -651,7 +651,7 @@ export let store = {
         {
             name: 'Remote Mining Camps',
             iconImg: './src/images/icons/modules/key-managers.svg',
-            img: '.././src/images/presentation/slides/commodity-production.jpeg',
+            img: './src/images/presentation/slides/commodity-production.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [
