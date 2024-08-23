@@ -522,7 +522,7 @@ export let store = {
         {
             name: 'Production Costs',
             iconImg: './src/images/icons/modules/key-managers.svg',
-            img: '.././scr/images/presentation/slides/project-costs-and-returns.jpeg',
+            img: '.././src/images/presentation/slides/project-costs-and-returns.jpeg',
             price: 100.00,
             video:"https://www.youtube.com/embed/8VESowgMbjA?si=qJbm3YA6jJnztTLo",
             serviceTabs: [

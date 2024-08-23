@@ -976,7 +976,7 @@
     }
 }
 
-.presentation-section .bg-opacity-inner {
+.bg-opacity-inner {
     background: #00000096 !important;
     transition: all .25s ease-in-out;
     top: 0;
@@ -990,10 +990,11 @@
     /*   position: fixed;*/
 }
 
-.presentation-section .bg-opacity-inner.bg-opacity-inner-open {
+.bg-opacity-inner.bg-opacity-inner-open {
     z-index: 1;
     transition: all .25s ease-in-out;
     opacity: 1;
+    position: fixed;
 }
 
 @media screen and (min-width: 1025px) {
@@ -1463,7 +1464,7 @@
         background: #1D1F28 !important;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
-        margin-top: 60px;
+        margin-top: 110px;
         padding: 0 18px 18px;
         min-height: 100%;
         transform: translateY(100%);

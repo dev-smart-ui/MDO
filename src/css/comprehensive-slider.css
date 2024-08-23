@@ -642,7 +642,7 @@
 
     @media screen and (max-width: 390px) {
         #comprehensive-slider-presentation .comprehensive-slide-item {
-            width: 145px !important;
+            width: 150px !important;
             height: 191px !important;
         }
     }
