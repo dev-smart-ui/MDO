@@ -526,8 +526,7 @@ function openModalModule(slideId) {
 
                 let screenWidth = $(window).width();
                 if (screenWidth <= 1024) {
-                    bgOpacityInner.classList.add('bg-opacity-inner-open');
-                    document.querySelector("header").classList.add('header-hide');
+                    document.querySelector("header").classList.add('open-segment-menu');
                     app.style.overflowY='hidden'
                 }
             }
@@ -563,7 +562,7 @@ document.addEventListener("click", () => {
 
             packageContainerWraps.forEach(packageContainerWrap => {
                 packageContainerWrap.classList.remove('package-container-wrap-open');
-                document.querySelector("header").classList.remove('header-hide');
+                document.querySelector("header").classList.remove('open-segment-menu');
                 packageContainerWrap.classList.remove('subscription-step-box-open');
                 subscriptionModalInfo.classList.remove('subscription-modal-open');
             });

@@ -1117,6 +1117,21 @@
 
 
 @media screen and (max-width: 1024px) {
+    .headerWrap.open-segment-menu{
+
+        &:after{
+            content: "";
+            background: #00000096;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 45;
+        }
+    }
+
+
     .presentation-section .section.section-select-target .main {
         padding: 75px 0 0;
     }
@@ -1602,7 +1617,7 @@
 }
 
 .presentation-section .header-hide {
-    position: static !important;
+
 }
 
 
