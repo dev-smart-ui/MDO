@@ -568,7 +568,7 @@ document.addEventListener("click", () => {
             });
 
             bgOpacityInner.classList.remove('bg-opacity-inner-open');
-            document.querySelector("header").classList.remove('header-hide');
+            document.querySelector("header").classList.remove('open-segment-menu');
         });
     });
 
@@ -586,11 +586,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const packageContainerWrap = document.querySelector(`#slide5 .subscription-step-box`);
         const bgOpacityInner = document.getElementById('bgOpacityInner');
 
+
         subscriptionModalInfo.classList.add('subscription-modal-open');
         setTimeout(() => {
             packageContainerWrap.classList.add('subscription-step-box-open');
             app.style.overflowY='hidden'
-            document.querySelector("header").classList.add('header-hide');
+            document.querySelector("header").classList.add('open-segment-menu');
             bgOpacityInner.classList.add('bg-opacity-inner-open');
             showModulePanel("Research Package", "", "currentBoxModules",);
         }, 200);
