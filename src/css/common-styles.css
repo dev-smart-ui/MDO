@@ -1,4 +1,4 @@
-.presentation-section{
+.presentation-section {
     background: #1D1F28;
 }
 
@@ -553,7 +553,6 @@
 }
 
 
-
 /*
 
   Select your target segment section
@@ -931,7 +930,7 @@
         height: 45dvh;
     }
 
-    .presentation-section  .laptop {
+    .presentation-section .laptop {
         width: auto;
     }
 }
@@ -965,11 +964,11 @@
 
     }
 
-    .presentation-section  .package-info {
+    .presentation-section .package-info {
         max-width: 200px;
     }
 
-    .presentation-section  .presentation-menu {
+    .presentation-section .presentation-menu {
         /*   flex-basis: 27%;*/
         padding: 140px 1vw 0 1vw;
 
@@ -994,36 +993,36 @@
     z-index: 1;
     transition: all .25s ease-in-out;
     opacity: 1;
-   /* position: fixed;*/
+    /* position: fixed;*/
 }
 
 @media screen and (min-width: 1025px) {
 
-    .presentation-section  .laptop-images-box {
+    .presentation-section .laptop-images-box {
         margin-bottom: 4dvh;
     }
 
-    .presentation-section  .presentation-modules-item {
+    .presentation-section .presentation-modules-item {
         user-select: none;
     }
 
-    .presentation-section  .presentation-modules-item .presentation-modules-item-text {
+    .presentation-section .presentation-modules-item .presentation-modules-item-text {
         min-width: 160px;
         max-width: 160px;
         display: inline-block;
     }
 
-    .presentation-section  .presentation-menu-box {
+    .presentation-section .presentation-menu-box {
         min-width: 390px;
     }
 
     .presentation-section .presentation-menu-box .module-info,
-    .presentation-section  .presentation-menu-box .custom-checkbox-label {
+    .presentation-section .presentation-menu-box .custom-checkbox-label {
         min-height: 52px;
     }
 
 
-    .presentation-section  .module-info span {
+    .presentation-section .module-info span {
         display: inline-block;
         min-width: 160px;
         max-width: 160px;
@@ -1035,22 +1034,22 @@
         width: 50%;
     }
 
-    .presentation-section  .section-calculation .selects-box-container-bottom {
+    .presentation-section .section-calculation .selects-box-container-bottom {
         width: 416px;
     }
 
 }
 
 @media screen and (min-width: 1300px) {
-    .presentation-section  .section.section-subscription .title {
+    .presentation-section .section.section-subscription .title {
         text-align: left;
     }
 
-    .presentation-section  .package-info-inner-wrapper {
+    .presentation-section .package-info-inner-wrapper {
         gap: 25px;
     }
 
-    .presentation-section  .calculation-container {
+    .presentation-section .calculation-container {
         gap: 3vw;
     }
 
@@ -1062,7 +1061,7 @@
         width: 50%;
     }
 
-    .presentation-section  .section-calculation .selects-box-container-bottom {
+    .presentation-section .section-calculation .selects-box-container-bottom {
         width: 416px;
     }
 }
@@ -1070,7 +1069,7 @@
 
 @media screen and (min-width: 1024px) and (max-height: 1030px) {
 
-    .presentation-section  .section-modules .accordion-panel {
+    .presentation-section .section-modules .accordion-panel {
         max-height: 58vh !important;
     }
 
@@ -1082,44 +1081,44 @@
         padding: 9vh 4vw 5vh;
     }
 
-    .presentation-section  .laptop {
+    .presentation-section .laptop {
         max-width: 550px;
     }
 
-    .presentation-section   .section.section-start .main {
+    .presentation-section .section.section-start .main {
         padding-top: 4vh;
     }
 
-    .presentation-section  .section-modules .accordion-panel {
+    .presentation-section .section-modules .accordion-panel {
         max-height: 50vh !important;
     }
 
-    .presentation-section   .subscription-accordion-box .accordion-panel {
+    .presentation-section .subscription-accordion-box .accordion-panel {
         max-height: 45vh !important;
     }
 }
 
 @media screen and (min-width: 1024px) and (max-height: 900px) {
 
-    .presentation-section  .section.section-start .main {
+    .presentation-section .section.section-start .main {
         padding-top: 6vh;
     }
 
 
-    .presentation-section  .accordion-panel {
+    .presentation-section .accordion-panel {
         max-height: 60vh !important;
     }
 
-    .presentation-section  .counter-title {
+    .presentation-section .counter-title {
         margin-bottom: 1dvh;
     }
 }
 
 
 @media screen and (max-width: 1024px) {
-    .headerWrap.open-segment-menu{
+    .headerWrap.open-segment-menu {
 
-        &:after{
+        &:after {
             content: "";
             background: #00000096;
             position: absolute;
@@ -1136,35 +1135,35 @@
         padding: 75px 0 0;
     }
 
-    .presentation-section  .section.section-select-target .gradient {
+    .presentation-section .section.section-select-target .gradient {
         display: none;
     }
 
-    .presentation-section  .section.section-select-target .swiper-comprehensive {
+    .presentation-section .section.section-select-target .swiper-comprehensive {
         padding-left: 20px;
         padding-right: 20px;
     }
 
 
-    .presentation-section  .section-calculation.section {
+    .presentation-section .section-calculation.section {
         height: 100%;
     }
 
-    .presentation-section   .section.section-modules .main,
-    .presentation-section   .calculation-container {
+    .presentation-section .section.section-modules .main,
+    .presentation-section .calculation-container {
         background: transparent;
     }
 
-    .presentation-section  .calculation-container {
+    .presentation-section .calculation-container {
         gap: 0;
         padding: 0;
     }
 
-    .presentation-section  .subscription-details-columns-wrapper {
+    .presentation-section .subscription-details-columns-wrapper {
         height: calc(100% - 180px);
     }
 
-    .presentation-section  .section-slide-box {
+    .presentation-section .section-slide-box {
         padding-top: 67px;
     }
 
@@ -1175,20 +1174,20 @@
         padding-top: 40px !important;
     }
 
-    .presentation-section  .calculation-btn {
+    .presentation-section .calculation-btn {
         display: none !important;
     }
 
-    .presentation-section  .presentation-menu-box {
+    .presentation-section .presentation-menu-box {
         margin-top: 0;
     }
 
-    .presentation-section  .swiper-slide-calculation-item-left {
+    .presentation-section .swiper-slide-calculation-item-left {
         flex-basis: auto;
     }
 
 
-    .presentation-section  .section.section-modules .presentation-menu-scroll-box.section-scroll-bg-top.scrolled-top {
+    .presentation-section .section.section-modules .presentation-menu-scroll-box.section-scroll-bg-top.scrolled-top {
         &:after {
             background: linear-gradient(.5turn, #1d1f28c9 60%, #1d1f2833 92%, #1d1f281a 90%, #1d1f280d);
             height: 105px;
@@ -1196,14 +1195,14 @@
     }
 
 
-    .presentation-section  .section.section-modules .presentation-menu-scroll-box.section-scroll-bg-bottom.scrolled-bottom {
+    .presentation-section .section.section-modules .presentation-menu-scroll-box.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
             height: 45px;
         }
     }
 
 
-    .presentation-section  .section.section-modules .presentation-menu-scroll.section-scroll-bg-top.scrolled-top {
+    .presentation-section .section.section-modules .presentation-menu-scroll.section-scroll-bg-top.scrolled-top {
         &:after {
             background: linear-gradient(.5turn, #1d1f28 60%, #1d1f2833 92%, #1d1f281a 90%, #1d1f280d);
             height: 105px;
@@ -1211,7 +1210,7 @@
     }
 
 
-    .presentation-section   .section.section-modules .presentation-menu-scroll.section-scroll-bg-bottom.scrolled-bottom {
+    .presentation-section .section.section-modules .presentation-menu-scroll.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
             height: 70px;
             background: linear-gradient(1turn, #1d1f28cc 55%, #1d1f2833 80%, #1d1f281a 40%, #1d1f280d);
@@ -1219,25 +1218,25 @@
     }
 
 
-    .presentation-section  .section.section-modules.section-calculation .presentation-menu-scroll-box {
+    .presentation-section .section.section-modules.section-calculation .presentation-menu-scroll-box {
         height: 100%;
         overflow: hidden;
     }
 
 
-    .presentation-section   .section.section-modules.section-calculation .presentation-menu-box {
+    .presentation-section .section.section-modules.section-calculation .presentation-menu-box {
         height: 100%;
     }
 
 
-    .presentation-section  .section.section-modules.section-calculation .section-scroll-bg-top.scrolled-top.scrolled-top {
+    .presentation-section .section.section-modules.section-calculation .section-scroll-bg-top.scrolled-top.scrolled-top {
         &:after {
             height: 35px;
             background: linear-gradient(0.5turn, #191b2675 55%, #1d1f2866 80%, #1d1f281a 0, #1d1f280d);
         }
     }
 
-    .presentation-section  .section.section-calculation .section-scroll-bg-bottom.scrolled-bottom {
+    .presentation-section .section.section-calculation .section-scroll-bg-bottom.scrolled-bottom {
         &:before {
             height: 45px;
         }
@@ -1253,7 +1252,7 @@
     }
 
 
-    .presentation-section  .accordion-panel-scroll-gradient {
+    .presentation-section .accordion-panel-scroll-gradient {
         height: 100%;
     }
 
@@ -1263,14 +1262,14 @@
         }
     }
 
-    .presentation-section   .section.section-modules .accordion-panel-scroll-gradient.accordion-panel-scroll-gradient-box.section-scroll-bg-bottom {
+    .presentation-section .section.section-modules .accordion-panel-scroll-gradient.accordion-panel-scroll-gradient-box.section-scroll-bg-bottom {
         &:before {
             content: none;
         }
     }
 
 
-    .presentation-section  .section.section-modules .package-info-inner-wrapper.scrolled-top {
+    .presentation-section .section.section-modules .package-info-inner-wrapper.scrolled-top {
         animation: maskAnimationToTopUp .5s ease forwards;
         mask-composite: intersect;
 
@@ -1279,7 +1278,7 @@
         }
     }
 
-    .presentation-section  .section.section-modules .package-info-inner-wrapper {
+    .presentation-section .section.section-modules .package-info-inner-wrapper {
         animation: maskAnimationToBottomDown .5s ease forwards;
         mask-composite: intersect;
 
@@ -1289,7 +1288,7 @@
     }
 
 
-    .presentation-section  .section.section-modules .package-info-inner-wrapper.scrolled-bottom {
+    .presentation-section .section.section-modules .package-info-inner-wrapper.scrolled-bottom {
         animation: maskAnimationToBottomUpOne .5s ease forwards;
         mask-composite: intersect;
 
@@ -1298,7 +1297,7 @@
         }
     }
 
-    .presentation-section  .section.section-modules .package-info-inner-wrapper.scrolled-bottom.scrolled {
+    .presentation-section .section.section-modules .package-info-inner-wrapper.scrolled-bottom.scrolled {
         animation: maskAnimationToBottomUp .5s ease forwards;
         mask-composite: intersect;
 
@@ -1312,7 +1311,7 @@
     }
 
 
-    .presentation-section  .section.section-modules .package-info-inner-wrapper.scrolled-bottom.scrolled-top.scrolled {
+    .presentation-section .section.section-modules .package-info-inner-wrapper.scrolled-bottom.scrolled-top.scrolled {
         animation: maskAnimationToBottomUpCommon .5s ease forwards;
         mask-composite: intersect;
 
@@ -1326,7 +1325,7 @@
     }
 
 
-    .presentation-section   .section.section-subscription .subscription-details-columns-wrapper.section-scroll-bg-bottom.scrolled-bottom {
+    .presentation-section .section.section-subscription .subscription-details-columns-wrapper.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
             background: linear-gradient(0deg, #20222C 0%, rgba(36, 38, 54, 0) 77%);
             height: 60px;
@@ -1335,7 +1334,7 @@
         }
     }
 
-    .presentation-section   .section.section-subscription .subscription-details-columns-wrapper.section-scroll-bg-top.scrolled-top {
+    .presentation-section .section.section-subscription .subscription-details-columns-wrapper.section-scroll-bg-top.scrolled-top {
         &:after {
             height: 60px;
             background: linear-gradient(180deg, #20222C 0%, rgba(36, 38, 54, 0) 77%);
@@ -1344,40 +1343,40 @@
     }
 
 
-    .presentation-section  .section.section-select-target .title {
+    .presentation-section .section.section-select-target .title {
         margin: 0;
     }
 
-    .presentation-section  .section-back,
-    .presentation-section  .section-close {
+    .presentation-section .section-back,
+    .presentation-section .section-close {
         top: 65px;
         width: 36px;
         height: 36px;
     }
 
-    .presentation-section    .section-back {
+    .presentation-section .section-back {
         left: 10px;
     }
 
-    .presentation-section   .section-close {
+    .presentation-section .section-close {
         right: 10px;
     }
 
-    .presentation-section   .section-back svg,
-    .presentation-section  .section-close svg {
+    .presentation-section .section-back svg,
+    .presentation-section .section-close svg {
         width: 20px;
     }
 
 
-    .presentation-section   .main .title {
+    .presentation-section .main .title {
         margin-bottom: 30px;
     }
 
-    .presentation-section   .main .subtitle {
+    .presentation-section .main .subtitle {
         margin-bottom: 80px;
     }
 
-    .presentation-section    .laptop {
+    .presentation-section .laptop {
         max-width: 360px;
         position: relative;
         top: initial;
@@ -1386,29 +1385,29 @@
         transform: initial;
     }
 
-    .presentation-section   .laptop-shadow {
+    .presentation-section .laptop-shadow {
         height: 30px;
     }
 
 
-    .presentation-section     .flex-md {
+    .presentation-section .flex-md {
         display: flex;
     }
 
-    .presentation-section   .flex-col-md {
+    .presentation-section .flex-col-md {
         flex-direction: column;
     }
 
-    .presentation-section    .content-end-md {
+    .presentation-section .content-end-md {
         justify-content: end;
     }
 
-    .presentation-section   .flex-col-reverse-md {
+    .presentation-section .flex-col-reverse-md {
         flex-direction: column-reverse;
     }
 
 
-    .presentation-section   .package-modal-close {
+    .presentation-section .package-modal-close {
         border: 1.46px solid #FFFFFF33;
         width: 36px;
         height: 36px;
@@ -1422,24 +1421,24 @@
         z-index: 33;
     }
 
-    .presentation-section   .package-modal-close svg {
+    .presentation-section .package-modal-close svg {
         color: white;
         width: 20px;
     }
 
-    .presentation-section   .package-list {
+    .presentation-section .package-list {
         padding-bottom: 10px;
     }
 
-    .presentation-section  .section-calculation .package-info {
+    .presentation-section .section-calculation .package-info {
         flex-basis: auto;
     }
 
-    .presentation-section   .section-calculation .package-container-width .package-list {
+    .presentation-section .section-calculation .package-container-width .package-list {
         flex-basis: auto;
     }
 
-    .presentation-section   .title-mobile {
+    .presentation-section .title-mobile {
         position: absolute;
         padding-top: 72px;
         width: 100%;
@@ -1447,11 +1446,11 @@
         font-size: 22px !important;
     }
 
-    .presentation-section  .section-slide-box .title-mobile {
+    .presentation-section .section-slide-box .title-mobile {
         padding-top: 5px;
     }
 
-    .presentation-section  .package-container-wrap {
+    .presentation-section .package-container-wrap {
         background: #00000096 !important;
         padding: 0 !important;
         transition: all .25s ease-in-out;
@@ -1467,7 +1466,7 @@
     }
 
 
-    .presentation-section   .package-container-wrap.package-container-wrap-open {
+    .presentation-section .package-container-wrap.package-container-wrap-open {
         display: flex !important;
         z-index: 10000;
         transition: all .25s ease-in-out;
@@ -1475,7 +1474,7 @@
         overflow: hidden !important;
     }
 
-    .presentation-section  .package {
+    .presentation-section .package {
         background: #1D1F28 !important;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
@@ -1488,56 +1487,56 @@
         position: relative;
     }
 
-    .presentation-section  .package-container-wrap.package-container-wrap-open .package {
+    .presentation-section .package-container-wrap.package-container-wrap-open .package {
         transform: translateY(0);
         transition: all .25s ease-in-out;
         height: 100%;
     }
 
-    .presentation-section   .presentation-menu.presentation-menu-big-space {
+    .presentation-section .presentation-menu.presentation-menu-big-space {
         padding: 97px 0 20px 20px;
         flex-basis: 100%;
         height: calc(100% - 95px);
     }
 
-    .presentation-section   .presentation-menu.presentation-menu-little-space {
+    .presentation-section .presentation-menu.presentation-menu-little-space {
         padding: 110px 0 20px 20px;
         flex-basis: 100%;
         height: calc(100% - 115px);
     }
 
 
-    .presentation-section  .swiper-slide-calculation .presentation-menu.presentation-menu-little-space {
+    .presentation-section .swiper-slide-calculation .presentation-menu.presentation-menu-little-space {
         padding: 0 0 20px 20px;
         overflow: hidden;
         height: calc(100% - 60px);
     }
 
-    .presentation-section  .presentation-modules {
+    .presentation-section .presentation-modules {
         padding-right: 20px;
         margin-bottom: 32px;
     }
 
-    .presentation-section  .presentation-menu {
+    .presentation-section .presentation-menu {
         min-width: 100%;
     }
 
-    .presentation-section   .presentation-modules-item {
+    .presentation-section .presentation-modules-item {
         min-height: 40px;
         padding: 5px 10px;
     }
 
-    .presentation-section   .presentation-modules:last-child {
+    .presentation-section .presentation-modules:last-child {
         margin-bottom: 20px;
     }
 
-    .presentation-section   .presentation-menu h5 {
+    .presentation-section .presentation-menu h5 {
         text-align: left;
         margin-bottom: 20px;
         font-size: 16px;
     }
 
-    .presentation-section  .swiper-slide-calculation .presentation-menu h5 {
+    .presentation-section .swiper-slide-calculation .presentation-menu h5 {
         line-height: 1;
     }
 
@@ -1554,33 +1553,33 @@
     }
 
 
-    .presentation-section  .package-info-inner-wrapper {
+    .presentation-section .package-info-inner-wrapper {
         flex-direction: column;
         overflow: auto;
         /* height: calc(100% - 105px);*/
     }
 
-    .presentation-section  .package-info--img {
+    .presentation-section .package-info--img {
         margin: 0 auto 24px;
         height: 250px;
         max-width: 393px;
     }
 
-    .presentation-section  .package-info {
+    .presentation-section .package-info {
         max-width: 100%;
     }
 
-    .presentation-section  .package-info p {
+    .presentation-section .package-info p {
         font-size: 14px;
     }
 
-    .presentation-section  .packages-request {
+    .presentation-section .packages-request {
         position: fixed;
         bottom: 0;
         width: 100%;
     }
 
-    .presentation-section   .packages-request-mobile {
+    .presentation-section .packages-request-mobile {
         position: absolute;
         bottom: 24px;
         left: 0;
@@ -1593,23 +1592,23 @@
         margin-right: 5px;
     }
 
-    .presentation-section  .packages-request-mobile img {
+    .presentation-section .packages-request-mobile img {
         height: 13px !important;
     }
 
-    .presentation-section  .packages-request-mobile button {
+    .presentation-section .packages-request-mobile button {
         margin: 0;
     }
 
-    .presentation-section  .swiper-slide-3 .packages-request-mobile button:first-child {
+    .presentation-section .swiper-slide-3 .packages-request-mobile button:first-child {
         margin-bottom: 10px;
     }
 
-    .presentation-section  .presentation-modules-item.presentation-modules-item-active {
+    .presentation-section .presentation-modules-item.presentation-modules-item-active {
         background: #FFFFFF30;
     }
 
-    .presentation-section  .custom-checkbox-label .checkmark {
+    .presentation-section .custom-checkbox-label .checkmark {
         width: 24px !important;
         height: 24px !important;
     }
@@ -2066,7 +2065,6 @@
         animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 }
-
 
 
 @keyframes fadeInWithWidthMin {

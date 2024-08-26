@@ -544,7 +544,6 @@ document.addEventListener("click", () => {
     const app=document.getElementById("app");
 
 
-
     packageModalCloseBtns.forEach(packageModalClose => {
         packageModalClose.addEventListener("click", () => {
             const openDDList = document.querySelectorAll(".drop-down-item-open");
@@ -558,7 +557,6 @@ document.addEventListener("click", () => {
                 app.style.overflowY='scroll'
 
             });
-
 
             packageContainerWraps.forEach(packageContainerWrap => {
                 packageContainerWrap.classList.remove('package-container-wrap-open');
