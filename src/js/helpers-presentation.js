@@ -622,21 +622,15 @@ function addedBgScroll() {
 
 
     scrollSections.forEach(scrollElement => {
-        const currentEvent=isMobile? "scroll":"wheel"
 
+        scrollElement.addEventListener("scroll", (event) => {
+            console.log("scroll")
 
-        scrollElement.addEventListener(currentEvent, (event) => {
-            if (!isMobile) {
-                event.preventDefault();
-                const delta = Math.sign(event.deltaY);
-                scrollElement.scrollTop += delta * 3;
-            }
 
             updateShadows(scrollElement, scrollWrapsMap.get(scrollElement.getAttribute("data-section-scroll")));
             wrap.classList.remove('scrolled-bottom-remove');
         });
 
-     /*   updateShadows(scrollElement, scrollWrapsMap.get(scrollElement.getAttribute("data-section-scroll")));*/
     });
 }
 
