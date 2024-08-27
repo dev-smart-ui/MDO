@@ -624,9 +624,6 @@ function addedBgScroll() {
     scrollSections.forEach(scrollElement => {
 
         scrollElement.addEventListener("scroll", (event) => {
-            console.log("scroll")
-
-
             updateShadows(scrollElement, scrollWrapsMap.get(scrollElement.getAttribute("data-section-scroll")));
             wrap.classList.remove('scrolled-bottom-remove');
         });

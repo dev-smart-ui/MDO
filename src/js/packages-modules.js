@@ -407,6 +407,7 @@ $(document).ready(function () {
             //for add checkboxes
 
             if (adjustedIndex === 3) {
+                $("#presentationMenuSlide4").removeClass('h-full');
                 if (window.innerWidth > 1025) {
                     //for desktop
                     const animateFadeIn = document.querySelectorAll('[data-animate-fade-in]');
@@ -472,6 +473,7 @@ $(document).ready(function () {
 
     requestInvoiceBtns.forEach(requestInvoiceBtn => {
         requestInvoiceBtn.addEventListener('click', () => {
+            $("#presentationMenuSlide4").addClass('h-full');
             const mobileShadowBox = "7";
             const isDefaultSegment = determineDefaultState(store.targetSegments, store.allServices, stepFormState.selectedSegmentNames);
 
