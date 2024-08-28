@@ -530,7 +530,7 @@ $(document).ready(function () {
     requestInvoiceSuccessfulBts.forEach(requestInvoiceSuccessful => {
         requestInvoiceSuccessful.addEventListener('click', () => {
             const isValidForm = validateForm();
-            if (isValidForm) {
+            if (!isValidForm) {
                 return;
             } else {
                 $("#modalSuccessful").css("display", "flex").hide().fadeIn(500);
