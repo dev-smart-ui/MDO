@@ -128,14 +128,14 @@
     }
 
 
-    .comprehensive-coverage-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+    .comprehensive-coverage-pagination-presentation.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0;
         width: 12px;
         height: 12px;
         background: #9b9b9b70;
     }
 
-    .comprehensive-coverage-pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
+    .comprehensive-coverage-pagination-presentation.swiper-pagination-bullets .swiper-pagination-bullet-active {
         background: #02C2FF;
     }
 

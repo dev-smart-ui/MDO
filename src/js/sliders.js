@@ -40,8 +40,9 @@ window.addEventListener("load", () => {
             freeMode: true,
             speed: 700,
             pagination: {
-                el: '.comprehensive-coverage-pagination',
+                el: '.comprehensive-coverage-pagination-presentation',
                 clickable: true,
+                type: 'bullets',
             },
             navigation: {
                 nextEl: '.swiper-button-next',
