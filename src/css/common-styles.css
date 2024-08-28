@@ -562,7 +562,7 @@
 .presentation-section .section-back,
 .presentation-section .section-close {
     position: absolute;
-    top: 8.5dvh;
+    top: 11dvh;
     width: 64px;
     height: 64px;
     display: -webkit-box;
@@ -614,7 +614,7 @@
 }
 
 .presentation-section .section.section-select-target .main {
-    padding: 9dvh 60px 6dvh;
+    padding: 11dvh 60px 6dvh;
 }
 
 .presentation-section .section.section-select-target .title,
@@ -648,7 +648,7 @@
 
 .presentation-section .presentation-menu {
     /*   flex-basis: 27%;*/
-    padding: 140px 30px 0 3vw;
+    padding: 190px 30px 0 3vw;
    /* flex-shrink: 0;*/
     background-color: #1d1f28;
 
@@ -732,7 +732,7 @@
 .presentation-section .section.section-modules .main,
 .presentation-section .calculation-container {
     flex-basis: 73%;
-    padding: 9vh 3vw 6vh;
+    padding: 11vh 3vw 6vh;
     background: url('../images/presentation/gradient.svg');
     background-size: 140%;
     -webkit-background-size: 140%;
