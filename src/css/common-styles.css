@@ -1330,7 +1330,7 @@
 
     .presentation-section .section.section-subscription .subscription-details-columns-wrapper.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
-            background: linear-gradient(0deg, #20222C 0%, rgba(36, 38, 54, 0) 77%);
+            background: linear-gradient(0deg,#20222c,#24263600 77%);
             height: 60px;
             bottom: -10px;
             opacity: 1;
