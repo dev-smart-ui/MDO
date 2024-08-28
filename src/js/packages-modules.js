@@ -532,7 +532,7 @@ $(document).ready(function () {
         requestInvoiceSuccessful.addEventListener('click', () => {
             const isValidForm = validateForm();
             debugger
-            if (isValidForm) {
+            if (!isValidForm) {
                 return;
             } else {
                 $("#modalSuccessful").css("display", "flex").hide().fadeIn(500);
