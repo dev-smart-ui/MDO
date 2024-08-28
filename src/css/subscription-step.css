@@ -21,7 +21,7 @@
         display: flex;
         flex-direction: column;
         flex-basis: 43%;
-        padding: 16dvh 3vw 6dvh 3.5vw;
+        padding: 21dvh 3vw 6dvh 3.5vw;
         background: url(../images/presentation/gradient.svg);
         background-size: cover;
         background-position: right;

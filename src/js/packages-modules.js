@@ -527,6 +527,7 @@ $(document).ready(function () {
 
     //finish step
 
+
     requestInvoiceSuccessfulBts.forEach(requestInvoiceSuccessful => {
         requestInvoiceSuccessful.addEventListener('click', () => {
             const isValidForm = validateForm();
