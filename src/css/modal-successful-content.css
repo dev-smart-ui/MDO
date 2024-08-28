@@ -11,12 +11,13 @@
         background: #1D1F28;
         align-items: center;
         justify-content: center;
-        background-image: url("../images/presentation/gradient-second.png");
+        background-image: url("../images/presentation/gradient-second.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         padding: 24px;
     }
+
 
     .modal-successful-content {
         background: #1e1e1e61;
