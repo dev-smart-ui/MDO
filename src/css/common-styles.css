@@ -98,7 +98,7 @@
 .presentation-section .section.section-modules .presentation-menu-scroll.section-scroll-bg-top.scrolled-top {
     &:after {
         z-index: 10;
-        height: 200px;
+        height: 260px;
         background: linear-gradient(0.5turn, #1d1f28 79%, #1d1f2833 93%, #1d1f281a 98%, #1d1f280d)
     }
 ;
@@ -125,7 +125,7 @@
 .presentation-section .section.section-modules .presentation-menu-scroll-box.section-scroll-bg-top.scrolled-top {
     &:after {
         z-index: 10;
-        height: 200px;
+        height: 260px;
         background: linear-gradient(.5turn, #1d1f28fa 79%, #1d1f2833 93%, #1d1f281a 98%, #1d1f280d);
     }
 }
@@ -972,7 +972,7 @@
 
     .presentation-section .presentation-menu {
         /*   flex-basis: 27%;*/
-        padding: 140px 1vw 0 1vw;
+        padding: 190px 1vw 0 1vw;
 
     }
 }
@@ -1207,14 +1207,14 @@
     .presentation-section .section.section-modules .presentation-menu-scroll.section-scroll-bg-top.scrolled-top {
         &:after {
             background: linear-gradient(.5turn, #1d1f28 60%, #1d1f2833 92%, #1d1f281a 90%, #1d1f280d);
-            height: 105px;
+            height: 140px;
         }
     }
 
 
     .presentation-section .section.section-modules .presentation-menu-scroll.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
-            height: 70px;
+            height: 135px;
             background: linear-gradient(1turn, #1d1f28cc 55%, #1d1f2833 80%, #1d1f281a 40%, #1d1f280d);
         }
     }
@@ -1234,7 +1234,7 @@
     .presentation-section .section.section-modules.section-calculation .section-scroll-bg-top.scrolled-top.scrolled-top {
         &:after {
             height: 35px;
-            background: linear-gradient(0.5turn, #191b2675 55%, #1d1f2866 80%, #1d1f281a 0, #1d1f280d);
+            background: linear-gradient(.5turn, #191b26cf 56%, #1d1f2821 86%, #1d1f2800 0, #1d1f2800);
         }
     }
 
