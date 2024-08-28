@@ -1214,7 +1214,7 @@
 
     .presentation-section .section.section-modules .presentation-menu-scroll.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
-            height: 135px;
+            height: 75px;
             background: linear-gradient(1turn, #1d1f28cc 55%, #1d1f2833 80%, #1d1f281a 40%, #1d1f280d);
         }
     }
@@ -1234,13 +1234,14 @@
     .presentation-section .section.section-modules.section-calculation .section-scroll-bg-top.scrolled-top.scrolled-top {
         &:after {
             height: 35px;
-            background: linear-gradient(.5turn, #191b26cf 56%, #1d1f2821 86%, #1d1f2800 0, #1d1f2800);
+            background: linear-gradient(.5turn, #191b26a8 56%, #1d1f2821 86%, #1d1f2800 0, #1d1f2800);
         }
     }
 
-    .presentation-section .section.section-calculation .section-scroll-bg-bottom.scrolled-bottom {
+    .presentation-section .section.section-calculation .presentation-menu-scroll.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
-            height: 45px;
+            height: 135px;
+            background: linear-gradient(1turn, #1d1f28cc 55%, #1d1f2833 80%, #1d1f281a 40%, #1d1f280d);
         }
     }
 
