@@ -1215,7 +1215,7 @@
     .presentation-section .section.section-modules .presentation-menu-scroll.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
             height: 75px;
-            background: linear-gradient(1turn, #1d1f28cc 55%, #1d1f2833 80%, #1d1f281a 40%, #1d1f280d);
+            background: linear-gradient(0deg, #1d1f28, rgb(29 31 41) 50%, rgb(29 31 40 / 0%));
         }
     }
 
@@ -1241,7 +1241,7 @@
     .presentation-section .section.section-calculation .presentation-menu-scroll.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
             height: 135px;
-            background: linear-gradient(1turn, #1d1f28cc 55%, #1d1f2833 80%, #1d1f281a 40%, #1d1f280d);
+            background: linear-gradient(0deg, #1d1f28, rgb(29 31 40 / 84%) 50%, rgba(29, 31, 40, .005)) ;
         }
     }
 
@@ -1330,7 +1330,7 @@
 
     .presentation-section .section.section-subscription .subscription-details-columns-wrapper.section-scroll-bg-bottom.scrolled-bottom {
         &:before {
-            background: linear-gradient(0deg,#20222c,#24263600 77%);
+            background: linear-gradient(0deg, #1d1f28, rgb(29 31 40 / 84%) 50%, rgba(29, 31, 40, .005)) ;
             height: 60px;
             bottom: -10px;
             opacity: 1;
@@ -1589,6 +1589,7 @@
         right: 0;
         z-index: 555;
         padding: 0 15px;
+        background: #1d1f28;
     }
 
     .presentation-section .packages-request-mobile span {
